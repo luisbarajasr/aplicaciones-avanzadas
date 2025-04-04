@@ -32,6 +32,18 @@ A Last-In-First-Out (LIFO) data structure implemented in `stack.go`. It provides
 - `Peek()`: Returns the element at the top without removing it
 - `Len()`: Returns the number of elements in the stack
 
+### Dictionary 
+A key-value data structure implemented using pre-existing 'map' variable. Provides the following methods:
+- `NewDictionary()`: Creates a new dictionary
+- `Add(key, value)`: Adds a key-value pair
+- `Get(key)`: Returns the value associated to a key and a boolean if exits.
+- `Remove(key)`: Removes a key-value pair given a key.
+- `Update(key, value)`: update the value associated to a key, returns a boolean if exists.
+- `Contains(key)`: returns a if a key exists.
+- `Size(key, value)`: returns dictionary full size.
+- `GetAll()`: returns whole dictionary.
+
+
 ## How to Run
 
 1. Make sure you have Go installed on your system (version 1.20 or higher recommended)
@@ -53,7 +65,8 @@ The program will demonstrate the usage of Queue, Stack, and Dictionary data stru
 When you run the program, you'll see output similar to this:
 
 ```
-Testing Queue:
+-----------Testing Queue-----------
+Testing Enqueue:
 Queue length after enqueuing 3 items: 3
 Front of queue: first
 
@@ -72,17 +85,24 @@ Enqueued numbers, length: 2
 Dequeued: 1
 Final queue length: 2
 Final front of queue: 2
-
-Testing Dictionary:
-Dictionary length: 3
-Value for key 'one': 1
-Keys: [one two three]
-Values: [1 2 3]
+-----------Testing Stack-----------
+Stack length after pushing 3 items: 3
+Top of stack: third
+Popped from stack: third
+New top of stack: second
+Stack length after popping: 2
+Popped from stack: second
+New top of stack: first
+-----------Testing Dictionary-----------
+Dictionary size: 3
+Get 'name': John
+Get 'age': 30
+'country' key does not exist
+Updated 'age': 31
+Dictionary size after removing 'city': 2
+Contains 'city': false
+Contains 'name': true
+All items in dictionary: map[age:31 name:John]
+Clearing dictionary...
+Dictionary size after clearing: 0
 ```
-
-## Notes
-
-- Queue and Stack implementations use interfaces (`interface{}`) to allow storing any type of data
-- Dictionary implementation uses Go's built-in map type for efficient key-value storage
-- The implementations are not thread-safe
-- Memory management is handled automatically by Go's garbage collector 
