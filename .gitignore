@@ -1,0 +1,5 @@
+*.doc
+*.docx
+.DS_Store
+*.log
+*.pdf
