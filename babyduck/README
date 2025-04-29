@@ -1,0 +1,15 @@
+# BabyDuck Compiler Project
+
+This compiler is being developed using the Golang compiler kit [gocc](https://github.com/goccmack/gocc?tab=readme-ov-file).
+
+## Purpose
+The goal of this project is to provide hands-on experience with advanced programming topics, encouraging problem-solving, creativity, and deeper understanding of software engineering principles.
+
+## Structure
+The folder is organized into subdirectories and files, each focusing on specific topics or exercises. Detailed explanations and instructions are provided where necessary to guide the user through the content.
+
+## Requirements
+To work with this project, ensure you have the necessary development tools and dependencies installed. Refer to individual subdirectories or files for specific requirements.
+
+## Contributions
+Contributions to the BabyDuck project are welcome. Feel free to submit pull requests or report issues to improve the content and functionality of this project.

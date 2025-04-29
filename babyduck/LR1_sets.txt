@@ -1,0 +1,5523 @@
+S0{
+	S' : •Program «␚»
+	Program : •program id ; VarsOp FuncLoop main Body end «␚»
+}
+Transitions:
+	Program -> 1
+	program -> 2
+
+
+S1{
+	S' : Program• «␚»
+}
+Transitions:
+
+
+S2{
+	Program : program •id ; VarsOp FuncLoop main Body end «␚»
+}
+Transitions:
+	id -> 3
+
+
+S3{
+	Program : program id •; VarsOp FuncLoop main Body end «␚»
+}
+Transitions:
+	; -> 4
+
+
+S4{
+	Program : program id ; •VarsOp FuncLoop main Body end «␚»
+	VarsOp : •Vars «main»
+	VarsOp : •Vars «void»
+	VarsOp : empty• «main»
+	VarsOp : empty• «void»
+	Vars : •var Variable VarsPrime «main»
+	Vars : •var Variable VarsPrime «void»
+}
+Transitions:
+	VarsOp -> 5
+	Vars -> 6
+	var -> 7
+
+
+S5{
+	Program : program id ; VarsOp •FuncLoop main Body end «␚»
+	FuncLoop : •Funcs AfterLoop «main»
+	FuncLoop : empty• «main»
+	Funcs : •void id lparen Params rparen lbracket VarsOpt Body rbracket semicolon «main»
+	Funcs : •void id lparen Params rparen lbracket VarsOpt Body rbracket semicolon «void»
+}
+Transitions:
+	FuncLoop -> 8
+	Funcs -> 9
+	void -> 10
+
+
+S6{
+	VarsOp : Vars• «main»
+	VarsOp : Vars• «void»
+}
+Transitions:
+
+
+S7{
+	Vars : var •Variable VarsPrime «main»
+	Vars : var •Variable VarsPrime «void»
+	Variable : •id MasId colon Type semicolon «id»
+	Variable : •id MasId colon Type semicolon «main»
+	Variable : •id MasId colon Type semicolon «void»
+}
+Transitions:
+	id -> 11
+	Variable -> 12
+
+
+S8{
+	Program : program id ; VarsOp FuncLoop •main Body end «␚»
+}
+Transitions:
+	main -> 13
+
+
+S9{
+	FuncLoop : Funcs •AfterLoop «main»
+	AfterLoop : •FuncLoop «main»
+	AfterLoop : empty• «main»
+	FuncLoop : •Funcs AfterLoop «main»
+	FuncLoop : empty• «main»
+	Funcs : •void id lparen Params rparen lbracket VarsOpt Body rbracket semicolon «main»
+	Funcs : •void id lparen Params rparen lbracket VarsOpt Body rbracket semicolon «void»
+}
+Transitions:
+	Funcs -> 9
+	void -> 10
+	FuncLoop -> 14
+	AfterLoop -> 15
+
+
+S10{
+	Funcs : void •id lparen Params rparen lbracket VarsOpt Body rbracket semicolon «main»
+	Funcs : void •id lparen Params rparen lbracket VarsOpt Body rbracket semicolon «void»
+}
+Transitions:
+	id -> 16
+
+
+S11{
+	Variable : id •MasId colon Type semicolon «id»
+	Variable : id •MasId colon Type semicolon «main»
+	Variable : id •MasId colon Type semicolon «void»
+	MasId : •comma id MasId «colon»
+	MasId : empty• «colon»
+}
+Transitions:
+	MasId -> 17
+	comma -> 18
+
+
+S12{
+	Vars : var Variable •VarsPrime «main»
+	Vars : var Variable •VarsPrime «void»
+	VarsPrime : •Variable VarsPrime «main»
+	VarsPrime : empty• «main»
+	VarsPrime : •Variable VarsPrime «void»
+	VarsPrime : empty• «void»
+	Variable : •id MasId colon Type semicolon «id»
+	Variable : •id MasId colon Type semicolon «main»
+	Variable : •id MasId colon Type semicolon «void»
+}
+Transitions:
+	id -> 11
+	Variable -> 19
+	VarsPrime -> 20
+
+
+S13{
+	Program : program id ; VarsOp FuncLoop main •Body end «␚»
+	Body : •lbrace StateDeclare rbrace «end»
+}
+Transitions:
+	Body -> 21
+	lbrace -> 22
+
+
+S14{
+	AfterLoop : FuncLoop• «main»
+}
+Transitions:
+
+
+S15{
+	FuncLoop : Funcs AfterLoop• «main»
+}
+Transitions:
+
+
+S16{
+	Funcs : void id •lparen Params rparen lbracket VarsOpt Body rbracket semicolon «main»
+	Funcs : void id •lparen Params rparen lbracket VarsOpt Body rbracket semicolon «void»
+}
+Transitions:
+	lparen -> 23
+
+
+S17{
+	Variable : id MasId •colon Type semicolon «id»
+	Variable : id MasId •colon Type semicolon «main»
+	Variable : id MasId •colon Type semicolon «void»
+}
+Transitions:
+	colon -> 24
+
+
+S18{
+	MasId : comma •id MasId «colon»
+}
+Transitions:
+	id -> 25
+
+
+S19{
+	VarsPrime : Variable •VarsPrime «main»
+	VarsPrime : Variable •VarsPrime «void»
+	VarsPrime : •Variable VarsPrime «main»
+	VarsPrime : empty• «main»
+	VarsPrime : •Variable VarsPrime «void»
+	VarsPrime : empty• «void»
+	Variable : •id MasId colon Type semicolon «id»
+	Variable : •id MasId colon Type semicolon «main»
+	Variable : •id MasId colon Type semicolon «void»
+}
+Transitions:
+	id -> 11
+	Variable -> 19
+	VarsPrime -> 26
+
+
+S20{
+	Vars : var Variable VarsPrime• «main»
+	Vars : var Variable VarsPrime• «void»
+}
+Transitions:
+
+
+S21{
+	Program : program id ; VarsOp FuncLoop main Body •end «␚»
+}
+Transitions:
+	end -> 27
+
+
+S22{
+	Body : lbrace •StateDeclare rbrace «end»
+	StateDeclare : •Statement StateLoop «rbrace»
+	StateDeclare : empty• «rbrace»
+	Statement : •Assign «id»
+	Statement : •Assign «if»
+	Statement : •Assign «print»
+	Statement : •Assign «rbrace»
+	Statement : •Assign «while»
+	Statement : •Condition «id»
+	Statement : •Condition «if»
+	Statement : •Condition «print»
+	Statement : •Condition «rbrace»
+	Statement : •Condition «while»
+	Statement : •Cycle «id»
+	Statement : •Cycle «if»
+	Statement : •Cycle «print»
+	Statement : •Cycle «rbrace»
+	Statement : •Cycle «while»
+	Statement : •FuncCall «id»
+	Statement : •FuncCall «if»
+	Statement : •FuncCall «print»
+	Statement : •FuncCall «rbrace»
+	Statement : •FuncCall «while»
+	Statement : •Print «id»
+	Statement : •Print «if»
+	Statement : •Print «print»
+	Statement : •Print «rbrace»
+	Statement : •Print «while»
+	Assign : •id assign Expresion semicolon «id»
+	Assign : •id assign Expresion semicolon «if»
+	Assign : •id assign Expresion semicolon «print»
+	Assign : •id assign Expresion semicolon «rbrace»
+	Assign : •id assign Expresion semicolon «while»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «id»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «if»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «print»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «rbrace»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «while»
+	Cycle : •while lparen Expresion rparen do Body semicolon «id»
+	Cycle : •while lparen Expresion rparen do Body semicolon «if»
+	Cycle : •while lparen Expresion rparen do Body semicolon «print»
+	Cycle : •while lparen Expresion rparen do Body semicolon «rbrace»
+	Cycle : •while lparen Expresion rparen do Body semicolon «while»
+	FuncCall : •id lparen ArgList rparen semicolon «id»
+	FuncCall : •id lparen ArgList rparen semicolon «if»
+	FuncCall : •id lparen ArgList rparen semicolon «print»
+	FuncCall : •id lparen ArgList rparen semicolon «rbrace»
+	FuncCall : •id lparen ArgList rparen semicolon «while»
+	Print : •print lparen PrintList rparen semicolon «id»
+	Print : •print lparen PrintList rparen semicolon «if»
+	Print : •print lparen PrintList rparen semicolon «print»
+	Print : •print lparen PrintList rparen semicolon «rbrace»
+	Print : •print lparen PrintList rparen semicolon «while»
+}
+Transitions:
+	id -> 28
+	StateDeclare -> 29
+	Statement -> 30
+	Assign -> 31
+	Condition -> 32
+	Cycle -> 33
+	FuncCall -> 34
+	Print -> 35
+	if -> 36
+	while -> 37
+	print -> 38
+
+
+S23{
+	Funcs : void id lparen •Params rparen lbracket VarsOpt Body rbracket semicolon «main»
+	Funcs : void id lparen •Params rparen lbracket VarsOpt Body rbracket semicolon «void»
+	Params : •ParamIndiv MoreParam «rparen»
+	Params : empty• «rparen»
+	ParamIndiv : •id colon Type «comma»
+	ParamIndiv : •id colon Type «rparen»
+}
+Transitions:
+	id -> 39
+	Params -> 40
+	ParamIndiv -> 41
+
+
+S24{
+	Variable : id MasId colon •Type semicolon «id»
+	Variable : id MasId colon •Type semicolon «main»
+	Variable : id MasId colon •Type semicolon «void»
+	Type : •int «semicolon»
+	Type : •float «semicolon»
+}
+Transitions:
+	Type -> 42
+	int -> 43
+	float -> 44
+
+
+S25{
+	MasId : comma id •MasId «colon»
+	MasId : •comma id MasId «colon»
+	MasId : empty• «colon»
+}
+Transitions:
+	comma -> 18
+	MasId -> 45
+
+
+S26{
+	VarsPrime : Variable VarsPrime• «main»
+	VarsPrime : Variable VarsPrime• «void»
+}
+Transitions:
+
+
+S27{
+	Program : program id ; VarsOp FuncLoop main Body end• «␚»
+}
+Transitions:
+
+
+S28{
+	Assign : id •assign Expresion semicolon «id»
+	Assign : id •assign Expresion semicolon «if»
+	Assign : id •assign Expresion semicolon «print»
+	Assign : id •assign Expresion semicolon «rbrace»
+	Assign : id •assign Expresion semicolon «while»
+	FuncCall : id •lparen ArgList rparen semicolon «id»
+	FuncCall : id •lparen ArgList rparen semicolon «if»
+	FuncCall : id •lparen ArgList rparen semicolon «print»
+	FuncCall : id •lparen ArgList rparen semicolon «rbrace»
+	FuncCall : id •lparen ArgList rparen semicolon «while»
+}
+Transitions:
+	lparen -> 46
+	assign -> 47
+
+
+S29{
+	Body : lbrace StateDeclare •rbrace «end»
+}
+Transitions:
+	rbrace -> 48
+
+
+S30{
+	StateDeclare : Statement •StateLoop «rbrace»
+	StateLoop : •StateDeclare «rbrace»
+	StateLoop : empty• «rbrace»
+	StateDeclare : •Statement StateLoop «rbrace»
+	StateDeclare : empty• «rbrace»
+	Statement : •Assign «id»
+	Statement : •Assign «if»
+	Statement : •Assign «print»
+	Statement : •Assign «rbrace»
+	Statement : •Assign «while»
+	Statement : •Condition «id»
+	Statement : •Condition «if»
+	Statement : •Condition «print»
+	Statement : •Condition «rbrace»
+	Statement : •Condition «while»
+	Statement : •Cycle «id»
+	Statement : •Cycle «if»
+	Statement : •Cycle «print»
+	Statement : •Cycle «rbrace»
+	Statement : •Cycle «while»
+	Statement : •FuncCall «id»
+	Statement : •FuncCall «if»
+	Statement : •FuncCall «print»
+	Statement : •FuncCall «rbrace»
+	Statement : •FuncCall «while»
+	Statement : •Print «id»
+	Statement : •Print «if»
+	Statement : •Print «print»
+	Statement : •Print «rbrace»
+	Statement : •Print «while»
+	Assign : •id assign Expresion semicolon «id»
+	Assign : •id assign Expresion semicolon «if»
+	Assign : •id assign Expresion semicolon «print»
+	Assign : •id assign Expresion semicolon «rbrace»
+	Assign : •id assign Expresion semicolon «while»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «id»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «if»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «print»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «rbrace»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «while»
+	Cycle : •while lparen Expresion rparen do Body semicolon «id»
+	Cycle : •while lparen Expresion rparen do Body semicolon «if»
+	Cycle : •while lparen Expresion rparen do Body semicolon «print»
+	Cycle : •while lparen Expresion rparen do Body semicolon «rbrace»
+	Cycle : •while lparen Expresion rparen do Body semicolon «while»
+	FuncCall : •id lparen ArgList rparen semicolon «id»
+	FuncCall : •id lparen ArgList rparen semicolon «if»
+	FuncCall : •id lparen ArgList rparen semicolon «print»
+	FuncCall : •id lparen ArgList rparen semicolon «rbrace»
+	FuncCall : •id lparen ArgList rparen semicolon «while»
+	Print : •print lparen PrintList rparen semicolon «id»
+	Print : •print lparen PrintList rparen semicolon «if»
+	Print : •print lparen PrintList rparen semicolon «print»
+	Print : •print lparen PrintList rparen semicolon «rbrace»
+	Print : •print lparen PrintList rparen semicolon «while»
+}
+Transitions:
+	id -> 28
+	Statement -> 30
+	Assign -> 31
+	Condition -> 32
+	Cycle -> 33
+	FuncCall -> 34
+	Print -> 35
+	if -> 36
+	while -> 37
+	print -> 38
+	StateDeclare -> 49
+	StateLoop -> 50
+
+
+S31{
+	Statement : Assign• «id»
+	Statement : Assign• «if»
+	Statement : Assign• «print»
+	Statement : Assign• «rbrace»
+	Statement : Assign• «while»
+}
+Transitions:
+
+
+S32{
+	Statement : Condition• «id»
+	Statement : Condition• «if»
+	Statement : Condition• «print»
+	Statement : Condition• «rbrace»
+	Statement : Condition• «while»
+}
+Transitions:
+
+
+S33{
+	Statement : Cycle• «id»
+	Statement : Cycle• «if»
+	Statement : Cycle• «print»
+	Statement : Cycle• «rbrace»
+	Statement : Cycle• «while»
+}
+Transitions:
+
+
+S34{
+	Statement : FuncCall• «id»
+	Statement : FuncCall• «if»
+	Statement : FuncCall• «print»
+	Statement : FuncCall• «rbrace»
+	Statement : FuncCall• «while»
+}
+Transitions:
+
+
+S35{
+	Statement : Print• «id»
+	Statement : Print• «if»
+	Statement : Print• «print»
+	Statement : Print• «rbrace»
+	Statement : Print• «while»
+}
+Transitions:
+
+
+S36{
+	Condition : if •lparen Expresion rparen Body ElseBody semicolon «id»
+	Condition : if •lparen Expresion rparen Body ElseBody semicolon «if»
+	Condition : if •lparen Expresion rparen Body ElseBody semicolon «print»
+	Condition : if •lparen Expresion rparen Body ElseBody semicolon «rbrace»
+	Condition : if •lparen Expresion rparen Body ElseBody semicolon «while»
+}
+Transitions:
+	lparen -> 51
+
+
+S37{
+	Cycle : while •lparen Expresion rparen do Body semicolon «id»
+	Cycle : while •lparen Expresion rparen do Body semicolon «if»
+	Cycle : while •lparen Expresion rparen do Body semicolon «print»
+	Cycle : while •lparen Expresion rparen do Body semicolon «rbrace»
+	Cycle : while •lparen Expresion rparen do Body semicolon «while»
+}
+Transitions:
+	lparen -> 52
+
+
+S38{
+	Print : print •lparen PrintList rparen semicolon «id»
+	Print : print •lparen PrintList rparen semicolon «if»
+	Print : print •lparen PrintList rparen semicolon «print»
+	Print : print •lparen PrintList rparen semicolon «rbrace»
+	Print : print •lparen PrintList rparen semicolon «while»
+}
+Transitions:
+	lparen -> 53
+
+
+S39{
+	ParamIndiv : id •colon Type «comma»
+	ParamIndiv : id •colon Type «rparen»
+}
+Transitions:
+	colon -> 54
+
+
+S40{
+	Funcs : void id lparen Params •rparen lbracket VarsOpt Body rbracket semicolon «main»
+	Funcs : void id lparen Params •rparen lbracket VarsOpt Body rbracket semicolon «void»
+}
+Transitions:
+	rparen -> 55
+
+
+S41{
+	Params : ParamIndiv •MoreParam «rparen»
+	MoreParam : •comma ParamIndiv MoreParam «rparen»
+	MoreParam : empty• «rparen»
+}
+Transitions:
+	comma -> 56
+	MoreParam -> 57
+
+
+S42{
+	Variable : id MasId colon Type •semicolon «id»
+	Variable : id MasId colon Type •semicolon «main»
+	Variable : id MasId colon Type •semicolon «void»
+}
+Transitions:
+	semicolon -> 58
+
+
+S43{
+	Type : int• «semicolon»
+}
+Transitions:
+
+
+S44{
+	Type : float• «semicolon»
+}
+Transitions:
+
+
+S45{
+	MasId : comma id MasId• «colon»
+}
+Transitions:
+
+
+S46{
+	FuncCall : id lparen •ArgList rparen semicolon «id»
+	FuncCall : id lparen •ArgList rparen semicolon «if»
+	FuncCall : id lparen •ArgList rparen semicolon «print»
+	FuncCall : id lparen •ArgList rparen semicolon «rbrace»
+	FuncCall : id lparen •ArgList rparen semicolon «while»
+	ArgList : •Expresion MoreCall «rparen»
+	ArgList : empty• «rparen»
+	Expresion : •Exp MoreExpresion «comma»
+	Expresion : •Exp MoreExpresion «rparen»
+	Exp : •Termino MoreExp «comma»
+	Exp : •Termino MoreExp «greater»
+	Exp : •Termino MoreExp «less»
+	Exp : •Termino MoreExp «notequal»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «comma»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •Op NextOp «greater»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	lparen -> 59
+	Expresion -> 60
+	ArgList -> 61
+	Exp -> 62
+	Termino -> 63
+	plus -> 64
+	minus -> 65
+	Factor -> 66
+	Op -> 67
+
+
+S47{
+	Assign : id assign •Expresion semicolon «id»
+	Assign : id assign •Expresion semicolon «if»
+	Assign : id assign •Expresion semicolon «print»
+	Assign : id assign •Expresion semicolon «rbrace»
+	Assign : id assign •Expresion semicolon «while»
+	Expresion : •Exp MoreExpresion «semicolon»
+	Exp : •Termino MoreExp «greater»
+	Exp : •Termino MoreExp «less»
+	Exp : •Termino MoreExp «notequal»
+	Exp : •Termino MoreExp «semicolon»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «semicolon»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «semicolon»
+	Factor : •Op NextOp «semicolon»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 68
+	Expresion -> 69
+	Exp -> 70
+	Termino -> 71
+	Factor -> 72
+	Op -> 73
+
+
+S48{
+	Body : lbrace StateDeclare rbrace• «end»
+}
+Transitions:
+
+
+S49{
+	StateLoop : StateDeclare• «rbrace»
+}
+Transitions:
+
+
+S50{
+	StateDeclare : Statement StateLoop• «rbrace»
+}
+Transitions:
+
+
+S51{
+	Condition : if lparen •Expresion rparen Body ElseBody semicolon «id»
+	Condition : if lparen •Expresion rparen Body ElseBody semicolon «if»
+	Condition : if lparen •Expresion rparen Body ElseBody semicolon «print»
+	Condition : if lparen •Expresion rparen Body ElseBody semicolon «rbrace»
+	Condition : if lparen •Expresion rparen Body ElseBody semicolon «while»
+	Expresion : •Exp MoreExpresion «rparen»
+	Exp : •Termino MoreExp «greater»
+	Exp : •Termino MoreExp «less»
+	Exp : •Termino MoreExp «notequal»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 74
+	Expresion -> 75
+	Exp -> 76
+	Termino -> 77
+	Factor -> 78
+	Op -> 79
+
+
+S52{
+	Cycle : while lparen •Expresion rparen do Body semicolon «id»
+	Cycle : while lparen •Expresion rparen do Body semicolon «if»
+	Cycle : while lparen •Expresion rparen do Body semicolon «print»
+	Cycle : while lparen •Expresion rparen do Body semicolon «rbrace»
+	Cycle : while lparen •Expresion rparen do Body semicolon «while»
+	Expresion : •Exp MoreExpresion «rparen»
+	Exp : •Termino MoreExp «greater»
+	Exp : •Termino MoreExp «less»
+	Exp : •Termino MoreExp «notequal»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 74
+	Exp -> 76
+	Termino -> 77
+	Factor -> 78
+	Op -> 79
+	Expresion -> 80
+
+
+S53{
+	Print : print lparen •PrintList rparen semicolon «id»
+	Print : print lparen •PrintList rparen semicolon «if»
+	Print : print lparen •PrintList rparen semicolon «print»
+	Print : print lparen •PrintList rparen semicolon «rbrace»
+	Print : print lparen •PrintList rparen semicolon «while»
+	PrintList : •PrintItem MorePrint «rparen»
+	PrintItem : •Expresion «comma»
+	PrintItem : •Expresion «rparen»
+	PrintItem : •cte_string «comma»
+	PrintItem : •cte_string «rparen»
+	Expresion : •Exp MoreExpresion «comma»
+	Expresion : •Exp MoreExpresion «rparen»
+	Exp : •Termino MoreExp «comma»
+	Exp : •Termino MoreExp «greater»
+	Exp : •Termino MoreExp «less»
+	Exp : •Termino MoreExp «notequal»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «comma»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •Op NextOp «greater»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	lparen -> 59
+	Exp -> 62
+	Termino -> 63
+	plus -> 64
+	minus -> 65
+	Factor -> 66
+	Op -> 67
+	Expresion -> 81
+	PrintList -> 82
+	PrintItem -> 83
+	cte_string -> 84
+
+
+S54{
+	ParamIndiv : id colon •Type «comma»
+	ParamIndiv : id colon •Type «rparen»
+	Type : •int «comma»
+	Type : •float «comma»
+	Type : •int «rparen»
+	Type : •float «rparen»
+}
+Transitions:
+	Type -> 85
+	int -> 86
+	float -> 87
+
+
+S55{
+	Funcs : void id lparen Params rparen •lbracket VarsOpt Body rbracket semicolon «main»
+	Funcs : void id lparen Params rparen •lbracket VarsOpt Body rbracket semicolon «void»
+}
+Transitions:
+	lbracket -> 88
+
+
+S56{
+	MoreParam : comma •ParamIndiv MoreParam «rparen»
+	ParamIndiv : •id colon Type «comma»
+	ParamIndiv : •id colon Type «rparen»
+}
+Transitions:
+	id -> 39
+	ParamIndiv -> 89
+
+
+S57{
+	Params : ParamIndiv MoreParam• «rparen»
+}
+Transitions:
+
+
+S58{
+	Variable : id MasId colon Type semicolon• «id»
+	Variable : id MasId colon Type semicolon• «main»
+	Variable : id MasId colon Type semicolon• «void»
+}
+Transitions:
+
+
+S59{
+	Factor : lparen •Expresion rparen «comma»
+	Factor : lparen •Expresion rparen «divide»
+	Factor : lparen •Expresion rparen «times»
+	Factor : lparen •Expresion rparen «minus»
+	Factor : lparen •Expresion rparen «plus»
+	Factor : lparen •Expresion rparen «greater»
+	Factor : lparen •Expresion rparen «less»
+	Factor : lparen •Expresion rparen «notequal»
+	Factor : lparen •Expresion rparen «rparen»
+	Expresion : •Exp MoreExpresion «rparen»
+	Exp : •Termino MoreExp «greater»
+	Exp : •Termino MoreExp «less»
+	Exp : •Termino MoreExp «notequal»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 74
+	Exp -> 76
+	Termino -> 77
+	Factor -> 78
+	Op -> 79
+	Expresion -> 90
+
+
+S60{
+	ArgList : Expresion •MoreCall «rparen»
+	MoreCall : •comma Expresion MoreCall «rparen»
+	MoreCall : empty• «rparen»
+}
+Transitions:
+	comma -> 91
+	MoreCall -> 92
+
+
+S61{
+	FuncCall : id lparen ArgList •rparen semicolon «id»
+	FuncCall : id lparen ArgList •rparen semicolon «if»
+	FuncCall : id lparen ArgList •rparen semicolon «print»
+	FuncCall : id lparen ArgList •rparen semicolon «rbrace»
+	FuncCall : id lparen ArgList •rparen semicolon «while»
+}
+Transitions:
+	rparen -> 93
+
+
+S62{
+	Expresion : Exp •MoreExpresion «comma»
+	Expresion : Exp •MoreExpresion «rparen»
+	MoreExpresion : •Exp1 «comma»
+	MoreExpresion : •Exp2 «comma»
+	MoreExpresion : •Exp3 «comma»
+	MoreExpresion : empty• «comma»
+	MoreExpresion : •Exp1 «rparen»
+	MoreExpresion : •Exp2 «rparen»
+	MoreExpresion : •Exp3 «rparen»
+	MoreExpresion : empty• «rparen»
+	Exp1 : •greater Exp «comma»
+	Exp2 : •less Exp «comma»
+	Exp3 : •notequal Exp «comma»
+	Exp1 : •greater Exp «rparen»
+	Exp2 : •less Exp «rparen»
+	Exp3 : •notequal Exp «rparen»
+}
+Transitions:
+	MoreExpresion -> 94
+	Exp1 -> 95
+	Exp2 -> 96
+	Exp3 -> 97
+	greater -> 98
+	less -> 99
+	notequal -> 100
+
+
+S63{
+	Exp : Termino •MoreExp «comma»
+	Exp : Termino •MoreExp «greater»
+	Exp : Termino •MoreExp «less»
+	Exp : Termino •MoreExp «notequal»
+	Exp : Termino •MoreExp «rparen»
+	MoreExp : •plus Termino MoreExp «comma»
+	MoreExp : •minus Termino MoreExp «comma»
+	MoreExp : empty• «comma»
+	MoreExp : •plus Termino MoreExp «greater»
+	MoreExp : •minus Termino MoreExp «greater»
+	MoreExp : empty• «greater»
+	MoreExp : •plus Termino MoreExp «less»
+	MoreExp : •minus Termino MoreExp «less»
+	MoreExp : empty• «less»
+	MoreExp : •plus Termino MoreExp «notequal»
+	MoreExp : •minus Termino MoreExp «notequal»
+	MoreExp : empty• «notequal»
+	MoreExp : •plus Termino MoreExp «rparen»
+	MoreExp : •minus Termino MoreExp «rparen»
+	MoreExp : empty• «rparen»
+}
+Transitions:
+	MoreExp -> 101
+	plus -> 102
+	minus -> 103
+
+
+S64{
+	Op : plus• «cte_float»
+	Op : plus• «cte_int»
+	Op : plus• «id»
+}
+Transitions:
+
+
+S65{
+	Op : minus• «cte_float»
+	Op : minus• «cte_int»
+	Op : minus• «id»
+}
+Transitions:
+
+
+S66{
+	Termino : Factor •MoreTermino «comma»
+	Termino : Factor •MoreTermino «minus»
+	Termino : Factor •MoreTermino «plus»
+	Termino : Factor •MoreTermino «greater»
+	Termino : Factor •MoreTermino «less»
+	Termino : Factor •MoreTermino «notequal»
+	Termino : Factor •MoreTermino «rparen»
+	MoreTermino : •times Factor MoreTermino «comma»
+	MoreTermino : •divide Factor MoreTermino «comma»
+	MoreTermino : empty• «comma»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «greater»
+	MoreTermino : •divide Factor MoreTermino «greater»
+	MoreTermino : empty• «greater»
+	MoreTermino : •times Factor MoreTermino «less»
+	MoreTermino : •divide Factor MoreTermino «less»
+	MoreTermino : empty• «less»
+	MoreTermino : •times Factor MoreTermino «notequal»
+	MoreTermino : •divide Factor MoreTermino «notequal»
+	MoreTermino : empty• «notequal»
+	MoreTermino : •times Factor MoreTermino «rparen»
+	MoreTermino : •divide Factor MoreTermino «rparen»
+	MoreTermino : empty• «rparen»
+}
+Transitions:
+	MoreTermino -> 104
+	times -> 105
+	divide -> 106
+
+
+S67{
+	Factor : Op •NextOp «comma»
+	Factor : Op •NextOp «divide»
+	Factor : Op •NextOp «times»
+	Factor : Op •NextOp «minus»
+	Factor : Op •NextOp «plus»
+	Factor : Op •NextOp «greater»
+	Factor : Op •NextOp «less»
+	Factor : Op •NextOp «notequal»
+	Factor : Op •NextOp «rparen»
+	NextOp : •id «comma»
+	NextOp : •Cte «comma»
+	NextOp : •id «divide»
+	NextOp : •Cte «divide»
+	NextOp : •id «times»
+	NextOp : •Cte «times»
+	NextOp : •id «minus»
+	NextOp : •Cte «minus»
+	NextOp : •id «plus»
+	NextOp : •Cte «plus»
+	NextOp : •id «greater»
+	NextOp : •Cte «greater»
+	NextOp : •id «less»
+	NextOp : •Cte «less»
+	NextOp : •id «notequal»
+	NextOp : •Cte «notequal»
+	NextOp : •id «rparen»
+	NextOp : •Cte «rparen»
+	Cte : •cte_int «comma»
+	Cte : •cte_float «comma»
+	Cte : •cte_int «divide»
+	Cte : •cte_float «divide»
+	Cte : •cte_int «times»
+	Cte : •cte_float «times»
+	Cte : •cte_int «minus»
+	Cte : •cte_float «minus»
+	Cte : •cte_int «plus»
+	Cte : •cte_float «plus»
+	Cte : •cte_int «greater»
+	Cte : •cte_float «greater»
+	Cte : •cte_int «less»
+	Cte : •cte_float «less»
+	Cte : •cte_int «notequal»
+	Cte : •cte_float «notequal»
+	Cte : •cte_int «rparen»
+	Cte : •cte_float «rparen»
+}
+Transitions:
+	id -> 107
+	NextOp -> 108
+	Cte -> 109
+	cte_int -> 110
+	cte_float -> 111
+
+
+S68{
+	Factor : lparen •Expresion rparen «divide»
+	Factor : lparen •Expresion rparen «greater»
+	Factor : lparen •Expresion rparen «times»
+	Factor : lparen •Expresion rparen «minus»
+	Factor : lparen •Expresion rparen «plus»
+	Factor : lparen •Expresion rparen «less»
+	Factor : lparen •Expresion rparen «notequal»
+	Factor : lparen •Expresion rparen «semicolon»
+	Expresion : •Exp MoreExpresion «rparen»
+	Exp : •Termino MoreExp «greater»
+	Exp : •Termino MoreExp «less»
+	Exp : •Termino MoreExp «notequal»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 74
+	Exp -> 76
+	Termino -> 77
+	Factor -> 78
+	Op -> 79
+	Expresion -> 112
+
+
+S69{
+	Assign : id assign Expresion •semicolon «id»
+	Assign : id assign Expresion •semicolon «if»
+	Assign : id assign Expresion •semicolon «print»
+	Assign : id assign Expresion •semicolon «rbrace»
+	Assign : id assign Expresion •semicolon «while»
+}
+Transitions:
+	semicolon -> 113
+
+
+S70{
+	Expresion : Exp •MoreExpresion «semicolon»
+	MoreExpresion : •Exp1 «semicolon»
+	MoreExpresion : •Exp2 «semicolon»
+	MoreExpresion : •Exp3 «semicolon»
+	MoreExpresion : empty• «semicolon»
+	Exp1 : •greater Exp «semicolon»
+	Exp2 : •less Exp «semicolon»
+	Exp3 : •notequal Exp «semicolon»
+}
+Transitions:
+	MoreExpresion -> 114
+	Exp1 -> 115
+	Exp2 -> 116
+	Exp3 -> 117
+	greater -> 118
+	less -> 119
+	notequal -> 120
+
+
+S71{
+	Exp : Termino •MoreExp «greater»
+	Exp : Termino •MoreExp «less»
+	Exp : Termino •MoreExp «notequal»
+	Exp : Termino •MoreExp «semicolon»
+	MoreExp : •plus Termino MoreExp «greater»
+	MoreExp : •minus Termino MoreExp «greater»
+	MoreExp : empty• «greater»
+	MoreExp : •plus Termino MoreExp «less»
+	MoreExp : •minus Termino MoreExp «less»
+	MoreExp : empty• «less»
+	MoreExp : •plus Termino MoreExp «notequal»
+	MoreExp : •minus Termino MoreExp «notequal»
+	MoreExp : empty• «notequal»
+	MoreExp : •plus Termino MoreExp «semicolon»
+	MoreExp : •minus Termino MoreExp «semicolon»
+	MoreExp : empty• «semicolon»
+}
+Transitions:
+	MoreExp -> 121
+	plus -> 122
+	minus -> 123
+
+
+S72{
+	Termino : Factor •MoreTermino «greater»
+	Termino : Factor •MoreTermino «minus»
+	Termino : Factor •MoreTermino «plus»
+	Termino : Factor •MoreTermino «less»
+	Termino : Factor •MoreTermino «notequal»
+	Termino : Factor •MoreTermino «semicolon»
+	MoreTermino : •times Factor MoreTermino «greater»
+	MoreTermino : •divide Factor MoreTermino «greater»
+	MoreTermino : empty• «greater»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «less»
+	MoreTermino : •divide Factor MoreTermino «less»
+	MoreTermino : empty• «less»
+	MoreTermino : •times Factor MoreTermino «notequal»
+	MoreTermino : •divide Factor MoreTermino «notequal»
+	MoreTermino : empty• «notequal»
+	MoreTermino : •times Factor MoreTermino «semicolon»
+	MoreTermino : •divide Factor MoreTermino «semicolon»
+	MoreTermino : empty• «semicolon»
+}
+Transitions:
+	MoreTermino -> 124
+	times -> 125
+	divide -> 126
+
+
+S73{
+	Factor : Op •NextOp «divide»
+	Factor : Op •NextOp «greater»
+	Factor : Op •NextOp «times»
+	Factor : Op •NextOp «minus»
+	Factor : Op •NextOp «plus»
+	Factor : Op •NextOp «less»
+	Factor : Op •NextOp «notequal»
+	Factor : Op •NextOp «semicolon»
+	NextOp : •id «divide»
+	NextOp : •Cte «divide»
+	NextOp : •id «greater»
+	NextOp : •Cte «greater»
+	NextOp : •id «times»
+	NextOp : •Cte «times»
+	NextOp : •id «minus»
+	NextOp : •Cte «minus»
+	NextOp : •id «plus»
+	NextOp : •Cte «plus»
+	NextOp : •id «less»
+	NextOp : •Cte «less»
+	NextOp : •id «notequal»
+	NextOp : •Cte «notequal»
+	NextOp : •id «semicolon»
+	NextOp : •Cte «semicolon»
+	Cte : •cte_int «divide»
+	Cte : •cte_float «divide»
+	Cte : •cte_int «greater»
+	Cte : •cte_float «greater»
+	Cte : •cte_int «times»
+	Cte : •cte_float «times»
+	Cte : •cte_int «minus»
+	Cte : •cte_float «minus»
+	Cte : •cte_int «plus»
+	Cte : •cte_float «plus»
+	Cte : •cte_int «less»
+	Cte : •cte_float «less»
+	Cte : •cte_int «notequal»
+	Cte : •cte_float «notequal»
+	Cte : •cte_int «semicolon»
+	Cte : •cte_float «semicolon»
+}
+Transitions:
+	id -> 127
+	NextOp -> 128
+	Cte -> 129
+	cte_int -> 130
+	cte_float -> 131
+
+
+S74{
+	Factor : lparen •Expresion rparen «divide»
+	Factor : lparen •Expresion rparen «greater»
+	Factor : lparen •Expresion rparen «times»
+	Factor : lparen •Expresion rparen «minus»
+	Factor : lparen •Expresion rparen «plus»
+	Factor : lparen •Expresion rparen «less»
+	Factor : lparen •Expresion rparen «notequal»
+	Factor : lparen •Expresion rparen «rparen»
+	Expresion : •Exp MoreExpresion «rparen»
+	Exp : •Termino MoreExp «greater»
+	Exp : •Termino MoreExp «less»
+	Exp : •Termino MoreExp «notequal»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 74
+	Exp -> 76
+	Termino -> 77
+	Factor -> 78
+	Op -> 79
+	Expresion -> 132
+
+
+S75{
+	Condition : if lparen Expresion •rparen Body ElseBody semicolon «id»
+	Condition : if lparen Expresion •rparen Body ElseBody semicolon «if»
+	Condition : if lparen Expresion •rparen Body ElseBody semicolon «print»
+	Condition : if lparen Expresion •rparen Body ElseBody semicolon «rbrace»
+	Condition : if lparen Expresion •rparen Body ElseBody semicolon «while»
+}
+Transitions:
+	rparen -> 133
+
+
+S76{
+	Expresion : Exp •MoreExpresion «rparen»
+	MoreExpresion : •Exp1 «rparen»
+	MoreExpresion : •Exp2 «rparen»
+	MoreExpresion : •Exp3 «rparen»
+	MoreExpresion : empty• «rparen»
+	Exp1 : •greater Exp «rparen»
+	Exp2 : •less Exp «rparen»
+	Exp3 : •notequal Exp «rparen»
+}
+Transitions:
+	MoreExpresion -> 134
+	Exp1 -> 135
+	Exp2 -> 136
+	Exp3 -> 137
+	greater -> 138
+	less -> 139
+	notequal -> 140
+
+
+S77{
+	Exp : Termino •MoreExp «greater»
+	Exp : Termino •MoreExp «less»
+	Exp : Termino •MoreExp «notequal»
+	Exp : Termino •MoreExp «rparen»
+	MoreExp : •plus Termino MoreExp «greater»
+	MoreExp : •minus Termino MoreExp «greater»
+	MoreExp : empty• «greater»
+	MoreExp : •plus Termino MoreExp «less»
+	MoreExp : •minus Termino MoreExp «less»
+	MoreExp : empty• «less»
+	MoreExp : •plus Termino MoreExp «notequal»
+	MoreExp : •minus Termino MoreExp «notequal»
+	MoreExp : empty• «notequal»
+	MoreExp : •plus Termino MoreExp «rparen»
+	MoreExp : •minus Termino MoreExp «rparen»
+	MoreExp : empty• «rparen»
+}
+Transitions:
+	MoreExp -> 141
+	plus -> 142
+	minus -> 143
+
+
+S78{
+	Termino : Factor •MoreTermino «greater»
+	Termino : Factor •MoreTermino «minus»
+	Termino : Factor •MoreTermino «plus»
+	Termino : Factor •MoreTermino «less»
+	Termino : Factor •MoreTermino «notequal»
+	Termino : Factor •MoreTermino «rparen»
+	MoreTermino : •times Factor MoreTermino «greater»
+	MoreTermino : •divide Factor MoreTermino «greater»
+	MoreTermino : empty• «greater»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «less»
+	MoreTermino : •divide Factor MoreTermino «less»
+	MoreTermino : empty• «less»
+	MoreTermino : •times Factor MoreTermino «notequal»
+	MoreTermino : •divide Factor MoreTermino «notequal»
+	MoreTermino : empty• «notequal»
+	MoreTermino : •times Factor MoreTermino «rparen»
+	MoreTermino : •divide Factor MoreTermino «rparen»
+	MoreTermino : empty• «rparen»
+}
+Transitions:
+	MoreTermino -> 144
+	times -> 145
+	divide -> 146
+
+
+S79{
+	Factor : Op •NextOp «divide»
+	Factor : Op •NextOp «greater»
+	Factor : Op •NextOp «times»
+	Factor : Op •NextOp «minus»
+	Factor : Op •NextOp «plus»
+	Factor : Op •NextOp «less»
+	Factor : Op •NextOp «notequal»
+	Factor : Op •NextOp «rparen»
+	NextOp : •id «divide»
+	NextOp : •Cte «divide»
+	NextOp : •id «greater»
+	NextOp : •Cte «greater»
+	NextOp : •id «times»
+	NextOp : •Cte «times»
+	NextOp : •id «minus»
+	NextOp : •Cte «minus»
+	NextOp : •id «plus»
+	NextOp : •Cte «plus»
+	NextOp : •id «less»
+	NextOp : •Cte «less»
+	NextOp : •id «notequal»
+	NextOp : •Cte «notequal»
+	NextOp : •id «rparen»
+	NextOp : •Cte «rparen»
+	Cte : •cte_int «divide»
+	Cte : •cte_float «divide»
+	Cte : •cte_int «greater»
+	Cte : •cte_float «greater»
+	Cte : •cte_int «times»
+	Cte : •cte_float «times»
+	Cte : •cte_int «minus»
+	Cte : •cte_float «minus»
+	Cte : •cte_int «plus»
+	Cte : •cte_float «plus»
+	Cte : •cte_int «less»
+	Cte : •cte_float «less»
+	Cte : •cte_int «notequal»
+	Cte : •cte_float «notequal»
+	Cte : •cte_int «rparen»
+	Cte : •cte_float «rparen»
+}
+Transitions:
+	id -> 147
+	NextOp -> 148
+	Cte -> 149
+	cte_int -> 150
+	cte_float -> 151
+
+
+S80{
+	Cycle : while lparen Expresion •rparen do Body semicolon «id»
+	Cycle : while lparen Expresion •rparen do Body semicolon «if»
+	Cycle : while lparen Expresion •rparen do Body semicolon «print»
+	Cycle : while lparen Expresion •rparen do Body semicolon «rbrace»
+	Cycle : while lparen Expresion •rparen do Body semicolon «while»
+}
+Transitions:
+	rparen -> 152
+
+
+S81{
+	PrintItem : Expresion• «comma»
+	PrintItem : Expresion• «rparen»
+}
+Transitions:
+
+
+S82{
+	Print : print lparen PrintList •rparen semicolon «id»
+	Print : print lparen PrintList •rparen semicolon «if»
+	Print : print lparen PrintList •rparen semicolon «print»
+	Print : print lparen PrintList •rparen semicolon «rbrace»
+	Print : print lparen PrintList •rparen semicolon «while»
+}
+Transitions:
+	rparen -> 153
+
+
+S83{
+	PrintList : PrintItem •MorePrint «rparen»
+	MorePrint : •comma PrintItem MorePrint «rparen»
+	MorePrint : empty• «rparen»
+}
+Transitions:
+	comma -> 154
+	MorePrint -> 155
+
+
+S84{
+	PrintItem : cte_string• «comma»
+	PrintItem : cte_string• «rparen»
+}
+Transitions:
+
+
+S85{
+	ParamIndiv : id colon Type• «comma»
+	ParamIndiv : id colon Type• «rparen»
+}
+Transitions:
+
+
+S86{
+	Type : int• «comma»
+	Type : int• «rparen»
+}
+Transitions:
+
+
+S87{
+	Type : float• «comma»
+	Type : float• «rparen»
+}
+Transitions:
+
+
+S88{
+	Funcs : void id lparen Params rparen lbracket •VarsOpt Body rbracket semicolon «main»
+	Funcs : void id lparen Params rparen lbracket •VarsOpt Body rbracket semicolon «void»
+	VarsOpt : •Vars «lbrace»
+	VarsOpt : empty• «lbrace»
+	Vars : •var Variable VarsPrime «lbrace»
+}
+Transitions:
+	Vars -> 156
+	var -> 157
+	VarsOpt -> 158
+
+
+S89{
+	MoreParam : comma ParamIndiv •MoreParam «rparen»
+	MoreParam : •comma ParamIndiv MoreParam «rparen»
+	MoreParam : empty• «rparen»
+}
+Transitions:
+	comma -> 56
+	MoreParam -> 159
+
+
+S90{
+	Factor : lparen Expresion •rparen «comma»
+	Factor : lparen Expresion •rparen «divide»
+	Factor : lparen Expresion •rparen «times»
+	Factor : lparen Expresion •rparen «minus»
+	Factor : lparen Expresion •rparen «plus»
+	Factor : lparen Expresion •rparen «greater»
+	Factor : lparen Expresion •rparen «less»
+	Factor : lparen Expresion •rparen «notequal»
+	Factor : lparen Expresion •rparen «rparen»
+}
+Transitions:
+	rparen -> 160
+
+
+S91{
+	MoreCall : comma •Expresion MoreCall «rparen»
+	Expresion : •Exp MoreExpresion «comma»
+	Expresion : •Exp MoreExpresion «rparen»
+	Exp : •Termino MoreExp «comma»
+	Exp : •Termino MoreExp «greater»
+	Exp : •Termino MoreExp «less»
+	Exp : •Termino MoreExp «notequal»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «comma»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •Op NextOp «greater»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	lparen -> 59
+	Exp -> 62
+	Termino -> 63
+	plus -> 64
+	minus -> 65
+	Factor -> 66
+	Op -> 67
+	Expresion -> 161
+
+
+S92{
+	ArgList : Expresion MoreCall• «rparen»
+}
+Transitions:
+
+
+S93{
+	FuncCall : id lparen ArgList rparen •semicolon «id»
+	FuncCall : id lparen ArgList rparen •semicolon «if»
+	FuncCall : id lparen ArgList rparen •semicolon «print»
+	FuncCall : id lparen ArgList rparen •semicolon «rbrace»
+	FuncCall : id lparen ArgList rparen •semicolon «while»
+}
+Transitions:
+	semicolon -> 162
+
+
+S94{
+	Expresion : Exp MoreExpresion• «comma»
+	Expresion : Exp MoreExpresion• «rparen»
+}
+Transitions:
+
+
+S95{
+	MoreExpresion : Exp1• «comma»
+	MoreExpresion : Exp1• «rparen»
+}
+Transitions:
+
+
+S96{
+	MoreExpresion : Exp2• «comma»
+	MoreExpresion : Exp2• «rparen»
+}
+Transitions:
+
+
+S97{
+	MoreExpresion : Exp3• «comma»
+	MoreExpresion : Exp3• «rparen»
+}
+Transitions:
+
+
+S98{
+	Exp1 : greater •Exp «comma»
+	Exp1 : greater •Exp «rparen»
+	Exp : •Termino MoreExp «comma»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «comma»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 163
+	Exp -> 164
+	Termino -> 165
+	Factor -> 166
+	Op -> 167
+
+
+S99{
+	Exp2 : less •Exp «comma»
+	Exp2 : less •Exp «rparen»
+	Exp : •Termino MoreExp «comma»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «comma»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 163
+	Termino -> 165
+	Factor -> 166
+	Op -> 167
+	Exp -> 168
+
+
+S100{
+	Exp3 : notequal •Exp «comma»
+	Exp3 : notequal •Exp «rparen»
+	Exp : •Termino MoreExp «comma»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «comma»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 163
+	Termino -> 165
+	Factor -> 166
+	Op -> 167
+	Exp -> 169
+
+
+S101{
+	Exp : Termino MoreExp• «comma»
+	Exp : Termino MoreExp• «greater»
+	Exp : Termino MoreExp• «less»
+	Exp : Termino MoreExp• «notequal»
+	Exp : Termino MoreExp• «rparen»
+}
+Transitions:
+
+
+S102{
+	MoreExp : plus •Termino MoreExp «comma»
+	MoreExp : plus •Termino MoreExp «greater»
+	MoreExp : plus •Termino MoreExp «less»
+	MoreExp : plus •Termino MoreExp «notequal»
+	MoreExp : plus •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «comma»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •Op NextOp «greater»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	lparen -> 59
+	plus -> 64
+	minus -> 65
+	Factor -> 66
+	Op -> 67
+	Termino -> 170
+
+
+S103{
+	MoreExp : minus •Termino MoreExp «comma»
+	MoreExp : minus •Termino MoreExp «greater»
+	MoreExp : minus •Termino MoreExp «less»
+	MoreExp : minus •Termino MoreExp «notequal»
+	MoreExp : minus •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «comma»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •Op NextOp «greater»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	lparen -> 59
+	plus -> 64
+	minus -> 65
+	Factor -> 66
+	Op -> 67
+	Termino -> 171
+
+
+S104{
+	Termino : Factor MoreTermino• «comma»
+	Termino : Factor MoreTermino• «minus»
+	Termino : Factor MoreTermino• «plus»
+	Termino : Factor MoreTermino• «greater»
+	Termino : Factor MoreTermino• «less»
+	Termino : Factor MoreTermino• «notequal»
+	Termino : Factor MoreTermino• «rparen»
+}
+Transitions:
+
+
+S105{
+	MoreTermino : times •Factor MoreTermino «comma»
+	MoreTermino : times •Factor MoreTermino «minus»
+	MoreTermino : times •Factor MoreTermino «plus»
+	MoreTermino : times •Factor MoreTermino «greater»
+	MoreTermino : times •Factor MoreTermino «less»
+	MoreTermino : times •Factor MoreTermino «notequal»
+	MoreTermino : times •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •Op NextOp «greater»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	lparen -> 59
+	plus -> 64
+	minus -> 65
+	Op -> 67
+	Factor -> 172
+
+
+S106{
+	MoreTermino : divide •Factor MoreTermino «comma»
+	MoreTermino : divide •Factor MoreTermino «minus»
+	MoreTermino : divide •Factor MoreTermino «plus»
+	MoreTermino : divide •Factor MoreTermino «greater»
+	MoreTermino : divide •Factor MoreTermino «less»
+	MoreTermino : divide •Factor MoreTermino «notequal»
+	MoreTermino : divide •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •Op NextOp «greater»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	lparen -> 59
+	plus -> 64
+	minus -> 65
+	Op -> 67
+	Factor -> 173
+
+
+S107{
+	NextOp : id• «comma»
+	NextOp : id• «divide»
+	NextOp : id• «times»
+	NextOp : id• «minus»
+	NextOp : id• «plus»
+	NextOp : id• «greater»
+	NextOp : id• «less»
+	NextOp : id• «notequal»
+	NextOp : id• «rparen»
+}
+Transitions:
+
+
+S108{
+	Factor : Op NextOp• «comma»
+	Factor : Op NextOp• «divide»
+	Factor : Op NextOp• «times»
+	Factor : Op NextOp• «minus»
+	Factor : Op NextOp• «plus»
+	Factor : Op NextOp• «greater»
+	Factor : Op NextOp• «less»
+	Factor : Op NextOp• «notequal»
+	Factor : Op NextOp• «rparen»
+}
+Transitions:
+
+
+S109{
+	NextOp : Cte• «comma»
+	NextOp : Cte• «divide»
+	NextOp : Cte• «times»
+	NextOp : Cte• «minus»
+	NextOp : Cte• «plus»
+	NextOp : Cte• «greater»
+	NextOp : Cte• «less»
+	NextOp : Cte• «notequal»
+	NextOp : Cte• «rparen»
+}
+Transitions:
+
+
+S110{
+	Cte : cte_int• «comma»
+	Cte : cte_int• «divide»
+	Cte : cte_int• «times»
+	Cte : cte_int• «minus»
+	Cte : cte_int• «plus»
+	Cte : cte_int• «greater»
+	Cte : cte_int• «less»
+	Cte : cte_int• «notequal»
+	Cte : cte_int• «rparen»
+}
+Transitions:
+
+
+S111{
+	Cte : cte_float• «comma»
+	Cte : cte_float• «divide»
+	Cte : cte_float• «times»
+	Cte : cte_float• «minus»
+	Cte : cte_float• «plus»
+	Cte : cte_float• «greater»
+	Cte : cte_float• «less»
+	Cte : cte_float• «notequal»
+	Cte : cte_float• «rparen»
+}
+Transitions:
+
+
+S112{
+	Factor : lparen Expresion •rparen «divide»
+	Factor : lparen Expresion •rparen «greater»
+	Factor : lparen Expresion •rparen «times»
+	Factor : lparen Expresion •rparen «minus»
+	Factor : lparen Expresion •rparen «plus»
+	Factor : lparen Expresion •rparen «less»
+	Factor : lparen Expresion •rparen «notequal»
+	Factor : lparen Expresion •rparen «semicolon»
+}
+Transitions:
+	rparen -> 174
+
+
+S113{
+	Assign : id assign Expresion semicolon• «id»
+	Assign : id assign Expresion semicolon• «if»
+	Assign : id assign Expresion semicolon• «print»
+	Assign : id assign Expresion semicolon• «rbrace»
+	Assign : id assign Expresion semicolon• «while»
+}
+Transitions:
+
+
+S114{
+	Expresion : Exp MoreExpresion• «semicolon»
+}
+Transitions:
+
+
+S115{
+	MoreExpresion : Exp1• «semicolon»
+}
+Transitions:
+
+
+S116{
+	MoreExpresion : Exp2• «semicolon»
+}
+Transitions:
+
+
+S117{
+	MoreExpresion : Exp3• «semicolon»
+}
+Transitions:
+
+
+S118{
+	Exp1 : greater •Exp «semicolon»
+	Exp : •Termino MoreExp «semicolon»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «semicolon»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «minus»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «semicolon»
+	Factor : •Op NextOp «semicolon»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 175
+	Exp -> 176
+	Termino -> 177
+	Factor -> 178
+	Op -> 179
+
+
+S119{
+	Exp2 : less •Exp «semicolon»
+	Exp : •Termino MoreExp «semicolon»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «semicolon»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «minus»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «semicolon»
+	Factor : •Op NextOp «semicolon»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 175
+	Termino -> 177
+	Factor -> 178
+	Op -> 179
+	Exp -> 180
+
+
+S120{
+	Exp3 : notequal •Exp «semicolon»
+	Exp : •Termino MoreExp «semicolon»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «semicolon»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «minus»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «semicolon»
+	Factor : •Op NextOp «semicolon»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 175
+	Termino -> 177
+	Factor -> 178
+	Op -> 179
+	Exp -> 181
+
+
+S121{
+	Exp : Termino MoreExp• «greater»
+	Exp : Termino MoreExp• «less»
+	Exp : Termino MoreExp• «notequal»
+	Exp : Termino MoreExp• «semicolon»
+}
+Transitions:
+
+
+S122{
+	MoreExp : plus •Termino MoreExp «greater»
+	MoreExp : plus •Termino MoreExp «less»
+	MoreExp : plus •Termino MoreExp «notequal»
+	MoreExp : plus •Termino MoreExp «semicolon»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «semicolon»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «semicolon»
+	Factor : •Op NextOp «semicolon»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 68
+	Factor -> 72
+	Op -> 73
+	Termino -> 182
+
+
+S123{
+	MoreExp : minus •Termino MoreExp «greater»
+	MoreExp : minus •Termino MoreExp «less»
+	MoreExp : minus •Termino MoreExp «notequal»
+	MoreExp : minus •Termino MoreExp «semicolon»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «semicolon»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «semicolon»
+	Factor : •Op NextOp «semicolon»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 68
+	Factor -> 72
+	Op -> 73
+	Termino -> 183
+
+
+S124{
+	Termino : Factor MoreTermino• «greater»
+	Termino : Factor MoreTermino• «minus»
+	Termino : Factor MoreTermino• «plus»
+	Termino : Factor MoreTermino• «less»
+	Termino : Factor MoreTermino• «notequal»
+	Termino : Factor MoreTermino• «semicolon»
+}
+Transitions:
+
+
+S125{
+	MoreTermino : times •Factor MoreTermino «greater»
+	MoreTermino : times •Factor MoreTermino «minus»
+	MoreTermino : times •Factor MoreTermino «plus»
+	MoreTermino : times •Factor MoreTermino «less»
+	MoreTermino : times •Factor MoreTermino «notequal»
+	MoreTermino : times •Factor MoreTermino «semicolon»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «semicolon»
+	Factor : •Op NextOp «semicolon»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 68
+	Op -> 73
+	Factor -> 184
+
+
+S126{
+	MoreTermino : divide •Factor MoreTermino «greater»
+	MoreTermino : divide •Factor MoreTermino «minus»
+	MoreTermino : divide •Factor MoreTermino «plus»
+	MoreTermino : divide •Factor MoreTermino «less»
+	MoreTermino : divide •Factor MoreTermino «notequal»
+	MoreTermino : divide •Factor MoreTermino «semicolon»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «semicolon»
+	Factor : •Op NextOp «semicolon»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 68
+	Op -> 73
+	Factor -> 185
+
+
+S127{
+	NextOp : id• «divide»
+	NextOp : id• «greater»
+	NextOp : id• «times»
+	NextOp : id• «minus»
+	NextOp : id• «plus»
+	NextOp : id• «less»
+	NextOp : id• «notequal»
+	NextOp : id• «semicolon»
+}
+Transitions:
+
+
+S128{
+	Factor : Op NextOp• «divide»
+	Factor : Op NextOp• «greater»
+	Factor : Op NextOp• «times»
+	Factor : Op NextOp• «minus»
+	Factor : Op NextOp• «plus»
+	Factor : Op NextOp• «less»
+	Factor : Op NextOp• «notequal»
+	Factor : Op NextOp• «semicolon»
+}
+Transitions:
+
+
+S129{
+	NextOp : Cte• «divide»
+	NextOp : Cte• «greater»
+	NextOp : Cte• «times»
+	NextOp : Cte• «minus»
+	NextOp : Cte• «plus»
+	NextOp : Cte• «less»
+	NextOp : Cte• «notequal»
+	NextOp : Cte• «semicolon»
+}
+Transitions:
+
+
+S130{
+	Cte : cte_int• «divide»
+	Cte : cte_int• «greater»
+	Cte : cte_int• «times»
+	Cte : cte_int• «minus»
+	Cte : cte_int• «plus»
+	Cte : cte_int• «less»
+	Cte : cte_int• «notequal»
+	Cte : cte_int• «semicolon»
+}
+Transitions:
+
+
+S131{
+	Cte : cte_float• «divide»
+	Cte : cte_float• «greater»
+	Cte : cte_float• «times»
+	Cte : cte_float• «minus»
+	Cte : cte_float• «plus»
+	Cte : cte_float• «less»
+	Cte : cte_float• «notequal»
+	Cte : cte_float• «semicolon»
+}
+Transitions:
+
+
+S132{
+	Factor : lparen Expresion •rparen «divide»
+	Factor : lparen Expresion •rparen «greater»
+	Factor : lparen Expresion •rparen «times»
+	Factor : lparen Expresion •rparen «minus»
+	Factor : lparen Expresion •rparen «plus»
+	Factor : lparen Expresion •rparen «less»
+	Factor : lparen Expresion •rparen «notequal»
+	Factor : lparen Expresion •rparen «rparen»
+}
+Transitions:
+	rparen -> 186
+
+
+S133{
+	Condition : if lparen Expresion rparen •Body ElseBody semicolon «id»
+	Condition : if lparen Expresion rparen •Body ElseBody semicolon «if»
+	Condition : if lparen Expresion rparen •Body ElseBody semicolon «print»
+	Condition : if lparen Expresion rparen •Body ElseBody semicolon «rbrace»
+	Condition : if lparen Expresion rparen •Body ElseBody semicolon «while»
+	Body : •lbrace StateDeclare rbrace «else»
+	Body : •lbrace StateDeclare rbrace «semicolon»
+}
+Transitions:
+	Body -> 187
+	lbrace -> 188
+
+
+S134{
+	Expresion : Exp MoreExpresion• «rparen»
+}
+Transitions:
+
+
+S135{
+	MoreExpresion : Exp1• «rparen»
+}
+Transitions:
+
+
+S136{
+	MoreExpresion : Exp2• «rparen»
+}
+Transitions:
+
+
+S137{
+	MoreExpresion : Exp3• «rparen»
+}
+Transitions:
+
+
+S138{
+	Exp1 : greater •Exp «rparen»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «minus»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 189
+	Exp -> 190
+	Termino -> 191
+	Factor -> 192
+	Op -> 193
+
+
+S139{
+	Exp2 : less •Exp «rparen»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «minus»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 189
+	Termino -> 191
+	Factor -> 192
+	Op -> 193
+	Exp -> 194
+
+
+S140{
+	Exp3 : notequal •Exp «rparen»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «minus»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 189
+	Termino -> 191
+	Factor -> 192
+	Op -> 193
+	Exp -> 195
+
+
+S141{
+	Exp : Termino MoreExp• «greater»
+	Exp : Termino MoreExp• «less»
+	Exp : Termino MoreExp• «notequal»
+	Exp : Termino MoreExp• «rparen»
+}
+Transitions:
+
+
+S142{
+	MoreExp : plus •Termino MoreExp «greater»
+	MoreExp : plus •Termino MoreExp «less»
+	MoreExp : plus •Termino MoreExp «notequal»
+	MoreExp : plus •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 74
+	Factor -> 78
+	Op -> 79
+	Termino -> 196
+
+
+S143{
+	MoreExp : minus •Termino MoreExp «greater»
+	MoreExp : minus •Termino MoreExp «less»
+	MoreExp : minus •Termino MoreExp «notequal»
+	MoreExp : minus •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 74
+	Factor -> 78
+	Op -> 79
+	Termino -> 197
+
+
+S144{
+	Termino : Factor MoreTermino• «greater»
+	Termino : Factor MoreTermino• «minus»
+	Termino : Factor MoreTermino• «plus»
+	Termino : Factor MoreTermino• «less»
+	Termino : Factor MoreTermino• «notequal»
+	Termino : Factor MoreTermino• «rparen»
+}
+Transitions:
+
+
+S145{
+	MoreTermino : times •Factor MoreTermino «greater»
+	MoreTermino : times •Factor MoreTermino «minus»
+	MoreTermino : times •Factor MoreTermino «plus»
+	MoreTermino : times •Factor MoreTermino «less»
+	MoreTermino : times •Factor MoreTermino «notequal»
+	MoreTermino : times •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 74
+	Op -> 79
+	Factor -> 198
+
+
+S146{
+	MoreTermino : divide •Factor MoreTermino «greater»
+	MoreTermino : divide •Factor MoreTermino «minus»
+	MoreTermino : divide •Factor MoreTermino «plus»
+	MoreTermino : divide •Factor MoreTermino «less»
+	MoreTermino : divide •Factor MoreTermino «notequal»
+	MoreTermino : divide •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 74
+	Op -> 79
+	Factor -> 199
+
+
+S147{
+	NextOp : id• «divide»
+	NextOp : id• «greater»
+	NextOp : id• «times»
+	NextOp : id• «minus»
+	NextOp : id• «plus»
+	NextOp : id• «less»
+	NextOp : id• «notequal»
+	NextOp : id• «rparen»
+}
+Transitions:
+
+
+S148{
+	Factor : Op NextOp• «divide»
+	Factor : Op NextOp• «greater»
+	Factor : Op NextOp• «times»
+	Factor : Op NextOp• «minus»
+	Factor : Op NextOp• «plus»
+	Factor : Op NextOp• «less»
+	Factor : Op NextOp• «notequal»
+	Factor : Op NextOp• «rparen»
+}
+Transitions:
+
+
+S149{
+	NextOp : Cte• «divide»
+	NextOp : Cte• «greater»
+	NextOp : Cte• «times»
+	NextOp : Cte• «minus»
+	NextOp : Cte• «plus»
+	NextOp : Cte• «less»
+	NextOp : Cte• «notequal»
+	NextOp : Cte• «rparen»
+}
+Transitions:
+
+
+S150{
+	Cte : cte_int• «divide»
+	Cte : cte_int• «greater»
+	Cte : cte_int• «times»
+	Cte : cte_int• «minus»
+	Cte : cte_int• «plus»
+	Cte : cte_int• «less»
+	Cte : cte_int• «notequal»
+	Cte : cte_int• «rparen»
+}
+Transitions:
+
+
+S151{
+	Cte : cte_float• «divide»
+	Cte : cte_float• «greater»
+	Cte : cte_float• «times»
+	Cte : cte_float• «minus»
+	Cte : cte_float• «plus»
+	Cte : cte_float• «less»
+	Cte : cte_float• «notequal»
+	Cte : cte_float• «rparen»
+}
+Transitions:
+
+
+S152{
+	Cycle : while lparen Expresion rparen •do Body semicolon «id»
+	Cycle : while lparen Expresion rparen •do Body semicolon «if»
+	Cycle : while lparen Expresion rparen •do Body semicolon «print»
+	Cycle : while lparen Expresion rparen •do Body semicolon «rbrace»
+	Cycle : while lparen Expresion rparen •do Body semicolon «while»
+}
+Transitions:
+	do -> 200
+
+
+S153{
+	Print : print lparen PrintList rparen •semicolon «id»
+	Print : print lparen PrintList rparen •semicolon «if»
+	Print : print lparen PrintList rparen •semicolon «print»
+	Print : print lparen PrintList rparen •semicolon «rbrace»
+	Print : print lparen PrintList rparen •semicolon «while»
+}
+Transitions:
+	semicolon -> 201
+
+
+S154{
+	MorePrint : comma •PrintItem MorePrint «rparen»
+	PrintItem : •Expresion «comma»
+	PrintItem : •Expresion «rparen»
+	PrintItem : •cte_string «comma»
+	PrintItem : •cte_string «rparen»
+	Expresion : •Exp MoreExpresion «comma»
+	Expresion : •Exp MoreExpresion «rparen»
+	Exp : •Termino MoreExp «comma»
+	Exp : •Termino MoreExp «greater»
+	Exp : •Termino MoreExp «less»
+	Exp : •Termino MoreExp «notequal»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «comma»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •Op NextOp «greater»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	lparen -> 59
+	Exp -> 62
+	Termino -> 63
+	plus -> 64
+	minus -> 65
+	Factor -> 66
+	Op -> 67
+	Expresion -> 81
+	cte_string -> 84
+	PrintItem -> 202
+
+
+S155{
+	PrintList : PrintItem MorePrint• «rparen»
+}
+Transitions:
+
+
+S156{
+	VarsOpt : Vars• «lbrace»
+}
+Transitions:
+
+
+S157{
+	Vars : var •Variable VarsPrime «lbrace»
+	Variable : •id MasId colon Type semicolon «id»
+	Variable : •id MasId colon Type semicolon «lbrace»
+}
+Transitions:
+	id -> 203
+	Variable -> 204
+
+
+S158{
+	Funcs : void id lparen Params rparen lbracket VarsOpt •Body rbracket semicolon «main»
+	Funcs : void id lparen Params rparen lbracket VarsOpt •Body rbracket semicolon «void»
+	Body : •lbrace StateDeclare rbrace «rbracket»
+}
+Transitions:
+	Body -> 205
+	lbrace -> 206
+
+
+S159{
+	MoreParam : comma ParamIndiv MoreParam• «rparen»
+}
+Transitions:
+
+
+S160{
+	Factor : lparen Expresion rparen• «comma»
+	Factor : lparen Expresion rparen• «divide»
+	Factor : lparen Expresion rparen• «times»
+	Factor : lparen Expresion rparen• «minus»
+	Factor : lparen Expresion rparen• «plus»
+	Factor : lparen Expresion rparen• «greater»
+	Factor : lparen Expresion rparen• «less»
+	Factor : lparen Expresion rparen• «notequal»
+	Factor : lparen Expresion rparen• «rparen»
+}
+Transitions:
+
+
+S161{
+	MoreCall : comma Expresion •MoreCall «rparen»
+	MoreCall : •comma Expresion MoreCall «rparen»
+	MoreCall : empty• «rparen»
+}
+Transitions:
+	comma -> 91
+	MoreCall -> 207
+
+
+S162{
+	FuncCall : id lparen ArgList rparen semicolon• «id»
+	FuncCall : id lparen ArgList rparen semicolon• «if»
+	FuncCall : id lparen ArgList rparen semicolon• «print»
+	FuncCall : id lparen ArgList rparen semicolon• «rbrace»
+	FuncCall : id lparen ArgList rparen semicolon• «while»
+}
+Transitions:
+
+
+S163{
+	Factor : lparen •Expresion rparen «comma»
+	Factor : lparen •Expresion rparen «divide»
+	Factor : lparen •Expresion rparen «times»
+	Factor : lparen •Expresion rparen «minus»
+	Factor : lparen •Expresion rparen «plus»
+	Factor : lparen •Expresion rparen «rparen»
+	Expresion : •Exp MoreExpresion «rparen»
+	Exp : •Termino MoreExp «greater»
+	Exp : •Termino MoreExp «less»
+	Exp : •Termino MoreExp «notequal»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 74
+	Exp -> 76
+	Termino -> 77
+	Factor -> 78
+	Op -> 79
+	Expresion -> 208
+
+
+S164{
+	Exp1 : greater Exp• «comma»
+	Exp1 : greater Exp• «rparen»
+}
+Transitions:
+
+
+S165{
+	Exp : Termino •MoreExp «comma»
+	Exp : Termino •MoreExp «rparen»
+	MoreExp : •plus Termino MoreExp «comma»
+	MoreExp : •minus Termino MoreExp «comma»
+	MoreExp : empty• «comma»
+	MoreExp : •plus Termino MoreExp «rparen»
+	MoreExp : •minus Termino MoreExp «rparen»
+	MoreExp : empty• «rparen»
+}
+Transitions:
+	MoreExp -> 209
+	plus -> 210
+	minus -> 211
+
+
+S166{
+	Termino : Factor •MoreTermino «comma»
+	Termino : Factor •MoreTermino «minus»
+	Termino : Factor •MoreTermino «plus»
+	Termino : Factor •MoreTermino «rparen»
+	MoreTermino : •times Factor MoreTermino «comma»
+	MoreTermino : •divide Factor MoreTermino «comma»
+	MoreTermino : empty• «comma»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «rparen»
+	MoreTermino : •divide Factor MoreTermino «rparen»
+	MoreTermino : empty• «rparen»
+}
+Transitions:
+	MoreTermino -> 212
+	times -> 213
+	divide -> 214
+
+
+S167{
+	Factor : Op •NextOp «comma»
+	Factor : Op •NextOp «divide»
+	Factor : Op •NextOp «times»
+	Factor : Op •NextOp «minus»
+	Factor : Op •NextOp «plus»
+	Factor : Op •NextOp «rparen»
+	NextOp : •id «comma»
+	NextOp : •Cte «comma»
+	NextOp : •id «divide»
+	NextOp : •Cte «divide»
+	NextOp : •id «times»
+	NextOp : •Cte «times»
+	NextOp : •id «minus»
+	NextOp : •Cte «minus»
+	NextOp : •id «plus»
+	NextOp : •Cte «plus»
+	NextOp : •id «rparen»
+	NextOp : •Cte «rparen»
+	Cte : •cte_int «comma»
+	Cte : •cte_float «comma»
+	Cte : •cte_int «divide»
+	Cte : •cte_float «divide»
+	Cte : •cte_int «times»
+	Cte : •cte_float «times»
+	Cte : •cte_int «minus»
+	Cte : •cte_float «minus»
+	Cte : •cte_int «plus»
+	Cte : •cte_float «plus»
+	Cte : •cte_int «rparen»
+	Cte : •cte_float «rparen»
+}
+Transitions:
+	id -> 215
+	NextOp -> 216
+	Cte -> 217
+	cte_int -> 218
+	cte_float -> 219
+
+
+S168{
+	Exp2 : less Exp• «comma»
+	Exp2 : less Exp• «rparen»
+}
+Transitions:
+
+
+S169{
+	Exp3 : notequal Exp• «comma»
+	Exp3 : notequal Exp• «rparen»
+}
+Transitions:
+
+
+S170{
+	MoreExp : plus Termino •MoreExp «comma»
+	MoreExp : plus Termino •MoreExp «greater»
+	MoreExp : plus Termino •MoreExp «less»
+	MoreExp : plus Termino •MoreExp «notequal»
+	MoreExp : plus Termino •MoreExp «rparen»
+	MoreExp : •plus Termino MoreExp «comma»
+	MoreExp : •minus Termino MoreExp «comma»
+	MoreExp : empty• «comma»
+	MoreExp : •plus Termino MoreExp «greater»
+	MoreExp : •minus Termino MoreExp «greater»
+	MoreExp : empty• «greater»
+	MoreExp : •plus Termino MoreExp «less»
+	MoreExp : •minus Termino MoreExp «less»
+	MoreExp : empty• «less»
+	MoreExp : •plus Termino MoreExp «notequal»
+	MoreExp : •minus Termino MoreExp «notequal»
+	MoreExp : empty• «notequal»
+	MoreExp : •plus Termino MoreExp «rparen»
+	MoreExp : •minus Termino MoreExp «rparen»
+	MoreExp : empty• «rparen»
+}
+Transitions:
+	plus -> 102
+	minus -> 103
+	MoreExp -> 220
+
+
+S171{
+	MoreExp : minus Termino •MoreExp «comma»
+	MoreExp : minus Termino •MoreExp «greater»
+	MoreExp : minus Termino •MoreExp «less»
+	MoreExp : minus Termino •MoreExp «notequal»
+	MoreExp : minus Termino •MoreExp «rparen»
+	MoreExp : •plus Termino MoreExp «comma»
+	MoreExp : •minus Termino MoreExp «comma»
+	MoreExp : empty• «comma»
+	MoreExp : •plus Termino MoreExp «greater»
+	MoreExp : •minus Termino MoreExp «greater»
+	MoreExp : empty• «greater»
+	MoreExp : •plus Termino MoreExp «less»
+	MoreExp : •minus Termino MoreExp «less»
+	MoreExp : empty• «less»
+	MoreExp : •plus Termino MoreExp «notequal»
+	MoreExp : •minus Termino MoreExp «notequal»
+	MoreExp : empty• «notequal»
+	MoreExp : •plus Termino MoreExp «rparen»
+	MoreExp : •minus Termino MoreExp «rparen»
+	MoreExp : empty• «rparen»
+}
+Transitions:
+	plus -> 102
+	minus -> 103
+	MoreExp -> 221
+
+
+S172{
+	MoreTermino : times Factor •MoreTermino «comma»
+	MoreTermino : times Factor •MoreTermino «minus»
+	MoreTermino : times Factor •MoreTermino «plus»
+	MoreTermino : times Factor •MoreTermino «greater»
+	MoreTermino : times Factor •MoreTermino «less»
+	MoreTermino : times Factor •MoreTermino «notequal»
+	MoreTermino : times Factor •MoreTermino «rparen»
+	MoreTermino : •times Factor MoreTermino «comma»
+	MoreTermino : •divide Factor MoreTermino «comma»
+	MoreTermino : empty• «comma»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «greater»
+	MoreTermino : •divide Factor MoreTermino «greater»
+	MoreTermino : empty• «greater»
+	MoreTermino : •times Factor MoreTermino «less»
+	MoreTermino : •divide Factor MoreTermino «less»
+	MoreTermino : empty• «less»
+	MoreTermino : •times Factor MoreTermino «notequal»
+	MoreTermino : •divide Factor MoreTermino «notequal»
+	MoreTermino : empty• «notequal»
+	MoreTermino : •times Factor MoreTermino «rparen»
+	MoreTermino : •divide Factor MoreTermino «rparen»
+	MoreTermino : empty• «rparen»
+}
+Transitions:
+	times -> 105
+	divide -> 106
+	MoreTermino -> 222
+
+
+S173{
+	MoreTermino : divide Factor •MoreTermino «comma»
+	MoreTermino : divide Factor •MoreTermino «minus»
+	MoreTermino : divide Factor •MoreTermino «plus»
+	MoreTermino : divide Factor •MoreTermino «greater»
+	MoreTermino : divide Factor •MoreTermino «less»
+	MoreTermino : divide Factor •MoreTermino «notequal»
+	MoreTermino : divide Factor •MoreTermino «rparen»
+	MoreTermino : •times Factor MoreTermino «comma»
+	MoreTermino : •divide Factor MoreTermino «comma»
+	MoreTermino : empty• «comma»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «greater»
+	MoreTermino : •divide Factor MoreTermino «greater»
+	MoreTermino : empty• «greater»
+	MoreTermino : •times Factor MoreTermino «less»
+	MoreTermino : •divide Factor MoreTermino «less»
+	MoreTermino : empty• «less»
+	MoreTermino : •times Factor MoreTermino «notequal»
+	MoreTermino : •divide Factor MoreTermino «notequal»
+	MoreTermino : empty• «notequal»
+	MoreTermino : •times Factor MoreTermino «rparen»
+	MoreTermino : •divide Factor MoreTermino «rparen»
+	MoreTermino : empty• «rparen»
+}
+Transitions:
+	times -> 105
+	divide -> 106
+	MoreTermino -> 223
+
+
+S174{
+	Factor : lparen Expresion rparen• «divide»
+	Factor : lparen Expresion rparen• «greater»
+	Factor : lparen Expresion rparen• «times»
+	Factor : lparen Expresion rparen• «minus»
+	Factor : lparen Expresion rparen• «plus»
+	Factor : lparen Expresion rparen• «less»
+	Factor : lparen Expresion rparen• «notequal»
+	Factor : lparen Expresion rparen• «semicolon»
+}
+Transitions:
+
+
+S175{
+	Factor : lparen •Expresion rparen «divide»
+	Factor : lparen •Expresion rparen «minus»
+	Factor : lparen •Expresion rparen «times»
+	Factor : lparen •Expresion rparen «plus»
+	Factor : lparen •Expresion rparen «semicolon»
+	Expresion : •Exp MoreExpresion «rparen»
+	Exp : •Termino MoreExp «greater»
+	Exp : •Termino MoreExp «less»
+	Exp : •Termino MoreExp «notequal»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 74
+	Exp -> 76
+	Termino -> 77
+	Factor -> 78
+	Op -> 79
+	Expresion -> 224
+
+
+S176{
+	Exp1 : greater Exp• «semicolon»
+}
+Transitions:
+
+
+S177{
+	Exp : Termino •MoreExp «semicolon»
+	MoreExp : •plus Termino MoreExp «semicolon»
+	MoreExp : •minus Termino MoreExp «semicolon»
+	MoreExp : empty• «semicolon»
+}
+Transitions:
+	MoreExp -> 225
+	plus -> 226
+	minus -> 227
+
+
+S178{
+	Termino : Factor •MoreTermino «minus»
+	Termino : Factor •MoreTermino «plus»
+	Termino : Factor •MoreTermino «semicolon»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «semicolon»
+	MoreTermino : •divide Factor MoreTermino «semicolon»
+	MoreTermino : empty• «semicolon»
+}
+Transitions:
+	MoreTermino -> 228
+	times -> 229
+	divide -> 230
+
+
+S179{
+	Factor : Op •NextOp «divide»
+	Factor : Op •NextOp «minus»
+	Factor : Op •NextOp «times»
+	Factor : Op •NextOp «plus»
+	Factor : Op •NextOp «semicolon»
+	NextOp : •id «divide»
+	NextOp : •Cte «divide»
+	NextOp : •id «minus»
+	NextOp : •Cte «minus»
+	NextOp : •id «times»
+	NextOp : •Cte «times»
+	NextOp : •id «plus»
+	NextOp : •Cte «plus»
+	NextOp : •id «semicolon»
+	NextOp : •Cte «semicolon»
+	Cte : •cte_int «divide»
+	Cte : •cte_float «divide»
+	Cte : •cte_int «minus»
+	Cte : •cte_float «minus»
+	Cte : •cte_int «times»
+	Cte : •cte_float «times»
+	Cte : •cte_int «plus»
+	Cte : •cte_float «plus»
+	Cte : •cte_int «semicolon»
+	Cte : •cte_float «semicolon»
+}
+Transitions:
+	id -> 231
+	NextOp -> 232
+	Cte -> 233
+	cte_int -> 234
+	cte_float -> 235
+
+
+S180{
+	Exp2 : less Exp• «semicolon»
+}
+Transitions:
+
+
+S181{
+	Exp3 : notequal Exp• «semicolon»
+}
+Transitions:
+
+
+S182{
+	MoreExp : plus Termino •MoreExp «greater»
+	MoreExp : plus Termino •MoreExp «less»
+	MoreExp : plus Termino •MoreExp «notequal»
+	MoreExp : plus Termino •MoreExp «semicolon»
+	MoreExp : •plus Termino MoreExp «greater»
+	MoreExp : •minus Termino MoreExp «greater»
+	MoreExp : empty• «greater»
+	MoreExp : •plus Termino MoreExp «less»
+	MoreExp : •minus Termino MoreExp «less»
+	MoreExp : empty• «less»
+	MoreExp : •plus Termino MoreExp «notequal»
+	MoreExp : •minus Termino MoreExp «notequal»
+	MoreExp : empty• «notequal»
+	MoreExp : •plus Termino MoreExp «semicolon»
+	MoreExp : •minus Termino MoreExp «semicolon»
+	MoreExp : empty• «semicolon»
+}
+Transitions:
+	plus -> 122
+	minus -> 123
+	MoreExp -> 236
+
+
+S183{
+	MoreExp : minus Termino •MoreExp «greater»
+	MoreExp : minus Termino •MoreExp «less»
+	MoreExp : minus Termino •MoreExp «notequal»
+	MoreExp : minus Termino •MoreExp «semicolon»
+	MoreExp : •plus Termino MoreExp «greater»
+	MoreExp : •minus Termino MoreExp «greater»
+	MoreExp : empty• «greater»
+	MoreExp : •plus Termino MoreExp «less»
+	MoreExp : •minus Termino MoreExp «less»
+	MoreExp : empty• «less»
+	MoreExp : •plus Termino MoreExp «notequal»
+	MoreExp : •minus Termino MoreExp «notequal»
+	MoreExp : empty• «notequal»
+	MoreExp : •plus Termino MoreExp «semicolon»
+	MoreExp : •minus Termino MoreExp «semicolon»
+	MoreExp : empty• «semicolon»
+}
+Transitions:
+	plus -> 122
+	minus -> 123
+	MoreExp -> 237
+
+
+S184{
+	MoreTermino : times Factor •MoreTermino «greater»
+	MoreTermino : times Factor •MoreTermino «minus»
+	MoreTermino : times Factor •MoreTermino «plus»
+	MoreTermino : times Factor •MoreTermino «less»
+	MoreTermino : times Factor •MoreTermino «notequal»
+	MoreTermino : times Factor •MoreTermino «semicolon»
+	MoreTermino : •times Factor MoreTermino «greater»
+	MoreTermino : •divide Factor MoreTermino «greater»
+	MoreTermino : empty• «greater»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «less»
+	MoreTermino : •divide Factor MoreTermino «less»
+	MoreTermino : empty• «less»
+	MoreTermino : •times Factor MoreTermino «notequal»
+	MoreTermino : •divide Factor MoreTermino «notequal»
+	MoreTermino : empty• «notequal»
+	MoreTermino : •times Factor MoreTermino «semicolon»
+	MoreTermino : •divide Factor MoreTermino «semicolon»
+	MoreTermino : empty• «semicolon»
+}
+Transitions:
+	times -> 125
+	divide -> 126
+	MoreTermino -> 238
+
+
+S185{
+	MoreTermino : divide Factor •MoreTermino «greater»
+	MoreTermino : divide Factor •MoreTermino «minus»
+	MoreTermino : divide Factor •MoreTermino «plus»
+	MoreTermino : divide Factor •MoreTermino «less»
+	MoreTermino : divide Factor •MoreTermino «notequal»
+	MoreTermino : divide Factor •MoreTermino «semicolon»
+	MoreTermino : •times Factor MoreTermino «greater»
+	MoreTermino : •divide Factor MoreTermino «greater»
+	MoreTermino : empty• «greater»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «less»
+	MoreTermino : •divide Factor MoreTermino «less»
+	MoreTermino : empty• «less»
+	MoreTermino : •times Factor MoreTermino «notequal»
+	MoreTermino : •divide Factor MoreTermino «notequal»
+	MoreTermino : empty• «notequal»
+	MoreTermino : •times Factor MoreTermino «semicolon»
+	MoreTermino : •divide Factor MoreTermino «semicolon»
+	MoreTermino : empty• «semicolon»
+}
+Transitions:
+	times -> 125
+	divide -> 126
+	MoreTermino -> 239
+
+
+S186{
+	Factor : lparen Expresion rparen• «divide»
+	Factor : lparen Expresion rparen• «greater»
+	Factor : lparen Expresion rparen• «times»
+	Factor : lparen Expresion rparen• «minus»
+	Factor : lparen Expresion rparen• «plus»
+	Factor : lparen Expresion rparen• «less»
+	Factor : lparen Expresion rparen• «notequal»
+	Factor : lparen Expresion rparen• «rparen»
+}
+Transitions:
+
+
+S187{
+	Condition : if lparen Expresion rparen Body •ElseBody semicolon «id»
+	Condition : if lparen Expresion rparen Body •ElseBody semicolon «if»
+	Condition : if lparen Expresion rparen Body •ElseBody semicolon «print»
+	Condition : if lparen Expresion rparen Body •ElseBody semicolon «rbrace»
+	Condition : if lparen Expresion rparen Body •ElseBody semicolon «while»
+	ElseBody : •else Body «semicolon»
+	ElseBody : empty• «semicolon»
+}
+Transitions:
+	ElseBody -> 240
+	else -> 241
+
+
+S188{
+	Body : lbrace •StateDeclare rbrace «else»
+	Body : lbrace •StateDeclare rbrace «semicolon»
+	StateDeclare : •Statement StateLoop «rbrace»
+	StateDeclare : empty• «rbrace»
+	Statement : •Assign «id»
+	Statement : •Assign «if»
+	Statement : •Assign «print»
+	Statement : •Assign «rbrace»
+	Statement : •Assign «while»
+	Statement : •Condition «id»
+	Statement : •Condition «if»
+	Statement : •Condition «print»
+	Statement : •Condition «rbrace»
+	Statement : •Condition «while»
+	Statement : •Cycle «id»
+	Statement : •Cycle «if»
+	Statement : •Cycle «print»
+	Statement : •Cycle «rbrace»
+	Statement : •Cycle «while»
+	Statement : •FuncCall «id»
+	Statement : •FuncCall «if»
+	Statement : •FuncCall «print»
+	Statement : •FuncCall «rbrace»
+	Statement : •FuncCall «while»
+	Statement : •Print «id»
+	Statement : •Print «if»
+	Statement : •Print «print»
+	Statement : •Print «rbrace»
+	Statement : •Print «while»
+	Assign : •id assign Expresion semicolon «id»
+	Assign : •id assign Expresion semicolon «if»
+	Assign : •id assign Expresion semicolon «print»
+	Assign : •id assign Expresion semicolon «rbrace»
+	Assign : •id assign Expresion semicolon «while»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «id»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «if»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «print»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «rbrace»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «while»
+	Cycle : •while lparen Expresion rparen do Body semicolon «id»
+	Cycle : •while lparen Expresion rparen do Body semicolon «if»
+	Cycle : •while lparen Expresion rparen do Body semicolon «print»
+	Cycle : •while lparen Expresion rparen do Body semicolon «rbrace»
+	Cycle : •while lparen Expresion rparen do Body semicolon «while»
+	FuncCall : •id lparen ArgList rparen semicolon «id»
+	FuncCall : •id lparen ArgList rparen semicolon «if»
+	FuncCall : •id lparen ArgList rparen semicolon «print»
+	FuncCall : •id lparen ArgList rparen semicolon «rbrace»
+	FuncCall : •id lparen ArgList rparen semicolon «while»
+	Print : •print lparen PrintList rparen semicolon «id»
+	Print : •print lparen PrintList rparen semicolon «if»
+	Print : •print lparen PrintList rparen semicolon «print»
+	Print : •print lparen PrintList rparen semicolon «rbrace»
+	Print : •print lparen PrintList rparen semicolon «while»
+}
+Transitions:
+	id -> 28
+	Statement -> 30
+	Assign -> 31
+	Condition -> 32
+	Cycle -> 33
+	FuncCall -> 34
+	Print -> 35
+	if -> 36
+	while -> 37
+	print -> 38
+	StateDeclare -> 242
+
+
+S189{
+	Factor : lparen •Expresion rparen «divide»
+	Factor : lparen •Expresion rparen «minus»
+	Factor : lparen •Expresion rparen «times»
+	Factor : lparen •Expresion rparen «plus»
+	Factor : lparen •Expresion rparen «rparen»
+	Expresion : •Exp MoreExpresion «rparen»
+	Exp : •Termino MoreExp «greater»
+	Exp : •Termino MoreExp «less»
+	Exp : •Termino MoreExp «notequal»
+	Exp : •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «greater»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «less»
+	Termino : •Factor MoreTermino «notequal»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «greater»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «greater»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «less»
+	Factor : •Op NextOp «less»
+	Factor : •lparen Expresion rparen «notequal»
+	Factor : •Op NextOp «notequal»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 74
+	Exp -> 76
+	Termino -> 77
+	Factor -> 78
+	Op -> 79
+	Expresion -> 243
+
+
+S190{
+	Exp1 : greater Exp• «rparen»
+}
+Transitions:
+
+
+S191{
+	Exp : Termino •MoreExp «rparen»
+	MoreExp : •plus Termino MoreExp «rparen»
+	MoreExp : •minus Termino MoreExp «rparen»
+	MoreExp : empty• «rparen»
+}
+Transitions:
+	MoreExp -> 244
+	plus -> 245
+	minus -> 246
+
+
+S192{
+	Termino : Factor •MoreTermino «minus»
+	Termino : Factor •MoreTermino «plus»
+	Termino : Factor •MoreTermino «rparen»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «rparen»
+	MoreTermino : •divide Factor MoreTermino «rparen»
+	MoreTermino : empty• «rparen»
+}
+Transitions:
+	MoreTermino -> 247
+	times -> 248
+	divide -> 249
+
+
+S193{
+	Factor : Op •NextOp «divide»
+	Factor : Op •NextOp «minus»
+	Factor : Op •NextOp «times»
+	Factor : Op •NextOp «plus»
+	Factor : Op •NextOp «rparen»
+	NextOp : •id «divide»
+	NextOp : •Cte «divide»
+	NextOp : •id «minus»
+	NextOp : •Cte «minus»
+	NextOp : •id «times»
+	NextOp : •Cte «times»
+	NextOp : •id «plus»
+	NextOp : •Cte «plus»
+	NextOp : •id «rparen»
+	NextOp : •Cte «rparen»
+	Cte : •cte_int «divide»
+	Cte : •cte_float «divide»
+	Cte : •cte_int «minus»
+	Cte : •cte_float «minus»
+	Cte : •cte_int «times»
+	Cte : •cte_float «times»
+	Cte : •cte_int «plus»
+	Cte : •cte_float «plus»
+	Cte : •cte_int «rparen»
+	Cte : •cte_float «rparen»
+}
+Transitions:
+	id -> 250
+	NextOp -> 251
+	Cte -> 252
+	cte_int -> 253
+	cte_float -> 254
+
+
+S194{
+	Exp2 : less Exp• «rparen»
+}
+Transitions:
+
+
+S195{
+	Exp3 : notequal Exp• «rparen»
+}
+Transitions:
+
+
+S196{
+	MoreExp : plus Termino •MoreExp «greater»
+	MoreExp : plus Termino •MoreExp «less»
+	MoreExp : plus Termino •MoreExp «notequal»
+	MoreExp : plus Termino •MoreExp «rparen»
+	MoreExp : •plus Termino MoreExp «greater»
+	MoreExp : •minus Termino MoreExp «greater»
+	MoreExp : empty• «greater»
+	MoreExp : •plus Termino MoreExp «less»
+	MoreExp : •minus Termino MoreExp «less»
+	MoreExp : empty• «less»
+	MoreExp : •plus Termino MoreExp «notequal»
+	MoreExp : •minus Termino MoreExp «notequal»
+	MoreExp : empty• «notequal»
+	MoreExp : •plus Termino MoreExp «rparen»
+	MoreExp : •minus Termino MoreExp «rparen»
+	MoreExp : empty• «rparen»
+}
+Transitions:
+	plus -> 142
+	minus -> 143
+	MoreExp -> 255
+
+
+S197{
+	MoreExp : minus Termino •MoreExp «greater»
+	MoreExp : minus Termino •MoreExp «less»
+	MoreExp : minus Termino •MoreExp «notequal»
+	MoreExp : minus Termino •MoreExp «rparen»
+	MoreExp : •plus Termino MoreExp «greater»
+	MoreExp : •minus Termino MoreExp «greater»
+	MoreExp : empty• «greater»
+	MoreExp : •plus Termino MoreExp «less»
+	MoreExp : •minus Termino MoreExp «less»
+	MoreExp : empty• «less»
+	MoreExp : •plus Termino MoreExp «notequal»
+	MoreExp : •minus Termino MoreExp «notequal»
+	MoreExp : empty• «notequal»
+	MoreExp : •plus Termino MoreExp «rparen»
+	MoreExp : •minus Termino MoreExp «rparen»
+	MoreExp : empty• «rparen»
+}
+Transitions:
+	plus -> 142
+	minus -> 143
+	MoreExp -> 256
+
+
+S198{
+	MoreTermino : times Factor •MoreTermino «greater»
+	MoreTermino : times Factor •MoreTermino «minus»
+	MoreTermino : times Factor •MoreTermino «plus»
+	MoreTermino : times Factor •MoreTermino «less»
+	MoreTermino : times Factor •MoreTermino «notequal»
+	MoreTermino : times Factor •MoreTermino «rparen»
+	MoreTermino : •times Factor MoreTermino «greater»
+	MoreTermino : •divide Factor MoreTermino «greater»
+	MoreTermino : empty• «greater»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «less»
+	MoreTermino : •divide Factor MoreTermino «less»
+	MoreTermino : empty• «less»
+	MoreTermino : •times Factor MoreTermino «notequal»
+	MoreTermino : •divide Factor MoreTermino «notequal»
+	MoreTermino : empty• «notequal»
+	MoreTermino : •times Factor MoreTermino «rparen»
+	MoreTermino : •divide Factor MoreTermino «rparen»
+	MoreTermino : empty• «rparen»
+}
+Transitions:
+	times -> 145
+	divide -> 146
+	MoreTermino -> 257
+
+
+S199{
+	MoreTermino : divide Factor •MoreTermino «greater»
+	MoreTermino : divide Factor •MoreTermino «minus»
+	MoreTermino : divide Factor •MoreTermino «plus»
+	MoreTermino : divide Factor •MoreTermino «less»
+	MoreTermino : divide Factor •MoreTermino «notequal»
+	MoreTermino : divide Factor •MoreTermino «rparen»
+	MoreTermino : •times Factor MoreTermino «greater»
+	MoreTermino : •divide Factor MoreTermino «greater»
+	MoreTermino : empty• «greater»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «less»
+	MoreTermino : •divide Factor MoreTermino «less»
+	MoreTermino : empty• «less»
+	MoreTermino : •times Factor MoreTermino «notequal»
+	MoreTermino : •divide Factor MoreTermino «notequal»
+	MoreTermino : empty• «notequal»
+	MoreTermino : •times Factor MoreTermino «rparen»
+	MoreTermino : •divide Factor MoreTermino «rparen»
+	MoreTermino : empty• «rparen»
+}
+Transitions:
+	times -> 145
+	divide -> 146
+	MoreTermino -> 258
+
+
+S200{
+	Cycle : while lparen Expresion rparen do •Body semicolon «id»
+	Cycle : while lparen Expresion rparen do •Body semicolon «if»
+	Cycle : while lparen Expresion rparen do •Body semicolon «print»
+	Cycle : while lparen Expresion rparen do •Body semicolon «rbrace»
+	Cycle : while lparen Expresion rparen do •Body semicolon «while»
+	Body : •lbrace StateDeclare rbrace «semicolon»
+}
+Transitions:
+	Body -> 259
+	lbrace -> 260
+
+
+S201{
+	Print : print lparen PrintList rparen semicolon• «id»
+	Print : print lparen PrintList rparen semicolon• «if»
+	Print : print lparen PrintList rparen semicolon• «print»
+	Print : print lparen PrintList rparen semicolon• «rbrace»
+	Print : print lparen PrintList rparen semicolon• «while»
+}
+Transitions:
+
+
+S202{
+	MorePrint : comma PrintItem •MorePrint «rparen»
+	MorePrint : •comma PrintItem MorePrint «rparen»
+	MorePrint : empty• «rparen»
+}
+Transitions:
+	comma -> 154
+	MorePrint -> 261
+
+
+S203{
+	Variable : id •MasId colon Type semicolon «id»
+	Variable : id •MasId colon Type semicolon «lbrace»
+	MasId : •comma id MasId «colon»
+	MasId : empty• «colon»
+}
+Transitions:
+	comma -> 18
+	MasId -> 262
+
+
+S204{
+	Vars : var Variable •VarsPrime «lbrace»
+	VarsPrime : •Variable VarsPrime «lbrace»
+	VarsPrime : empty• «lbrace»
+	Variable : •id MasId colon Type semicolon «id»
+	Variable : •id MasId colon Type semicolon «lbrace»
+}
+Transitions:
+	id -> 203
+	Variable -> 263
+	VarsPrime -> 264
+
+
+S205{
+	Funcs : void id lparen Params rparen lbracket VarsOpt Body •rbracket semicolon «main»
+	Funcs : void id lparen Params rparen lbracket VarsOpt Body •rbracket semicolon «void»
+}
+Transitions:
+	rbracket -> 265
+
+
+S206{
+	Body : lbrace •StateDeclare rbrace «rbracket»
+	StateDeclare : •Statement StateLoop «rbrace»
+	StateDeclare : empty• «rbrace»
+	Statement : •Assign «id»
+	Statement : •Assign «if»
+	Statement : •Assign «print»
+	Statement : •Assign «rbrace»
+	Statement : •Assign «while»
+	Statement : •Condition «id»
+	Statement : •Condition «if»
+	Statement : •Condition «print»
+	Statement : •Condition «rbrace»
+	Statement : •Condition «while»
+	Statement : •Cycle «id»
+	Statement : •Cycle «if»
+	Statement : •Cycle «print»
+	Statement : •Cycle «rbrace»
+	Statement : •Cycle «while»
+	Statement : •FuncCall «id»
+	Statement : •FuncCall «if»
+	Statement : •FuncCall «print»
+	Statement : •FuncCall «rbrace»
+	Statement : •FuncCall «while»
+	Statement : •Print «id»
+	Statement : •Print «if»
+	Statement : •Print «print»
+	Statement : •Print «rbrace»
+	Statement : •Print «while»
+	Assign : •id assign Expresion semicolon «id»
+	Assign : •id assign Expresion semicolon «if»
+	Assign : •id assign Expresion semicolon «print»
+	Assign : •id assign Expresion semicolon «rbrace»
+	Assign : •id assign Expresion semicolon «while»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «id»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «if»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «print»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «rbrace»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «while»
+	Cycle : •while lparen Expresion rparen do Body semicolon «id»
+	Cycle : •while lparen Expresion rparen do Body semicolon «if»
+	Cycle : •while lparen Expresion rparen do Body semicolon «print»
+	Cycle : •while lparen Expresion rparen do Body semicolon «rbrace»
+	Cycle : •while lparen Expresion rparen do Body semicolon «while»
+	FuncCall : •id lparen ArgList rparen semicolon «id»
+	FuncCall : •id lparen ArgList rparen semicolon «if»
+	FuncCall : •id lparen ArgList rparen semicolon «print»
+	FuncCall : •id lparen ArgList rparen semicolon «rbrace»
+	FuncCall : •id lparen ArgList rparen semicolon «while»
+	Print : •print lparen PrintList rparen semicolon «id»
+	Print : •print lparen PrintList rparen semicolon «if»
+	Print : •print lparen PrintList rparen semicolon «print»
+	Print : •print lparen PrintList rparen semicolon «rbrace»
+	Print : •print lparen PrintList rparen semicolon «while»
+}
+Transitions:
+	id -> 28
+	Statement -> 30
+	Assign -> 31
+	Condition -> 32
+	Cycle -> 33
+	FuncCall -> 34
+	Print -> 35
+	if -> 36
+	while -> 37
+	print -> 38
+	StateDeclare -> 266
+
+
+S207{
+	MoreCall : comma Expresion MoreCall• «rparen»
+}
+Transitions:
+
+
+S208{
+	Factor : lparen Expresion •rparen «comma»
+	Factor : lparen Expresion •rparen «divide»
+	Factor : lparen Expresion •rparen «times»
+	Factor : lparen Expresion •rparen «minus»
+	Factor : lparen Expresion •rparen «plus»
+	Factor : lparen Expresion •rparen «rparen»
+}
+Transitions:
+	rparen -> 267
+
+
+S209{
+	Exp : Termino MoreExp• «comma»
+	Exp : Termino MoreExp• «rparen»
+}
+Transitions:
+
+
+S210{
+	MoreExp : plus •Termino MoreExp «comma»
+	MoreExp : plus •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «comma»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 163
+	Factor -> 166
+	Op -> 167
+	Termino -> 268
+
+
+S211{
+	MoreExp : minus •Termino MoreExp «comma»
+	MoreExp : minus •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «comma»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 163
+	Factor -> 166
+	Op -> 167
+	Termino -> 269
+
+
+S212{
+	Termino : Factor MoreTermino• «comma»
+	Termino : Factor MoreTermino• «minus»
+	Termino : Factor MoreTermino• «plus»
+	Termino : Factor MoreTermino• «rparen»
+}
+Transitions:
+
+
+S213{
+	MoreTermino : times •Factor MoreTermino «comma»
+	MoreTermino : times •Factor MoreTermino «minus»
+	MoreTermino : times •Factor MoreTermino «plus»
+	MoreTermino : times •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 163
+	Op -> 167
+	Factor -> 270
+
+
+S214{
+	MoreTermino : divide •Factor MoreTermino «comma»
+	MoreTermino : divide •Factor MoreTermino «minus»
+	MoreTermino : divide •Factor MoreTermino «plus»
+	MoreTermino : divide •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «comma»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «comma»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •Op NextOp «minus»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 163
+	Op -> 167
+	Factor -> 271
+
+
+S215{
+	NextOp : id• «comma»
+	NextOp : id• «divide»
+	NextOp : id• «times»
+	NextOp : id• «minus»
+	NextOp : id• «plus»
+	NextOp : id• «rparen»
+}
+Transitions:
+
+
+S216{
+	Factor : Op NextOp• «comma»
+	Factor : Op NextOp• «divide»
+	Factor : Op NextOp• «times»
+	Factor : Op NextOp• «minus»
+	Factor : Op NextOp• «plus»
+	Factor : Op NextOp• «rparen»
+}
+Transitions:
+
+
+S217{
+	NextOp : Cte• «comma»
+	NextOp : Cte• «divide»
+	NextOp : Cte• «times»
+	NextOp : Cte• «minus»
+	NextOp : Cte• «plus»
+	NextOp : Cte• «rparen»
+}
+Transitions:
+
+
+S218{
+	Cte : cte_int• «comma»
+	Cte : cte_int• «divide»
+	Cte : cte_int• «times»
+	Cte : cte_int• «minus»
+	Cte : cte_int• «plus»
+	Cte : cte_int• «rparen»
+}
+Transitions:
+
+
+S219{
+	Cte : cte_float• «comma»
+	Cte : cte_float• «divide»
+	Cte : cte_float• «times»
+	Cte : cte_float• «minus»
+	Cte : cte_float• «plus»
+	Cte : cte_float• «rparen»
+}
+Transitions:
+
+
+S220{
+	MoreExp : plus Termino MoreExp• «comma»
+	MoreExp : plus Termino MoreExp• «greater»
+	MoreExp : plus Termino MoreExp• «less»
+	MoreExp : plus Termino MoreExp• «notequal»
+	MoreExp : plus Termino MoreExp• «rparen»
+}
+Transitions:
+
+
+S221{
+	MoreExp : minus Termino MoreExp• «comma»
+	MoreExp : minus Termino MoreExp• «greater»
+	MoreExp : minus Termino MoreExp• «less»
+	MoreExp : minus Termino MoreExp• «notequal»
+	MoreExp : minus Termino MoreExp• «rparen»
+}
+Transitions:
+
+
+S222{
+	MoreTermino : times Factor MoreTermino• «comma»
+	MoreTermino : times Factor MoreTermino• «minus»
+	MoreTermino : times Factor MoreTermino• «plus»
+	MoreTermino : times Factor MoreTermino• «greater»
+	MoreTermino : times Factor MoreTermino• «less»
+	MoreTermino : times Factor MoreTermino• «notequal»
+	MoreTermino : times Factor MoreTermino• «rparen»
+}
+Transitions:
+
+
+S223{
+	MoreTermino : divide Factor MoreTermino• «comma»
+	MoreTermino : divide Factor MoreTermino• «minus»
+	MoreTermino : divide Factor MoreTermino• «plus»
+	MoreTermino : divide Factor MoreTermino• «greater»
+	MoreTermino : divide Factor MoreTermino• «less»
+	MoreTermino : divide Factor MoreTermino• «notequal»
+	MoreTermino : divide Factor MoreTermino• «rparen»
+}
+Transitions:
+
+
+S224{
+	Factor : lparen Expresion •rparen «divide»
+	Factor : lparen Expresion •rparen «minus»
+	Factor : lparen Expresion •rparen «times»
+	Factor : lparen Expresion •rparen «plus»
+	Factor : lparen Expresion •rparen «semicolon»
+}
+Transitions:
+	rparen -> 272
+
+
+S225{
+	Exp : Termino MoreExp• «semicolon»
+}
+Transitions:
+
+
+S226{
+	MoreExp : plus •Termino MoreExp «semicolon»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «semicolon»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «minus»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «semicolon»
+	Factor : •Op NextOp «semicolon»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 175
+	Factor -> 178
+	Op -> 179
+	Termino -> 273
+
+
+S227{
+	MoreExp : minus •Termino MoreExp «semicolon»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «semicolon»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «minus»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «semicolon»
+	Factor : •Op NextOp «semicolon»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 175
+	Factor -> 178
+	Op -> 179
+	Termino -> 274
+
+
+S228{
+	Termino : Factor MoreTermino• «minus»
+	Termino : Factor MoreTermino• «plus»
+	Termino : Factor MoreTermino• «semicolon»
+}
+Transitions:
+
+
+S229{
+	MoreTermino : times •Factor MoreTermino «minus»
+	MoreTermino : times •Factor MoreTermino «plus»
+	MoreTermino : times •Factor MoreTermino «semicolon»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «minus»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «semicolon»
+	Factor : •Op NextOp «semicolon»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 175
+	Op -> 179
+	Factor -> 275
+
+
+S230{
+	MoreTermino : divide •Factor MoreTermino «minus»
+	MoreTermino : divide •Factor MoreTermino «plus»
+	MoreTermino : divide •Factor MoreTermino «semicolon»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «minus»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «semicolon»
+	Factor : •Op NextOp «semicolon»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 175
+	Op -> 179
+	Factor -> 276
+
+
+S231{
+	NextOp : id• «divide»
+	NextOp : id• «minus»
+	NextOp : id• «times»
+	NextOp : id• «plus»
+	NextOp : id• «semicolon»
+}
+Transitions:
+
+
+S232{
+	Factor : Op NextOp• «divide»
+	Factor : Op NextOp• «minus»
+	Factor : Op NextOp• «times»
+	Factor : Op NextOp• «plus»
+	Factor : Op NextOp• «semicolon»
+}
+Transitions:
+
+
+S233{
+	NextOp : Cte• «divide»
+	NextOp : Cte• «minus»
+	NextOp : Cte• «times»
+	NextOp : Cte• «plus»
+	NextOp : Cte• «semicolon»
+}
+Transitions:
+
+
+S234{
+	Cte : cte_int• «divide»
+	Cte : cte_int• «minus»
+	Cte : cte_int• «times»
+	Cte : cte_int• «plus»
+	Cte : cte_int• «semicolon»
+}
+Transitions:
+
+
+S235{
+	Cte : cte_float• «divide»
+	Cte : cte_float• «minus»
+	Cte : cte_float• «times»
+	Cte : cte_float• «plus»
+	Cte : cte_float• «semicolon»
+}
+Transitions:
+
+
+S236{
+	MoreExp : plus Termino MoreExp• «greater»
+	MoreExp : plus Termino MoreExp• «less»
+	MoreExp : plus Termino MoreExp• «notequal»
+	MoreExp : plus Termino MoreExp• «semicolon»
+}
+Transitions:
+
+
+S237{
+	MoreExp : minus Termino MoreExp• «greater»
+	MoreExp : minus Termino MoreExp• «less»
+	MoreExp : minus Termino MoreExp• «notequal»
+	MoreExp : minus Termino MoreExp• «semicolon»
+}
+Transitions:
+
+
+S238{
+	MoreTermino : times Factor MoreTermino• «greater»
+	MoreTermino : times Factor MoreTermino• «minus»
+	MoreTermino : times Factor MoreTermino• «plus»
+	MoreTermino : times Factor MoreTermino• «less»
+	MoreTermino : times Factor MoreTermino• «notequal»
+	MoreTermino : times Factor MoreTermino• «semicolon»
+}
+Transitions:
+
+
+S239{
+	MoreTermino : divide Factor MoreTermino• «greater»
+	MoreTermino : divide Factor MoreTermino• «minus»
+	MoreTermino : divide Factor MoreTermino• «plus»
+	MoreTermino : divide Factor MoreTermino• «less»
+	MoreTermino : divide Factor MoreTermino• «notequal»
+	MoreTermino : divide Factor MoreTermino• «semicolon»
+}
+Transitions:
+
+
+S240{
+	Condition : if lparen Expresion rparen Body ElseBody •semicolon «id»
+	Condition : if lparen Expresion rparen Body ElseBody •semicolon «if»
+	Condition : if lparen Expresion rparen Body ElseBody •semicolon «print»
+	Condition : if lparen Expresion rparen Body ElseBody •semicolon «rbrace»
+	Condition : if lparen Expresion rparen Body ElseBody •semicolon «while»
+}
+Transitions:
+	semicolon -> 277
+
+
+S241{
+	ElseBody : else •Body «semicolon»
+	Body : •lbrace StateDeclare rbrace «semicolon»
+}
+Transitions:
+	lbrace -> 260
+	Body -> 278
+
+
+S242{
+	Body : lbrace StateDeclare •rbrace «else»
+	Body : lbrace StateDeclare •rbrace «semicolon»
+}
+Transitions:
+	rbrace -> 279
+
+
+S243{
+	Factor : lparen Expresion •rparen «divide»
+	Factor : lparen Expresion •rparen «minus»
+	Factor : lparen Expresion •rparen «times»
+	Factor : lparen Expresion •rparen «plus»
+	Factor : lparen Expresion •rparen «rparen»
+}
+Transitions:
+	rparen -> 280
+
+
+S244{
+	Exp : Termino MoreExp• «rparen»
+}
+Transitions:
+
+
+S245{
+	MoreExp : plus •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «minus»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 189
+	Factor -> 192
+	Op -> 193
+	Termino -> 281
+
+
+S246{
+	MoreExp : minus •Termino MoreExp «rparen»
+	Termino : •Factor MoreTermino «minus»
+	Termino : •Factor MoreTermino «plus»
+	Termino : •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «minus»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 189
+	Factor -> 192
+	Op -> 193
+	Termino -> 282
+
+
+S247{
+	Termino : Factor MoreTermino• «minus»
+	Termino : Factor MoreTermino• «plus»
+	Termino : Factor MoreTermino• «rparen»
+}
+Transitions:
+
+
+S248{
+	MoreTermino : times •Factor MoreTermino «minus»
+	MoreTermino : times •Factor MoreTermino «plus»
+	MoreTermino : times •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «minus»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 189
+	Op -> 193
+	Factor -> 283
+
+
+S249{
+	MoreTermino : divide •Factor MoreTermino «minus»
+	MoreTermino : divide •Factor MoreTermino «plus»
+	MoreTermino : divide •Factor MoreTermino «rparen»
+	Factor : •lparen Expresion rparen «divide»
+	Factor : •lparen Expresion rparen «minus»
+	Factor : •lparen Expresion rparen «times»
+	Factor : •Op NextOp «divide»
+	Factor : •Op NextOp «minus»
+	Factor : •Op NextOp «times»
+	Factor : •lparen Expresion rparen «plus»
+	Factor : •Op NextOp «plus»
+	Factor : •lparen Expresion rparen «rparen»
+	Factor : •Op NextOp «rparen»
+	Op : •plus «cte_float»
+	Op : •plus «cte_int»
+	Op : •plus «id»
+	Op : •minus «cte_float»
+	Op : •minus «cte_int»
+	Op : •minus «id»
+	Op : empty• «cte_float»
+	Op : empty• «cte_int»
+	Op : empty• «id»
+}
+Transitions:
+	plus -> 64
+	minus -> 65
+	lparen -> 189
+	Op -> 193
+	Factor -> 284
+
+
+S250{
+	NextOp : id• «divide»
+	NextOp : id• «minus»
+	NextOp : id• «times»
+	NextOp : id• «plus»
+	NextOp : id• «rparen»
+}
+Transitions:
+
+
+S251{
+	Factor : Op NextOp• «divide»
+	Factor : Op NextOp• «minus»
+	Factor : Op NextOp• «times»
+	Factor : Op NextOp• «plus»
+	Factor : Op NextOp• «rparen»
+}
+Transitions:
+
+
+S252{
+	NextOp : Cte• «divide»
+	NextOp : Cte• «minus»
+	NextOp : Cte• «times»
+	NextOp : Cte• «plus»
+	NextOp : Cte• «rparen»
+}
+Transitions:
+
+
+S253{
+	Cte : cte_int• «divide»
+	Cte : cte_int• «minus»
+	Cte : cte_int• «times»
+	Cte : cte_int• «plus»
+	Cte : cte_int• «rparen»
+}
+Transitions:
+
+
+S254{
+	Cte : cte_float• «divide»
+	Cte : cte_float• «minus»
+	Cte : cte_float• «times»
+	Cte : cte_float• «plus»
+	Cte : cte_float• «rparen»
+}
+Transitions:
+
+
+S255{
+	MoreExp : plus Termino MoreExp• «greater»
+	MoreExp : plus Termino MoreExp• «less»
+	MoreExp : plus Termino MoreExp• «notequal»
+	MoreExp : plus Termino MoreExp• «rparen»
+}
+Transitions:
+
+
+S256{
+	MoreExp : minus Termino MoreExp• «greater»
+	MoreExp : minus Termino MoreExp• «less»
+	MoreExp : minus Termino MoreExp• «notequal»
+	MoreExp : minus Termino MoreExp• «rparen»
+}
+Transitions:
+
+
+S257{
+	MoreTermino : times Factor MoreTermino• «greater»
+	MoreTermino : times Factor MoreTermino• «minus»
+	MoreTermino : times Factor MoreTermino• «plus»
+	MoreTermino : times Factor MoreTermino• «less»
+	MoreTermino : times Factor MoreTermino• «notequal»
+	MoreTermino : times Factor MoreTermino• «rparen»
+}
+Transitions:
+
+
+S258{
+	MoreTermino : divide Factor MoreTermino• «greater»
+	MoreTermino : divide Factor MoreTermino• «minus»
+	MoreTermino : divide Factor MoreTermino• «plus»
+	MoreTermino : divide Factor MoreTermino• «less»
+	MoreTermino : divide Factor MoreTermino• «notequal»
+	MoreTermino : divide Factor MoreTermino• «rparen»
+}
+Transitions:
+
+
+S259{
+	Cycle : while lparen Expresion rparen do Body •semicolon «id»
+	Cycle : while lparen Expresion rparen do Body •semicolon «if»
+	Cycle : while lparen Expresion rparen do Body •semicolon «print»
+	Cycle : while lparen Expresion rparen do Body •semicolon «rbrace»
+	Cycle : while lparen Expresion rparen do Body •semicolon «while»
+}
+Transitions:
+	semicolon -> 285
+
+
+S260{
+	Body : lbrace •StateDeclare rbrace «semicolon»
+	StateDeclare : •Statement StateLoop «rbrace»
+	StateDeclare : empty• «rbrace»
+	Statement : •Assign «id»
+	Statement : •Assign «if»
+	Statement : •Assign «print»
+	Statement : •Assign «rbrace»
+	Statement : •Assign «while»
+	Statement : •Condition «id»
+	Statement : •Condition «if»
+	Statement : •Condition «print»
+	Statement : •Condition «rbrace»
+	Statement : •Condition «while»
+	Statement : •Cycle «id»
+	Statement : •Cycle «if»
+	Statement : •Cycle «print»
+	Statement : •Cycle «rbrace»
+	Statement : •Cycle «while»
+	Statement : •FuncCall «id»
+	Statement : •FuncCall «if»
+	Statement : •FuncCall «print»
+	Statement : •FuncCall «rbrace»
+	Statement : •FuncCall «while»
+	Statement : •Print «id»
+	Statement : •Print «if»
+	Statement : •Print «print»
+	Statement : •Print «rbrace»
+	Statement : •Print «while»
+	Assign : •id assign Expresion semicolon «id»
+	Assign : •id assign Expresion semicolon «if»
+	Assign : •id assign Expresion semicolon «print»
+	Assign : •id assign Expresion semicolon «rbrace»
+	Assign : •id assign Expresion semicolon «while»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «id»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «if»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «print»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «rbrace»
+	Condition : •if lparen Expresion rparen Body ElseBody semicolon «while»
+	Cycle : •while lparen Expresion rparen do Body semicolon «id»
+	Cycle : •while lparen Expresion rparen do Body semicolon «if»
+	Cycle : •while lparen Expresion rparen do Body semicolon «print»
+	Cycle : •while lparen Expresion rparen do Body semicolon «rbrace»
+	Cycle : •while lparen Expresion rparen do Body semicolon «while»
+	FuncCall : •id lparen ArgList rparen semicolon «id»
+	FuncCall : •id lparen ArgList rparen semicolon «if»
+	FuncCall : •id lparen ArgList rparen semicolon «print»
+	FuncCall : •id lparen ArgList rparen semicolon «rbrace»
+	FuncCall : •id lparen ArgList rparen semicolon «while»
+	Print : •print lparen PrintList rparen semicolon «id»
+	Print : •print lparen PrintList rparen semicolon «if»
+	Print : •print lparen PrintList rparen semicolon «print»
+	Print : •print lparen PrintList rparen semicolon «rbrace»
+	Print : •print lparen PrintList rparen semicolon «while»
+}
+Transitions:
+	id -> 28
+	Statement -> 30
+	Assign -> 31
+	Condition -> 32
+	Cycle -> 33
+	FuncCall -> 34
+	Print -> 35
+	if -> 36
+	while -> 37
+	print -> 38
+	StateDeclare -> 286
+
+
+S261{
+	MorePrint : comma PrintItem MorePrint• «rparen»
+}
+Transitions:
+
+
+S262{
+	Variable : id MasId •colon Type semicolon «id»
+	Variable : id MasId •colon Type semicolon «lbrace»
+}
+Transitions:
+	colon -> 287
+
+
+S263{
+	VarsPrime : Variable •VarsPrime «lbrace»
+	VarsPrime : •Variable VarsPrime «lbrace»
+	VarsPrime : empty• «lbrace»
+	Variable : •id MasId colon Type semicolon «id»
+	Variable : •id MasId colon Type semicolon «lbrace»
+}
+Transitions:
+	id -> 203
+	Variable -> 263
+	VarsPrime -> 288
+
+
+S264{
+	Vars : var Variable VarsPrime• «lbrace»
+}
+Transitions:
+
+
+S265{
+	Funcs : void id lparen Params rparen lbracket VarsOpt Body rbracket •semicolon «main»
+	Funcs : void id lparen Params rparen lbracket VarsOpt Body rbracket •semicolon «void»
+}
+Transitions:
+	semicolon -> 289
+
+
+S266{
+	Body : lbrace StateDeclare •rbrace «rbracket»
+}
+Transitions:
+	rbrace -> 290
+
+
+S267{
+	Factor : lparen Expresion rparen• «comma»
+	Factor : lparen Expresion rparen• «divide»
+	Factor : lparen Expresion rparen• «times»
+	Factor : lparen Expresion rparen• «minus»
+	Factor : lparen Expresion rparen• «plus»
+	Factor : lparen Expresion rparen• «rparen»
+}
+Transitions:
+
+
+S268{
+	MoreExp : plus Termino •MoreExp «comma»
+	MoreExp : plus Termino •MoreExp «rparen»
+	MoreExp : •plus Termino MoreExp «comma»
+	MoreExp : •minus Termino MoreExp «comma»
+	MoreExp : empty• «comma»
+	MoreExp : •plus Termino MoreExp «rparen»
+	MoreExp : •minus Termino MoreExp «rparen»
+	MoreExp : empty• «rparen»
+}
+Transitions:
+	plus -> 210
+	minus -> 211
+	MoreExp -> 291
+
+
+S269{
+	MoreExp : minus Termino •MoreExp «comma»
+	MoreExp : minus Termino •MoreExp «rparen»
+	MoreExp : •plus Termino MoreExp «comma»
+	MoreExp : •minus Termino MoreExp «comma»
+	MoreExp : empty• «comma»
+	MoreExp : •plus Termino MoreExp «rparen»
+	MoreExp : •minus Termino MoreExp «rparen»
+	MoreExp : empty• «rparen»
+}
+Transitions:
+	plus -> 210
+	minus -> 211
+	MoreExp -> 292
+
+
+S270{
+	MoreTermino : times Factor •MoreTermino «comma»
+	MoreTermino : times Factor •MoreTermino «minus»
+	MoreTermino : times Factor •MoreTermino «plus»
+	MoreTermino : times Factor •MoreTermino «rparen»
+	MoreTermino : •times Factor MoreTermino «comma»
+	MoreTermino : •divide Factor MoreTermino «comma»
+	MoreTermino : empty• «comma»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «rparen»
+	MoreTermino : •divide Factor MoreTermino «rparen»
+	MoreTermino : empty• «rparen»
+}
+Transitions:
+	times -> 213
+	divide -> 214
+	MoreTermino -> 293
+
+
+S271{
+	MoreTermino : divide Factor •MoreTermino «comma»
+	MoreTermino : divide Factor •MoreTermino «minus»
+	MoreTermino : divide Factor •MoreTermino «plus»
+	MoreTermino : divide Factor •MoreTermino «rparen»
+	MoreTermino : •times Factor MoreTermino «comma»
+	MoreTermino : •divide Factor MoreTermino «comma»
+	MoreTermino : empty• «comma»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «rparen»
+	MoreTermino : •divide Factor MoreTermino «rparen»
+	MoreTermino : empty• «rparen»
+}
+Transitions:
+	times -> 213
+	divide -> 214
+	MoreTermino -> 294
+
+
+S272{
+	Factor : lparen Expresion rparen• «divide»
+	Factor : lparen Expresion rparen• «minus»
+	Factor : lparen Expresion rparen• «times»
+	Factor : lparen Expresion rparen• «plus»
+	Factor : lparen Expresion rparen• «semicolon»
+}
+Transitions:
+
+
+S273{
+	MoreExp : plus Termino •MoreExp «semicolon»
+	MoreExp : •plus Termino MoreExp «semicolon»
+	MoreExp : •minus Termino MoreExp «semicolon»
+	MoreExp : empty• «semicolon»
+}
+Transitions:
+	plus -> 226
+	minus -> 227
+	MoreExp -> 295
+
+
+S274{
+	MoreExp : minus Termino •MoreExp «semicolon»
+	MoreExp : •plus Termino MoreExp «semicolon»
+	MoreExp : •minus Termino MoreExp «semicolon»
+	MoreExp : empty• «semicolon»
+}
+Transitions:
+	plus -> 226
+	minus -> 227
+	MoreExp -> 296
+
+
+S275{
+	MoreTermino : times Factor •MoreTermino «minus»
+	MoreTermino : times Factor •MoreTermino «plus»
+	MoreTermino : times Factor •MoreTermino «semicolon»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «semicolon»
+	MoreTermino : •divide Factor MoreTermino «semicolon»
+	MoreTermino : empty• «semicolon»
+}
+Transitions:
+	times -> 229
+	divide -> 230
+	MoreTermino -> 297
+
+
+S276{
+	MoreTermino : divide Factor •MoreTermino «minus»
+	MoreTermino : divide Factor •MoreTermino «plus»
+	MoreTermino : divide Factor •MoreTermino «semicolon»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «semicolon»
+	MoreTermino : •divide Factor MoreTermino «semicolon»
+	MoreTermino : empty• «semicolon»
+}
+Transitions:
+	times -> 229
+	divide -> 230
+	MoreTermino -> 298
+
+
+S277{
+	Condition : if lparen Expresion rparen Body ElseBody semicolon• «id»
+	Condition : if lparen Expresion rparen Body ElseBody semicolon• «if»
+	Condition : if lparen Expresion rparen Body ElseBody semicolon• «print»
+	Condition : if lparen Expresion rparen Body ElseBody semicolon• «rbrace»
+	Condition : if lparen Expresion rparen Body ElseBody semicolon• «while»
+}
+Transitions:
+
+
+S278{
+	ElseBody : else Body• «semicolon»
+}
+Transitions:
+
+
+S279{
+	Body : lbrace StateDeclare rbrace• «else»
+	Body : lbrace StateDeclare rbrace• «semicolon»
+}
+Transitions:
+
+
+S280{
+	Factor : lparen Expresion rparen• «divide»
+	Factor : lparen Expresion rparen• «minus»
+	Factor : lparen Expresion rparen• «times»
+	Factor : lparen Expresion rparen• «plus»
+	Factor : lparen Expresion rparen• «rparen»
+}
+Transitions:
+
+
+S281{
+	MoreExp : plus Termino •MoreExp «rparen»
+	MoreExp : •plus Termino MoreExp «rparen»
+	MoreExp : •minus Termino MoreExp «rparen»
+	MoreExp : empty• «rparen»
+}
+Transitions:
+	plus -> 245
+	minus -> 246
+	MoreExp -> 299
+
+
+S282{
+	MoreExp : minus Termino •MoreExp «rparen»
+	MoreExp : •plus Termino MoreExp «rparen»
+	MoreExp : •minus Termino MoreExp «rparen»
+	MoreExp : empty• «rparen»
+}
+Transitions:
+	plus -> 245
+	minus -> 246
+	MoreExp -> 300
+
+
+S283{
+	MoreTermino : times Factor •MoreTermino «minus»
+	MoreTermino : times Factor •MoreTermino «plus»
+	MoreTermino : times Factor •MoreTermino «rparen»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «rparen»
+	MoreTermino : •divide Factor MoreTermino «rparen»
+	MoreTermino : empty• «rparen»
+}
+Transitions:
+	times -> 248
+	divide -> 249
+	MoreTermino -> 301
+
+
+S284{
+	MoreTermino : divide Factor •MoreTermino «minus»
+	MoreTermino : divide Factor •MoreTermino «plus»
+	MoreTermino : divide Factor •MoreTermino «rparen»
+	MoreTermino : •times Factor MoreTermino «minus»
+	MoreTermino : •divide Factor MoreTermino «minus»
+	MoreTermino : empty• «minus»
+	MoreTermino : •times Factor MoreTermino «plus»
+	MoreTermino : •divide Factor MoreTermino «plus»
+	MoreTermino : empty• «plus»
+	MoreTermino : •times Factor MoreTermino «rparen»
+	MoreTermino : •divide Factor MoreTermino «rparen»
+	MoreTermino : empty• «rparen»
+}
+Transitions:
+	times -> 248
+	divide -> 249
+	MoreTermino -> 302
+
+
+S285{
+	Cycle : while lparen Expresion rparen do Body semicolon• «id»
+	Cycle : while lparen Expresion rparen do Body semicolon• «if»
+	Cycle : while lparen Expresion rparen do Body semicolon• «print»
+	Cycle : while lparen Expresion rparen do Body semicolon• «rbrace»
+	Cycle : while lparen Expresion rparen do Body semicolon• «while»
+}
+Transitions:
+
+
+S286{
+	Body : lbrace StateDeclare •rbrace «semicolon»
+}
+Transitions:
+	rbrace -> 303
+
+
+S287{
+	Variable : id MasId colon •Type semicolon «id»
+	Variable : id MasId colon •Type semicolon «lbrace»
+	Type : •int «semicolon»
+	Type : •float «semicolon»
+}
+Transitions:
+	int -> 43
+	float -> 44
+	Type -> 304
+
+
+S288{
+	VarsPrime : Variable VarsPrime• «lbrace»
+}
+Transitions:
+
+
+S289{
+	Funcs : void id lparen Params rparen lbracket VarsOpt Body rbracket semicolon• «main»
+	Funcs : void id lparen Params rparen lbracket VarsOpt Body rbracket semicolon• «void»
+}
+Transitions:
+
+
+S290{
+	Body : lbrace StateDeclare rbrace• «rbracket»
+}
+Transitions:
+
+
+S291{
+	MoreExp : plus Termino MoreExp• «comma»
+	MoreExp : plus Termino MoreExp• «rparen»
+}
+Transitions:
+
+
+S292{
+	MoreExp : minus Termino MoreExp• «comma»
+	MoreExp : minus Termino MoreExp• «rparen»
+}
+Transitions:
+
+
+S293{
+	MoreTermino : times Factor MoreTermino• «comma»
+	MoreTermino : times Factor MoreTermino• «minus»
+	MoreTermino : times Factor MoreTermino• «plus»
+	MoreTermino : times Factor MoreTermino• «rparen»
+}
+Transitions:
+
+
+S294{
+	MoreTermino : divide Factor MoreTermino• «comma»
+	MoreTermino : divide Factor MoreTermino• «minus»
+	MoreTermino : divide Factor MoreTermino• «plus»
+	MoreTermino : divide Factor MoreTermino• «rparen»
+}
+Transitions:
+
+
+S295{
+	MoreExp : plus Termino MoreExp• «semicolon»
+}
+Transitions:
+
+
+S296{
+	MoreExp : minus Termino MoreExp• «semicolon»
+}
+Transitions:
+
+
+S297{
+	MoreTermino : times Factor MoreTermino• «minus»
+	MoreTermino : times Factor MoreTermino• «plus»
+	MoreTermino : times Factor MoreTermino• «semicolon»
+}
+Transitions:
+
+
+S298{
+	MoreTermino : divide Factor MoreTermino• «minus»
+	MoreTermino : divide Factor MoreTermino• «plus»
+	MoreTermino : divide Factor MoreTermino• «semicolon»
+}
+Transitions:
+
+
+S299{
+	MoreExp : plus Termino MoreExp• «rparen»
+}
+Transitions:
+
+
+S300{
+	MoreExp : minus Termino MoreExp• «rparen»
+}
+Transitions:
+
+
+S301{
+	MoreTermino : times Factor MoreTermino• «minus»
+	MoreTermino : times Factor MoreTermino• «plus»
+	MoreTermino : times Factor MoreTermino• «rparen»
+}
+Transitions:
+
+
+S302{
+	MoreTermino : divide Factor MoreTermino• «minus»
+	MoreTermino : divide Factor MoreTermino• «plus»
+	MoreTermino : divide Factor MoreTermino• «rparen»
+}
+Transitions:
+
+
+S303{
+	Body : lbrace StateDeclare rbrace• «semicolon»
+}
+Transitions:
+
+
+S304{
+	Variable : id MasId colon Type •semicolon «id»
+	Variable : id MasId colon Type •semicolon «lbrace»
+}
+Transitions:
+	semicolon -> 305
+
+
+S305{
+	Variable : id MasId colon Type semicolon• «id»
+	Variable : id MasId colon Type semicolon• «lbrace»
+}
+Transitions:
+
+

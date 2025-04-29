@@ -1,0 +1,9 @@
+2 LR-1 conflicts: 
+	S9
+		symbol: main
+			Reduce(8:AfterLoop : empty	<<  >>)
+			Reduce(6:FuncLoop : empty	<<  >>)
+	S30
+		symbol: rbrace
+			Reduce(26:StateDeclare : empty	<<  >>)
+			Reduce(28:StateLoop : empty	<<  >>)

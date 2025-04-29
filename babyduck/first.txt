@@ -1,0 +1,202 @@
+S': {
+	program
+}
+Program: {
+	program
+}
+VarsOp: {
+	empty
+	var
+}
+Vars: {
+	var
+}
+FuncLoop: {
+	empty
+	void
+}
+AfterLoop: {
+	empty
+	void
+}
+VarsPrime: {
+	empty
+	id
+}
+Variable: {
+	id
+}
+MasId: {
+	comma
+	empty
+}
+Type: {
+	float
+	int
+}
+Funcs: {
+	void
+}
+Params: {
+	empty
+	id
+}
+ParamIndiv: {
+	id
+}
+MoreParam: {
+	comma
+	empty
+}
+VarsOpt: {
+	empty
+	var
+}
+Body: {
+	lbrace
+}
+StateDeclare: {
+	empty
+	id
+	if
+	print
+	while
+}
+StateLoop: {
+	empty
+	id
+	if
+	print
+	while
+}
+Statement: {
+	id
+	if
+	print
+	while
+}
+Assign: {
+	id
+}
+Condition: {
+	if
+}
+ElseBody: {
+	else
+	empty
+}
+Cycle: {
+	while
+}
+FuncCall: {
+	id
+}
+ArgList: {
+	cte_float
+	cte_int
+	empty
+	id
+	lparen
+	minus
+	plus
+}
+MoreCall: {
+	comma
+	empty
+}
+Print: {
+	print
+}
+PrintList: {
+	cte_float
+	cte_int
+	cte_string
+	id
+	lparen
+	minus
+	plus
+}
+PrintItem: {
+	cte_float
+	cte_int
+	cte_string
+	id
+	lparen
+	minus
+	plus
+}
+MorePrint: {
+	comma
+	empty
+}
+Expresion: {
+	cte_float
+	cte_int
+	id
+	lparen
+	minus
+	plus
+}
+MoreExpresion: {
+	empty
+	greater
+	less
+	notequal
+}
+Exp1: {
+	greater
+}
+Exp2: {
+	less
+}
+Exp3: {
+	notequal
+}
+Exp: {
+	cte_float
+	cte_int
+	id
+	lparen
+	minus
+	plus
+}
+MoreExp: {
+	empty
+	minus
+	plus
+}
+Termino: {
+	cte_float
+	cte_int
+	id
+	lparen
+	minus
+	plus
+}
+MoreTermino: {
+	divide
+	empty
+	times
+}
+Factor: {
+	cte_float
+	cte_int
+	id
+	lparen
+	minus
+	plus
+}
+Op: {
+	empty
+	minus
+	plus
+}
+NextOp: {
+	cte_float
+	cte_int
+	id
+}
+Cte: {
+	cte_float
+	cte_int
+}

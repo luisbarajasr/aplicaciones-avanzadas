@@ -1,15 +1,4 @@
-/* Lexical Part */
-!whitespace : '\t' | '\n' | '\r' | ' ' ;
-_letter : 'a'-'z' | 'A'-'Z' | '_' ; 
-_digit : '0'-'9' ;
-
-id : _letter | _digit ;
-/* un int puede ser '0' pero cuando hay mas numeros  a su lado, se ignora el '0' inicial (123 es valido, 0123 no es valido)*/
-cte_int : '0' | '1'-'9' {_digit} ;  
-cte_float : '0' | '1'-'9' {_digit} '.' _digit {_digit} ;
-cte_string : '"' {_letter | ' ' | '!' | '?' }'"' ;
-
-/* keywords *
+/* ---- keywords ---- */
 program : 'p' 'r' 'o' 'g' 'r' 'a' 'm' ;
 main : 'm' 'a' 'i' 'n' ;
 end : 'e' 'n' 'd' ;
@@ -23,21 +12,127 @@ while : 'w' 'h' 'i' 'l' 'e' ;
 do : 'd' 'o' ;
 print : 'p' 'r' 'i' 'n' 't' ;
 
-assign : "=" ;
-notequal : "!=" ;
-less : "<" ;
-plus : "+" ;
-minus : "-" ;
-times : "*" ;
-divide : "/" ;
-colon : ":" ;
-semicolon : ";" ;
-comma : "," ;
-lparen : "(" ;
-rparen : ")" ;
-lbrace : "{" ;
-rbrace : "}" ;
-lbracket : "[" ;
-rbracket : "]" ;
+assign : '=' ;
+notequal : '!' '=' ;
+less : '<' ;
+greater : '>' ;
+plus : '+' ;
+minus : '-' ;
+times : '*' ;
+divide : '/' ;
+colon : ':' ;
+semicolon : ';' ;
+comma : ',' ;
+lparen : '(' ;
+rparen : ')' ;
+lbrace : '{' ;
+rbrace : '}' ;
+lbracket : '[' ;
+rbracket : ']' ;
 
-!whitespace : ' ' | '\t' | '\n' | '\r' ;
+/*---- Lexical Part ---- */
+!whitespace : '\t' | '\n' | '\r' | ' ' ;
+_letter : 'a'-'z' | 'A'-'Z' | '_' ; 
+_digit : '0'-'9' ;
+
+id : _letter {_letter | _digit} ;
+/* un int puede ser '0' pero cuando hay mas numeros  a su lado, se ignora el '0' inicial (123 es valido, 0123 no es valido)*/
+cte_int : '0' | '1'-'9' {_digit} ;  
+cte_float : '0' | '1'-'9' {_digit} '.' _digit {_digit} ;
+cte_string : '"' {_letter | ' ' | '!' | '?' }'"' ;
+
+
+/* ---- CFG ---- */
+
+Program : program id semicolon VarsOp FuncLoop main Body end;
+
+VarsOp : Vars 
+    | empty ;
+
+Vars : var Variable VarsPrime ;
+
+FuncLoop : Funcs FuncLoop | empty ;
+
+VarsPrime : Variable VarsPrime | empty ;
+
+Variable : id MasId colon Type semicolon ;
+
+MasId : comma id MasId | empty ;
+
+Type : int | float ;
+
+Funcs : void id lparen Params rparen lbracket VarsOpt Body rbracket semicolon ;
+
+Params : ParamIndiv MoreParam | empty ;
+
+ParamIndiv : id colon Type ;
+
+MoreParam : comma ParamIndiv MoreParam | empty ;
+
+VarsOpt : Vars | empty ;
+
+Body : lbrace StateDeclare rbrace ;
+
+StateDeclare : Statement StateDeclare | empty ;
+
+/* StateLoop : StateDeclare | empty ; */
+
+Statement : Assign 
+          | Condition 
+          | Cycle 
+          | FuncCall 
+          | Print ;
+
+Assign : id assign Expresion semicolon ;
+
+Condition : if lparen Expresion rparen Body ElseBody semicolon ;
+
+ElseBody : else Body | empty ;
+
+Cycle : while lparen Expresion rparen do Body semicolon ;
+
+FuncCall : id lparen ArgList rparen semicolon ;
+
+ArgList : Expresion MoreCall | empty ;
+
+MoreCall : comma Expresion MoreCall | empty ;
+
+Print : print lparen PrintList rparen semicolon ;
+
+PrintList : PrintItem MorePrint ;
+
+PrintItem : Expresion 
+          | cte_string ;
+
+MorePrint : comma PrintItem MorePrint | empty ;
+
+Expresion : Exp MoreExpresion ;
+
+MoreExpresion : Exp1 | Exp2 | Exp3 | empty ;
+
+Exp1 : greater Exp ;
+
+Exp2 : less Exp ;
+
+Exp3 : notequal Exp ;
+
+Exp : Termino MoreExp ;
+
+MoreExp : plus Termino MoreExp
+        | minus Termino MoreExp
+        | empty ;
+
+Termino : Factor MoreTermino ;
+
+MoreTermino : times Factor MoreTermino
+            | divide Factor MoreTermino
+            | empty ;
+
+Factor : lparen Expresion rparen 
+       | Op NextOp ;
+
+Op : plus | minus | empty ;
+
+NextOp : id | Cte ;
+
+Cte : cte_int | cte_float ;
