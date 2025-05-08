@@ -2,7 +2,7 @@
 
 package parser
 
-const numNTSymbols = 28
+const numNTSymbols = 26
 
 type (
 	gotoTable [numStates]gotoRow
@@ -13,15 +13,15 @@ var gotoTab = gotoTable{
 	gotoRow{ // S0
 		-1, // S'
 		1,  // Start
-		-1, // Program_Create
 		2,  // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -37,21 +37,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S1
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -67,21 +65,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S2
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -97,21 +93,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S3
 		-1, // S'
 		-1, // Start
-		4,  // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -127,21 +121,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S4
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -157,21 +149,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S5
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		6,  // Program_vars
+		-1, // FuncLoop
+		7,  // Vars
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -187,21 +177,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S6
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		8,  // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		7,  // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
+		-1, // Program_vars
+		9,  // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		11, // Type
+		15, // Register_Func
+		10, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -217,21 +205,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		9,  // Funcs
 	},
 	gotoRow{ // S7
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		12, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -247,21 +233,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		9,  // Funcs
 	},
 	gotoRow{ // S8
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		17, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -277,21 +261,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S9
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		14, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -307,21 +289,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		9,  // Funcs
 	},
 	gotoRow{ // S10
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		16, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		19, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
+		-1, // VarList
+		11, // Type
+		15, // Register_Func
+		10, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -337,21 +317,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S11
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -367,21 +345,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		18, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S12
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -397,22 +373,20 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S13
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
-		20, // Body
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
 		-1, // Print
@@ -427,21 +401,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S14
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -457,21 +429,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S15
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -487,21 +457,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S16
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		22, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -517,21 +485,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S17
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -547,22 +513,20 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S18
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
-		-1, // Body
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		24, // Body
 		-1, // Body_PR
 		-1, // Statement
 		-1, // Print
@@ -577,22 +541,20 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S19
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
-		25, // Body
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
 		-1, // Print
@@ -607,21 +569,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S20
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -637,51 +597,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S21
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		27, // ParamList
 		-1, // Body
-		28, // Body_PR
-		29, // Statement
-		34, // Print
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
 		-1, // Print_PR
-		30, // Assign
-		32, // Cycle
-		31, // Condition
-		33, // F_call
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
 		-1, // F_call_PR
 		-1, // Cte
 		-1, // Expr
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S22
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		29, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -697,21 +653,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S23
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		39, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
+		-1, // VarList
+		30, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -727,21 +681,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S24
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -757,51 +709,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S25
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
+		36, // Body_PR
+		37, // Statement
+		42, // Print
 		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
+		38, // Assign
+		40, // Cycle
+		39, // Condition
+		41, // F_call
 		-1, // F_call_PR
 		-1, // Cte
 		-1, // Expr
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S26
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -817,21 +765,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S27
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -847,21 +793,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S28
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -877,51 +821,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S29
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
-		45, // Body_PR
-		29, // Statement
-		34, // Print
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
 		-1, // Print_PR
-		30, // Assign
-		32, // Cycle
-		31, // Condition
-		33, // F_call
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
 		-1, // F_call_PR
 		-1, // Cte
 		-1, // Expr
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S30
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -937,21 +877,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S31
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -967,21 +905,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S32
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -997,21 +933,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S33
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1027,21 +961,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S34
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1057,21 +989,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S35
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1087,21 +1017,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S36
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1117,51 +1045,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S37
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
+		53, // Body_PR
+		37, // Statement
+		42, // Print
 		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
+		38, // Assign
+		40, // Cycle
+		39, // Condition
+		41, // F_call
 		-1, // F_call_PR
 		-1, // Cte
 		-1, // Expr
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S38
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		49, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		50, // Type
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1177,21 +1101,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S39
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		53, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1207,21 +1129,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S40
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1237,21 +1157,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S41
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1267,21 +1185,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S42
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1292,26 +1208,220 @@ var gotoTab = gotoTable{
 		-1, // Condition
 		-1, // F_call
 		-1, // F_call_PR
-		59, // Cte
-		57, // Expr
-		62, // Exp
-		63, // Term
-		66, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S43
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S44
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S45
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S46
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		57, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S47
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S48
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		63, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		62, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S49
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S50
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1327,231 +1437,19 @@ var gotoTab = gotoTable{
 		73, // Exp
 		74, // Term
 		77, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S44
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S45
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S46
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		59, // Cte
-		78, // Expr
-		62, // Exp
-		63, // Term
-		66, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S47
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		83, // Cte
-		82, // Expr
-		86, // Exp
-		87, // Term
-		90, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S48
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		83, // Cte
-		91, // Expr
-		86, // Exp
-		87, // Term
-		90, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S49
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S50
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S51
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1562,26 +1460,24 @@ var gotoTab = gotoTable{
 		-1, // Condition
 		-1, // F_call
 		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		81, // Cte
+		80, // Expr
+		84, // Exp
+		85, // Term
+		88, // Fact
 	},
 	gotoRow{ // S52
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1597,21 +1493,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S53
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1627,22 +1521,20 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S54
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		93, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
 		-1, // Type
-		94, // Body
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
 		-1, // Print
@@ -1652,86 +1544,80 @@ var gotoTab = gotoTable{
 		-1, // Condition
 		-1, // F_call
 		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		70, // Cte
+		89, // Expr
+		73, // Exp
+		74, // Term
+		77, // Fact
 	},
 	gotoRow{ // S55
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		94,  // Cte
+		93,  // Expr
+		97,  // Exp
+		98,  // Term
+		101, // Fact
 	},
 	gotoRow{ // S56
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		83, // Cte
-		97, // Expr
-		86, // Exp
-		87, // Term
-		90, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		94,  // Cte
+		102, // Expr
+		97,  // Exp
+		98,  // Term
+		101, // Fact
 	},
 	gotoRow{ // S57
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1741,27 +1627,25 @@ var gotoTab = gotoTable{
 		-1, // Cycle
 		-1, // Condition
 		-1, // F_call
-		99, // F_call_PR
+		-1, // F_call_PR
 		-1, // Cte
 		-1, // Expr
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S58
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1777,21 +1661,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S59
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1807,21 +1689,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S60
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1837,51 +1717,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S61
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		105, // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		104, // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		-1,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S62
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -1897,51 +1773,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S63
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		107, // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		-1,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S64
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		108, // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -1952,56 +1824,52 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		107, // Cte
+		-1,  // Cte
 		-1,  // Expr
 		-1,  // Exp
 		-1,  // Term
 		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S65
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
+		109, // Body_PR
+		37,  // Statement
+		42,  // Print
 		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
+		38,  // Assign
+		40,  // Cycle
+		39,  // Condition
+		41,  // F_call
 		-1,  // F_call_PR
-		109, // Cte
+		-1,  // Cte
 		-1,  // Expr
 		-1,  // Exp
 		-1,  // Term
 		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S66
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2017,51 +1885,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S67
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S68
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -2072,26 +1908,24 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		83,  // Cte
-		112, // Expr
-		86,  // Exp
-		87,  // Term
-		90,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		94,  // Cte
+		110, // Expr
+		97,  // Exp
+		98,  // Term
+		101, // Fact
 	},
-	gotoRow{ // S69
+	gotoRow{ // S68
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2107,21 +1941,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+	},
+	gotoRow{ // S69
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		113, // F_call_PR
+		-1,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S70
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2137,21 +1997,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S71
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2167,21 +2025,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S72
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2197,21 +2053,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S73
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2227,21 +2081,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S74
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2257,21 +2109,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S75
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -2287,21 +2137,19 @@ var gotoTab = gotoTable{
 		-1,  // Exp
 		-1,  // Term
 		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S76
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -2317,21 +2165,19 @@ var gotoTab = gotoTable{
 		-1,  // Exp
 		-1,  // Term
 		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S77
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2347,81 +2193,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S78
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		126, // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S79
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
 		-1,  // Print
-		127, // Print_PR
+		-1,  // Print_PR
 		-1,  // Assign
 		-1,  // Cycle
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		94,  // Cte
+		125, // Expr
+		97,  // Exp
+		98,  // Term
+		101, // Fact
 	},
 	gotoRow{ // S80
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2437,51 +2277,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S81
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		83,  // Cte
-		128, // Expr
-		86,  // Exp
-		87,  // Term
-		90,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S82
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2497,21 +2333,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S83
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2527,21 +2361,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S84
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2557,21 +2389,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S85
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2587,81 +2417,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S86
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S87
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S88
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -2672,86 +2440,136 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		136, // Cte
+		133, // Cte
 		-1,  // Expr
 		-1,  // Exp
 		-1,  // Term
 		-1,  // Fact
-		-1,  // Func_Create
+	},
+	gotoRow{ // S87
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
 		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		135, // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
+	},
+	gotoRow{ // S88
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S89
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
 		-1,  // Print
-		-1,  // Print_PR
+		139, // Print_PR
 		-1,  // Assign
 		-1,  // Cycle
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		138, // Cte
+		-1,  // Cte
 		-1,  // Expr
 		-1,  // Exp
 		-1,  // Term
 		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S90
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		140, // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		-1,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S91
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2767,21 +2585,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S92
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		142, // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		143, // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -2792,56 +2608,52 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		94,  // Cte
+		141, // Expr
+		97,  // Exp
+		98,  // Term
+		101, // Fact
 	},
 	gotoRow{ // S93
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		144, // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S94
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2857,81 +2669,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S95
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		146, // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S96
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		147, // Body_PR
-		29,  // Statement
-		34,  // Print
-		-1,  // Print_PR
-		30,  // Assign
-		32,  // Cycle
-		31,  // Condition
-		33,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S97
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -2947,81 +2753,103 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S98
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		59,  // Cte
-		149, // Expr
-		62,  // Exp
-		63,  // Term
-		66,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S99
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		149, // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S100
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		151, // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
+	},
+	gotoRow{ // S101
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -3037,81 +2865,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S101
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		153, // Cte
-		-1,  // Expr
-		156, // Exp
-		157, // Term
-		160, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S102
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		153, // Cte
-		-1,  // Expr
-		161, // Exp
-		157, // Term
-		160, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S103
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		155, // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -3122,57 +2916,53 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		153, // Cte
+		-1,  // Cte
 		-1,  // Expr
-		162, // Exp
-		157, // Term
-		160, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S104
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		59,  // Cte
-		-1,  // Expr
-		163, // Exp
-		63,  // Term
-		66,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S105
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
-		-1,  // Body
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		157, // Body
 		-1,  // Body_PR
 		-1,  // Statement
 		-1,  // Print
@@ -3182,26 +2972,24 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		59,  // Cte
+		-1,  // Cte
 		-1,  // Expr
-		164, // Exp
-		63,  // Term
-		66,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S106
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -3217,21 +3005,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S107
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -3247,21 +3033,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S108
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -3277,21 +3061,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S109
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -3307,81 +3089,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S110
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		59,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		165, // Term
-		66,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
-	},
-	gotoRow{ // S111
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		59,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		166, // Term
-		66,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
-	},
-	gotoRow{ // S112
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -3397,21 +3117,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
+	},
+	gotoRow{ // S111
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
 		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S112
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		70,  // Cte
+		163, // Expr
+		73,  // Exp
+		74,  // Term
+		77,  // Fact
 	},
 	gotoRow{ // S113
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -3427,21 +3201,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S114
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -3452,26 +3224,24 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		170, // Cte
+		167, // Cte
 		-1,  // Expr
-		173, // Exp
-		174, // Term
-		177, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		170, // Exp
+		171, // Term
+		174, // Fact
 	},
 	gotoRow{ // S115
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -3482,26 +3252,24 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		170, // Cte
+		167, // Cte
 		-1,  // Expr
-		178, // Exp
-		174, // Term
-		177, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		175, // Exp
+		171, // Term
+		174, // Fact
 	},
 	gotoRow{ // S116
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -3512,26 +3280,24 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		170, // Cte
+		167, // Cte
 		-1,  // Expr
-		179, // Exp
-		174, // Term
-		177, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		176, // Exp
+		171, // Term
+		174, // Fact
 	},
 	gotoRow{ // S117
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -3544,24 +3310,22 @@ var gotoTab = gotoTable{
 		-1,  // F_call_PR
 		70,  // Cte
 		-1,  // Expr
-		180, // Exp
+		177, // Exp
 		74,  // Term
 		77,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S118
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -3574,24 +3338,22 @@ var gotoTab = gotoTable{
 		-1,  // F_call_PR
 		70,  // Cte
 		-1,  // Expr
-		181, // Exp
+		178, // Exp
 		74,  // Term
 		77,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S119
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -3607,21 +3369,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S120
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -3637,21 +3397,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S121
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -3667,21 +3425,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S122
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -3697,21 +3453,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S123
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -3725,23 +3479,21 @@ var gotoTab = gotoTable{
 		70,  // Cte
 		-1,  // Expr
 		-1,  // Exp
-		182, // Term
+		179, // Term
 		77,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S124
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -3755,53 +3507,49 @@ var gotoTab = gotoTable{
 		70,  // Cte
 		-1,  // Expr
 		-1,  // Exp
-		183, // Term
+		180, // Term
 		77,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S125
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		59,  // Cte
-		184, // Expr
-		62,  // Exp
-		63,  // Term
-		66,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S126
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -3817,111 +3565,103 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S127
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		184, // Cte
+		-1,  // Expr
+		187, // Exp
+		188, // Term
+		191, // Fact
 	},
 	gotoRow{ // S128
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		184, // Cte
+		-1,  // Expr
+		192, // Exp
+		188, // Term
+		191, // Fact
 	},
 	gotoRow{ // S129
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		184, // Cte
+		-1,  // Expr
+		193, // Exp
+		188, // Term
+		191, // Fact
 	},
 	gotoRow{ // S130
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -3932,26 +3672,24 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		192, // Cte
+		81,  // Cte
 		-1,  // Expr
-		195, // Exp
-		196, // Term
-		199, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		194, // Exp
+		85,  // Term
+		88,  // Fact
 	},
 	gotoRow{ // S131
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -3962,116 +3700,108 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		192, // Cte
+		81,  // Cte
 		-1,  // Expr
-		200, // Exp
-		196, // Term
-		199, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		195, // Exp
+		85,  // Term
+		88,  // Fact
 	},
 	gotoRow{ // S132
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		192, // Cte
-		-1,  // Expr
-		201, // Exp
-		196, // Term
-		199, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S133
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		83,  // Cte
-		-1,  // Expr
-		202, // Exp
-		87,  // Term
-		90,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S134
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		83,  // Cte
-		-1,  // Expr
-		203, // Exp
-		87,  // Term
-		90,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S135
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -4087,201 +3817,215 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S136
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		81,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		196, // Term
+		88,  // Fact
 	},
 	gotoRow{ // S137
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		81,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		197, // Term
+		88,  // Fact
 	},
 	gotoRow{ // S138
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		70,  // Cte
+		198, // Expr
+		73,  // Exp
+		74,  // Term
+		77,  // Fact
 	},
 	gotoRow{ // S139
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		83,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		204, // Term
-		90,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S140
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		83,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		205, // Term
-		90,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S141
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		206, // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S142
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S143
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		208, // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -4292,116 +4036,80 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		-1,  // Cte
+		206, // Cte
 		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
-	},
-	gotoRow{ // S143
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		209, // Exp
+		210, // Term
+		213, // Fact
 	},
 	gotoRow{ // S144
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		206, // Cte
+		-1,  // Expr
+		214, // Exp
+		210, // Term
+		213, // Fact
 	},
 	gotoRow{ // S145
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		206, // Cte
+		-1,  // Expr
+		215, // Exp
+		210, // Term
+		213, // Fact
 	},
 	gotoRow{ // S146
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		211, // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -4412,56 +4120,52 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		-1,  // Cte
+		94,  // Cte
 		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		216, // Exp
+		98,  // Term
+		101, // Fact
 	},
 	gotoRow{ // S147
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		94,  // Cte
+		-1,  // Expr
+		217, // Exp
+		98,  // Term
+		101, // Fact
 	},
 	gotoRow{ // S148
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -4477,51 +4181,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S149
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		213, // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S150
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -4537,21 +4237,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S151
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -4567,21 +4265,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S152
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -4592,86 +4288,80 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		83,  // Cte
-		215, // Expr
-		86,  // Exp
-		87,  // Term
-		90,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		94,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		218, // Term
+		101, // Fact
 	},
 	gotoRow{ // S153
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		94,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		219, // Term
+		101, // Fact
 	},
 	gotoRow{ // S154
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		220, // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		-1,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S155
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -4687,21 +4377,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S156
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -4717,21 +4405,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S157
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -4747,81 +4433,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S158
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		219, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
-	},
-	gotoRow{ // S159
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		221, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
-	},
-	gotoRow{ // S160
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -4837,21 +4461,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
+	},
+	gotoRow{ // S159
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
 		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S160
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		225, // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		-1,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S161
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -4867,21 +4545,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S162
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -4897,51 +4573,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S163
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		226, // F_call_PR
+		-1,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S164
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -4957,21 +4629,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S165
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -4987,51 +4657,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S166
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		94,  // Cte
+		228, // Expr
+		97,  // Exp
+		98,  // Term
+		101, // Fact
 	},
 	gotoRow{ // S167
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5047,21 +4713,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S168
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5077,51 +4741,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S169
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		83,  // Cte
-		224, // Expr
-		86,  // Exp
-		87,  // Term
-		90,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S170
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5137,21 +4797,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S171
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5167,81 +4825,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S172
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		232, // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S173
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		234, // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S174
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5257,81 +4909,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S175
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		228, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S176
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		230, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S177
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5347,21 +4993,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S178
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5377,21 +5021,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S179
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5407,21 +5049,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S180
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5437,21 +5077,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S181
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5467,21 +5105,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S182
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5497,21 +5133,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S183
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		94,  // Cte
+		237, // Expr
+		97,  // Exp
+		98,  // Term
+		101, // Fact
+	},
+	gotoRow{ // S184
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5527,81 +5189,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S184
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		233, // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S185
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		234, // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S186
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5617,21 +5245,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S187
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5647,21 +5273,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S188
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -5677,81 +5301,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S189
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
-		237, // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
+		-1,  // Register_Func
 		-1,  // Funcs
-	},
-	gotoRow{ // S190
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S191
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -5762,176 +5324,24 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		83,  // Cte
-		239, // Expr
-		86,  // Exp
-		87,  // Term
-		90,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		241, // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
-	gotoRow{ // S192
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S193
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S194
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S195
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S196
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S197
+	gotoRow{ // S190
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -5947,81 +5357,271 @@ var gotoTab = gotoTable{
 		-1,  // Exp
 		-1,  // Term
 		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+	},
+	gotoRow{ // S191
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S192
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S193
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S194
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S195
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S196
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
+	},
+	gotoRow{ // S197
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S198
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
 		-1,  // Print
-		-1,  // Print_PR
+		246, // Print_PR
 		-1,  // Assign
 		-1,  // Cycle
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		245, // Cte
+		-1,  // Cte
 		-1,  // Expr
 		-1,  // Exp
 		-1,  // Term
 		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S199
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		247, // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		-1,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S200
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6037,21 +5637,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S201
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6067,21 +5665,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S202
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6097,51 +5693,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S203
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		250, // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		-1,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S204
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6157,51 +5749,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S205
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		94,  // Cte
+		252, // Expr
+		97,  // Exp
+		98,  // Term
+		101, // Fact
 	},
 	gotoRow{ // S206
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6217,51 +5805,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S207
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		250, // Body_PR
-		29,  // Statement
-		34,  // Print
-		-1,  // Print_PR
-		30,  // Assign
-		32,  // Cycle
-		31,  // Condition
-		33,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S208
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6277,21 +5861,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S209
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6307,21 +5889,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S210
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6337,81 +5917,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S211
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		256, // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S212
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		258, // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S213
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6427,21 +6001,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S214
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6457,21 +6029,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S215
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6487,81 +6057,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S216
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		153, // Cte
-		-1,  // Expr
-		255, // Exp
-		157, // Term
-		160, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S217
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		153, // Cte
-		-1,  // Expr
-		256, // Exp
-		157, // Term
-		160, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S218
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6577,21 +6141,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S219
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6607,21 +6169,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S220
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6637,21 +6197,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S221
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		263, // Body_PR
+		37,  // Statement
+		42,  // Print
+		-1,  // Print_PR
+		38,  // Assign
+		40,  // Cycle
+		39,  // Condition
+		41,  // F_call
+		-1,  // F_call_PR
+		-1,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
+	},
+	gotoRow{ // S222
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6667,81 +6253,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S222
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		153, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		257, // Term
-		160, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S223
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		153, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		258, // Term
-		160, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S224
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6757,81 +6309,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S225
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		170, // Cte
-		-1,  // Expr
-		260, // Exp
-		174, // Term
-		177, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S226
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		170, // Cte
-		-1,  // Expr
-		261, // Exp
-		174, // Term
-		177, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S227
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6847,21 +6393,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S228
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6877,51 +6421,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S229
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		167, // Cte
+		-1,  // Expr
+		267, // Exp
+		171, // Term
+		174, // Fact
 	},
 	gotoRow{ // S230
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		167, // Cte
+		-1,  // Expr
+		268, // Exp
+		171, // Term
+		174, // Fact
+	},
+	gotoRow{ // S231
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -6937,81 +6505,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S231
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		170, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		262, // Term
-		177, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S232
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		170, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		263, // Term
-		177, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S233
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7027,21 +6561,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S234
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7057,81 +6589,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S235
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		167, // Cte
+		-1,  // Expr
+		-1,  // Exp
+		269, // Term
+		174, // Fact
 	},
 	gotoRow{ // S236
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		167, // Cte
+		-1,  // Expr
+		-1,  // Exp
+		270, // Term
+		174, // Fact
 	},
 	gotoRow{ // S237
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7147,51 +6673,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S238
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
+		-1,  // VarList
 		-1,  // Type
-		-1,  // Body
-		265, // Body_PR
-		29,  // Statement
-		34,  // Print
-		-1,  // Print_PR
-		30,  // Assign
-		32,  // Cycle
-		31,  // Condition
-		33,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
+		-1,  // Register_Func
 		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		184, // Cte
+		-1,  // Expr
+		272, // Exp
+		188, // Term
+		191, // Fact
 	},
 	gotoRow{ // S239
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		184, // Cte
+		-1,  // Expr
+		273, // Exp
+		188, // Term
+		191, // Fact
+	},
+	gotoRow{ // S240
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7207,81 +6757,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S240
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		192, // Cte
-		-1,  // Expr
-		267, // Exp
-		196, // Term
-		199, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S241
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		192, // Cte
-		-1,  // Expr
-		268, // Exp
-		196, // Term
-		199, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S242
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7297,21 +6813,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S243
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7327,51 +6841,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S244
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		184, // Cte
+		-1,  // Expr
+		-1,  // Exp
+		274, // Term
+		191, // Fact
 	},
 	gotoRow{ // S245
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		184, // Cte
+		-1,  // Expr
+		-1,  // Exp
+		275, // Term
+		191, // Fact
+	},
+	gotoRow{ // S246
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7387,81 +6925,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
-	},
-	gotoRow{ // S246
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		192, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		269, // Term
-		199, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S247
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		192, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		270, // Term
-		199, // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S248
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7477,51 +6981,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S249
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		271, // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S250
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7537,51 +7037,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S251
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		273, // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		50,  // Type
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
+		277, // Body_PR
+		37,  // Statement
+		42,  // Print
 		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
+		38,  // Assign
+		40,  // Cycle
+		39,  // Condition
+		41,  // F_call
 		-1,  // F_call_PR
 		-1,  // Cte
 		-1,  // Expr
 		-1,  // Exp
 		-1,  // Term
 		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
 	},
 	gotoRow{ // S252
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7597,21 +7093,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S253
 		-1,  // S'
 		-1,  // Start
-		-1,  // Program_Create
 		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		274, // Declare_Vars
+		-1,  // Program_vars
+		-1,  // FuncLoop
 		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		50,  // Type
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
 		-1,  // Body
 		-1,  // Body_PR
 		-1,  // Statement
@@ -7622,56 +7116,52 @@ var gotoTab = gotoTable{
 		-1,  // Condition
 		-1,  // F_call
 		-1,  // F_call_PR
-		-1,  // Cte
+		206, // Cte
 		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		279, // Exp
+		210, // Term
+		213, // Fact
 	},
 	gotoRow{ // S254
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		206, // Cte
+		-1,  // Expr
+		280, // Exp
+		210, // Term
+		213, // Fact
 	},
 	gotoRow{ // S255
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7687,21 +7177,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S256
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7717,21 +7205,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S257
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7747,21 +7233,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S258
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7777,81 +7261,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S259
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		206, // Cte
+		-1,  // Expr
+		-1,  // Exp
+		281, // Term
+		213, // Fact
 	},
 	gotoRow{ // S260
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		-1,  // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		206, // Cte
+		-1,  // Expr
+		-1,  // Exp
+		282, // Term
+		213, // Fact
 	},
 	gotoRow{ // S261
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7867,51 +7345,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S262
-		-1, // S'
-		-1, // Start
-		-1, // Program_Create
-		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
-		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
-		-1, // Type
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
+		-1,  // S'
+		-1,  // Start
+		-1,  // Programa
+		-1,  // Program_vars
+		-1,  // FuncLoop
+		-1,  // Vars
+		-1,  // VarList
+		-1,  // Type
+		-1,  // Register_Func
+		-1,  // Funcs
+		-1,  // ParamList
+		283, // Body
+		-1,  // Body_PR
+		-1,  // Statement
+		-1,  // Print
+		-1,  // Print_PR
+		-1,  // Assign
+		-1,  // Cycle
+		-1,  // Condition
+		-1,  // F_call
+		-1,  // F_call_PR
+		-1,  // Cte
+		-1,  // Expr
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Fact
 	},
 	gotoRow{ // S263
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7927,21 +7401,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S264
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7957,21 +7429,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S265
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -7987,21 +7457,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S266
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8017,21 +7485,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S267
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8047,21 +7513,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S268
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8077,21 +7541,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S269
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8107,21 +7569,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S270
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8137,21 +7597,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S271
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8167,21 +7625,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S272
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8197,21 +7653,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S273
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8227,21 +7681,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S274
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8257,21 +7709,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S275
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8287,21 +7737,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S276
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8317,81 +7765,75 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S277
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		142, // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		279, // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S278
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		280, // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		281, // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S279
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8407,51 +7849,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S280
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		282, // Vars_PR
-		-1,  // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S281
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8467,21 +7905,19 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S282
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8497,51 +7933,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S283
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		-1,  // Enqueue_Vars
-		284, // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		-1,  // Vars_PR_PR
-		50,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S284
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8557,51 +7989,47 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 	gotoRow{ // S285
-		-1,  // S'
-		-1,  // Start
-		-1,  // Program_Create
-		-1,  // Programa
-		-1,  // Programa_PR
-		280, // Enqueue_Vars
-		-1,  // Declare_Vars
-		-1,  // Vars
-		-1,  // Vars_PR
-		286, // Vars_PR_PR
-		-1,  // Type
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-		-1,  // Func_Create
-		-1,  // Funcs
+		-1, // S'
+		-1, // Start
+		-1, // Programa
+		-1, // Program_vars
+		-1, // FuncLoop
+		-1, // Vars
+		-1, // VarList
+		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
+		-1, // Body
+		-1, // Body_PR
+		-1, // Statement
+		-1, // Print
+		-1, // Print_PR
+		-1, // Assign
+		-1, // Cycle
+		-1, // Condition
+		-1, // F_call
+		-1, // F_call_PR
+		-1, // Cte
+		-1, // Expr
+		-1, // Exp
+		-1, // Term
+		-1, // Fact
 	},
 	gotoRow{ // S286
 		-1, // S'
 		-1, // Start
-		-1, // Program_Create
 		-1, // Programa
-		-1, // Programa_PR
-		-1, // Enqueue_Vars
-		-1, // Declare_Vars
+		-1, // Program_vars
+		-1, // FuncLoop
 		-1, // Vars
-		-1, // Vars_PR
-		-1, // Vars_PR_PR
+		-1, // VarList
 		-1, // Type
+		-1, // Register_Func
+		-1, // Funcs
+		-1, // ParamList
 		-1, // Body
 		-1, // Body_PR
 		-1, // Statement
@@ -8617,7 +8045,5 @@ var gotoTab = gotoTable{
 		-1, // Exp
 		-1, // Term
 		-1, // Fact
-		-1, // Func_Create
-		-1, // Funcs
 	},
 }

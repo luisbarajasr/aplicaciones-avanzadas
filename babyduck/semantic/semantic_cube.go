@@ -1,4 +1,4 @@
-/ cubo semantico
+// cubo semantico
 // This file contains the semantic cube for BabyDuck, which defines the
 // valid operations and their resulting types for the BabyDuck programming language.
 package semantic

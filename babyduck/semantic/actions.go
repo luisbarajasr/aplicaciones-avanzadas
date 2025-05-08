@@ -34,7 +34,8 @@ func (functionDir *FunctionDirectory) RegisterGlobalVars(names []string, typ Typ
 
 // RegisterFunction registers a function in the directory
 func (functionDir *FunctionDirectory) RegisterFunction(name interface{}, ret Type, params []Type) (interface{}, error) {
-	err := functionDir.AddFunction(string(name.(*token.Token).Lit), ret)
+	functionName := string(name.(*token.Token).Lit)
+	err := functionDir.AddFunction(functionName, ret)
 	if err != nil {
 		return nil, err
 	}
@@ -91,4 +92,12 @@ func (functionDir *FunctionDirectory) ConcatOperator(term Type, op string, prev 
 		return term, nil
 	}
 	return CheckTypes(prev, term, Operator(op))
+}
+
+func (functionDir *FunctionDirectory) DeleteFuncDirectory() (interface{}, error) {
+	functionDir.Functions = make(map[string]*Function)
+	functionDir.GlobalVars = NewVariableTable()
+	functionDir.CurrentScope = functionDir.GlobalVars
+	functionDir.CurrentFunction = nil
+	return nil, nil
 }

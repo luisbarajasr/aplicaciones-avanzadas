@@ -16,8 +16,8 @@ else: 'e' 'l' 's' 'e';
 semicolon: ';';
 two_dots: ':';
 comma: ',';
-curly_open: '{';
-curly_close: '}';
+curly_open: '{' ;
+curly_close: '}' ;
 parenthesis_open: '(';
 parenthesis_close: ')';
 bracket_open: '[';
@@ -40,88 +40,92 @@ string : '"' {'a'-'z' | 'A'-'Z'} '"' ;
 !whitespace : ' ' | '\t' | '\n' | '\r' ;
 
 /* ----------------- Sintaxis ----------------- */
-<< import "babyduck/semantic" >>
+<< 
+import "babyduck/semantic"
+var functionDir = semantic.NewFunctionDirectory() 
+>>
 
-Start : Programa ;
+Start : Programa <<functionDir, nil>> ;
 
-Program_Create : id << semantic.CreateFunction($0, true) >>;
+Programa : program id semicolon Program_vars FuncLoop main Body end ;
 
-Programa : program Program_Create semicolon Vars Programa_PR main Body end
-| program Program_Create semicolon Programa_PR main Body end;
+Program_vars : Vars
+            | empty;
 
-Programa_PR : Funcs Programa_PR
-| empty;
+FuncLoop : Funcs FuncLoop
+            | empty ;
 
-Enqueue_Vars : id << semantic.AddVarToQueue($0) >> ;
+Vars : var VarList two_dots Type semicolon << functionDir.RegisterGlobalVars($1.([]string), $3.(semantic.Type)) >> ;
 
-Declare_Vars : Type << semantic.AddVarsToTable($0.(string)) >> ;
+VarList : id << functionDir.MakeVarList($0) >>
+        | id comma VarList << functionDir.ConcatVarList($0, $2.([]string)) >> ;
 
-Vars : var Enqueue_Vars Vars_PR two_dots Declare_Vars semicolon Vars_PR_PR ;
+Type : int_rw << semantic.Int, nil >>
+     | float_rw << semantic.Float, nil >>
+     | void << semantic.Void, nil >> ;
 
-Vars_PR : comma Enqueue_Vars Vars_PR
-| empty ;
+Register_Func : Type id << functionDir.RegisterFunction($1, $0.(semantic.Type), nil)>> ;
 
-Vars_PR_PR : Enqueue_Vars Vars_PR two_dots Declare_Vars semicolon Vars_PR_PR
-| empty ;
+Funcs : Register_Func parenthesis_open ParamList parenthesis_close bracket_open Vars Body bracket_close semicolon
+      | Register_Func parenthesis_open ParamList parenthesis_close bracket_open Body bracket_close semicolon 
+      | Register_Func parenthesis_open parenthesis_close bracket_open Vars Body bracket_close semicolon 
+      | Register_Func parenthesis_open parenthesis_close bracket_open Body bracket_close semicolon ;
 
-Type : int_rw << semantic.SetCurrentType("int") >> | float_rw << semantic.SetCurrentType("float") >> ;
+ParamList : id two_dots Type << functionDir.RegisterParam($0, $2.(semantic.Type)) >>
+          | id two_dots Type comma ParamList << functionDir.RegisterParam($0, $2.(semantic.Type)) >> ;
 
-Body : curly_open Body_PR curly_close;
+Body : curly_open Body_PR curly_close ;
 
 Body_PR : Statement Body_PR
-| empty ;
+        | empty ;
 
 Statement : Assign
-| Condition
-| Cycle
-| F_call
-| Print;
+          | Condition
+          | Cycle
+          | F_call
+          | Print ;
 
 Print : print parenthesis_open Expr Print_PR parenthesis_close semicolon
-| print parenthesis_open string Print_PR parenthesis_close semicolon;
+      | print parenthesis_open string Print_PR parenthesis_close semicolon ;
 
 Print_PR : comma Expr Print_PR
-| comma string Print_PR
-| empty ;
+         | comma string Print_PR
+         | empty ;
 
-Assign : id equal Expr semicolon << semantic.AssignVarValue($0, $2.(string)) >>;
 
-Cycle : while parenthesis_open Expr parenthesis_close do Body semicolon;
+Assign : id equal Expr semicolon << functionDir.ValidateAssign($0, $2.(semantic.Type)), nil >> ;
+
+Cycle : while parenthesis_open Expr parenthesis_close do Body semicolon ;
 
 Condition : if parenthesis_open Expr parenthesis_close Body semicolon
-| if parenthesis_open Expr parenthesis_close Body else Body semicolon;
+          | if parenthesis_open Expr parenthesis_close Body else Body semicolon ;
 
-F_call : id parenthesis_open parenthesis_close semicolon
-| id parenthesis_open Expr F_call_PR parenthesis_close semicolon;
+F_call : id parenthesis_open Expr F_call_PR parenthesis_close semicolon
+       | id parenthesis_open parenthesis_close semicolon ;
 
 F_call_PR : comma Expr F_call_PR
-| empty ;
+          | empty ;
 
-Cte : myint << "int" >>
-| myfloat << "float" >>;
+Cte : myint << semantic.Int, nil >>
+    | myfloat << semantic.Float, nil >> ;
 
 Expr : Exp
-| Exp greater_than Exp << semantic.BinaryExpression($0.(string), $1, $2.(string)) >>
-| Exp less_than Exp << semantic.BinaryExpression($0.(string), $1, $2.(string)) >>
-| Exp not_equal Exp << semantic.BinaryExpression($0.(string), $1, $2.(string)) >>;
+     | Exp greater_than Exp << functionDir.BinaryExpression($0.(semantic.Type), $1, $2.(semantic.Type)) >>
+     | Exp less_than Exp << functionDir.BinaryExpression($0.(semantic.Type), $1, $2.(semantic.Type)) >>
+     | Exp not_equal Exp << functionDir.BinaryExpression($0.(semantic.Type), $1, $2.(semantic.Type)) >> ;
 
 Exp : Term
-| Term plus Exp << semantic.BinaryExpression($0.(string), $1, $2.(string)) >>
-| Term minus Exp << semantic.BinaryExpression($0.(string), $1, $2.(string)) >>;
+    | Term plus Exp << functionDir.BinaryExpression($0.(semantic.Type), $1, $2.(semantic.Type)) >>
+    | Term minus Exp << functionDir.BinaryExpression($0.(semantic.Type), $1, $2.(semantic.Type)) >> ;
 
 Term : Fact
-| Fact mult Term << semantic.BinaryExpression($0.(string), $1, $2.(string)) >>
-| Fact div Term << semantic.BinaryExpression($0.(string), $1, $2.(string)) >>;
+     | Fact mult Term << functionDir.BinaryExpression($0.(semantic.Type), $1, $2.(semantic.Type)) >>
+     | Fact div Term << functionDir.BinaryExpression($0.(semantic.Type), $1, $2.(semantic.Type)) >> ;
 
-Fact : parenthesis_open Expr parenthesis_close << $1.(string) >>
-| Cte
-| id << semantic.GetVarValue($0) >>
-| plus id << semantic.GetVarValue($1) >>
-| minus id << semantic.GetVarValue($1) >>
-| plus Cte << $1.(string) >>
-| minus Cte << $1.(string) >>;
-
-Func_Create : id << semantic.CreateFunction($0, false) >>;
-
-Funcs : void Func_Create parenthesis_open parenthesis_close bracket_open Body bracket_close semicolon
-| void Func_Create parenthesis_open parenthesis_close bracket_open Vars Body bracket_close semicolon;
+Fact : parenthesis_open Expr parenthesis_close << $1.(semantic.Type), nil >>
+     | Cte << $0.(semantic.Type), nil>>
+     | id << functionDir.ResolveVarType($0) >>
+     | plus id << functionDir.ResolveVarType($1) >>
+     | minus id << functionDir.ResolveVarType($1) >>
+     | plus Cte << $1.(semantic.Type), nil >>
+     | minus Cte << $1.(semantic.Type), nil >> ;

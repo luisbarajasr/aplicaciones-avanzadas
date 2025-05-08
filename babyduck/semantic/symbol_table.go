@@ -15,6 +15,13 @@ func NewFunctionDirectory() *FunctionDirectory {
 	}
 }
 
+func (functionDir *FunctionDirectory) DeleteFunctionDirectory() {
+	functionDir.Functions = nil
+	functionDir.GlobalVars = nil
+	functionDir.CurrentScope = nil
+	functionDir.CurrentFunction = nil
+}
+
 // AddFunction agrega una nueva función al directorio de funciones global
 func (functionDir *FunctionDirectory) AddFunction(name string, returnType Type) error {
 	if value, exists := functionDir.Functions[name]; exists {
