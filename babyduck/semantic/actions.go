@@ -1,153 +1,94 @@
 package semantic
 
 import (
-    "babyduck/token"
-    "fmt"
+	"fmt"
+	"babyduck/token"
 )
 
-// CreateFunction adds a new function or program to ProgramFunctions
-func CreateFunction(name interface{}, isProgram bool) (interface{}, error) {
-    id := string(name.(*token.Token).Lit)
-    if _, ok := ProgramFunctions[id]; ok {
-        return nil, fmt.Errorf("function %s already exists at line %d, column %d",
-            id, name.(*token.Token).Line, name.(*token.Token).Column)
-    }
-    newFunc := Function{
-        Name: id,
-        Vars: make(map[string]Variable),
-    }
-    if isProgram {
-        GlobalProgramName = id
-    }
-    ProgramFunctions[id] = newFunc
-    CurrentModule = id
-    return nil, nil
+// ValidateAssign checks if an assignment is type-compatible
+func (functionDir *FunctionDirectory) ValidateAssign(name interface{}, exprType Type) error {
+	varName := string(name.(*token.Token).Lit)
+	varDecl, err := functionDir.LookupVariable(varName)
+	if err != nil {
+		return err
+	}
+	resultType, err := CheckTypes(varDecl.Type, exprType, Assign)
+	if err != nil {
+		return fmt.Errorf("type mismatch in assignment: %s (%s) cannot be assigned %s", varName, varDecl.Type, exprType)
+	}
+	if resultType == Void {
+		return fmt.Errorf("type mismatch in assignment: %s (%s) cannot be assigned %s", varName, varDecl.Type, exprType)
+	}
+	return nil
 }
 
-// AddVarToQueue queues a variable ID for later type assignment
-func AddVarToQueue(name interface{}) (interface{}, error) {
-    token, ok := name.(*token.Token)
-    if !ok {
-        return nil, fmt.Errorf("expected token, got %T", name)
-    }
-    id := string(token.Lit)
-    varsQueue.Enqueue(id)
-    if _, ok := ProgramFunctions[CurrentModule].Vars[id]; ok {
-        return nil, fmt.Errorf("variable %s already exists in module %s at line %d, column %d",
-            id, CurrentModule, token.Line, token.Column)
-    }
-    return nil, nil
+// RegisterGlobalVars adds multiple global variables of the same type
+func (functionDir *FunctionDirectory) RegisterGlobalVars(names []string, typ Type) (interface{}, error) {
+	for _, name := range names {
+		if err := functionDir.GlobalVars.AddVariable(name, typ); err != nil {
+			return nil, err
+		}
+	}
+	return nil, nil
 }
 
-// SetCurrentType sets the type for queued variables
-func SetCurrentType(varType string) (interface{}, error) {
-    if varType != "int" && varType != "float" {
-        return nil, fmt.Errorf("invalid type: %s", varType)
-    }
-    CurrentType = varType
-    return nil, nil
+// RegisterFunction registers a function in the directory
+func (functionDir *FunctionDirectory) RegisterFunction(name interface{}, ret Type, params []Type) (interface{}, error) {
+	err := functionDir.AddFunction(string(name.(*token.Token).Lit), ret)
+	if err != nil {
+		return nil, err
+	}
+	return nil, nil
 }
 
-// AddVarsToTable assigns types to queued variables
-func AddVarsToTable(varType string) (interface{}, error) {
-    if varsQueue.IsEmpty() {
-        return nil, fmt.Errorf("no variables queued for type %s", varType)
-    }
-    for !varsQueue.IsEmpty() {
-        id := varsQueue.Dequeue()
-        if _, ok := ProgramFunctions[CurrentModule].Vars[id]; ok {
-            return nil, fmt.Errorf("variable %s already exists in module %s", id, CurrentModule)
-        }
-        if CurrentModule != GlobalProgramName {
-            if _, ok := ProgramFunctions[GlobalProgramName].Vars[id]; ok {
-                return nil, fmt.Errorf("global variable %s already exists in program %s", id, GlobalProgramName)
-            }
-        }
-        newVar := Variable{
-            Id:   id,
-            Type: varType,
-        }
-        ProgramFunctions[CurrentModule].Vars[id] = newVar
-    }
-    return nil, nil
+// MakeVarList builds a slice with a single identifier
+func (functionDir *FunctionDirectory) MakeVarList(name interface{}) (interface{}, error) {
+	return []string{string(name.(*token.Token).Lit)}, nil
 }
 
-// AssignVarValue assigns a value to a variable with type checking
-func AssignVarValue(name interface{}, exprType interface{}) (interface{}, error) {
-    token, ok := name.(*token.Token)
-    if !ok {
-        return nil, fmt.Errorf("expected token, got %T", name)
-    }
-    id := string(token.Lit)
-    exprTypeStr, ok := exprType.(string)
-    if !ok {
-        return nil, fmt.Errorf("expected string expression type, got %T", exprType)
-    }
-    v, ok := lookupVariable(id)
-    if !ok {
-        return nil, fmt.Errorf("variable %s not defined at line %d, column %d",
-            id, token.Line, token.Column)
-    }
-    _, err := CheckTypes(v.Type, exprTypeStr, "=")
-    if err != nil {
-        return nil, fmt.Errorf("type mismatch at line %d, column %d: cannot assign %s to %s variable %s",
-            token.Line, token.Column, exprTypeStr, v.Type, id)
-    }
-    v.Value = "assigned"
-    ProgramFunctions[CurrentModule].Vars[id] = v
-    return nil, nil
+// ConcatVarList adds an identifier to the front of an existing list
+func (functionDir *FunctionDirectory) ConcatVarList(head interface{}, tail []string) (interface{}, error) {
+	return append([]string{string(head.(*token.Token).Lit)}, tail...), nil
 }
 
-// GetVarValue retrieves a variable's type for expression evaluation
-func GetVarValue(name interface{}) (interface{}, error) {
-    token, ok := name.(*token.Token)
-    if !ok {
-        return nil, fmt.Errorf("expected token, got %T", name)
-    }
-    id := string(token.Lit)
-    v, ok := lookupVariable(id)
-    if !ok {
-        return nil, fmt.Errorf("variable %s not defined at line %d, column %d",
-            id, token.Line, token.Column)
-    }
-    if v.Value != "assigned" {
-        return nil, fmt.Errorf("variable %s not assigned at line %d, column %d",
-            id, token.Line, token.Column)
-    }
-    return v.Type, nil
+// MakeParamList builds a slice of parameter types with a single element
+func (functionDir *FunctionDirectory) MakeParamList(param Type) (interface{}, error) {
+	return []Type{param}, nil
+}
+
+// ConcatParamList adds a parameter type to the front of an existing list
+func (functionDir *FunctionDirectory) ConcatParamList(head Type, tail []Type) (interface{}, error) {
+	return append([]Type{head}, tail...), nil
+}
+
+// RegisterParam adds a parameter to the active function
+func (functionDir *FunctionDirectory) RegisterParam(name interface{}, typ Type) (interface{}, error) {
+	if functionDir.CurrentFunction == nil {
+		return nil, fmt.Errorf("no active function to add parameter %s", string(name.(*token.Token).Lit))
+	}
+	return nil, functionDir.AddParam(functionDir.CurrentFunction.Name, string(name.(*token.Token).Lit), typ)
+}
+
+// ResolveVarType looks up a variable's type in the current scope
+func (functionDir *FunctionDirectory) ResolveVarType(name interface{}) (interface{}, error) {
+	varName := string(name.(*token.Token).Lit)
+	varDecl, err := functionDir.LookupVariable(varName)
+	if err != nil {
+		return nil, err
+	}
+	return varDecl.Type, nil
 }
 
 // BinaryExpression computes the type of a binary expression
-func BinaryExpression(leftType, op, rightType interface{}) (interface{}, error) {
-    leftTypeStr, ok := leftType.(string)
-    if !ok {
-        return nil, fmt.Errorf("expected string left type, got %T", leftType)
-    }
-    rightTypeStr, ok := rightType.(string)
-    if !ok {
-        return nil, fmt.Errorf("expected string right type, got %T", rightType)
-    }
-    opToken, ok := op.(*token.Token)
-    if !ok {
-        return nil, fmt.Errorf("expected token for operator, got %T", op)
-    }
-    opStr := string(opToken.Lit)
-    resultType, err := CheckTypes(leftTypeStr, rightTypeStr, opStr)
-    if err != nil {
-        return nil, fmt.Errorf("%s at line %d, column %d", err.Error(), opToken.Line, opToken.Column)
-    }
-    return resultType, nil
+func (functionDir *FunctionDirectory) BinaryExpression(left Type, op interface{}, right Type) (interface{}, error) {
+	opStr := string(op.(*token.Token).Lit)
+	return CheckTypes(left, right, Operator(opStr))
 }
 
-// lookupVariable checks for a variable in the current or global scope
-func lookupVariable(id string) (Variable, bool) {
-    if v, ok := ProgramFunctions[CurrentModule].Vars[id]; ok {
-        return v, true
-    }
-    if CurrentModule != GlobalProgramName {
-        if v, ok := ProgramFunctions[GlobalProgramName].Vars[id]; ok {
-            return v, true
-        }
-    }
-    return Variable{}, false
+// ConcatOperator handles operator precedence for MoreExp and MoreTerm
+func (functionDir *FunctionDirectory) ConcatOperator(term Type, op string, prev Type) (interface{}, error) {
+	if prev == "" {
+		return term, nil
+	}
+	return CheckTypes(prev, term, Operator(op))
 }
