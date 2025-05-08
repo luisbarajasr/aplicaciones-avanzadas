@@ -6,9 +6,8 @@ import (
 	"testing"
 )
 
-// testData maps input programs to a boolean indicating whether parsing should succeed.
 var testData = map[string]bool{
-	// Test case 1: testing empty program
+	// caso 1 : funcion doble declarada
 	`program demoEight;
 
 		var x, y, z : int;
@@ -32,28 +31,74 @@ var testData = map[string]bool{
 		}
 
 		end`: false,
-	// Test case 2: testing variable declaration and assignment
-	// "program p; var x: int; main { x = 5.2; } end": true,
-	// // // Test case 3: testing float
-	// "program p; var y: float; main { y = 3.14; } end": true,
-	// // // Test case 4: testing if
-	// "program p; var z: int; main { if (z < 10) { z = 2 + 1; }; } end": true,
-	// // // Test case 6: testing print
-	// "program p; var nueva: int; main { nueva = 5; print(nueva); } end": true,
-	// // Test case 8: testing while
-	// `program p; var r: int; main 
-	// { while (r < 10) do { r = r + 1; }; } 
-	// end`: true,
-	// // Test case 9: missing semicolon after identifier
-	// "program p main { } end": false,
-	// // Test case 10: missing 'end'
-	// "program p; main { }": false,
-	// // Test case 11: missing semicolon after assignment
-	// "program p; var e: int; main { e = 5 } end": false,
-	// // Test case 13: testing function declaration
-	// "program p; var m: int; void f(a: int) [{ m = a + 2; }]; main { } end": true,
-	// // Test case 12: extra text after 'end'
-	// "program p; var z: int; main { z = 5; } end extra": false,
+	// caso 2 : variable no declarada
+    `program demoNine;
+
+        var x, y, z : int;
+
+        main {
+            print(a);
+        }
+
+    end`: false,
+	// caso 3: variable no declarada
+    `program demoTen;
+
+    var t, u, i : int;
+
+    main {
+        print(t);
+    }
+    end`: false,
+	// caso 4: re-declaracion de variable global
+	`program demoSeven;
+
+		var x, y, z : int;
+
+		void anotherFunction(a : int, b : float) [
+			var x : int;
+
+			{
+				d = a + b;
+				print(d);
+			}
+		];
+
+		main {
+			print(x);
+		}
+
+		end`: false,
+	// caso 5: variable no declarada
+	`program demoSix;
+
+		var x, y, z : int;
+
+		void anotherFunction(a : int, b : float) [
+			var nueva : int;
+
+			{
+				nose = 1 + 2;
+				print(nose);
+			}
+		];
+
+		main {
+			x = 1;
+			anotherFunction(1, 2.0);
+		}
+
+		end`: false,
+	// caso 6: token no registrado
+    `program demoFive;
+
+    var  x, y, z : string;
+
+    main {
+        print(1 + 2);
+    }`: false,
+	// caso 7: variable no declarada
+	"program p main { } end": false,
 }
 
 func TestParse(t *testing.T) {
@@ -62,8 +107,6 @@ func TestParse(t *testing.T) {
 		// Log the test input and output
         t.Logf("\n")
 		t.Logf("=== Parsing Test #%d", i)
-        t.Logf("Input:\n%s", input)
-        t.Logf("\n")
 		l := lexer.NewLexer([]byte(input))
 		p := parser.NewParser()
 		_, err := p.Parse(l)

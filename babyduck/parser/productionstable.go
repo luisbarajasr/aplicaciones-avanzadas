@@ -311,7 +311,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Print : print parenthesis_open string Print_PR parenthesis_close semicolon	<<  >>`,
+		String: `Print : print parenthesis_open cte_string Print_PR parenthesis_close semicolon	<<  >>`,
 		Id:         "Print",
 		NTType:     14,
 		Index:      29,
@@ -331,7 +331,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Print_PR : comma string Print_PR	<<  >>`,
+		String: `Print_PR : comma cte_string Print_PR	<<  >>`,
 		Id:         "Print_PR",
 		NTType:     15,
 		Index:      31,

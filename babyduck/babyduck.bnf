@@ -32,10 +32,13 @@ mult: '*';
 div: '/';
 
 /* ----------------- Lexico - Constantes ----------------- */
+_letter : 'a'-'z' | 'A'-'Z' | '_' ; 
+_digit : '0'-'9' ;
+
 id : 'a'-'z' {'a'-'z'} { ('_' | 'A'-'Z') ('a'-'z' | 'A'-'Z' | '0'-'9') {'a'-'z' | 'A'-'Z' | '0'-'9'} } ;
 myint : '0'-'9' {'0'-'9'} ;
 myfloat : '0'-'9' {'0'-'9'} '.' '0'-'9' {'0'-'9'} ;
-string : '"' {'a'-'z' | 'A'-'Z'} '"' ;
+cte_string : '"' {_letter | ' ' | '!' | '?' }'"' ;
 
 !whitespace : ' ' | '\t' | '\n' | '\r' ;
 
@@ -59,7 +62,7 @@ Vars : var VarList two_dots Type semicolon << functionDir.RegisterGlobalVars($1.
 
 VarList : id << functionDir.MakeVarList($0) >>
         | id comma VarList << functionDir.ConcatVarList($0, $2.([]string)) >> ;
-
+        
 Type : int_rw << semantic.Int, nil >>
      | float_rw << semantic.Float, nil >>
      | void << semantic.Void, nil >> ;
@@ -86,10 +89,10 @@ Statement : Assign
           | Print ;
 
 Print : print parenthesis_open Expr Print_PR parenthesis_close semicolon
-      | print parenthesis_open string Print_PR parenthesis_close semicolon ;
+      | print parenthesis_open cte_string Print_PR parenthesis_close semicolon ;
 
 Print_PR : comma Expr Print_PR
-         | comma string Print_PR
+         | comma cte_string Print_PR
          | empty ;
 
 
