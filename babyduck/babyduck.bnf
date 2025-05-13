@@ -1,134 +1,145 @@
-/* ----------------- Lexico - Palabras reservadas ----------------- */
-program : 'p' 'r' 'o' 'g' 'r' 'a' 'm';
-main : 'm' 'a' 'i' 'n';
-var: 'v' 'a' 'r';
-end: 'e' 'n' 'd';
-int_rw: 'i' 'n' 't';
-float_rw: 'f' 'l' 'o' 'a' 't';
-void: 'v' 'o' 'i' 'd';
-while: 'w' 'h' 'i' 'l' 'e';
-do: 'd' 'o';
-print: 'p' 'r' 'i' 'n' 't';
-if: 'i' 'f';
-else: 'e' 'l' 's' 'e';
+/* ------------- Lexical Part  -------------  */
+program : 'p' 'r' 'o' 'g' 'r' 'a' 'm' ;
+main : 'm' 'a' 'i' 'n' ;
+end : 'e' 'n' 'd' ;
+var : 'v' 'a' 'r' ;
+void : 'v' 'o' 'i' 'd' ;
+int : 'i' 'n' 't' ;
+float : 'f' 'l' 'o' 'a' 't' ;
+if : 'i' 'f' ;
+else : 'e' 'l' 's' 'e' ;
+while : 'w' 'h' 'i' 'l' 'e' ;
+do : 'd' 'o' ;
+print : 'p' 'r' 'i' 'n' 't' ;
 
-/* ----------------- Lexico - Simbolos ----------------- */
-semicolon: ';';
-two_dots: ':';
-comma: ',';
-curly_open: '{' ;
-curly_close: '}' ;
-parenthesis_open: '(';
-parenthesis_close: ')';
-bracket_open: '[';
-bracket_close: ']';
-equal: '=';
-plus: '+';
-minus: '-';
-greater_than: '>';
-less_than: '<';
-not_equal: '!' '=';
-mult: '*';
-div: '/';
+assign : '=' ;
+notequal : '!' '=' ;
+less : '<' ;
+greater : '>' ;
+plus : '+' ;
+minus : '-' ;
+times : '*' ;
+divide : '/' ;
+colon : ':' ;
+semicolon : ';' ;
+comma : ',' ;
+lparen : '(' ;
+rparen : ')' ;
+lbrace : '{' ;
+rbrace : '}' ;
+lbracket : '[' ;
+rbracket : ']' ;
 
-/* ----------------- Lexico - Constantes ----------------- */
+/* -----------------s Lexical Part ----------------- */
+!whitespace : '\t' | '\n' | '\r' | ' ' ;
 _letter : 'a'-'z' | 'A'-'Z' | '_' ; 
 _digit : '0'-'9' ;
 
-id : 'a'-'z' {'a'-'z'} { ('_' | 'A'-'Z') ('a'-'z' | 'A'-'Z' | '0'-'9') {'a'-'z' | 'A'-'Z' | '0'-'9'} } ;
-myint : '0'-'9' {'0'-'9'} ;
-myfloat : '0'-'9' {'0'-'9'} '.' '0'-'9' {'0'-'9'} ;
+id : _letter {_letter | _digit} ;
+cte_int : '0' | '1'-'9' {_digit} ;  
+cte_float : '0' | '1'-'9' {_digit} '.' _digit {_digit} ;
 cte_string : '"' {_letter | ' ' | '!' | '?' }'"' ;
 
-!whitespace : ' ' | '\t' | '\n' | '\r' ;
-
-/* ----------------- Sintaxis ----------------- */
+/* ----------------- CFG ----------------- */
 << 
 import "babyduck/semantic"
-var functionDir = semantic.NewFunctionDirectory() 
+var functionDir = semantic.NewFunctionDirectory()
 >>
 
-Start : Programa <<functionDir, nil>> ;
+Start: Program <<functionDir, nil>> ;
 
-Programa : program id semicolon Program_vars FuncLoop main Body end ;
+Program : program id semicolon VarsOp FuncLoop main Body end ;
 
-Program_vars : Vars
-            | empty;
+VarsOp : Vars 
+    | empty ;
 
-FuncLoop : Funcs FuncLoop
-            | empty ;
+Vars : var Variable VarsPrime ;
 
-Vars : var VarList two_dots Type semicolon << functionDir.RegisterGlobalVars($1.([]string), $3.(semantic.Type)) >> ;
+Variable : AddVarId MasId colon Type semicolon << functionDir.SaveVariables($3.(semantic.Type))>>;
 
-VarList : id << functionDir.MakeVarList($0) >>
-        | id comma VarList << functionDir.ConcatVarList($0, $2.([]string)) >> ;
-        
-Type : int_rw << semantic.Int, nil >>
-     | float_rw << semantic.Float, nil >>
-     | void << semantic.Void, nil >> ;
+MasId : comma AddVarId MasId | empty ;
 
-Register_Func : Type id << functionDir.RegisterFunction($1, $0.(semantic.Type), nil)>> ;
+AddVarId : id <<functionDir.AppendVariable($0)>> ;
 
-Funcs : Register_Func parenthesis_open ParamList parenthesis_close bracket_open Vars Body bracket_close semicolon
-      | Register_Func parenthesis_open ParamList parenthesis_close bracket_open Body bracket_close semicolon 
-      | Register_Func parenthesis_open parenthesis_close bracket_open Vars Body bracket_close semicolon 
-      | Register_Func parenthesis_open parenthesis_close bracket_open Body bracket_close semicolon ;
+VarsPrime : Variable | empty ;
 
-ParamList : id two_dots Type << functionDir.RegisterParam($0, $2.(semantic.Type)) >>
-          | id two_dots Type comma ParamList << functionDir.RegisterParam($0, $2.(semantic.Type)) >> ;
+FuncLoop : Funcs FuncLoop | empty ;
 
-Body : curly_open Body_PR curly_close ;
+Funcs : RegisterFunc lparen Params rparen lbracket Vars Body rbracket semicolon ;
 
-Body_PR : Statement Body_PR
-        | empty ;
+RegisterFunc : void id <<functionDir.RegisterFunction($1, semantic.Void)>> ; 
 
-Statement : Assign
-          | Condition
-          | Cycle
-          | F_call
+Params : ParamIndiv MoreParam | empty ;
+
+ParamIndiv : id colon Type << functionDir.RegisterParam($0, $2.(semantic.Type))>>;
+
+MoreParam : comma ParamIndiv MoreParam | empty ;
+
+Type : int <<semantic.Int, nil>>
+     | float <<semantic.Float, nil>>
+     | void <<semantic.Void, nil>> ;
+
+Body : lbrace StateDeclare rbrace ;
+
+StateDeclare : Statement StateDeclare | empty ;
+
+Statement : Assign 
+          | Condition 
+          | Cycle 
+          | FuncCall 
           | Print ;
 
-Print : print parenthesis_open Expr Print_PR parenthesis_close semicolon
-      | print parenthesis_open cte_string Print_PR parenthesis_close semicolon ;
+Assign : id assign Expresion semicolon << functionDir.ValidateAssign($0)>>;
 
-Print_PR : comma Expr Print_PR
-         | comma cte_string Print_PR
-         | empty ;
+Condition : if lparen Expresion rparen Body ElseBody semicolon ;
 
+ElseBody : else Body | empty ;
 
-Assign : id equal Expr semicolon << functionDir.ValidateAssign($0, $2.(semantic.Type)), nil >> ;
+Cycle : while lparen Expresion rparen do Body semicolon ;
 
-Cycle : while parenthesis_open Expr parenthesis_close do Body semicolon ;
+FuncCall : id lparen ArgList rparen semicolon ;
 
-Condition : if parenthesis_open Expr parenthesis_close Body semicolon
-          | if parenthesis_open Expr parenthesis_close Body else Body semicolon ;
+ArgList : Expresion MoreCall | empty ;
 
-F_call : id parenthesis_open Expr F_call_PR parenthesis_close semicolon
-       | id parenthesis_open parenthesis_close semicolon ;
+MoreCall : comma Expresion MoreCall | empty ;
 
-F_call_PR : comma Expr F_call_PR
-          | empty ;
+Print : print lparen PrintList rparen semicolon ;
 
-Cte : myint << semantic.Int, nil >>
-    | myfloat << semantic.Float, nil >> ;
+PrintList : PrintItem MorePrint ;
 
-Expr : Exp
-     | Exp greater_than Exp << functionDir.BinaryExpression($0.(semantic.Type), $1, $2.(semantic.Type)) >>
-     | Exp less_than Exp << functionDir.BinaryExpression($0.(semantic.Type), $1, $2.(semantic.Type)) >>
-     | Exp not_equal Exp << functionDir.BinaryExpression($0.(semantic.Type), $1, $2.(semantic.Type)) >> ;
+PrintItem : Expresion 
+          | cte_string ;
 
-Exp : Term
-    | Term plus Exp << functionDir.BinaryExpression($0.(semantic.Type), $1, $2.(semantic.Type)) >>
-    | Term minus Exp << functionDir.BinaryExpression($0.(semantic.Type), $1, $2.(semantic.Type)) >> ;
+MorePrint : comma PrintItem MorePrint | empty ;
 
-Term : Fact
-     | Fact mult Term << functionDir.BinaryExpression($0.(semantic.Type), $1, $2.(semantic.Type)) >>
-     | Fact div Term << functionDir.BinaryExpression($0.(semantic.Type), $1, $2.(semantic.Type)) >> ;
+Expresion : Exp MoreExpresion ;
 
-Fact : parenthesis_open Expr parenthesis_close << $1.(semantic.Type), nil >>
-     | Cte << $0.(semantic.Type), nil>>
-     | id << functionDir.ResolveVarType($0) >>
-     | plus id << functionDir.ResolveVarType($1) >>
-     | minus id << functionDir.ResolveVarType($1) >>
-     | plus Cte << $1.(semantic.Type), nil >>
-     | minus Cte << $1.(semantic.Type), nil >> ;
+Exp : Termino MoreExp ;
+
+Termino : Factor MoreTermino ;
+
+Factor : lparen Expresion rparen 
+       | Op id
+       | Op Cte ;
+
+MoreExpresion : ExOp Exp 
+     | empty ;
+
+ExOp : greater 
+     | less 
+     | notequal  ;
+
+MoreExp : plus Termino
+        | minus Termino
+        | empty ;
+
+MoreTermino : times Factor MoreTermino
+            | divide Factor MoreTermino
+            | empty ;
+
+Op : plus 
+     | minus 
+     | empty ;
+
+Cte : cte_int <<semantic.Int, nil >>
+     | cte_float <<semantic.Float, nil>> ;

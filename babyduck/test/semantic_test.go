@@ -8,7 +8,7 @@ import (
 
 var testData = map[string]bool{
 	// caso 1 : funcion doble declarada
-	`program demoEight;
+	`program demo1;
 
 		var x, y, z : int;
 
@@ -32,26 +32,26 @@ var testData = map[string]bool{
 
 		end`: false,
 	// caso 2 : variable no declarada
-    `program demoNine;
+    `program demo2;
 
         var x, y, z : int;
 
         main {
-            print(a);
+            noesta = 2;
         }
 
     end`: false,
-	// caso 3: variable no declarada
-    `program demoTen;
+	// caso 3: variable declarada
+    `program demo3;
 
     var t, u, i : int;
 
     main {
         print(t);
     }
-    end`: false,
+    end`: true,
 	// caso 4: re-declaracion de variable global
-	`program demoSeven;
+	`program demo4;
 
 		var x, y, z : int;
 
@@ -70,7 +70,7 @@ var testData = map[string]bool{
 
 		end`: false,
 	// caso 5: variable no declarada
-	`program demoSix;
+	`program demo5;
 
 		var x, y, z : int;
 
@@ -90,7 +90,7 @@ var testData = map[string]bool{
 
 		end`: false,
 	// caso 6: token no registrado
-    `program demoFive;
+    `program demo6;
 
     var  x, y, z : string;
 

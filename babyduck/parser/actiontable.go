@@ -23,33 +23,33 @@ var actionTab = actionTable{
 			nil,      // end
 			nil,      // empty
 			nil,      // var
-			nil,      // two_dots
+			nil,      // colon
 			nil,      // comma
-			nil,      // int_rw
-			nil,      // float_rw
+			nil,      // lparen
+			nil,      // rparen
+			nil,      // lbracket
+			nil,      // rbracket
 			nil,      // void
-			nil,      // parenthesis_open
-			nil,      // parenthesis_close
-			nil,      // bracket_open
-			nil,      // bracket_close
-			nil,      // curly_open
-			nil,      // curly_close
-			nil,      // print
-			nil,      // cte_string
-			nil,      // equal
-			nil,      // while
-			nil,      // do
+			nil,      // int
+			nil,      // float
+			nil,      // lbrace
+			nil,      // rbrace
+			nil,      // assign
 			nil,      // if
 			nil,      // else
-			nil,      // myint
-			nil,      // myfloat
-			nil,      // greater_than
-			nil,      // less_than
-			nil,      // not_equal
+			nil,      // while
+			nil,      // do
+			nil,      // print
+			nil,      // cte_string
+			nil,      // greater
+			nil,      // less
+			nil,      // notequal
 			nil,      // plus
 			nil,      // minus
-			nil,      // mult
-			nil,      // div
+			nil,      // times
+			nil,      // divide
+			nil,      // cte_int
+			nil,      // cte_float
 		},
 	},
 	actionRow{ // S1
@@ -64,33 +64,33 @@ var actionTab = actionTable{
 			nil,          // end
 			nil,          // empty
 			nil,          // var
-			nil,          // two_dots
+			nil,          // colon
 			nil,          // comma
-			nil,          // int_rw
-			nil,          // float_rw
+			nil,          // lparen
+			nil,          // rparen
+			nil,          // lbracket
+			nil,          // rbracket
 			nil,          // void
-			nil,          // parenthesis_open
-			nil,          // parenthesis_close
-			nil,          // bracket_open
-			nil,          // bracket_close
-			nil,          // curly_open
-			nil,          // curly_close
-			nil,          // print
-			nil,          // cte_string
-			nil,          // equal
-			nil,          // while
-			nil,          // do
+			nil,          // int
+			nil,          // float
+			nil,          // lbrace
+			nil,          // rbrace
+			nil,          // assign
 			nil,          // if
 			nil,          // else
-			nil,          // myint
-			nil,          // myfloat
-			nil,          // greater_than
-			nil,          // less_than
-			nil,          // not_equal
+			nil,          // while
+			nil,          // do
+			nil,          // print
+			nil,          // cte_string
+			nil,          // greater
+			nil,          // less
+			nil,          // notequal
 			nil,          // plus
 			nil,          // minus
-			nil,          // mult
-			nil,          // div
+			nil,          // times
+			nil,          // divide
+			nil,          // cte_int
+			nil,          // cte_float
 		},
 	},
 	actionRow{ // S2
@@ -105,33 +105,33 @@ var actionTab = actionTable{
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S3
@@ -146,33 +146,33 @@ var actionTab = actionTable{
 			nil,      // end
 			nil,      // empty
 			nil,      // var
-			nil,      // two_dots
+			nil,      // colon
 			nil,      // comma
-			nil,      // int_rw
-			nil,      // float_rw
+			nil,      // lparen
+			nil,      // rparen
+			nil,      // lbracket
+			nil,      // rbracket
 			nil,      // void
-			nil,      // parenthesis_open
-			nil,      // parenthesis_close
-			nil,      // bracket_open
-			nil,      // bracket_close
-			nil,      // curly_open
-			nil,      // curly_close
-			nil,      // print
-			nil,      // cte_string
-			nil,      // equal
-			nil,      // while
-			nil,      // do
+			nil,      // int
+			nil,      // float
+			nil,      // lbrace
+			nil,      // rbrace
+			nil,      // assign
 			nil,      // if
 			nil,      // else
-			nil,      // myint
-			nil,      // myfloat
-			nil,      // greater_than
-			nil,      // less_than
-			nil,      // not_equal
+			nil,      // while
+			nil,      // do
+			nil,      // print
+			nil,      // cte_string
+			nil,      // greater
+			nil,      // less
+			nil,      // notequal
 			nil,      // plus
 			nil,      // minus
-			nil,      // mult
-			nil,      // div
+			nil,      // times
+			nil,      // divide
+			nil,      // cte_int
+			nil,      // cte_float
 		},
 	},
 	actionRow{ // S4
@@ -187,33 +187,33 @@ var actionTab = actionTable{
 			nil,      // end
 			nil,      // empty
 			nil,      // var
-			nil,      // two_dots
+			nil,      // colon
 			nil,      // comma
-			nil,      // int_rw
-			nil,      // float_rw
+			nil,      // lparen
+			nil,      // rparen
+			nil,      // lbracket
+			nil,      // rbracket
 			nil,      // void
-			nil,      // parenthesis_open
-			nil,      // parenthesis_close
-			nil,      // bracket_open
-			nil,      // bracket_close
-			nil,      // curly_open
-			nil,      // curly_close
-			nil,      // print
-			nil,      // cte_string
-			nil,      // equal
-			nil,      // while
-			nil,      // do
+			nil,      // int
+			nil,      // float
+			nil,      // lbrace
+			nil,      // rbrace
+			nil,      // assign
 			nil,      // if
 			nil,      // else
-			nil,      // myint
-			nil,      // myfloat
-			nil,      // greater_than
-			nil,      // less_than
-			nil,      // not_equal
+			nil,      // while
+			nil,      // do
+			nil,      // print
+			nil,      // cte_string
+			nil,      // greater
+			nil,      // less
+			nil,      // notequal
 			nil,      // plus
 			nil,      // minus
-			nil,      // mult
-			nil,      // div
+			nil,      // times
+			nil,      // divide
+			nil,      // cte_int
+			nil,      // cte_float
 		},
 	},
 	actionRow{ // S5
@@ -224,78 +224,78 @@ var actionTab = actionTable{
 			nil,       // program
 			nil,       // id
 			nil,       // semicolon
-			reduce(4), // main, reduce: Program_vars
+			reduce(4), // main, reduce: VarsOp
 			nil,       // end
 			nil,       // empty
 			shift(8),  // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			reduce(4), // int_rw, reduce: Program_vars
-			reduce(4), // float_rw, reduce: Program_vars
-			reduce(4), // void, reduce: Program_vars
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			reduce(4), // void, reduce: VarsOp
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S6
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			nil,       // id
-			nil,       // semicolon
-			reduce(6), // main, reduce: FuncLoop
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			shift(12), // int_rw
-			shift(13), // float_rw
-			shift(14), // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			nil,       // plus
-			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			reduce(13), // main, reduce: FuncLoop
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			shift(12),  // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S7
@@ -306,37 +306,37 @@ var actionTab = actionTable{
 			nil,       // program
 			nil,       // id
 			nil,       // semicolon
-			reduce(3), // main, reduce: Program_vars
+			reduce(3), // main, reduce: VarsOp
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			reduce(3), // int_rw, reduce: Program_vars
-			reduce(3), // float_rw, reduce: Program_vars
-			reduce(3), // void, reduce: Program_vars
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			reduce(3), // void, reduce: VarsOp
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S8
@@ -345,39 +345,39 @@ var actionTab = actionTable{
 			nil,       // INVALID
 			nil,       // ␚
 			nil,       // program
-			shift(16), // id
+			shift(13), // id
 			nil,       // semicolon
 			nil,       // main
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S9
@@ -388,78 +388,78 @@ var actionTab = actionTable{
 			nil,       // program
 			nil,       // id
 			nil,       // semicolon
-			shift(18), // main
+			shift(16), // main
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S10
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			nil,       // id
-			nil,       // semicolon
-			reduce(6), // main, reduce: FuncLoop
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			shift(12), // int_rw
-			shift(13), // float_rw
-			shift(14), // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			nil,       // plus
-			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			reduce(13), // main, reduce: FuncLoop
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			shift(12),  // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S11
@@ -468,121 +468,121 @@ var actionTab = actionTable{
 			nil,       // INVALID
 			nil,       // ␚
 			nil,       // program
-			shift(20), // id
+			nil,       // id
 			nil,       // semicolon
 			nil,       // main
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			shift(18), // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S12
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			reduce(10), // id, reduce: Type
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			shift(19), // id
+			nil,       // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			nil,       // colon
+			nil,       // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S13
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			reduce(11), // id, reduce: Type
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			nil,       // id
+			nil,       // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			reduce(9), // colon, reduce: AddVarId
+			reduce(9), // comma, reduce: AddVarId
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S14
@@ -591,39 +591,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			reduce(12), // id, reduce: Type
+			shift(13),  // id
 			nil,        // semicolon
-			nil,        // main
+			reduce(11), // main, reduce: VarsPrime
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			reduce(11), // void, reduce: VarsPrime
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S15
@@ -638,33 +638,33 @@ var actionTab = actionTable{
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			reduce(8), // colon, reduce: MasId
+			shift(24), // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			shift(21), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S16
@@ -679,159 +679,118 @@ var actionTab = actionTable{
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			reduce(8), // two_dots, reduce: VarList
-			shift(22), // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			nil,       // colon
+			nil,       // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			shift(26), // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S17
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			nil,       // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			shift(23), // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			nil,       // plus
-			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			reduce(12), // main, reduce: FuncLoop
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S18
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			nil,       // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			shift(25), // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			nil,       // plus
-			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			shift(27),  // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(17), // rparen, reduce: Params
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S19
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			nil,       // id
-			nil,       // semicolon
-			reduce(5), // main, reduce: FuncLoop
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			nil,       // plus
-			nil,       // minus
-			nil,       // mult
-			nil,       // div
-		},
-	},
-	actionRow{ // S20
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        // INVALID
@@ -843,33 +802,74 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			reduce(15), // lparen, reduce: RegisterFunc
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			reduce(13), // parenthesis_open, reduce: Register_Func
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S20
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			reduce(10), // main, reduce: VarsPrime
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			reduce(10), // void, reduce: VarsPrime
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S21
@@ -878,39 +878,39 @@ var actionTab = actionTable{
 			nil,       // INVALID
 			nil,       // ␚
 			nil,       // program
-			shift(26), // id
+			nil,       // id
 			nil,       // semicolon
-			nil,       // main
+			reduce(5), // main, reduce: Vars
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			nil,       // parenthesis_open
-			shift(28), // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			reduce(5), // void, reduce: Vars
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S22
@@ -919,39 +919,39 @@ var actionTab = actionTable{
 			nil,       // INVALID
 			nil,       // ␚
 			nil,       // program
-			shift(16), // id
+			nil,       // id
 			nil,       // semicolon
 			nil,       // main
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			reduce(8), // colon, reduce: MasId
+			shift(24), // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S23
@@ -966,33 +966,33 @@ var actionTab = actionTable{
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			shift(31), // colon
 			nil,       // comma
-			shift(31), // int_rw
-			shift(32), // float_rw
-			shift(33), // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S24
@@ -1001,83 +1001,42 @@ var actionTab = actionTable{
 			nil,       // INVALID
 			nil,       // ␚
 			nil,       // program
-			nil,       // id
+			shift(13), // id
 			nil,       // semicolon
 			nil,       // main
-			shift(34), // end
+			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S25
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			shift(35),  // id
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(22), // curly_close, reduce: Body_PR
-			shift(43),  // print
-			nil,        // cte_string
-			nil,        // equal
-			shift(44),  // while
-			nil,        // do
-			shift(45),  // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
-		},
-	},
-	actionRow{ // S26
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,       // INVALID
@@ -1086,36 +1045,77 @@ var actionTab = actionTable{
 			nil,       // id
 			nil,       // semicolon
 			nil,       // main
-			nil,       // end
+			shift(33), // end
 			nil,       // empty
 			nil,       // var
-			shift(46), // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
+		},
+	},
+	actionRow{ // S26
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			shift(34),  // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(26), // rbrace, reduce: StateDeclare
+			nil,        // assign
+			shift(42),  // if
+			nil,        // else
+			shift(43),  // while
+			nil,        // do
+			shift(44),  // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S27
@@ -1130,33 +1130,33 @@ var actionTab = actionTable{
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			shift(45), // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			nil,       // parenthesis_open
-			shift(47), // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S28
@@ -1171,74 +1171,74 @@ var actionTab = actionTable{
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			nil,       // lparen
+			shift(46), // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			shift(48), // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S29
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			nil,       // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			reduce(9), // two_dots, reduce: VarList
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			nil,       // plus
-			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			shift(47),  // comma
+			nil,        // lparen
+			reduce(20), // rparen, reduce: MoreParam
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S30
@@ -1248,168 +1248,45 @@ var actionTab = actionTable{
 			nil,       // ␚
 			nil,       // program
 			nil,       // id
-			shift(49), // semicolon
+			nil,       // semicolon
 			nil,       // main
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			shift(49), // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S31
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			nil,        // id
-			reduce(10), // semicolon, reduce: Type
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
-		},
-	},
-	actionRow{ // S32
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			nil,        // id
-			reduce(11), // semicolon, reduce: Type
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
-		},
-	},
-	actionRow{ // S33
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			nil,        // id
-			reduce(12), // semicolon, reduce: Type
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
-		},
-	},
-	actionRow{ // S34
-		canRecover: false,
-		actions: [numSymbols]action{
 			nil,       // INVALID
-			reduce(2), // ␚, reduce: Programa
+			nil,       // ␚
 			nil,       // program
 			nil,       // id
 			nil,       // semicolon
@@ -1417,33 +1294,156 @@ var actionTab = actionTable{
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			shift(51), // void
+			shift(52), // int
+			shift(53), // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
+		},
+	},
+	actionRow{ // S32
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			nil,       // id
+			nil,       // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			reduce(8), // colon, reduce: MasId
+			shift(24), // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
+		},
+	},
+	actionRow{ // S33
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			reduce(2), // ␚, reduce: Program
+			nil,       // program
+			nil,       // id
+			nil,       // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			nil,       // colon
+			nil,       // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
+		},
+	},
+	actionRow{ // S34
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			nil,       // id
+			nil,       // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			nil,       // colon
+			nil,       // comma
+			shift(55), // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			shift(56), // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S35
@@ -1458,282 +1458,77 @@ var actionTab = actionTable{
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			shift(50), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			shift(51), // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			shift(57), // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S36
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			nil,       // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			shift(52), // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			nil,       // plus
-			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			shift(34),  // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(26), // rbrace, reduce: StateDeclare
+			nil,        // assign
+			shift(42),  // if
+			nil,        // else
+			shift(43),  // while
+			nil,        // do
+			shift(44),  // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S37
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			shift(35),  // id
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(22), // curly_close, reduce: Body_PR
-			shift(43),  // print
-			nil,        // cte_string
-			nil,        // equal
-			shift(44),  // while
-			nil,        // do
-			shift(45),  // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
-		},
-	},
-	actionRow{ // S38
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			reduce(23), // id, reduce: Statement
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(23), // curly_close, reduce: Statement
-			reduce(23), // print, reduce: Statement
-			nil,        // cte_string
-			nil,        // equal
-			reduce(23), // while, reduce: Statement
-			nil,        // do
-			reduce(23), // if, reduce: Statement
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
-		},
-	},
-	actionRow{ // S39
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			reduce(24), // id, reduce: Statement
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(24), // curly_close, reduce: Statement
-			reduce(24), // print, reduce: Statement
-			nil,        // cte_string
-			nil,        // equal
-			reduce(24), // while, reduce: Statement
-			nil,        // do
-			reduce(24), // if, reduce: Statement
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
-		},
-	},
-	actionRow{ // S40
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			reduce(25), // id, reduce: Statement
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(25), // curly_close, reduce: Statement
-			reduce(25), // print, reduce: Statement
-			nil,        // cte_string
-			nil,        // equal
-			reduce(25), // while, reduce: Statement
-			nil,        // do
-			reduce(25), // if, reduce: Statement
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
-		},
-	},
-	actionRow{ // S41
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			reduce(26), // id, reduce: Statement
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(26), // curly_close, reduce: Statement
-			reduce(26), // print, reduce: Statement
-			nil,        // cte_string
-			nil,        // equal
-			reduce(26), // while, reduce: Statement
-			nil,        // do
-			reduce(26), // if, reduce: Statement
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
-		},
-	},
-	actionRow{ // S42
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        // INVALID
@@ -1745,33 +1540,238 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(27), // curly_close, reduce: Statement
-			reduce(27), // print, reduce: Statement
-			nil,        // cte_string
-			nil,        // equal
-			reduce(27), // while, reduce: Statement
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(27), // rbrace, reduce: Statement
+			nil,        // assign
 			reduce(27), // if, reduce: Statement
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			reduce(27), // while, reduce: Statement
+			nil,        // do
+			reduce(27), // print, reduce: Statement
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S38
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(28), // id, reduce: Statement
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(28), // rbrace, reduce: Statement
+			nil,        // assign
+			reduce(28), // if, reduce: Statement
+			nil,        // else
+			reduce(28), // while, reduce: Statement
+			nil,        // do
+			reduce(28), // print, reduce: Statement
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S39
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(29), // id, reduce: Statement
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(29), // rbrace, reduce: Statement
+			nil,        // assign
+			reduce(29), // if, reduce: Statement
+			nil,        // else
+			reduce(29), // while, reduce: Statement
+			nil,        // do
+			reduce(29), // print, reduce: Statement
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S40
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(30), // id, reduce: Statement
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(30), // rbrace, reduce: Statement
+			nil,        // assign
+			reduce(30), // if, reduce: Statement
+			nil,        // else
+			reduce(30), // while, reduce: Statement
+			nil,        // do
+			reduce(30), // print, reduce: Statement
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S41
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(31), // id, reduce: Statement
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(31), // rbrace, reduce: Statement
+			nil,        // assign
+			reduce(31), // if, reduce: Statement
+			nil,        // else
+			reduce(31), // while, reduce: Statement
+			nil,        // do
+			reduce(31), // print, reduce: Statement
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S42
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			nil,       // id
+			nil,       // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			nil,       // colon
+			nil,       // comma
+			shift(59), // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S43
@@ -1786,33 +1786,33 @@ var actionTab = actionTable{
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			shift(60), // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			shift(54), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S44
@@ -1827,33 +1827,33 @@ var actionTab = actionTable{
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			shift(61), // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			shift(55), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S45
@@ -1868,33 +1868,33 @@ var actionTab = actionTable{
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			shift(56), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			shift(63), // void
+			shift(64), // int
+			shift(65), // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S46
@@ -1909,33 +1909,33 @@ var actionTab = actionTable{
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			shift(58), // int_rw
-			shift(59), // float_rw
-			shift(60), // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // lparen
+			nil,       // rparen
+			shift(66), // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S47
@@ -1944,80 +1944,80 @@ var actionTab = actionTable{
 			nil,       // INVALID
 			nil,       // ␚
 			nil,       // program
-			nil,       // id
+			shift(27), // id
 			nil,       // semicolon
 			nil,       // main
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			shift(61), // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S48
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			nil,       // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			shift(64), // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			shift(65), // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			nil,       // plus
-			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(16), // rparen, reduce: Params
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S49
@@ -2028,37 +2028,37 @@ var actionTab = actionTable{
 			nil,       // program
 			nil,       // id
 			nil,       // semicolon
-			reduce(7), // main, reduce: Vars
+			nil,       // main
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			reduce(7), // int_rw, reduce: Vars
-			reduce(7), // float_rw, reduce: Vars
-			reduce(7), // void, reduce: Vars
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			shift(51), // void
+			shift(52), // int
+			shift(53), // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S50
@@ -2067,80 +2067,80 @@ var actionTab = actionTable{
 			nil,       // INVALID
 			nil,       // ␚
 			nil,       // program
-			shift(66), // id
-			nil,       // semicolon
+			nil,       // id
+			shift(69), // semicolon
 			nil,       // main
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			shift(67), // parenthesis_open
-			shift(68), // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			shift(71), // myint
-			shift(72), // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			shift(75), // plus
-			shift(76), // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S51
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			shift(78), // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			shift(79), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			shift(82), // myint
-			shift(83), // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			shift(86), // plus
-			shift(87), // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(23), // semicolon, reduce: Type
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S52
@@ -2150,38 +2150,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			nil,        // semicolon
+			reduce(21), // semicolon, reduce: Type
 			nil,        // main
-			reduce(20), // end, reduce: Body
+			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S53
@@ -2191,38 +2191,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			nil,        // semicolon
+			reduce(22), // semicolon, reduce: Type
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(21), // curly_close, reduce: Body_PR
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S54
@@ -2231,39 +2231,39 @@ var actionTab = actionTable{
 			nil,       // INVALID
 			nil,       // ␚
 			nil,       // program
-			shift(66), // id
+			nil,       // id
 			nil,       // semicolon
 			nil,       // main
 			nil,       // end
 			nil,       // empty
 			nil,       // var
-			nil,       // two_dots
+			reduce(7), // colon, reduce: MasId
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			shift(67), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			shift(90), // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			shift(71), // myint
-			shift(72), // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			shift(75), // plus
-			shift(76), // minus
-			nil,       // mult
-			nil,       // div
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S55
@@ -2272,39 +2272,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(91),  // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(70),  // lparen
+			reduce(39), // rparen, reduce: ArgList
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(92),  // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(95),  // myint
-			shift(96),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(99),  // plus
-			shift(100), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S56
@@ -2313,39 +2313,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(91),  // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(79),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(92),  // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(95),  // myint
-			shift(96),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(99),  // plus
-			shift(100), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S57
@@ -2357,36 +2357,36 @@ var actionTab = actionTable{
 			nil,        // id
 			nil,        // semicolon
 			nil,        // main
-			nil,        // end
+			reduce(24), // end, reduce: Body
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			shift(103), // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(18), // parenthesis_close, reduce: ParamList
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S58
@@ -2401,33 +2401,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(10), // comma, reduce: Type
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(10), // parenthesis_close, reduce: Type
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(25), // rbrace, reduce: StateDeclare
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S59
@@ -2436,39 +2436,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(11), // comma, reduce: Type
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(11), // parenthesis_close, reduce: Type
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S60
@@ -2477,80 +2477,80 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(12), // comma, reduce: Type
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(12), // parenthesis_close, reduce: Type
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S61
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			nil,       // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			shift(64), // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			shift(65), // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			nil,       // plus
-			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(70),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			shift(95),  // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S62
@@ -2565,36 +2565,159 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(18), // comma, reduce: ParamIndiv
+			nil,        // lparen
+			reduce(18), // rparen, reduce: ParamIndiv
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			shift(106), // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S63
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(23), // comma, reduce: Type
+			nil,        // lparen
+			reduce(23), // rparen, reduce: Type
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S64
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(21), // comma, reduce: Type
+			nil,        // lparen
+			reduce(21), // rparen, reduce: Type
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S65
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(22), // comma, reduce: Type
+			nil,        // lparen
+			reduce(22), // rparen, reduce: Type
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S66
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,       // INVALID
@@ -2605,157 +2728,34 @@ var actionTab = actionTable{
 			nil,       // main
 			nil,       // end
 			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
+			shift(97), // var
+			nil,       // colon
 			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
 			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			shift(65), // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
 			nil,       // if
 			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			nil,       // plus
-			nil,       // minus
-			nil,       // mult
-			nil,       // div
-		},
-	},
-	actionRow{ // S64
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			shift(16), // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
 			nil,       // while
 			nil,       // do
-			nil,       // if
-			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
 			nil,       // plus
 			nil,       // minus
-			nil,       // mult
-			nil,       // div
-		},
-	},
-	actionRow{ // S65
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			shift(35),  // id
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(22), // curly_close, reduce: Body_PR
-			shift(43),  // print
-			nil,        // cte_string
-			nil,        // equal
-			shift(44),  // while
-			nil,        // do
-			shift(45),  // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
-		},
-	},
-	actionRow{ // S66
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			nil,        // id
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			reduce(55), // comma, reduce: Fact
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			reduce(55), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(55), // greater_than, reduce: Fact
-			reduce(55), // less_than, reduce: Fact
-			reduce(55), // not_equal, reduce: Fact
-			reduce(55), // plus, reduce: Fact
-			reduce(55), // minus, reduce: Fact
-			reduce(55), // mult, reduce: Fact
-			reduce(55), // div, reduce: Fact
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S67
@@ -2764,121 +2764,121 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(91),  // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			shift(47),  // comma
+			nil,        // lparen
+			reduce(20), // rparen, reduce: MoreParam
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(92),  // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(95),  // myint
-			shift(96),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(99),  // plus
-			shift(100), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S68
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			nil,        // id
-			shift(111), // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			nil,       // id
+			shift(99), // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			nil,       // colon
+			nil,       // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S69
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			nil,        // id
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			shift(112), // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			reduce(40), // parenthesis_close, reduce: F_call_PR
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			reduce(6), // id, reduce: Variable
+			nil,       // semicolon
+			reduce(6), // main, reduce: Variable
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			nil,       // colon
+			nil,       // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			reduce(6), // void, reduce: Variable
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S70
@@ -2887,39 +2887,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(54), // comma, reduce: Fact
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(54), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(54), // greater_than, reduce: Fact
-			reduce(54), // less_than, reduce: Fact
-			reduce(54), // not_equal, reduce: Fact
-			reduce(54), // plus, reduce: Fact
-			reduce(54), // minus, reduce: Fact
-			reduce(54), // mult, reduce: Fact
-			reduce(54), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S71
@@ -2934,33 +2934,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(41), // comma, reduce: Cte
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			shift(101), // comma
+			nil,        // lparen
+			reduce(41), // rparen, reduce: MoreCall
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(41), // parenthesis_close, reduce: Cte
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(41), // greater_than, reduce: Cte
-			reduce(41), // less_than, reduce: Cte
-			reduce(41), // not_equal, reduce: Cte
-			reduce(41), // plus, reduce: Cte
-			reduce(41), // minus, reduce: Cte
-			reduce(41), // mult, reduce: Cte
-			reduce(41), // div, reduce: Cte
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S72
@@ -2975,33 +2975,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(42), // comma, reduce: Cte
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			shift(103), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(42), // parenthesis_close, reduce: Cte
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(42), // greater_than, reduce: Cte
-			reduce(42), // less_than, reduce: Cte
-			reduce(42), // not_equal, reduce: Cte
-			reduce(42), // plus, reduce: Cte
-			reduce(42), // minus, reduce: Cte
-			reduce(42), // mult, reduce: Cte
-			reduce(42), // div, reduce: Cte
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S73
@@ -3016,33 +3016,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(43), // comma, reduce: Expr
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(55), // comma, reduce: MoreExpresion
+			nil,        // lparen
+			reduce(55), // rparen, reduce: MoreExpresion
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(43), // parenthesis_close, reduce: Expr
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			shift(114), // greater_than
-			shift(115), // less_than
-			shift(116), // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			shift(106), // greater
+			shift(107), // less
+			shift(108), // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S74
@@ -3057,33 +3057,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(47), // comma, reduce: Exp
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(61), // comma, reduce: MoreExp
+			nil,        // lparen
+			reduce(61), // rparen, reduce: MoreExp
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(47), // parenthesis_close, reduce: Exp
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(47), // greater_than, reduce: Exp
-			reduce(47), // less_than, reduce: Exp
-			reduce(47), // not_equal, reduce: Exp
-			shift(117), // plus
-			shift(118), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(61), // greater, reduce: MoreExp
+			reduce(61), // less, reduce: MoreExp
+			reduce(61), // notequal, reduce: MoreExp
+			shift(110), // plus
+			shift(111), // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S75
@@ -3092,39 +3092,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(119), // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(64), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(71),  // myint
-			shift(72),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(113), // times
+			shift(114), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S76
@@ -3133,39 +3133,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(121), // id
+			shift(115), // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(71),  // myint
-			shift(72),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			shift(117), // cte_int
+			shift(118), // cte_float
 		},
 	},
 	actionRow{ // S77
@@ -3174,39 +3174,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(65), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(50), // comma, reduce: Term
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(50), // parenthesis_close, reduce: Term
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(50), // greater_than, reduce: Term
-			reduce(50), // less_than, reduce: Term
-			reduce(50), // not_equal, reduce: Term
-			reduce(50), // plus, reduce: Term
-			reduce(50), // minus, reduce: Term
-			shift(123), // mult
-			shift(124), // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			reduce(65), // cte_int, reduce: Op
+			reduce(65), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S78
@@ -3215,39 +3215,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
-			reduce(55), // semicolon, reduce: Fact
+			reduce(66), // id, reduce: Op
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(55), // greater_than, reduce: Fact
-			reduce(55), // less_than, reduce: Fact
-			reduce(55), // not_equal, reduce: Fact
-			reduce(55), // plus, reduce: Fact
-			reduce(55), // minus, reduce: Fact
-			reduce(55), // mult, reduce: Fact
-			reduce(55), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			reduce(66), // cte_int, reduce: Op
+			reduce(66), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S79
@@ -3256,39 +3256,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(91),  // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(92),  // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(95),  // myint
-			shift(96),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(99),  // plus
-			shift(100), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S80
@@ -3298,38 +3298,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			shift(126), // semicolon
+			shift(120), // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S81
@@ -3339,38 +3339,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(54), // semicolon, reduce: Fact
+			reduce(55), // semicolon, reduce: MoreExpresion
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(54), // greater_than, reduce: Fact
-			reduce(54), // less_than, reduce: Fact
-			reduce(54), // not_equal, reduce: Fact
-			reduce(54), // plus, reduce: Fact
-			reduce(54), // minus, reduce: Fact
-			reduce(54), // mult, reduce: Fact
-			reduce(54), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			shift(106), // greater
+			shift(107), // less
+			shift(108), // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S82
@@ -3380,38 +3380,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(41), // semicolon, reduce: Cte
+			reduce(61), // semicolon, reduce: MoreExp
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(41), // greater_than, reduce: Cte
-			reduce(41), // less_than, reduce: Cte
-			reduce(41), // not_equal, reduce: Cte
-			reduce(41), // plus, reduce: Cte
-			reduce(41), // minus, reduce: Cte
-			reduce(41), // mult, reduce: Cte
-			reduce(41), // div, reduce: Cte
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(61), // greater, reduce: MoreExp
+			reduce(61), // less, reduce: MoreExp
+			reduce(61), // notequal, reduce: MoreExp
+			shift(124), // plus
+			shift(125), // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S83
@@ -3421,38 +3421,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(42), // semicolon, reduce: Cte
+			reduce(64), // semicolon, reduce: MoreTermino
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(42), // greater_than, reduce: Cte
-			reduce(42), // less_than, reduce: Cte
-			reduce(42), // not_equal, reduce: Cte
-			reduce(42), // plus, reduce: Cte
-			reduce(42), // minus, reduce: Cte
-			reduce(42), // mult, reduce: Cte
-			reduce(42), // div, reduce: Cte
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(127), // times
+			shift(128), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S84
@@ -3461,39 +3461,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
-			reduce(43), // semicolon, reduce: Expr
+			shift(129), // id
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			shift(127), // greater_than
-			shift(128), // less_than
-			shift(129), // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			shift(131), // cte_int
+			shift(132), // cte_float
 		},
 	},
 	actionRow{ // S85
@@ -3502,39 +3502,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
-			reduce(47), // semicolon, reduce: Exp
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(47), // greater_than, reduce: Exp
-			reduce(47), // less_than, reduce: Exp
-			reduce(47), // not_equal, reduce: Exp
-			shift(130), // plus
-			shift(131), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S86
@@ -3543,39 +3543,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(132), // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			shift(134), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(82),  // myint
-			shift(83),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S87
@@ -3584,39 +3584,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(134), // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(55), // rparen, reduce: MoreExpresion
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(82),  // myint
-			shift(83),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			shift(106), // greater
+			shift(107), // less
+			shift(108), // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S88
@@ -3626,38 +3626,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(50), // semicolon, reduce: Term
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(61), // rparen, reduce: MoreExp
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(50), // greater_than, reduce: Term
-			reduce(50), // less_than, reduce: Term
-			reduce(50), // not_equal, reduce: Term
-			reduce(50), // plus, reduce: Term
-			reduce(50), // minus, reduce: Term
-			shift(136), // mult
-			shift(137), // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(61), // greater, reduce: MoreExp
+			reduce(61), // less, reduce: MoreExp
+			reduce(61), // notequal, reduce: MoreExp
+			shift(138), // plus
+			shift(139), // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S89
@@ -3672,33 +3672,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			shift(138), // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(32), // parenthesis_close, reduce: Print_PR
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(141), // times
+			shift(142), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S90
@@ -3707,39 +3707,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			shift(143), // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			shift(138), // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(32), // parenthesis_close, reduce: Print_PR
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			shift(145), // cte_int
+			shift(146), // cte_float
 		},
 	},
 	actionRow{ // S91
@@ -3754,33 +3754,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			shift(147), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(55), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(55), // greater_than, reduce: Fact
-			reduce(55), // less_than, reduce: Fact
-			reduce(55), // not_equal, reduce: Fact
-			reduce(55), // plus, reduce: Fact
-			reduce(55), // minus, reduce: Fact
-			reduce(55), // mult, reduce: Fact
-			reduce(55), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S92
@@ -3789,39 +3789,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(91),  // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(44), // comma, reduce: PrintItem
+			nil,        // lparen
+			reduce(44), // rparen, reduce: PrintItem
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(92),  // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(95),  // myint
-			shift(96),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(99),  // plus
-			shift(100), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S93
@@ -3836,33 +3836,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			shift(148), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			shift(142), // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S94
@@ -3877,33 +3877,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			shift(149), // comma
+			nil,        // lparen
+			reduce(47), // rparen, reduce: MorePrint
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(54), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(54), // greater_than, reduce: Fact
-			reduce(54), // less_than, reduce: Fact
-			reduce(54), // not_equal, reduce: Fact
-			reduce(54), // plus, reduce: Fact
-			reduce(54), // minus, reduce: Fact
-			reduce(54), // mult, reduce: Fact
-			reduce(54), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S95
@@ -3918,33 +3918,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(45), // comma, reduce: PrintItem
+			nil,        // lparen
+			reduce(45), // rparen, reduce: PrintItem
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(41), // parenthesis_close, reduce: Cte
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(41), // greater_than, reduce: Cte
-			reduce(41), // less_than, reduce: Cte
-			reduce(41), // not_equal, reduce: Cte
-			reduce(41), // plus, reduce: Cte
-			reduce(41), // minus, reduce: Cte
-			reduce(41), // mult, reduce: Cte
-			reduce(41), // div, reduce: Cte
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S96
@@ -3959,74 +3959,74 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(42), // parenthesis_close, reduce: Cte
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			shift(152), // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(42), // greater_than, reduce: Cte
-			reduce(42), // less_than, reduce: Cte
-			reduce(42), // not_equal, reduce: Cte
-			reduce(42), // plus, reduce: Cte
-			reduce(42), // minus, reduce: Cte
-			reduce(42), // mult, reduce: Cte
-			reduce(42), // div, reduce: Cte
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S97
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			nil,        // id
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			reduce(43), // parenthesis_close, reduce: Expr
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			shift(143), // greater_than
-			shift(144), // less_than
-			shift(145), // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			shift(13), // id
+			nil,       // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			nil,       // colon
+			nil,       // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S98
@@ -4041,118 +4041,77 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(19), // rparen, reduce: MoreParam
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(47), // parenthesis_close, reduce: Exp
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(47), // greater_than, reduce: Exp
-			reduce(47), // less_than, reduce: Exp
-			reduce(47), // not_equal, reduce: Exp
-			shift(146), // plus
-			shift(147), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S99
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			shift(148), // id
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			shift(95),  // myint
-			shift(96),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			nil,       // id
+			nil,       // semicolon
+			reduce(6), // main, reduce: Variable
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			nil,       // colon
+			nil,       // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			reduce(6), // void, reduce: Variable
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S100
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			shift(150), // id
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			shift(95),  // myint
-			shift(96),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
-		},
-	},
-	actionRow{ // S101
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        // INVALID
@@ -4164,33 +4123,74 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			shift(155), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(50), // parenthesis_close, reduce: Term
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(50), // greater_than, reduce: Term
-			reduce(50), // less_than, reduce: Term
-			reduce(50), // not_equal, reduce: Term
-			reduce(50), // plus, reduce: Term
-			reduce(50), // minus, reduce: Term
-			shift(152), // mult
-			shift(153), // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S101
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(70),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S102
@@ -4205,74 +4205,74 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(38), // rparen, reduce: ArgList
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			shift(154), // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S103
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			shift(26), // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			nil,       // plus
-			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			shift(157), // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S104
@@ -4287,74 +4287,74 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(48), // comma, reduce: Expresion
+			nil,        // lparen
+			reduce(48), // rparen, reduce: Expresion
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			shift(156), // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S105
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			nil,       // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			shift(65), // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			nil,       // plus
-			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(158), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S106
@@ -4363,39 +4363,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
-			shift(158), // semicolon
+			reduce(56), // id, reduce: ExOp
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			reduce(56), // lparen, reduce: ExOp
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(56), // plus, reduce: ExOp
+			reduce(56), // minus, reduce: ExOp
+			nil,        // times
+			nil,        // divide
+			reduce(56), // cte_int, reduce: ExOp
+			reduce(56), // cte_float, reduce: ExOp
 		},
 	},
 	actionRow{ // S107
@@ -4404,39 +4404,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(57), // id, reduce: ExOp
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			reduce(57), // lparen, reduce: ExOp
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			shift(159), // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(57), // plus, reduce: ExOp
+			reduce(57), // minus, reduce: ExOp
+			nil,        // times
+			nil,        // divide
+			reduce(57), // cte_int, reduce: ExOp
+			reduce(57), // cte_float, reduce: ExOp
 		},
 	},
 	actionRow{ // S108
@@ -4445,39 +4445,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(58), // id, reduce: ExOp
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			shift(160), // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			reduce(58), // lparen, reduce: ExOp
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(58), // plus, reduce: ExOp
+			reduce(58), // minus, reduce: ExOp
+			nil,        // times
+			nil,        // divide
+			reduce(58), // cte_int, reduce: ExOp
+			reduce(58), // cte_float, reduce: ExOp
 		},
 	},
 	actionRow{ // S109
@@ -4492,33 +4492,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(49), // comma, reduce: Exp
+			nil,        // lparen
+			reduce(49), // rparen, reduce: Exp
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			shift(161), // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(49), // greater, reduce: Exp
+			reduce(49), // less, reduce: Exp
+			reduce(49), // notequal, reduce: Exp
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S110
@@ -4527,39 +4527,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(163), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			shift(162), // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S111
@@ -4568,83 +4568,42 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			reduce(38), // id, reduce: F_call
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(163), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(38), // curly_close, reduce: F_call
-			reduce(38), // print, reduce: F_call
-			nil,        // cte_string
-			nil,        // equal
-			reduce(38), // while, reduce: F_call
-			nil,        // do
-			reduce(38), // if, reduce: F_call
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S112
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			shift(66), // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			shift(67), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			shift(71), // myint
-			shift(72), // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			shift(75), // plus
-			shift(76), // minus
-			nil,       // mult
-			nil,       // div
-		},
-	},
-	actionRow{ // S113
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        // INVALID
@@ -4656,33 +4615,74 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(50), // comma, reduce: Termino
+			nil,        // lparen
+			reduce(50), // rparen, reduce: Termino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			shift(164), // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(50), // greater, reduce: Termino
+			reduce(50), // less, reduce: Termino
+			reduce(50), // notequal, reduce: Termino
+			reduce(50), // plus, reduce: Termino
+			reduce(50), // minus, reduce: Termino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S113
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(70),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S114
@@ -4691,39 +4691,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(165), // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(70),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(166), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(168), // myint
-			shift(169), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(172), // plus
-			shift(173), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S115
@@ -4732,39 +4732,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(165), // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(52), // comma, reduce: Factor
+			nil,        // lparen
+			reduce(52), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(166), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(168), // myint
-			shift(169), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(172), // plus
-			shift(173), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(52), // greater, reduce: Factor
+			reduce(52), // less, reduce: Factor
+			reduce(52), // notequal, reduce: Factor
+			reduce(52), // plus, reduce: Factor
+			reduce(52), // minus, reduce: Factor
+			reduce(52), // times, reduce: Factor
+			reduce(52), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S116
@@ -4773,121 +4773,121 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(165), // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(53), // comma, reduce: Factor
+			nil,        // lparen
+			reduce(53), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(166), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(168), // myint
-			shift(169), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(172), // plus
-			shift(173), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(53), // greater, reduce: Factor
+			reduce(53), // less, reduce: Factor
+			reduce(53), // notequal, reduce: Factor
+			reduce(53), // plus, reduce: Factor
+			reduce(53), // minus, reduce: Factor
+			reduce(53), // times, reduce: Factor
+			reduce(53), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S117
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			shift(66), // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			shift(67), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			shift(71), // myint
-			shift(72), // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			shift(75), // plus
-			shift(76), // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(68), // comma, reduce: Cte
+			nil,        // lparen
+			reduce(68), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(68), // greater, reduce: Cte
+			reduce(68), // less, reduce: Cte
+			reduce(68), // notequal, reduce: Cte
+			reduce(68), // plus, reduce: Cte
+			reduce(68), // minus, reduce: Cte
+			reduce(68), // times, reduce: Cte
+			reduce(68), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S118
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			shift(66), // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			shift(67), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			shift(71), // myint
-			shift(72), // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			shift(75), // plus
-			shift(76), // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(69), // comma, reduce: Cte
+			nil,        // lparen
+			reduce(69), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(69), // greater, reduce: Cte
+			reduce(69), // less, reduce: Cte
+			reduce(69), // notequal, reduce: Cte
+			reduce(69), // plus, reduce: Cte
+			reduce(69), // minus, reduce: Cte
+			reduce(69), // times, reduce: Cte
+			reduce(69), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S119
@@ -4902,33 +4902,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(56), // comma, reduce: Fact
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			shift(170), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(56), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(56), // greater_than, reduce: Fact
-			reduce(56), // less_than, reduce: Fact
-			reduce(56), // not_equal, reduce: Fact
-			reduce(56), // plus, reduce: Fact
-			reduce(56), // minus, reduce: Fact
-			reduce(56), // mult, reduce: Fact
-			reduce(56), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S120
@@ -4937,39 +4937,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(32), // id, reduce: Assign
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(58), // comma, reduce: Fact
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(58), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(32), // rbrace, reduce: Assign
+			nil,        // assign
+			reduce(32), // if, reduce: Assign
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(58), // greater_than, reduce: Fact
-			reduce(58), // less_than, reduce: Fact
-			reduce(58), // not_equal, reduce: Fact
-			reduce(58), // plus, reduce: Fact
-			reduce(58), // minus, reduce: Fact
-			reduce(58), // mult, reduce: Fact
-			reduce(58), // div, reduce: Fact
+			reduce(32), // while, reduce: Assign
+			nil,        // do
+			reduce(32), // print, reduce: Assign
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S121
@@ -4979,38 +4979,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			nil,        // semicolon
+			reduce(48), // semicolon, reduce: Expresion
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(57), // comma, reduce: Fact
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(57), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(57), // greater_than, reduce: Fact
-			reduce(57), // less_than, reduce: Fact
-			reduce(57), // not_equal, reduce: Fact
-			reduce(57), // plus, reduce: Fact
-			reduce(57), // minus, reduce: Fact
-			reduce(57), // mult, reduce: Fact
-			reduce(57), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S122
@@ -5019,121 +5019,121 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(59), // comma, reduce: Fact
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			shift(171), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(59), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(59), // greater_than, reduce: Fact
-			reduce(59), // less_than, reduce: Fact
-			reduce(59), // not_equal, reduce: Fact
-			reduce(59), // plus, reduce: Fact
-			reduce(59), // minus, reduce: Fact
-			reduce(59), // mult, reduce: Fact
-			reduce(59), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S123
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			shift(66), // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			shift(67), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			shift(71), // myint
-			shift(72), // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			shift(75), // plus
-			shift(76), // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(49), // semicolon, reduce: Exp
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(49), // greater, reduce: Exp
+			reduce(49), // less, reduce: Exp
+			reduce(49), // notequal, reduce: Exp
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S124
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			shift(66), // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			shift(67), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			shift(71), // myint
-			shift(72), // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			shift(75), // plus
-			shift(76), // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(176), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S125
@@ -5142,39 +5142,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(176), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			shift(181), // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S126
@@ -5183,39 +5183,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			reduce(33), // id, reduce: Assign
-			nil,        // semicolon
+			nil,        // id
+			reduce(50), // semicolon, reduce: Termino
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(33), // curly_close, reduce: Assign
-			reduce(33), // print, reduce: Assign
-			nil,        // cte_string
-			nil,        // equal
-			reduce(33), // while, reduce: Assign
-			nil,        // do
-			reduce(33), // if, reduce: Assign
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(50), // greater, reduce: Termino
+			reduce(50), // less, reduce: Termino
+			reduce(50), // notequal, reduce: Termino
+			reduce(50), // plus, reduce: Termino
+			reduce(50), // minus, reduce: Termino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S127
@@ -5224,39 +5224,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(182), // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(79),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(183), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(185), // myint
-			shift(186), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(189), // plus
-			shift(190), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S128
@@ -5265,39 +5265,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(182), // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(79),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(183), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(185), // myint
-			shift(186), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(189), // plus
-			shift(190), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S129
@@ -5306,121 +5306,121 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(182), // id
-			nil,        // semicolon
+			nil,        // id
+			reduce(52), // semicolon, reduce: Factor
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(183), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(185), // myint
-			shift(186), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(189), // plus
-			shift(190), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(52), // greater, reduce: Factor
+			reduce(52), // less, reduce: Factor
+			reduce(52), // notequal, reduce: Factor
+			reduce(52), // plus, reduce: Factor
+			reduce(52), // minus, reduce: Factor
+			reduce(52), // times, reduce: Factor
+			reduce(52), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S130
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			shift(78), // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			shift(79), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			shift(82), // myint
-			shift(83), // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			shift(86), // plus
-			shift(87), // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(53), // semicolon, reduce: Factor
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(53), // greater, reduce: Factor
+			reduce(53), // less, reduce: Factor
+			reduce(53), // notequal, reduce: Factor
+			reduce(53), // plus, reduce: Factor
+			reduce(53), // minus, reduce: Factor
+			reduce(53), // times, reduce: Factor
+			reduce(53), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S131
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			shift(78), // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			shift(79), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			shift(82), // myint
-			shift(83), // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			shift(86), // plus
-			shift(87), // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(68), // semicolon, reduce: Cte
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(68), // greater, reduce: Cte
+			reduce(68), // less, reduce: Cte
+			reduce(68), // notequal, reduce: Cte
+			reduce(68), // plus, reduce: Cte
+			reduce(68), // minus, reduce: Cte
+			reduce(68), // times, reduce: Cte
+			reduce(68), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S132
@@ -5430,38 +5430,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(56), // semicolon, reduce: Fact
+			reduce(69), // semicolon, reduce: Cte
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(56), // greater_than, reduce: Fact
-			reduce(56), // less_than, reduce: Fact
-			reduce(56), // not_equal, reduce: Fact
-			reduce(56), // plus, reduce: Fact
-			reduce(56), // minus, reduce: Fact
-			reduce(56), // mult, reduce: Fact
-			reduce(56), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(69), // greater, reduce: Cte
+			reduce(69), // less, reduce: Cte
+			reduce(69), // notequal, reduce: Cte
+			reduce(69), // plus, reduce: Cte
+			reduce(69), // minus, reduce: Cte
+			reduce(69), // times, reduce: Cte
+			reduce(69), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S133
@@ -5471,38 +5471,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(58), // semicolon, reduce: Fact
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			shift(183), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(58), // greater_than, reduce: Fact
-			reduce(58), // less_than, reduce: Fact
-			reduce(58), // not_equal, reduce: Fact
-			reduce(58), // plus, reduce: Fact
-			reduce(58), // minus, reduce: Fact
-			reduce(58), // mult, reduce: Fact
-			reduce(58), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S134
@@ -5512,38 +5512,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(57), // semicolon, reduce: Fact
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			shift(185), // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(57), // greater_than, reduce: Fact
-			reduce(57), // less_than, reduce: Fact
-			reduce(57), // not_equal, reduce: Fact
-			reduce(57), // plus, reduce: Fact
-			reduce(57), // minus, reduce: Fact
-			reduce(57), // mult, reduce: Fact
-			reduce(57), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S135
@@ -5553,164 +5553,82 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(59), // semicolon, reduce: Fact
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(59), // greater_than, reduce: Fact
-			reduce(59), // less_than, reduce: Fact
-			reduce(59), // not_equal, reduce: Fact
-			reduce(59), // plus, reduce: Fact
-			reduce(59), // minus, reduce: Fact
-			reduce(59), // mult, reduce: Fact
-			reduce(59), // div, reduce: Fact
-		},
-	},
-	actionRow{ // S136
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			shift(78), // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			shift(79), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			shift(82), // myint
-			shift(83), // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			shift(86), // plus
-			shift(87), // minus
-			nil,       // mult
-			nil,       // div
-		},
-	},
-	actionRow{ // S137
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			shift(78), // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			shift(79), // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			shift(82), // myint
-			shift(83), // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			shift(86), // plus
-			shift(87), // minus
-			nil,       // mult
-			nil,       // div
-		},
-	},
-	actionRow{ // S138
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			shift(66),  // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(48), // rparen, reduce: Expresion
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(67),  // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			shift(199), // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(71),  // myint
-			shift(72),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(75),  // plus
-			shift(76),  // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
-	actionRow{ // S139
+	actionRow{ // S136
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(186), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
+		},
+	},
+	actionRow{ // S137
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        // INVALID
@@ -5722,33 +5640,115 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(49), // rparen, reduce: Exp
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			shift(200), // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(49), // greater, reduce: Exp
+			reduce(49), // less, reduce: Exp
+			reduce(49), // notequal, reduce: Exp
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S138
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(191), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
+		},
+	},
+	actionRow{ // S139
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(191), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S140
@@ -5763,33 +5763,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(50), // rparen, reduce: Termino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			shift(201), // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(50), // greater, reduce: Termino
+			reduce(50), // less, reduce: Termino
+			reduce(50), // notequal, reduce: Termino
+			reduce(50), // plus, reduce: Termino
+			reduce(50), // minus, reduce: Termino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S141
@@ -5798,39 +5798,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			shift(202), // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S142
@@ -5839,39 +5839,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			shift(203), // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S143
@@ -5880,39 +5880,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(204), // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(52), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(205), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(207), // myint
-			shift(208), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(211), // plus
-			shift(212), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(52), // greater, reduce: Factor
+			reduce(52), // less, reduce: Factor
+			reduce(52), // notequal, reduce: Factor
+			reduce(52), // plus, reduce: Factor
+			reduce(52), // minus, reduce: Factor
+			reduce(52), // times, reduce: Factor
+			reduce(52), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S144
@@ -5921,39 +5921,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(204), // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(53), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(205), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(207), // myint
-			shift(208), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(211), // plus
-			shift(212), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(53), // greater, reduce: Factor
+			reduce(53), // less, reduce: Factor
+			reduce(53), // notequal, reduce: Factor
+			reduce(53), // plus, reduce: Factor
+			reduce(53), // minus, reduce: Factor
+			reduce(53), // times, reduce: Factor
+			reduce(53), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S145
@@ -5962,39 +5962,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(204), // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(68), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(205), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(207), // myint
-			shift(208), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(211), // plus
-			shift(212), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(68), // greater, reduce: Cte
+			reduce(68), // less, reduce: Cte
+			reduce(68), // notequal, reduce: Cte
+			reduce(68), // plus, reduce: Cte
+			reduce(68), // minus, reduce: Cte
+			reduce(68), // times, reduce: Cte
+			reduce(68), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S146
@@ -6003,39 +6003,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(91),  // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(69), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(92),  // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(95),  // myint
-			shift(96),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(99),  // plus
-			shift(100), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(69), // greater, reduce: Cte
+			reduce(69), // less, reduce: Cte
+			reduce(69), // notequal, reduce: Cte
+			reduce(69), // plus, reduce: Cte
+			reduce(69), // minus, reduce: Cte
+			reduce(69), // times, reduce: Cte
+			reduce(69), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S147
@@ -6044,39 +6044,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(91),  // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(92),  // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(95),  // myint
-			shift(96),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(99),  // plus
-			shift(100), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			shift(198), // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S148
@@ -6086,38 +6086,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			nil,        // semicolon
+			shift(199), // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(56), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(56), // greater_than, reduce: Fact
-			reduce(56), // less_than, reduce: Fact
-			reduce(56), // not_equal, reduce: Fact
-			reduce(56), // plus, reduce: Fact
-			reduce(56), // minus, reduce: Fact
-			reduce(56), // mult, reduce: Fact
-			reduce(56), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S149
@@ -6126,39 +6126,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(70),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(58), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(58), // greater_than, reduce: Fact
-			reduce(58), // less_than, reduce: Fact
-			reduce(58), // not_equal, reduce: Fact
-			reduce(58), // plus, reduce: Fact
-			reduce(58), // minus, reduce: Fact
-			reduce(58), // mult, reduce: Fact
-			reduce(58), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			shift(95),  // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S150
@@ -6173,33 +6173,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(43), // rparen, reduce: PrintList
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(57), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(57), // greater_than, reduce: Fact
-			reduce(57), // less_than, reduce: Fact
-			reduce(57), // not_equal, reduce: Fact
-			reduce(57), // plus, reduce: Fact
-			reduce(57), // minus, reduce: Fact
-			reduce(57), // mult, reduce: Fact
-			reduce(57), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S151
@@ -6214,33 +6214,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			shift(201), // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(59), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(59), // greater_than, reduce: Fact
-			reduce(59), // less_than, reduce: Fact
-			reduce(59), // not_equal, reduce: Fact
-			reduce(59), // plus, reduce: Fact
-			reduce(59), // minus, reduce: Fact
-			reduce(59), // mult, reduce: Fact
-			reduce(59), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S152
@@ -6249,39 +6249,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(91),  // id
+			shift(34),  // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(92),  // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(26), // rbrace, reduce: StateDeclare
+			nil,        // assign
+			shift(42),  // if
 			nil,        // else
-			shift(95),  // myint
-			shift(96),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(99),  // plus
-			shift(100), // minus
-			nil,        // mult
-			nil,        // div
+			shift(43),  // while
+			nil,        // do
+			shift(44),  // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S153
@@ -6290,80 +6290,80 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(91),  // id
+			shift(13),  // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(92),  // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			reduce(11), // lbrace, reduce: VarsPrime
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(95),  // myint
-			shift(96),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(99),  // plus
-			shift(100), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S154
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			nil,        // id
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			shift(221), // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			nil,       // id
+			nil,       // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			reduce(8), // colon, reduce: MasId
+			shift(24), // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S155
@@ -6378,33 +6378,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(51), // comma, reduce: Factor
+			nil,        // lparen
+			reduce(51), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(19), // parenthesis_close, reduce: ParamList
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(51), // greater, reduce: Factor
+			reduce(51), // less, reduce: Factor
+			reduce(51), // notequal, reduce: Factor
+			reduce(51), // plus, reduce: Factor
+			reduce(51), // minus, reduce: Factor
+			reduce(51), // times, reduce: Factor
+			reduce(51), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S156
@@ -6414,38 +6414,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			shift(222), // semicolon
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			shift(101), // comma
+			nil,        // lparen
+			reduce(41), // rparen, reduce: MoreCall
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S157
@@ -6454,39 +6454,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(37), // id, reduce: FuncCall
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			shift(223), // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(37), // rbrace, reduce: FuncCall
+			nil,        // assign
+			reduce(37), // if, reduce: FuncCall
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			reduce(37), // while, reduce: FuncCall
+			nil,        // do
+			reduce(37), // print, reduce: FuncCall
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S158
@@ -6495,39 +6495,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
-			reduce(17), // main, reduce: Funcs
+			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			reduce(17), // int_rw, reduce: Funcs
-			reduce(17), // float_rw, reduce: Funcs
-			reduce(17), // void, reduce: Funcs
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S159
@@ -6537,79 +6537,79 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			shift(224), // semicolon
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(54), // comma, reduce: MoreExpresion
+			nil,        // lparen
+			reduce(54), // rparen, reduce: MoreExpresion
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S160
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			nil,       // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			shift(31), // int_rw
-			shift(32), // float_rw
-			shift(33), // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			nil,       // curly_open
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			nil,       // plus
-			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(61), // comma, reduce: MoreExp
+			nil,        // lparen
+			reduce(61), // rparen, reduce: MoreExp
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(210), // plus
+			shift(211), // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S161
@@ -6624,33 +6624,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(64), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			reduce(20), // bracket_close, reduce: Body
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(213), // times
+			shift(214), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S162
@@ -6659,39 +6659,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			shift(215), // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(53), // comma, reduce: Fact
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(53), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(53), // greater_than, reduce: Fact
-			reduce(53), // less_than, reduce: Fact
-			reduce(53), // not_equal, reduce: Fact
-			reduce(53), // plus, reduce: Fact
-			reduce(53), // minus, reduce: Fact
-			reduce(53), // mult, reduce: Fact
-			reduce(53), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			shift(217), // cte_int
+			shift(218), // cte_float
 		},
 	},
 	actionRow{ // S163
@@ -6700,39 +6700,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			shift(112), // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(40), // parenthesis_close, reduce: F_call_PR
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S164
@@ -6742,38 +6742,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			shift(227), // semicolon
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(59), // comma, reduce: MoreExp
+			nil,        // lparen
+			reduce(59), // rparen, reduce: MoreExp
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(59), // greater, reduce: MoreExp
+			reduce(59), // less, reduce: MoreExp
+			reduce(59), // notequal, reduce: MoreExp
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S165
@@ -6788,33 +6788,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(55), // comma, reduce: Fact
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(64), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(55), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(55), // plus, reduce: Fact
-			reduce(55), // minus, reduce: Fact
-			reduce(55), // mult, reduce: Fact
-			reduce(55), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			nil,        // plus
+			nil,        // minus
+			shift(221), // times
+			shift(222), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S166
@@ -6823,39 +6823,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(91),  // id
+			shift(223), // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(92),  // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(95),  // myint
-			shift(96),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(99),  // plus
-			shift(100), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			shift(225), // cte_int
+			shift(226), // cte_float
 		},
 	},
 	actionRow{ // S167
@@ -6870,33 +6870,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(54), // comma, reduce: Fact
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(60), // comma, reduce: MoreExp
+			nil,        // lparen
+			reduce(60), // rparen, reduce: MoreExp
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(54), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(54), // plus, reduce: Fact
-			reduce(54), // minus, reduce: Fact
-			reduce(54), // mult, reduce: Fact
-			reduce(54), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(60), // greater, reduce: MoreExp
+			reduce(60), // less, reduce: MoreExp
+			reduce(60), // notequal, reduce: MoreExp
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S168
@@ -6911,33 +6911,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(41), // comma, reduce: Cte
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(64), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(41), // parenthesis_close, reduce: Cte
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(41), // plus, reduce: Cte
-			reduce(41), // minus, reduce: Cte
-			reduce(41), // mult, reduce: Cte
-			reduce(41), // div, reduce: Cte
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(113), // times
+			shift(114), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S169
@@ -6952,33 +6952,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(42), // comma, reduce: Cte
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(64), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(42), // parenthesis_close, reduce: Cte
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(42), // plus, reduce: Cte
-			reduce(42), // minus, reduce: Cte
-			reduce(42), // mult, reduce: Cte
-			reduce(42), // div, reduce: Cte
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(113), // times
+			shift(114), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S170
@@ -6988,38 +6988,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			nil,        // semicolon
+			reduce(51), // semicolon, reduce: Factor
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(44), // comma, reduce: Expr
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(44), // parenthesis_close, reduce: Expr
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(51), // greater, reduce: Factor
+			reduce(51), // less, reduce: Factor
+			reduce(51), // notequal, reduce: Factor
+			reduce(51), // plus, reduce: Factor
+			reduce(51), // minus, reduce: Factor
+			reduce(51), // times, reduce: Factor
+			reduce(51), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S171
@@ -7028,39 +7028,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(47), // comma, reduce: Exp
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(47), // parenthesis_close, reduce: Exp
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(229), // plus
-			shift(230), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S172
@@ -7069,39 +7069,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(231), // id
-			nil,        // semicolon
+			nil,        // id
+			reduce(54), // semicolon, reduce: MoreExpresion
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(168), // myint
-			shift(169), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S173
@@ -7110,39 +7110,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(233), // id
-			nil,        // semicolon
+			nil,        // id
+			reduce(61), // semicolon, reduce: MoreExp
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(168), // myint
-			shift(169), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(231), // plus
+			shift(232), // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S174
@@ -7152,38 +7152,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			nil,        // semicolon
+			reduce(64), // semicolon, reduce: MoreTermino
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(50), // comma, reduce: Term
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(50), // parenthesis_close, reduce: Term
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(50), // plus, reduce: Term
-			reduce(50), // minus, reduce: Term
-			shift(235), // mult
-			shift(236), // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(234), // times
+			shift(235), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S175
@@ -7192,39 +7192,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			shift(236), // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(45), // comma, reduce: Expr
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(45), // parenthesis_close, reduce: Expr
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			shift(238), // cte_int
+			shift(239), // cte_float
 		},
 	},
 	actionRow{ // S176
@@ -7233,39 +7233,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(46), // comma, reduce: Expr
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(46), // parenthesis_close, reduce: Expr
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S177
@@ -7275,38 +7275,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			nil,        // semicolon
+			reduce(59), // semicolon, reduce: MoreExp
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(48), // comma, reduce: Exp
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(48), // parenthesis_close, reduce: Exp
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(48), // greater_than, reduce: Exp
-			reduce(48), // less_than, reduce: Exp
-			reduce(48), // not_equal, reduce: Exp
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(59), // greater, reduce: MoreExp
+			reduce(59), // less, reduce: MoreExp
+			reduce(59), // notequal, reduce: MoreExp
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S178
@@ -7316,38 +7316,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			nil,        // semicolon
+			reduce(64), // semicolon, reduce: MoreTermino
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(49), // comma, reduce: Exp
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(49), // parenthesis_close, reduce: Exp
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(49), // greater_than, reduce: Exp
-			reduce(49), // less_than, reduce: Exp
-			reduce(49), // not_equal, reduce: Exp
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			shift(242), // times
+			shift(243), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S179
@@ -7356,39 +7356,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			shift(244), // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(51), // comma, reduce: Term
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(51), // parenthesis_close, reduce: Term
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(51), // greater_than, reduce: Term
-			reduce(51), // less_than, reduce: Term
-			reduce(51), // not_equal, reduce: Term
-			reduce(51), // plus, reduce: Term
-			reduce(51), // minus, reduce: Term
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			shift(246), // cte_int
+			shift(247), // cte_float
 		},
 	},
 	actionRow{ // S180
@@ -7398,38 +7398,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			nil,        // semicolon
+			reduce(60), // semicolon, reduce: MoreExp
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(52), // comma, reduce: Term
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(52), // parenthesis_close, reduce: Term
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(52), // greater_than, reduce: Term
-			reduce(52), // less_than, reduce: Term
-			reduce(52), // not_equal, reduce: Term
-			reduce(52), // plus, reduce: Term
-			reduce(52), // minus, reduce: Term
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(60), // greater, reduce: MoreExp
+			reduce(60), // less, reduce: MoreExp
+			reduce(60), // notequal, reduce: MoreExp
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S181
@@ -7439,38 +7439,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(53), // semicolon, reduce: Fact
+			reduce(64), // semicolon, reduce: MoreTermino
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(53), // greater_than, reduce: Fact
-			reduce(53), // less_than, reduce: Fact
-			reduce(53), // not_equal, reduce: Fact
-			reduce(53), // plus, reduce: Fact
-			reduce(53), // minus, reduce: Fact
-			reduce(53), // mult, reduce: Fact
-			reduce(53), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(127), // times
+			shift(128), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S182
@@ -7480,38 +7480,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(55), // semicolon, reduce: Fact
+			reduce(64), // semicolon, reduce: MoreTermino
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(55), // plus, reduce: Fact
-			reduce(55), // minus, reduce: Fact
-			reduce(55), // mult, reduce: Fact
-			reduce(55), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(127), // times
+			shift(128), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S183
@@ -7520,39 +7520,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(91),  // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(51), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(92),  // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(95),  // myint
-			shift(96),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(99),  // plus
-			shift(100), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(51), // greater, reduce: Factor
+			reduce(51), // less, reduce: Factor
+			reduce(51), // notequal, reduce: Factor
+			reduce(51), // plus, reduce: Factor
+			reduce(51), // minus, reduce: Factor
+			reduce(51), // times, reduce: Factor
+			reduce(51), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S184
@@ -7562,38 +7562,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(54), // semicolon, reduce: Fact
+			reduce(35), // semicolon, reduce: ElseBody
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			shift(251), // else
 			nil,        // while
 			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(54), // plus, reduce: Fact
-			reduce(54), // minus, reduce: Fact
-			reduce(54), // mult, reduce: Fact
-			reduce(54), // div, reduce: Fact
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S185
@@ -7602,39 +7602,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
-			reduce(41), // semicolon, reduce: Cte
+			shift(34),  // id
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(26), // rbrace, reduce: StateDeclare
+			nil,        // assign
+			shift(42),  // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(41), // plus, reduce: Cte
-			reduce(41), // minus, reduce: Cte
-			reduce(41), // mult, reduce: Cte
-			reduce(41), // div, reduce: Cte
+			shift(43),  // while
+			nil,        // do
+			shift(44),  // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S186
@@ -7643,39 +7643,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
-			reduce(42), // semicolon, reduce: Cte
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(42), // plus, reduce: Cte
-			reduce(42), // minus, reduce: Cte
-			reduce(42), // mult, reduce: Cte
-			reduce(42), // div, reduce: Cte
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S187
@@ -7685,38 +7685,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(44), // semicolon, reduce: Expr
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(54), // rparen, reduce: MoreExpresion
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S188
@@ -7726,38 +7726,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(47), // semicolon, reduce: Exp
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(61), // rparen, reduce: MoreExp
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(238), // plus
-			shift(239), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(255), // plus
+			shift(256), // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S189
@@ -7766,39 +7766,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(240), // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(185), // myint
-			shift(186), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(258), // times
+			shift(259), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S190
@@ -7807,39 +7807,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(242), // id
+			shift(260), // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(185), // myint
-			shift(186), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			shift(262), // cte_int
+			shift(263), // cte_float
 		},
 	},
 	actionRow{ // S191
@@ -7848,39 +7848,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
-			reduce(50), // semicolon, reduce: Term
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(50), // plus, reduce: Term
-			reduce(50), // minus, reduce: Term
-			shift(244), // mult
-			shift(245), // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S192
@@ -7890,38 +7890,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(45), // semicolon, reduce: Expr
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(59), // rparen, reduce: MoreExp
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(59), // greater, reduce: MoreExp
+			reduce(59), // less, reduce: MoreExp
+			reduce(59), // notequal, reduce: MoreExp
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S193
@@ -7931,38 +7931,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(46), // semicolon, reduce: Expr
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			shift(266), // times
+			shift(267), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S194
@@ -7971,39 +7971,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
-			reduce(48), // semicolon, reduce: Exp
+			shift(268), // id
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(48), // greater_than, reduce: Exp
-			reduce(48), // less_than, reduce: Exp
-			reduce(48), // not_equal, reduce: Exp
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			shift(270), // cte_int
+			shift(271), // cte_float
 		},
 	},
 	actionRow{ // S195
@@ -8013,38 +8013,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(49), // semicolon, reduce: Exp
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(60), // rparen, reduce: MoreExp
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(49), // greater_than, reduce: Exp
-			reduce(49), // less_than, reduce: Exp
-			reduce(49), // not_equal, reduce: Exp
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(60), // greater, reduce: MoreExp
+			reduce(60), // less, reduce: MoreExp
+			reduce(60), // notequal, reduce: MoreExp
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S196
@@ -8054,38 +8054,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(51), // semicolon, reduce: Term
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(51), // greater_than, reduce: Term
-			reduce(51), // less_than, reduce: Term
-			reduce(51), // not_equal, reduce: Term
-			reduce(51), // plus, reduce: Term
-			reduce(51), // minus, reduce: Term
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(141), // times
+			shift(142), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S197
@@ -8095,38 +8095,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(52), // semicolon, reduce: Term
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(52), // greater_than, reduce: Term
-			reduce(52), // less_than, reduce: Term
-			reduce(52), // not_equal, reduce: Term
-			reduce(52), // plus, reduce: Term
-			reduce(52), // minus, reduce: Term
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(141), // times
+			shift(142), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S198
@@ -8141,36 +8141,77 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			shift(138), // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(32), // parenthesis_close, reduce: Print_PR
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			shift(275), // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S199
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(42), // id, reduce: Print
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(42), // rbrace, reduce: Print
+			nil,        // assign
+			reduce(42), // if, reduce: Print
+			nil,        // else
+			reduce(42), // while, reduce: Print
+			nil,        // do
+			reduce(42), // print, reduce: Print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S200
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        // INVALID
@@ -8182,74 +8223,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			shift(138), // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			shift(149), // comma
+			nil,        // lparen
+			reduce(47), // rparen, reduce: MorePrint
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(32), // parenthesis_close, reduce: Print_PR
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
-		},
-	},
-	actionRow{ // S200
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			nil,        // id
-			shift(248), // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
 			nil,        // while
 			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S201
@@ -8259,38 +8259,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			shift(249), // semicolon
+			shift(277), // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S202
@@ -8305,33 +8305,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(53), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			shift(278), // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(53), // greater_than, reduce: Fact
-			reduce(53), // less_than, reduce: Fact
-			reduce(53), // not_equal, reduce: Fact
-			reduce(53), // plus, reduce: Fact
-			reduce(53), // minus, reduce: Fact
-			reduce(53), // mult, reduce: Fact
-			reduce(53), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S203
@@ -8346,115 +8346,115 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			shift(251), // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			reduce(10), // lbrace, reduce: VarsPrime
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S204
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			nil,        // id
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			reduce(55), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(55), // plus, reduce: Fact
-			reduce(55), // minus, reduce: Fact
-			reduce(55), // mult, reduce: Fact
-			reduce(55), // div, reduce: Fact
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			nil,       // id
+			nil,       // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			nil,       // colon
+			nil,       // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			reduce(5), // lbrace, reduce: Vars
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S205
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			shift(91),  // id
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			shift(92),  // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			shift(95),  // myint
-			shift(96),  // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(99),  // plus
-			shift(100), // minus
-			nil,        // mult
-			nil,        // div
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			nil,       // id
+			nil,       // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			reduce(8), // colon, reduce: MasId
+			shift(24), // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S206
@@ -8469,33 +8469,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			shift(280), // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(54), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(54), // plus, reduce: Fact
-			reduce(54), // minus, reduce: Fact
-			reduce(54), // mult, reduce: Fact
-			reduce(54), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S207
@@ -8510,33 +8510,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(40), // rparen, reduce: MoreCall
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(41), // parenthesis_close, reduce: Cte
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(41), // plus, reduce: Cte
-			reduce(41), // minus, reduce: Cte
-			reduce(41), // mult, reduce: Cte
-			reduce(41), // div, reduce: Cte
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S208
@@ -8551,33 +8551,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			shift(281), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(42), // parenthesis_close, reduce: Cte
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(42), // plus, reduce: Cte
-			reduce(42), // minus, reduce: Cte
-			reduce(42), // mult, reduce: Cte
-			reduce(42), // div, reduce: Cte
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S209
@@ -8592,33 +8592,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(49), // comma, reduce: Exp
+			nil,        // lparen
+			reduce(49), // rparen, reduce: Exp
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(44), // parenthesis_close, reduce: Expr
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S210
@@ -8627,39 +8627,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(282), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(47), // parenthesis_close, reduce: Exp
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(253), // plus
-			shift(254), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S211
@@ -8668,39 +8668,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(255), // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(282), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(207), // myint
-			shift(208), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S212
@@ -8709,39 +8709,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(257), // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(50), // comma, reduce: Termino
+			nil,        // lparen
+			reduce(50), // rparen, reduce: Termino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(207), // myint
-			shift(208), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(50), // plus, reduce: Termino
+			reduce(50), // minus, reduce: Termino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S213
@@ -8750,39 +8750,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(158), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(50), // parenthesis_close, reduce: Term
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(50), // plus, reduce: Term
-			reduce(50), // minus, reduce: Term
-			shift(259), // mult
-			shift(260), // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S214
@@ -8791,39 +8791,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(158), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(45), // parenthesis_close, reduce: Expr
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S215
@@ -8838,33 +8838,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(52), // comma, reduce: Factor
+			nil,        // lparen
+			reduce(52), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(46), // parenthesis_close, reduce: Expr
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(52), // plus, reduce: Factor
+			reduce(52), // minus, reduce: Factor
+			reduce(52), // times, reduce: Factor
+			reduce(52), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S216
@@ -8879,33 +8879,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(53), // comma, reduce: Factor
+			nil,        // lparen
+			reduce(53), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(48), // parenthesis_close, reduce: Exp
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(48), // greater_than, reduce: Exp
-			reduce(48), // less_than, reduce: Exp
-			reduce(48), // not_equal, reduce: Exp
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(53), // plus, reduce: Factor
+			reduce(53), // minus, reduce: Factor
+			reduce(53), // times, reduce: Factor
+			reduce(53), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S217
@@ -8920,33 +8920,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(68), // comma, reduce: Cte
+			nil,        // lparen
+			reduce(68), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(49), // parenthesis_close, reduce: Exp
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(49), // greater_than, reduce: Exp
-			reduce(49), // less_than, reduce: Exp
-			reduce(49), // not_equal, reduce: Exp
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(68), // plus, reduce: Cte
+			reduce(68), // minus, reduce: Cte
+			reduce(68), // times, reduce: Cte
+			reduce(68), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S218
@@ -8961,33 +8961,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(69), // comma, reduce: Cte
+			nil,        // lparen
+			reduce(69), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(51), // parenthesis_close, reduce: Term
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(51), // greater_than, reduce: Term
-			reduce(51), // less_than, reduce: Term
-			reduce(51), // not_equal, reduce: Term
-			reduce(51), // plus, reduce: Term
-			reduce(51), // minus, reduce: Term
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(69), // plus, reduce: Cte
+			reduce(69), // minus, reduce: Cte
+			reduce(69), // times, reduce: Cte
+			reduce(69), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S219
@@ -9002,33 +9002,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			shift(289), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(52), // parenthesis_close, reduce: Term
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			reduce(52), // greater_than, reduce: Term
-			reduce(52), // less_than, reduce: Term
-			reduce(52), // not_equal, reduce: Term
-			reduce(52), // plus, reduce: Term
-			reduce(52), // minus, reduce: Term
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S220
@@ -9038,38 +9038,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			shift(261), // semicolon
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(50), // comma, reduce: Termino
+			nil,        // lparen
+			reduce(50), // rparen, reduce: Termino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
 			nil,        // while
 			nil,        // do
-			nil,        // if
-			shift(262), // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // print
+			nil,        // cte_string
+			reduce(50), // greater, reduce: Termino
+			reduce(50), // less, reduce: Termino
+			reduce(50), // notequal, reduce: Termino
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S221
@@ -9078,39 +9078,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(35),  // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(163), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(22), // curly_close, reduce: Body_PR
-			shift(43),  // print
-			nil,        // cte_string
-			nil,        // equal
-			shift(44),  // while
-			nil,        // do
-			shift(45),  // if
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S222
@@ -9119,39 +9119,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
-			reduce(15), // main, reduce: Funcs
+			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			reduce(15), // int_rw, reduce: Funcs
-			reduce(15), // float_rw, reduce: Funcs
-			reduce(15), // void, reduce: Funcs
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			shift(163), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S223
@@ -9161,38 +9161,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			shift(264), // semicolon
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(52), // comma, reduce: Factor
+			nil,        // lparen
+			reduce(52), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(52), // greater, reduce: Factor
+			reduce(52), // less, reduce: Factor
+			reduce(52), // notequal, reduce: Factor
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			reduce(52), // times, reduce: Factor
+			reduce(52), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S224
@@ -9203,37 +9203,37 @@ var actionTab = actionTable{
 			nil,        // program
 			nil,        // id
 			nil,        // semicolon
-			reduce(16), // main, reduce: Funcs
+			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			reduce(16), // int_rw, reduce: Funcs
-			reduce(16), // float_rw, reduce: Funcs
-			reduce(16), // void, reduce: Funcs
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // colon
+			reduce(53), // comma, reduce: Factor
+			nil,        // lparen
+			reduce(53), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(53), // greater, reduce: Factor
+			reduce(53), // less, reduce: Factor
+			reduce(53), // notequal, reduce: Factor
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			reduce(53), // times, reduce: Factor
+			reduce(53), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S225
@@ -9243,38 +9243,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			shift(265), // semicolon
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(68), // comma, reduce: Cte
+			nil,        // lparen
+			reduce(68), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(68), // greater, reduce: Cte
+			reduce(68), // less, reduce: Cte
+			reduce(68), // notequal, reduce: Cte
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			reduce(68), // times, reduce: Cte
+			reduce(68), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S226
@@ -9289,33 +9289,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(69), // comma, reduce: Cte
+			nil,        // lparen
+			reduce(69), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(39), // parenthesis_close, reduce: F_call_PR
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(69), // greater, reduce: Cte
+			reduce(69), // less, reduce: Cte
+			reduce(69), // notequal, reduce: Cte
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			reduce(69), // times, reduce: Cte
+			reduce(69), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S227
@@ -9324,39 +9324,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			reduce(37), // id, reduce: F_call
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(62), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(62), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(37), // curly_close, reduce: F_call
-			reduce(37), // print, reduce: F_call
-			nil,        // cte_string
-			nil,        // equal
-			reduce(37), // while, reduce: F_call
-			nil,        // do
-			reduce(37), // if, reduce: F_call
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(62), // greater, reduce: MoreTermino
+			reduce(62), // less, reduce: MoreTermino
+			reduce(62), // notequal, reduce: MoreTermino
+			reduce(62), // plus, reduce: MoreTermino
+			reduce(62), // minus, reduce: MoreTermino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S228
@@ -9371,33 +9371,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(63), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(63), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			shift(266), // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(63), // greater, reduce: MoreTermino
+			reduce(63), // less, reduce: MoreTermino
+			reduce(63), // notequal, reduce: MoreTermino
+			reduce(63), // plus, reduce: MoreTermino
+			reduce(63), // minus, reduce: MoreTermino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S229
@@ -9406,39 +9406,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(165), // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			shift(292), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(166), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(168), // myint
-			shift(169), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(172), // plus
-			shift(173), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S230
@@ -9447,39 +9447,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(165), // id
-			nil,        // semicolon
+			nil,        // id
+			reduce(49), // semicolon, reduce: Exp
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(166), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(168), // myint
-			shift(169), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(172), // plus
-			shift(173), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S231
@@ -9488,39 +9488,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(56), // comma, reduce: Fact
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			shift(293), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(56), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(56), // plus, reduce: Fact
-			reduce(56), // minus, reduce: Fact
-			reduce(56), // mult, reduce: Fact
-			reduce(56), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S232
@@ -9529,39 +9529,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(58), // comma, reduce: Fact
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			shift(293), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(58), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(58), // plus, reduce: Fact
-			reduce(58), // minus, reduce: Fact
-			reduce(58), // mult, reduce: Fact
-			reduce(58), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S233
@@ -9571,38 +9571,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			nil,        // semicolon
+			reduce(50), // semicolon, reduce: Termino
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(57), // comma, reduce: Fact
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(57), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(57), // plus, reduce: Fact
-			reduce(57), // minus, reduce: Fact
-			reduce(57), // mult, reduce: Fact
-			reduce(57), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(50), // plus, reduce: Termino
+			reduce(50), // minus, reduce: Termino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S234
@@ -9611,39 +9611,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(59), // comma, reduce: Fact
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			shift(171), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(59), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(59), // plus, reduce: Fact
-			reduce(59), // minus, reduce: Fact
-			reduce(59), // mult, reduce: Fact
-			reduce(59), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S235
@@ -9652,39 +9652,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(165), // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(171), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(166), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(168), // myint
-			shift(169), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(172), // plus
-			shift(173), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S236
@@ -9693,39 +9693,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(165), // id
-			nil,        // semicolon
+			nil,        // id
+			reduce(52), // semicolon, reduce: Factor
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(166), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(168), // myint
-			shift(169), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(172), // plus
-			shift(173), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(52), // plus, reduce: Factor
+			reduce(52), // minus, reduce: Factor
+			reduce(52), // times, reduce: Factor
+			reduce(52), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S237
@@ -9735,38 +9735,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			nil,        // semicolon
+			reduce(53), // semicolon, reduce: Factor
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			shift(271), // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(53), // plus, reduce: Factor
+			reduce(53), // minus, reduce: Factor
+			reduce(53), // times, reduce: Factor
+			reduce(53), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S238
@@ -9775,39 +9775,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(182), // id
-			nil,        // semicolon
+			nil,        // id
+			reduce(68), // semicolon, reduce: Cte
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(183), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(185), // myint
-			shift(186), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(189), // plus
-			shift(190), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(68), // plus, reduce: Cte
+			reduce(68), // minus, reduce: Cte
+			reduce(68), // times, reduce: Cte
+			reduce(68), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S239
@@ -9816,39 +9816,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(182), // id
-			nil,        // semicolon
+			nil,        // id
+			reduce(69), // semicolon, reduce: Cte
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(183), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(185), // myint
-			shift(186), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(189), // plus
-			shift(190), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(69), // plus, reduce: Cte
+			reduce(69), // minus, reduce: Cte
+			reduce(69), // times, reduce: Cte
+			reduce(69), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S240
@@ -9858,38 +9858,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(56), // semicolon, reduce: Fact
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			shift(300), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(56), // plus, reduce: Fact
-			reduce(56), // minus, reduce: Fact
-			reduce(56), // mult, reduce: Fact
-			reduce(56), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S241
@@ -9899,38 +9899,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(58), // semicolon, reduce: Fact
+			reduce(50), // semicolon, reduce: Termino
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(58), // plus, reduce: Fact
-			reduce(58), // minus, reduce: Fact
-			reduce(58), // mult, reduce: Fact
-			reduce(58), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(50), // greater, reduce: Termino
+			reduce(50), // less, reduce: Termino
+			reduce(50), // notequal, reduce: Termino
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S242
@@ -9939,39 +9939,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
-			reduce(57), // semicolon, reduce: Fact
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(176), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(57), // plus, reduce: Fact
-			reduce(57), // minus, reduce: Fact
-			reduce(57), // mult, reduce: Fact
-			reduce(57), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S243
@@ -9980,39 +9980,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
-			reduce(59), // semicolon, reduce: Fact
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(176), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(59), // plus, reduce: Fact
-			reduce(59), // minus, reduce: Fact
-			reduce(59), // mult, reduce: Fact
-			reduce(59), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S244
@@ -10021,39 +10021,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(182), // id
-			nil,        // semicolon
+			nil,        // id
+			reduce(52), // semicolon, reduce: Factor
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(183), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(185), // myint
-			shift(186), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(189), // plus
-			shift(190), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(52), // greater, reduce: Factor
+			reduce(52), // less, reduce: Factor
+			reduce(52), // notequal, reduce: Factor
+			nil,        // plus
+			nil,        // minus
+			reduce(52), // times, reduce: Factor
+			reduce(52), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S245
@@ -10062,39 +10062,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(182), // id
-			nil,        // semicolon
+			nil,        // id
+			reduce(53), // semicolon, reduce: Factor
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(183), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(185), // myint
-			shift(186), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(189), // plus
-			shift(190), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(53), // greater, reduce: Factor
+			reduce(53), // less, reduce: Factor
+			reduce(53), // notequal, reduce: Factor
+			nil,        // plus
+			nil,        // minus
+			reduce(53), // times, reduce: Factor
+			reduce(53), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S246
@@ -10104,38 +10104,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			nil,        // semicolon
+			reduce(68), // semicolon, reduce: Cte
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(30), // parenthesis_close, reduce: Print_PR
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(68), // greater, reduce: Cte
+			reduce(68), // less, reduce: Cte
+			reduce(68), // notequal, reduce: Cte
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			reduce(68), // times, reduce: Cte
+			reduce(68), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S247
@@ -10145,38 +10145,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			nil,        // semicolon
+			reduce(69), // semicolon, reduce: Cte
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(31), // parenthesis_close, reduce: Print_PR
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(69), // greater, reduce: Cte
+			reduce(69), // less, reduce: Cte
+			reduce(69), // notequal, reduce: Cte
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			reduce(69), // times, reduce: Cte
+			reduce(69), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S248
@@ -10185,39 +10185,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			reduce(28), // id, reduce: Print
-			nil,        // semicolon
+			nil,        // id
+			reduce(62), // semicolon, reduce: MoreTermino
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(28), // curly_close, reduce: Print
-			reduce(28), // print, reduce: Print
-			nil,        // cte_string
-			nil,        // equal
-			reduce(28), // while, reduce: Print
-			nil,        // do
-			reduce(28), // if, reduce: Print
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(62), // greater, reduce: MoreTermino
+			reduce(62), // less, reduce: MoreTermino
+			reduce(62), // notequal, reduce: MoreTermino
+			reduce(62), // plus, reduce: MoreTermino
+			reduce(62), // minus, reduce: MoreTermino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S249
@@ -10226,39 +10226,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			reduce(29), // id, reduce: Print
-			nil,        // semicolon
+			nil,        // id
+			reduce(63), // semicolon, reduce: MoreTermino
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(29), // curly_close, reduce: Print
-			reduce(29), // print, reduce: Print
-			nil,        // cte_string
-			nil,        // equal
-			reduce(29), // while, reduce: Print
-			nil,        // do
-			reduce(29), // if, reduce: Print
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(63), // greater, reduce: MoreTermino
+			reduce(63), // less, reduce: MoreTermino
+			reduce(63), // notequal, reduce: MoreTermino
+			reduce(63), // plus, reduce: MoreTermino
+			reduce(63), // minus, reduce: MoreTermino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S250
@@ -10268,38 +10268,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			shift(276), // semicolon
+			shift(303), // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S251
@@ -10308,39 +10308,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(35),  // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(22), // curly_close, reduce: Body_PR
-			shift(43),  // print
-			nil,        // cte_string
-			nil,        // equal
-			shift(44),  // while
-			nil,        // do
-			shift(45),  // if
+			nil,        // int
+			nil,        // float
+			shift(275), // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S252
@@ -10355,33 +10355,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			shift(278), // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			shift(305), // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S253
@@ -10390,39 +10390,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(204), // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			shift(306), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(205), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(207), // myint
-			shift(208), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(211), // plus
-			shift(212), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S254
@@ -10431,39 +10431,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			shift(204), // id
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(49), // rparen, reduce: Exp
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			shift(205), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			shift(207), // myint
-			shift(208), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(211), // plus
-			shift(212), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S255
@@ -10472,39 +10472,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(307), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(56), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(56), // plus, reduce: Fact
-			reduce(56), // minus, reduce: Fact
-			reduce(56), // mult, reduce: Fact
-			reduce(56), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S256
@@ -10513,39 +10513,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(307), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(58), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(58), // plus, reduce: Fact
-			reduce(58), // minus, reduce: Fact
-			reduce(58), // mult, reduce: Fact
-			reduce(58), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S257
@@ -10560,36 +10560,118 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(50), // rparen, reduce: Termino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(57), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(57), // plus, reduce: Fact
-			reduce(57), // minus, reduce: Fact
-			reduce(57), // mult, reduce: Fact
-			reduce(57), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(50), // plus, reduce: Termino
+			reduce(50), // minus, reduce: Termino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S258
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(186), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
+		},
+	},
+	actionRow{ // S259
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(186), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
+		},
+	},
+	actionRow{ // S260
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        // INVALID
@@ -10601,115 +10683,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(52), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(59), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(59), // plus, reduce: Fact
-			reduce(59), // minus, reduce: Fact
-			reduce(59), // mult, reduce: Fact
-			reduce(59), // div, reduce: Fact
-		},
-	},
-	actionRow{ // S259
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			shift(204), // id
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			shift(205), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
 			nil,        // while
 			nil,        // do
-			nil,        // if
-			nil,        // else
-			shift(207), // myint
-			shift(208), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(211), // plus
-			shift(212), // minus
-			nil,        // mult
-			nil,        // div
-		},
-	},
-	actionRow{ // S260
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			shift(204), // id
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			shift(205), // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
 			nil,        // print
 			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			shift(207), // myint
-			shift(208), // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			shift(211), // plus
-			shift(212), // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(52), // plus, reduce: Factor
+			reduce(52), // minus, reduce: Factor
+			reduce(52), // times, reduce: Factor
+			reduce(52), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S261
@@ -10718,39 +10718,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			reduce(35), // id, reduce: Condition
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(53), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(35), // curly_close, reduce: Condition
-			reduce(35), // print, reduce: Condition
-			nil,        // cte_string
-			nil,        // equal
-			reduce(35), // while, reduce: Condition
-			nil,        // do
-			reduce(35), // if, reduce: Condition
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(53), // plus, reduce: Factor
+			reduce(53), // minus, reduce: Factor
+			reduce(53), // times, reduce: Factor
+			reduce(53), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S262
@@ -10765,33 +10765,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(68), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			shift(251), // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(68), // plus, reduce: Cte
+			reduce(68), // minus, reduce: Cte
+			reduce(68), // times, reduce: Cte
+			reduce(68), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S263
@@ -10806,33 +10806,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(69), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			shift(284), // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(69), // plus, reduce: Cte
+			reduce(69), // minus, reduce: Cte
+			reduce(69), // times, reduce: Cte
+			reduce(69), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S264
@@ -10843,78 +10843,78 @@ var actionTab = actionTable{
 			nil,        // program
 			nil,        // id
 			nil,        // semicolon
-			reduce(14), // main, reduce: Funcs
+			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			reduce(14), // int_rw, reduce: Funcs
-			reduce(14), // float_rw, reduce: Funcs
-			reduce(14), // void, reduce: Funcs
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // lparen
+			shift(314), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S265
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       // INVALID
-			nil,       // ␚
-			nil,       // program
-			nil,       // id
-			nil,       // semicolon
-			nil,       // main
-			nil,       // end
-			nil,       // empty
-			nil,       // var
-			nil,       // two_dots
-			nil,       // comma
-			nil,       // int_rw
-			nil,       // float_rw
-			nil,       // void
-			nil,       // parenthesis_open
-			nil,       // parenthesis_close
-			nil,       // bracket_open
-			nil,       // bracket_close
-			reduce(7), // curly_open, reduce: Vars
-			nil,       // curly_close
-			nil,       // print
-			nil,       // cte_string
-			nil,       // equal
-			nil,       // while
-			nil,       // do
-			nil,       // if
-			nil,       // else
-			nil,       // myint
-			nil,       // myfloat
-			nil,       // greater_than
-			nil,       // less_than
-			nil,       // not_equal
-			nil,       // plus
-			nil,       // minus
-			nil,       // mult
-			nil,       // div
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(50), // rparen, reduce: Termino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(50), // greater, reduce: Termino
+			reduce(50), // less, reduce: Termino
+			reduce(50), // notequal, reduce: Termino
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S266
@@ -10923,39 +10923,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(53), // comma, reduce: Fact
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			shift(191), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(53), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(53), // plus, reduce: Fact
-			reduce(53), // minus, reduce: Fact
-			reduce(53), // mult, reduce: Fact
-			reduce(53), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S267
@@ -10964,39 +10964,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(48), // comma, reduce: Exp
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			shift(191), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(48), // parenthesis_close, reduce: Exp
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S268
@@ -11011,33 +11011,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(49), // comma, reduce: Exp
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(52), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(49), // parenthesis_close, reduce: Exp
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(52), // greater, reduce: Factor
+			reduce(52), // less, reduce: Factor
+			reduce(52), // notequal, reduce: Factor
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			reduce(52), // times, reduce: Factor
+			reduce(52), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S269
@@ -11052,33 +11052,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(51), // comma, reduce: Term
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(53), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(51), // parenthesis_close, reduce: Term
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(51), // plus, reduce: Term
-			reduce(51), // minus, reduce: Term
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(53), // greater, reduce: Factor
+			reduce(53), // less, reduce: Factor
+			reduce(53), // notequal, reduce: Factor
+			nil,        // plus
+			nil,        // minus
+			reduce(53), // times, reduce: Factor
+			reduce(53), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S270
@@ -11093,33 +11093,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			reduce(52), // comma, reduce: Term
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(68), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(52), // parenthesis_close, reduce: Term
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(52), // plus, reduce: Term
-			reduce(52), // minus, reduce: Term
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(68), // greater, reduce: Cte
+			reduce(68), // less, reduce: Cte
+			reduce(68), // notequal, reduce: Cte
+			nil,        // plus
+			nil,        // minus
+			reduce(68), // times, reduce: Cte
+			reduce(68), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S271
@@ -11129,38 +11129,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(53), // semicolon, reduce: Fact
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(69), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(53), // plus, reduce: Fact
-			reduce(53), // minus, reduce: Fact
-			reduce(53), // mult, reduce: Fact
-			reduce(53), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(69), // greater, reduce: Cte
+			reduce(69), // less, reduce: Cte
+			reduce(69), // notequal, reduce: Cte
+			nil,        // plus
+			nil,        // minus
+			reduce(69), // times, reduce: Cte
+			reduce(69), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S272
@@ -11170,38 +11170,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(48), // semicolon, reduce: Exp
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(62), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(62), // greater, reduce: MoreTermino
+			reduce(62), // less, reduce: MoreTermino
+			reduce(62), // notequal, reduce: MoreTermino
+			reduce(62), // plus, reduce: MoreTermino
+			reduce(62), // minus, reduce: MoreTermino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S273
@@ -11211,38 +11211,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(49), // semicolon, reduce: Exp
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(63), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(63), // greater, reduce: MoreTermino
+			reduce(63), // less, reduce: MoreTermino
+			reduce(63), // notequal, reduce: MoreTermino
+			reduce(63), // plus, reduce: MoreTermino
+			reduce(63), // minus, reduce: MoreTermino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S274
@@ -11252,38 +11252,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(51), // semicolon, reduce: Term
+			shift(317), // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(51), // plus, reduce: Term
-			reduce(51), // minus, reduce: Term
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S275
@@ -11292,39 +11292,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
-			reduce(52), // semicolon, reduce: Term
+			shift(34),  // id
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(26), // rbrace, reduce: StateDeclare
+			nil,        // assign
+			shift(42),  // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(52), // plus, reduce: Term
-			reduce(52), // minus, reduce: Term
-			nil,        // mult
-			nil,        // div
+			shift(43),  // while
+			nil,        // do
+			shift(44),  // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S276
@@ -11333,39 +11333,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			reduce(34), // id, reduce: Cycle
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			reduce(46), // rparen, reduce: MorePrint
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(34), // curly_close, reduce: Cycle
-			reduce(34), // print, reduce: Cycle
-			nil,        // cte_string
-			nil,        // equal
-			reduce(34), // while, reduce: Cycle
-			nil,        // do
-			reduce(34), // if, reduce: Cycle
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S277
@@ -11376,37 +11376,37 @@ var actionTab = actionTable{
 			nil,        // program
 			nil,        // id
 			nil,        // semicolon
-			nil,        // main
+			reduce(14), // main, reduce: Funcs
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			shift(285), // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			reduce(14), // void, reduce: Funcs
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S278
@@ -11421,33 +11421,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			reduce(24), // rbracket, reduce: Body
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(53), // parenthesis_close, reduce: Fact
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(53), // plus, reduce: Fact
-			reduce(53), // minus, reduce: Fact
-			reduce(53), // mult, reduce: Fact
-			reduce(53), // div, reduce: Fact
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S279
@@ -11462,74 +11462,74 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			shift(319), // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(48), // parenthesis_close, reduce: Exp
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S280
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,        // INVALID
-			nil,        // ␚
-			nil,        // program
-			nil,        // id
-			nil,        // semicolon
-			nil,        // main
-			nil,        // end
-			nil,        // empty
-			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
-			nil,        // void
-			nil,        // parenthesis_open
-			reduce(49), // parenthesis_close, reduce: Exp
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
-			nil,        // if
-			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			nil,        // plus
-			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			nil,       // id
+			nil,       // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			nil,       // colon
+			nil,       // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			shift(51), // void
+			shift(52), // int
+			shift(53), // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
 		},
 	},
 	actionRow{ // S281
@@ -11544,33 +11544,33 @@ var actionTab = actionTable{
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(51), // comma, reduce: Factor
+			nil,        // lparen
+			reduce(51), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(51), // parenthesis_close, reduce: Term
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(51), // plus, reduce: Term
-			reduce(51), // minus, reduce: Term
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(51), // plus, reduce: Factor
+			reduce(51), // minus, reduce: Factor
+			reduce(51), // times, reduce: Factor
+			reduce(51), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S282
@@ -11579,39 +11579,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
+			reduce(67), // id, reduce: Op
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			reduce(52), // parenthesis_close, reduce: Term
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
-			reduce(52), // plus, reduce: Term
-			reduce(52), // minus, reduce: Term
-			nil,        // mult
-			nil,        // div
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
 		},
 	},
 	actionRow{ // S283
@@ -11621,38 +11621,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			shift(286), // semicolon
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(59), // comma, reduce: MoreExp
+			nil,        // lparen
+			reduce(59), // rparen, reduce: MoreExp
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S284
@@ -11662,38 +11662,38 @@ var actionTab = actionTable{
 			nil,        // ␚
 			nil,        // program
 			nil,        // id
-			reduce(20), // semicolon, reduce: Body
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(64), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
 			nil,        // while
 			nil,        // do
-			nil,        // if
-			reduce(20), // else, reduce: Body
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			shift(323), // times
+			shift(324), // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 	actionRow{ // S285
@@ -11702,39 +11702,39 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			nil,        // id
-			reduce(20), // semicolon, reduce: Body
+			shift(325), // id
+			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
+			nil,        // colon
 			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			nil,        // curly_close
-			nil,        // print
-			nil,        // cte_string
-			nil,        // equal
-			nil,        // while
-			nil,        // do
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
 			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			shift(327), // cte_int
+			shift(328), // cte_float
 		},
 	},
 	actionRow{ // S286
@@ -11743,39 +11743,3688 @@ var actionTab = actionTable{
 			nil,        // INVALID
 			nil,        // ␚
 			nil,        // program
-			reduce(36), // id, reduce: Condition
+			nil,        // id
 			nil,        // semicolon
 			nil,        // main
 			nil,        // end
 			nil,        // empty
 			nil,        // var
-			nil,        // two_dots
-			nil,        // comma
-			nil,        // int_rw
-			nil,        // float_rw
+			nil,        // colon
+			reduce(60), // comma, reduce: MoreExp
+			nil,        // lparen
+			reduce(60), // rparen, reduce: MoreExp
+			nil,        // lbracket
+			nil,        // rbracket
 			nil,        // void
-			nil,        // parenthesis_open
-			nil,        // parenthesis_close
-			nil,        // bracket_open
-			nil,        // bracket_close
-			nil,        // curly_open
-			reduce(36), // curly_close, reduce: Condition
-			reduce(36), // print, reduce: Condition
-			nil,        // cte_string
-			nil,        // equal
-			reduce(36), // while, reduce: Condition
-			nil,        // do
-			reduce(36), // if, reduce: Condition
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
 			nil,        // else
-			nil,        // myint
-			nil,        // myfloat
-			nil,        // greater_than
-			nil,        // less_than
-			nil,        // not_equal
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
 			nil,        // plus
 			nil,        // minus
-			nil,        // mult
-			nil,        // div
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S287
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(64), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(213), // times
+			shift(214), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S288
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(64), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(213), // times
+			shift(214), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S289
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(51), // comma, reduce: Factor
+			nil,        // lparen
+			reduce(51), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(51), // greater, reduce: Factor
+			reduce(51), // less, reduce: Factor
+			reduce(51), // notequal, reduce: Factor
+			nil,        // plus
+			nil,        // minus
+			reduce(51), // times, reduce: Factor
+			reduce(51), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S290
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(64), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			nil,        // plus
+			nil,        // minus
+			shift(221), // times
+			shift(222), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S291
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(64), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			nil,        // plus
+			nil,        // minus
+			shift(221), // times
+			shift(222), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S292
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(51), // semicolon, reduce: Factor
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(51), // plus, reduce: Factor
+			reduce(51), // minus, reduce: Factor
+			reduce(51), // times, reduce: Factor
+			reduce(51), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S293
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
+		},
+	},
+	actionRow{ // S294
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(59), // semicolon, reduce: MoreExp
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S295
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(64), // semicolon, reduce: MoreTermino
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			shift(335), // times
+			shift(336), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S296
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			shift(337), // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			shift(339), // cte_int
+			shift(340), // cte_float
+		},
+	},
+	actionRow{ // S297
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(60), // semicolon, reduce: MoreExp
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S298
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(64), // semicolon, reduce: MoreTermino
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(234), // times
+			shift(235), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S299
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(64), // semicolon, reduce: MoreTermino
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(234), // times
+			shift(235), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S300
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(51), // semicolon, reduce: Factor
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(51), // greater, reduce: Factor
+			reduce(51), // less, reduce: Factor
+			reduce(51), // notequal, reduce: Factor
+			nil,        // plus
+			nil,        // minus
+			reduce(51), // times, reduce: Factor
+			reduce(51), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S301
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(64), // semicolon, reduce: MoreTermino
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			nil,        // plus
+			nil,        // minus
+			shift(242), // times
+			shift(243), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S302
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(64), // semicolon, reduce: MoreTermino
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			nil,        // plus
+			nil,        // minus
+			shift(242), // times
+			shift(243), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S303
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(33), // id, reduce: Condition
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(33), // rbrace, reduce: Condition
+			nil,        // assign
+			reduce(33), // if, reduce: Condition
+			nil,        // else
+			reduce(33), // while, reduce: Condition
+			nil,        // do
+			reduce(33), // print, reduce: Condition
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S304
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(34), // semicolon, reduce: ElseBody
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S305
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(24), // semicolon, reduce: Body
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			reduce(24), // else, reduce: Body
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S306
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(51), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(51), // plus, reduce: Factor
+			reduce(51), // minus, reduce: Factor
+			reduce(51), // times, reduce: Factor
+			reduce(51), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S307
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(85),  // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
+		},
+	},
+	actionRow{ // S308
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(59), // rparen, reduce: MoreExp
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S309
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			shift(347), // times
+			shift(348), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S310
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			shift(349), // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			shift(351), // cte_int
+			shift(352), // cte_float
+		},
+	},
+	actionRow{ // S311
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(60), // rparen, reduce: MoreExp
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S312
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(258), // times
+			shift(259), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S313
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(64), // plus, reduce: MoreTermino
+			reduce(64), // minus, reduce: MoreTermino
+			shift(258), // times
+			shift(259), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S314
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(51), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(51), // greater, reduce: Factor
+			reduce(51), // less, reduce: Factor
+			reduce(51), // notequal, reduce: Factor
+			nil,        // plus
+			nil,        // minus
+			reduce(51), // times, reduce: Factor
+			reduce(51), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S315
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			nil,        // plus
+			nil,        // minus
+			shift(266), // times
+			shift(267), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S316
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(64), // greater, reduce: MoreTermino
+			reduce(64), // less, reduce: MoreTermino
+			reduce(64), // notequal, reduce: MoreTermino
+			nil,        // plus
+			nil,        // minus
+			shift(266), // times
+			shift(267), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S317
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(36), // id, reduce: Cycle
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			reduce(36), // rbrace, reduce: Cycle
+			nil,        // assign
+			reduce(36), // if, reduce: Cycle
+			nil,        // else
+			reduce(36), // while, reduce: Cycle
+			nil,        // do
+			reduce(36), // print, reduce: Cycle
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S318
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			shift(357), // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S319
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			nil,       // id
+			nil,       // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			nil,       // colon
+			nil,       // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			shift(51), // void
+			shift(52), // int
+			shift(53), // float
+			nil,       // lbrace
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
+		},
+	},
+	actionRow{ // S320
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			shift(359), // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S321
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			shift(360), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S322
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(50), // comma, reduce: Termino
+			nil,        // lparen
+			reduce(50), // rparen, reduce: Termino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S323
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(282), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
+		},
+	},
+	actionRow{ // S324
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(282), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
+		},
+	},
+	actionRow{ // S325
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(52), // comma, reduce: Factor
+			nil,        // lparen
+			reduce(52), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(52), // times, reduce: Factor
+			reduce(52), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S326
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(53), // comma, reduce: Factor
+			nil,        // lparen
+			reduce(53), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(53), // times, reduce: Factor
+			reduce(53), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S327
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(68), // comma, reduce: Cte
+			nil,        // lparen
+			reduce(68), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(68), // times, reduce: Cte
+			reduce(68), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S328
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(69), // comma, reduce: Cte
+			nil,        // lparen
+			reduce(69), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(69), // times, reduce: Cte
+			reduce(69), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S329
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(62), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(62), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(62), // plus, reduce: MoreTermino
+			reduce(62), // minus, reduce: MoreTermino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S330
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(63), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(63), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(63), // plus, reduce: MoreTermino
+			reduce(63), // minus, reduce: MoreTermino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S331
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(62), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(62), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(62), // greater, reduce: MoreTermino
+			reduce(62), // less, reduce: MoreTermino
+			reduce(62), // notequal, reduce: MoreTermino
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S332
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(63), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(63), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(63), // greater, reduce: MoreTermino
+			reduce(63), // less, reduce: MoreTermino
+			reduce(63), // notequal, reduce: MoreTermino
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S333
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			shift(363), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S334
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(50), // semicolon, reduce: Termino
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S335
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(293), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
+		},
+	},
+	actionRow{ // S336
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(293), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
+		},
+	},
+	actionRow{ // S337
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(52), // semicolon, reduce: Factor
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(52), // times, reduce: Factor
+			reduce(52), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S338
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(53), // semicolon, reduce: Factor
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(53), // times, reduce: Factor
+			reduce(53), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S339
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(68), // semicolon, reduce: Cte
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(68), // times, reduce: Cte
+			reduce(68), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S340
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(69), // semicolon, reduce: Cte
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(69), // times, reduce: Cte
+			reduce(69), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S341
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(62), // semicolon, reduce: MoreTermino
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(62), // plus, reduce: MoreTermino
+			reduce(62), // minus, reduce: MoreTermino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S342
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(63), // semicolon, reduce: MoreTermino
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(63), // plus, reduce: MoreTermino
+			reduce(63), // minus, reduce: MoreTermino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S343
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(62), // semicolon, reduce: MoreTermino
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(62), // greater, reduce: MoreTermino
+			reduce(62), // less, reduce: MoreTermino
+			reduce(62), // notequal, reduce: MoreTermino
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S344
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(63), // semicolon, reduce: MoreTermino
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(63), // greater, reduce: MoreTermino
+			reduce(63), // less, reduce: MoreTermino
+			reduce(63), // notequal, reduce: MoreTermino
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S345
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			shift(366), // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S346
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(50), // rparen, reduce: Termino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S347
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(307), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
+		},
+	},
+	actionRow{ // S348
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			reduce(67), // id, reduce: Op
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			shift(307), // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			shift(77),  // plus
+			shift(78),  // minus
+			nil,        // times
+			nil,        // divide
+			reduce(67), // cte_int, reduce: Op
+			reduce(67), // cte_float, reduce: Op
+		},
+	},
+	actionRow{ // S349
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(52), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(52), // times, reduce: Factor
+			reduce(52), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S350
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(53), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(53), // times, reduce: Factor
+			reduce(53), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S351
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(68), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(68), // times, reduce: Cte
+			reduce(68), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S352
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(69), // rparen, reduce: Cte
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(69), // times, reduce: Cte
+			reduce(69), // divide, reduce: Cte
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S353
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(62), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(62), // plus, reduce: MoreTermino
+			reduce(62), // minus, reduce: MoreTermino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S354
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(63), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			reduce(63), // plus, reduce: MoreTermino
+			reduce(63), // minus, reduce: MoreTermino
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S355
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(62), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(62), // greater, reduce: MoreTermino
+			reduce(62), // less, reduce: MoreTermino
+			reduce(62), // notequal, reduce: MoreTermino
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S356
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(63), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			reduce(63), // greater, reduce: MoreTermino
+			reduce(63), // less, reduce: MoreTermino
+			reduce(63), // notequal, reduce: MoreTermino
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S357
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(24), // semicolon, reduce: Body
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S358
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			shift(369), // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S359
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			reduce(6), // id, reduce: Variable
+			nil,       // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			nil,       // colon
+			nil,       // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			reduce(6), // lbrace, reduce: Variable
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
+		},
+	},
+	actionRow{ // S360
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(51), // comma, reduce: Factor
+			nil,        // lparen
+			reduce(51), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(51), // times, reduce: Factor
+			reduce(51), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S361
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(64), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			shift(323), // times
+			shift(324), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S362
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(64), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			shift(323), // times
+			shift(324), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S363
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(51), // semicolon, reduce: Factor
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(51), // times, reduce: Factor
+			reduce(51), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S364
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(64), // semicolon, reduce: MoreTermino
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			shift(335), // times
+			shift(336), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S365
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(64), // semicolon, reduce: MoreTermino
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			shift(335), // times
+			shift(336), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S366
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(51), // rparen, reduce: Factor
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			reduce(51), // times, reduce: Factor
+			reduce(51), // divide, reduce: Factor
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S367
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			shift(347), // times
+			shift(348), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S368
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(64), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			shift(347), // times
+			shift(348), // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S369
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // ␚
+			nil,       // program
+			nil,       // id
+			nil,       // semicolon
+			nil,       // main
+			nil,       // end
+			nil,       // empty
+			nil,       // var
+			nil,       // colon
+			nil,       // comma
+			nil,       // lparen
+			nil,       // rparen
+			nil,       // lbracket
+			nil,       // rbracket
+			nil,       // void
+			nil,       // int
+			nil,       // float
+			reduce(6), // lbrace, reduce: Variable
+			nil,       // rbrace
+			nil,       // assign
+			nil,       // if
+			nil,       // else
+			nil,       // while
+			nil,       // do
+			nil,       // print
+			nil,       // cte_string
+			nil,       // greater
+			nil,       // less
+			nil,       // notequal
+			nil,       // plus
+			nil,       // minus
+			nil,       // times
+			nil,       // divide
+			nil,       // cte_int
+			nil,       // cte_float
+		},
+	},
+	actionRow{ // S370
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(62), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(62), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S371
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			reduce(63), // comma, reduce: MoreTermino
+			nil,        // lparen
+			reduce(63), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S372
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(62), // semicolon, reduce: MoreTermino
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S373
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			reduce(63), // semicolon, reduce: MoreTermino
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			nil,        // rparen
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S374
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(62), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
+		},
+	},
+	actionRow{ // S375
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // ␚
+			nil,        // program
+			nil,        // id
+			nil,        // semicolon
+			nil,        // main
+			nil,        // end
+			nil,        // empty
+			nil,        // var
+			nil,        // colon
+			nil,        // comma
+			nil,        // lparen
+			reduce(63), // rparen, reduce: MoreTermino
+			nil,        // lbracket
+			nil,        // rbracket
+			nil,        // void
+			nil,        // int
+			nil,        // float
+			nil,        // lbrace
+			nil,        // rbrace
+			nil,        // assign
+			nil,        // if
+			nil,        // else
+			nil,        // while
+			nil,        // do
+			nil,        // print
+			nil,        // cte_string
+			nil,        // greater
+			nil,        // less
+			nil,        // notequal
+			nil,        // plus
+			nil,        // minus
+			nil,        // times
+			nil,        // divide
+			nil,        // cte_int
+			nil,        // cte_float
 		},
 	},
 }

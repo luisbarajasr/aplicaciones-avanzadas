@@ -2,7 +2,7 @@
 
 package parser
 
-const numNTSymbols = 26
+const numNTSymbols = 40
 
 type (
 	gotoTable [numStates]gotoRow
@@ -13,8037 +13,15793 @@ var gotoTab = gotoTable{
 	gotoRow{ // S0
 		-1, // S'
 		1,  // Start
-		2,  // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		2,  // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S1
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S2
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S3
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S4
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S5
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		6,  // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		6,  // VarsOp
 		7,  // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S6
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		9,  // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		11, // Type
-		15, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		9,  // FuncLoop
 		10, // Funcs
-		-1, // ParamList
+		11, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S7
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S8
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		17, // VarList
-		-1, // Type
-		-1, // Register_Func
+		14, // Variable
+		-1, // MasId
+		15, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S9
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S10
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		19, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		11, // Type
-		15, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		17, // FuncLoop
 		10, // Funcs
-		-1, // ParamList
+		11, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S11
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S12
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S13
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S14
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		20, // Variable
+		-1, // MasId
+		22, // AddVarId
+		21, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S15
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		23, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S16
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		25, // Body
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S17
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S18
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
-		24, // Body
-		-1, // Body_PR
+		-1, // RegisterFunc
+		28, // Params
+		29, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S19
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S20
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S21
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		27, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S22
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		29, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		30, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S23
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		30, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S24
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		32, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S25
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		36, // Body_PR
-		37, // Statement
-		42, // Print
-		-1, // Print_PR
-		38, // Assign
-		40, // Cycle
-		39, // Condition
-		41, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S26
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		35, // StateDeclare
+		36, // Statement
+		37, // Assign
+		38, // Condition
+		-1, // ElseBody
+		39, // Cycle
+		40, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		41, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S27
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S28
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S29
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		48, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S30
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S31
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		50, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S32
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		54, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S33
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S34
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S35
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S36
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		58, // StateDeclare
+		36, // Statement
+		37, // Assign
+		38, // Condition
+		-1, // ElseBody
+		39, // Cycle
+		40, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		41, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S37
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		53, // Body_PR
-		37, // Statement
-		42, // Print
-		-1, // Print_PR
-		38, // Assign
-		40, // Cycle
-		39, // Condition
-		41, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S38
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S39
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S40
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S41
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S42
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S43
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S44
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S45
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		62, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S46
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		57, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S47
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		67, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S48
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
 		-1, // FuncLoop
-		63, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
 		-1, // Funcs
-		-1, // ParamList
-		62, // Body
-		-1, // Body_PR
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S49
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		68, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S50
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		70, // Cte
-		69, // Expr
-		73, // Exp
-		74, // Term
-		77, // Fact
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S51
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		81, // Cte
-		80, // Expr
-		84, // Exp
-		85, // Term
-		88, // Fact
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S52
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S53
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S54
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		70, // Cte
-		89, // Expr
-		73, // Exp
-		74, // Term
-		77, // Fact
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S55
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		94,  // Cte
-		93,  // Expr
-		97,  // Exp
-		98,  // Term
-		101, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		72, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		71, // Expresion
+		73, // Exp
+		74, // Termino
+		75, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		76, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S56
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		94,  // Cte
-		102, // Expr
-		97,  // Exp
-		98,  // Term
-		101, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		80, // Expresion
+		81, // Exp
+		82, // Termino
+		83, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		84, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S57
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S58
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S59
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		86, // Expresion
+		87, // Exp
+		88, // Termino
+		89, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		90, // Op
 		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
 	},
 	gotoRow{ // S60
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		91, // Expresion
+		87, // Exp
+		88, // Termino
+		89, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		90, // Op
 		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
 	},
 	gotoRow{ // S61
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		105, // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		104, // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		93, // PrintList
+		94, // PrintItem
+		-1, // MorePrint
+		92, // Expresion
+		73, // Exp
+		74, // Termino
+		75, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		76, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S62
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S63
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		107, // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S64
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		108, // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S65
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		109, // Body_PR
-		37,  // Statement
-		42,  // Print
-		-1,  // Print_PR
-		38,  // Assign
-		40,  // Cycle
-		39,  // Condition
-		41,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S66
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
+		-1, // Program
+		-1, // VarsOp
+		96, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
 		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S67
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		94,  // Cte
-		110, // Expr
-		97,  // Exp
-		98,  // Term
-		101, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		98, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S68
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S69
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		113, // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S70
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		100, // Expresion
+		87,  // Exp
+		88,  // Termino
+		89,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		90,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S71
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		102, // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S72
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S73
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		104, // MoreExpresion
+		105, // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S74
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		109, // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S75
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		120, // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		112, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S76
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		122, // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		116, // Cte
 	},
 	gotoRow{ // S77
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S78
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S79
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		94,  // Cte
-		125, // Expr
-		97,  // Exp
-		98,  // Term
-		101, // Fact
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		119, // Expresion
+		87,  // Exp
+		88,  // Termino
+		89,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		90,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S80
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S81
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-	},
-	gotoRow{ // S82
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-	},
-	gotoRow{ // S83
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-	},
-	gotoRow{ // S84
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-	},
-	gotoRow{ // S85
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-	},
-	gotoRow{ // S86
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		133, // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // Termino
+		-1,  // Factor
+		121, // MoreExpresion
+		122, // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S82
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		123, // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S83
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		126, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S84
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		130, // Cte
+	},
+	gotoRow{ // S85
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		133, // Expresion
+		87,  // Exp
+		88,  // Termino
+		89,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		90,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S86
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S87
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		135, // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // Termino
+		-1,  // Factor
+		135, // MoreExpresion
+		136, // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S88
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		137, // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S89
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		139, // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		140, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S90
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		140, // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		144, // Cte
 	},
 	gotoRow{ // S91
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S92
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		94,  // Cte
-		141, // Expr
-		97,  // Exp
-		98,  // Term
-		101, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S93
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S94
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		150, // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S95
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S96
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		151, // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S97
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		153, // Variable
+		-1,  // MasId
+		154, // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S98
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S99
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		149, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-	},
-	gotoRow{ // S100
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		151, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-	},
-	gotoRow{ // S101
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S100
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S101
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		156, // Expresion
+		73,  // Exp
+		74,  // Termino
+		75,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		76,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S102
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S103
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		155, // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S104
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S105
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
-		157, // Body
-		-1,  // Body_PR
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		159, // Exp
+		160, // Termino
+		161, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		162, // Op
 		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
 	},
 	gotoRow{ // S106
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S107
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S108
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S109
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S110
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-	},
-	gotoRow{ // S111
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-	},
-	gotoRow{ // S112
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		70,  // Cte
-		163, // Expr
-		73,  // Exp
-		74,  // Term
-		77,  // Fact
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		164, // Termino
+		165, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		166, // Op
+		-1,  // Cte
 	},
-	gotoRow{ // S113
+	gotoRow{ // S111
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		167, // Termino
+		165, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		166, // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S112
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S113
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		168, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		76,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S114
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		167, // Cte
-		-1,  // Expr
-		170, // Exp
-		171, // Term
-		174, // Fact
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		169, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		76,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S115
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		167, // Cte
-		-1,  // Expr
-		175, // Exp
-		171, // Term
-		174, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S116
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		167, // Cte
-		-1,  // Expr
-		176, // Exp
-		171, // Term
-		174, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S117
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		70,  // Cte
-		-1,  // Expr
-		177, // Exp
-		74,  // Term
-		77,  // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S118
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		70,  // Cte
-		-1,  // Expr
-		178, // Exp
-		74,  // Term
-		77,  // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S119
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S120
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S121
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S122
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-	},
-	gotoRow{ // S123
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		70,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		179, // Term
-		77,  // Fact
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		172, // Exp
+		173, // Termino
+		174, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		175, // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S123
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S124
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		70,  // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		180, // Term
-		77,  // Fact
+		177, // Termino
+		178, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		179, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S125
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		180, // Termino
+		178, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		179, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S126
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S127
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		184, // Cte
-		-1,  // Expr
-		187, // Exp
-		188, // Term
-		191, // Fact
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		181, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		84,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S128
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		184, // Cte
-		-1,  // Expr
-		192, // Exp
-		188, // Term
-		191, // Fact
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		182, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		84,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S129
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		184, // Cte
-		-1,  // Expr
-		193, // Exp
-		188, // Term
-		191, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S130
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		81,  // Cte
-		-1,  // Expr
-		194, // Exp
-		85,  // Term
-		88,  // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S131
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		81,  // Cte
-		-1,  // Expr
-		195, // Exp
-		85,  // Term
-		88,  // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S132
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S133
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S134
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		184, // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S135
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S136
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		81,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		196, // Term
-		88,  // Fact
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		187, // Exp
+		188, // Termino
+		189, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		190, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S137
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		81,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		197, // Term
-		88,  // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S138
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		70,  // Cte
-		198, // Expr
-		73,  // Exp
-		74,  // Term
-		77,  // Fact
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		192, // Termino
+		193, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		194, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S139
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		195, // Termino
+		193, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		194, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S140
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S141
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		196, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		90,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S142
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		197, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		90,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S143
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		206, // Cte
-		-1,  // Expr
-		209, // Exp
-		210, // Term
-		213, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S144
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		206, // Cte
-		-1,  // Expr
-		214, // Exp
-		210, // Term
-		213, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S145
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		206, // Cte
-		-1,  // Expr
-		215, // Exp
-		210, // Term
-		213, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S146
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		94,  // Cte
-		-1,  // Expr
-		216, // Exp
-		98,  // Term
-		101, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S147
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		94,  // Cte
-		-1,  // Expr
-		217, // Exp
-		98,  // Term
-		101, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S148
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S149
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		200, // PrintItem
+		-1,  // MorePrint
+		92,  // Expresion
+		73,  // Exp
+		74,  // Termino
+		75,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		76,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S150
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S151
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S152
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		94,  // Cte
-		-1,  // Expr
+		202, // StateDeclare
+		36,  // Statement
+		37,  // Assign
+		38,  // Condition
+		-1,  // ElseBody
+		39,  // Cycle
+		40,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		41,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		218, // Term
-		101, // Fact
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S153
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		203, // Variable
+		-1,  // MasId
+		205, // AddVarId
+		204, // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		94,  // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		219, // Term
-		101, // Fact
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S154
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		206, // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
-		220, // Body
-		-1,  // Body_PR
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S155
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S156
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		207, // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S157
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S158
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		208, // Expresion
+		87,  // Exp
+		88,  // Termino
+		89,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		90,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S159
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S160
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		225, // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		209, // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S161
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		212, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S162
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		216, // Cte
 	},
 	gotoRow{ // S163
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		226, // F_call_PR
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		219, // Expresion
+		87,  // Exp
+		88,  // Termino
+		89,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		90,  // Op
 		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
 	},
 	gotoRow{ // S164
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S165
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		220, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S166
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		94,  // Cte
-		228, // Expr
-		97,  // Exp
-		98,  // Term
-		101, // Fact
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		224, // Cte
 	},
 	gotoRow{ // S167
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S168
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		227, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S169
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		228, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S170
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S171
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-	},
-	gotoRow{ // S172
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		232, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		229, // Expresion
+		87,  // Exp
+		88,  // Termino
+		89,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		90,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S172
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S173
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		234, // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		230, // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S174
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		233, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S175
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		237, // Cte
 	},
 	gotoRow{ // S176
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		240, // Expresion
+		87,  // Exp
+		88,  // Termino
+		89,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		90,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S177
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S178
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		241, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S179
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		245, // Cte
 	},
 	gotoRow{ // S180
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S181
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-	},
-	gotoRow{ // S182
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
-	},
-	gotoRow{ // S183
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		94,  // Cte
-		237, // Expr
-		97,  // Exp
-		98,  // Term
-		101, // Fact
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		248, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S182
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		249, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S183
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S184
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		250, // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S185
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		252, // StateDeclare
+		36,  // Statement
+		37,  // Assign
+		38,  // Condition
+		-1,  // ElseBody
+		39,  // Cycle
+		40,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		41,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S186
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		253, // Expresion
+		87,  // Exp
+		88,  // Termino
+		89,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		90,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S187
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S188
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		254, // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S189
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		241, // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		257, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S190
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		243, // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		261, // Cte
 	},
 	gotoRow{ // S191
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		264, // Expresion
+		87,  // Exp
+		88,  // Termino
+		89,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		90,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S192
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S193
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		265, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S194
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		269, // Cte
 	},
 	gotoRow{ // S195
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S196
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		272, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S197
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		273, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S198
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		274, // Body
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		246, // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S199
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		247, // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
-	},
-	gotoRow{ // S200
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S200
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		276, // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S201
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S202
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S203
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		250, // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S204
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S205
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		279, // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		94,  // Cte
-		252, // Expr
-		97,  // Exp
-		98,  // Term
-		101, // Fact
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S206
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S207
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S208
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S209
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S210
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		283, // Termino
+		284, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		285, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S211
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		256, // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		286, // Termino
+		284, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		285, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S212
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		258, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S213
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		287, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		162, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S214
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		288, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		162, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S215
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S216
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S217
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S218
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S219
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S220
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S221
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		263, // Body_PR
-		37,  // Statement
-		42,  // Print
-		-1,  // Print_PR
-		38,  // Assign
-		40,  // Cycle
-		39,  // Condition
-		41,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // Termino
+		290, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		166, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S222
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		291, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		166, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S223
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S224
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S225
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S226
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S227
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S228
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S229
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		167, // Cte
-		-1,  // Expr
-		267, // Exp
-		171, // Term
-		174, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S230
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		167, // Cte
-		-1,  // Expr
-		268, // Exp
-		171, // Term
-		174, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S231
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		294, // Termino
+		295, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		296, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S232
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		297, // Termino
+		295, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		296, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S233
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S234
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		298, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		175, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S235
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		167, // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		269, // Term
-		174, // Fact
+		-1,  // Termino
+		299, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		175, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S236
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		167, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		270, // Term
-		174, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S237
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S238
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		184, // Cte
-		-1,  // Expr
-		272, // Exp
-		188, // Term
-		191, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S239
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		184, // Cte
-		-1,  // Expr
-		273, // Exp
-		188, // Term
-		191, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S240
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S241
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S242
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		301, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		179, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S243
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		302, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		179, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S244
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		184, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		274, // Term
-		191, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S245
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		184, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		275, // Term
-		191, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S246
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S247
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S248
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S249
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S250
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S251
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		277, // Body_PR
-		37,  // Statement
-		42,  // Print
-		-1,  // Print_PR
-		38,  // Assign
-		40,  // Cycle
-		39,  // Condition
-		41,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		304, // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S252
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S253
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		206, // Cte
-		-1,  // Expr
-		279, // Exp
-		210, // Term
-		213, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S254
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		206, // Cte
-		-1,  // Expr
-		280, // Exp
-		210, // Term
-		213, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S255
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		308, // Termino
+		309, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		310, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S256
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		311, // Termino
+		309, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		310, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S257
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S258
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		312, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		190, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S259
 		-1,  // S'
 		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
+		-1,  // Program
+		-1,  // VarsOp
 		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
 		-1,  // Funcs
-		-1,  // ParamList
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
 		-1,  // Body
-		-1,  // Body_PR
+		-1,  // StateDeclare
 		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
 		-1,  // Assign
-		-1,  // Cycle
 		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		206, // Cte
-		-1,  // Expr
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
 		-1,  // Exp
-		281, // Term
-		213, // Fact
+		-1,  // Termino
+		313, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		190, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S260
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		-1,  // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		206, // Cte
-		-1,  // Expr
-		-1,  // Exp
-		282, // Term
-		213, // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S261
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S262
-		-1,  // S'
-		-1,  // Start
-		-1,  // Programa
-		-1,  // Program_vars
-		-1,  // FuncLoop
-		-1,  // Vars
-		-1,  // VarList
-		-1,  // Type
-		-1,  // Register_Func
-		-1,  // Funcs
-		-1,  // ParamList
-		283, // Body
-		-1,  // Body_PR
-		-1,  // Statement
-		-1,  // Print
-		-1,  // Print_PR
-		-1,  // Assign
-		-1,  // Cycle
-		-1,  // Condition
-		-1,  // F_call
-		-1,  // F_call_PR
-		-1,  // Cte
-		-1,  // Expr
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Fact
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S263
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S264
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S265
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S266
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		315, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		194, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S267
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		316, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		194, // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S268
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S269
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S270
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S271
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S272
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S273
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S274
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S275
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		318, // StateDeclare
+		36,  // Statement
+		37,  // Assign
+		38,  // Condition
+		-1,  // ElseBody
+		39,  // Cycle
+		40,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		41,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S276
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S277
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S278
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S279
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S280
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		320, // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S281
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S282
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		321, // Expresion
+		87,  // Exp
+		88,  // Termino
+		89,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		90,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S283
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 	gotoRow{ // S284
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		322, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
 	},
 	gotoRow{ // S285
-		-1, // S'
-		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
-		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
-		-1, // Funcs
-		-1, // ParamList
-		-1, // Body
-		-1, // Body_PR
-		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
-		-1, // Assign
-		-1, // Cycle
-		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
-		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		326, // Cte
 	},
 	gotoRow{ // S286
 		-1, // S'
 		-1, // Start
-		-1, // Programa
-		-1, // Program_vars
-		-1, // FuncLoop
+		-1, // Program
+		-1, // VarsOp
 		-1, // Vars
-		-1, // VarList
-		-1, // Type
-		-1, // Register_Func
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
 		-1, // Funcs
-		-1, // ParamList
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
 		-1, // Body
-		-1, // Body_PR
+		-1, // StateDeclare
 		-1, // Statement
-		-1, // Print
-		-1, // Print_PR
 		-1, // Assign
-		-1, // Cycle
 		-1, // Condition
-		-1, // F_call
-		-1, // F_call_PR
-		-1, // Cte
-		-1, // Expr
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
 		-1, // Exp
-		-1, // Term
-		-1, // Fact
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S287
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		329, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S288
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		330, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S289
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S290
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		331, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S291
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		332, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S292
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S293
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		333, // Expresion
+		87,  // Exp
+		88,  // Termino
+		89,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		90,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S294
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S295
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		334, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S296
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		338, // Cte
+	},
+	gotoRow{ // S297
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S298
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		341, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S299
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		342, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S300
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S301
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		343, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S302
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		344, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S303
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S304
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S305
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S306
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S307
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		345, // Expresion
+		87,  // Exp
+		88,  // Termino
+		89,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		90,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S308
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S309
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		346, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S310
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		350, // Cte
+	},
+	gotoRow{ // S311
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S312
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		353, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S313
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		354, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S314
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S315
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		355, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S316
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		356, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S317
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S318
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S319
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		358, // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S320
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S321
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S322
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S323
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		361, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		285, // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S324
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		362, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		285, // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S325
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S326
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S327
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S328
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S329
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S330
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S331
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S332
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S333
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S334
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S335
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		364, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		296, // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S336
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		365, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		296, // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S337
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S338
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S339
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S340
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S341
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S342
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S343
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S344
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S345
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S346
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S347
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		367, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		310, // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S348
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		368, // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		-1,  // MoreTermino
+		310, // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S349
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S350
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S351
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S352
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S353
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S354
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S355
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S356
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S357
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S358
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S359
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S360
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S361
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		370, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S362
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		371, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S363
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S364
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		372, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S365
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		373, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S366
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S367
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		374, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S368
+		-1,  // S'
+		-1,  // Start
+		-1,  // Program
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // Variable
+		-1,  // MasId
+		-1,  // AddVarId
+		-1,  // VarsPrime
+		-1,  // FuncLoop
+		-1,  // Funcs
+		-1,  // RegisterFunc
+		-1,  // Params
+		-1,  // ParamIndiv
+		-1,  // MoreParam
+		-1,  // Type
+		-1,  // Body
+		-1,  // StateDeclare
+		-1,  // Statement
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // ElseBody
+		-1,  // Cycle
+		-1,  // FuncCall
+		-1,  // ArgList
+		-1,  // MoreCall
+		-1,  // Print
+		-1,  // PrintList
+		-1,  // PrintItem
+		-1,  // MorePrint
+		-1,  // Expresion
+		-1,  // Exp
+		-1,  // Termino
+		-1,  // Factor
+		-1,  // MoreExpresion
+		-1,  // ExOp
+		-1,  // MoreExp
+		375, // MoreTermino
+		-1,  // Op
+		-1,  // Cte
+	},
+	gotoRow{ // S369
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S370
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S371
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S372
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S373
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S374
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
+	},
+	gotoRow{ // S375
+		-1, // S'
+		-1, // Start
+		-1, // Program
+		-1, // VarsOp
+		-1, // Vars
+		-1, // Variable
+		-1, // MasId
+		-1, // AddVarId
+		-1, // VarsPrime
+		-1, // FuncLoop
+		-1, // Funcs
+		-1, // RegisterFunc
+		-1, // Params
+		-1, // ParamIndiv
+		-1, // MoreParam
+		-1, // Type
+		-1, // Body
+		-1, // StateDeclare
+		-1, // Statement
+		-1, // Assign
+		-1, // Condition
+		-1, // ElseBody
+		-1, // Cycle
+		-1, // FuncCall
+		-1, // ArgList
+		-1, // MoreCall
+		-1, // Print
+		-1, // PrintList
+		-1, // PrintItem
+		-1, // MorePrint
+		-1, // Expresion
+		-1, // Exp
+		-1, // Termino
+		-1, // Factor
+		-1, // MoreExpresion
+		-1, // ExOp
+		-1, // MoreExp
+		-1, // MoreTermino
+		-1, // Op
+		-1, // Cte
 	},
 }

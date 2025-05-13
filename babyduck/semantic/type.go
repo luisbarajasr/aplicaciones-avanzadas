@@ -6,7 +6,6 @@ const (
 	Int   Type = "int"
 	Float Type = "float"
 	Void  Type = "void"
-	Bool  Type = "bool"
 	Error Type = "error"
 )
 
@@ -23,18 +22,18 @@ const (
 	Assign	  	Operator = "="
 )
 
-// Variable represents a variable with a name and type
+// Variable nombre y tipo
 type Variable struct {
 	Name string
 	Type Type
 }
 
-// VariableTable holds variables in a scope
+// VariableTable guarda las variables de una función
 type VariableTable struct {
 	Variables map[string]Variable
 }
 
-// Function represents a function with its variables
+// Function representa una función con su nombre, tipo de retorno, parámetros y variables
 type Function struct {
 	Name       string
 	ReturnType Type
@@ -43,10 +42,11 @@ type Function struct {
 	Vars       *VariableTable
 }
 
-// FunctionDirectory holds all functions and global variables
+// FunctionDirectory guarda todas las funciones y variables globales
 type FunctionDirectory struct {
 	Functions    map[string]*Function
 	GlobalVars   *VariableTable
 	CurrentScope *VariableTable
 	CurrentFunction *Function
+	TempVarList []Variable
 }

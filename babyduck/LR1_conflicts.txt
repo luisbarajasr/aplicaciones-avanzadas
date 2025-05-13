@@ -1,5 +1,0 @@
-1 LR-1 conflicts: 
-	S8
-		symbol: main
-			Reduce(7:Program_Components : Vars	<<  >>)
-			Reduce(10:Programa_PR : empty	<<  >>)
