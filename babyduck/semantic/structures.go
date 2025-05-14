@@ -1,30 +1,43 @@
 package semantic
 
+
+type VarStack struct {
+    data []Variable
+}
+
+type OpStack struct {
+    data []Operator
+}
+
 func NewVarStack() *VarStack {
 	return &VarStack{
-		data: []int{},
+		data: []Variable{},
 	}
 }
 
-func (stack *VarStack) Push(val int) {
+func (stack *VarStack) Push(val Variable) {
 	stack.data = append(stack.data, val)
 }
 
-func (stack *VarStack) Pop() int {
+func (stack *VarStack) Pop() Variable {
 
 	if stack.IsEmpty() {
-		return -1
+		return Variable{}
 	}
 
-	var ultimo int = stack.Peek()
+	var ultimo Variable = stack.Peek()
 	stack.data = stack.Reduce()
 
 	return ultimo
 }
 
 // Peek
-func (stack *VarStack) Peek() int {
+func (stack *VarStack) Peek() Variable {
 	return stack.data[len(stack.data)-1]
+}
+
+func (stack *VarStack) PeekDouble() Variable {
+	return stack.data[len(stack.data)-2]
 }
 
 // IsEmpty
@@ -33,7 +46,7 @@ func (stack *VarStack) IsEmpty() bool {
 }
 
 // reduce
-func (stack *VarStack) Reduce() []int {
+func (stack *VarStack) Reduce() []Variable {
 	return stack.data[:len(stack.data)-1]
 }
 
@@ -46,20 +59,20 @@ func NewOpStack() *OpStack {
 }
 
 
-func (stack *OpStack) Push(opertator Operator) {
+func (stack *OpStack) Push(operador Operator) {
 	stack.data = append(stack.data, operador)
 }
 
-func (stack *OpStack) Pop() int {
+func (stack *OpStack) Pop() (Operator, bool) {
 
 	if stack.IsEmpty() {
-		return -1
+		return Operator(""), false
 	}
 
 	var ultimo Operator = stack.Peek()
 	stack.data = stack.Reduce()
 
-	return ultimo
+	return ultimo, true
 }
 
 // Peek

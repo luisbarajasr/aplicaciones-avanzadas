@@ -54,15 +54,16 @@ func (functionDir *FunctionDirectory) RegisterParam(name interface{}, typ Type) 
 
 
 // ---------------- QUADRUPLE SECTION ----------------
-func (cuadruplo *Cuadruplo) AddOperatorAction(op Operator) (interface{}, error) {
+func (cuadruplo *CuadruploList) AddOperatorAction(op Operator) (interface{}, error) {
 	// Add the operator to the stack
-	cuadruplo.OpStack.Push(op)
+	cuadruplo.AddOperator(op)
 	return nil, nil
 }
 
-func (cuadruplo *Cuadruplo) AddVariableAction(name interface{}) (interface{}, error) {
+func (cuadruplo *CuadruploList) AddVariableAction(name interface{}) (interface{}, error) {
 	// Add the variable to the stack
-	varName := string(name.(*token.Token).Lit)
-	cuadruplo.VarStack.Push(varName)
+	// varName := string(name.(*token.Token).Lit)
+
+	// cuadruplo.addVariable(varName)
 	return nil, nil
 }

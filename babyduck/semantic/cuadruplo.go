@@ -1,4 +1,9 @@
 package semantic
+
+import (
+	"strconv"
+)
+
 // cuadruplo 
 type Cuadruplo struct {
 	Arg1     Variable
@@ -11,7 +16,7 @@ type CuadruploList struct {
 	Cuadruplos []Cuadruplo
 }
 
-var TempVariables = map[string]Variable
+var TempVariables = map[string]Variable{}
 
 // regresa las precednecias de los operadores
 func (o Operator) Precedence() int {
@@ -31,8 +36,8 @@ func (o Operator) Precedence() int {
 	}
 }
 
-func (op *Operator) IsRightAssociative() bool {
-    return op == Operator.Assign
+func (op Operator) IsRightAssociative() bool {
+    return op == Assign
 }
 
 func NewTempVariable(name string, typ Type) Variable {
@@ -44,15 +49,15 @@ func NewTempVariable(name string, typ Type) Variable {
 
 // ------------ CUADRUPLO LIST ------------ 
 
+var (
+	opStack  *OpStack  // Global OpStack instance
+	varStack *VarStack // Global VarStack instance
+)
 
 func NewCuadruploList() *CuadruploList {
-	var (
-		OpStack  *OpStack  // Global OpStack instance
-		VarStack *VarStack // Global VarStack instance
-	)
-	
-	OpStack = NewOpStack()   // Initialize OpStack
-    VarStack = NewVarStack() // Initialize VarStack
+
+	opStack = NewOpStack()   // Initialize OpStack
+    varStack = NewVarStack() // Initialize VarStack
 
     return &CuadruploList{
         Cuadruplos: []Cuadruplo{},
@@ -61,39 +66,39 @@ func NewCuadruploList() *CuadruploList {
 
 func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, error){
 
-	if OpStack.IsEmpty() {
+	if opStack.IsEmpty() {
 		// agregar operador a la pila
-		OpStack.Push(operator)
+		opStack.Push(operator)
 		return operator, nil
 
 	} else if(operator == NewPara){
-		OpStack.Push(operator)
+		opStack.Push(operator)
 		return operator, nil
 
 	} else if (operator == ClosePara) {
 
-		for OpStack.Peek() != NewPara {
-			topOperator := OpStack.Pop()
-			CuadruploList.addCuadruplo(topOperator)
-			OpStack.Pop()
+		for opStack.Peek() != NewPara {
+			opOperator,_ := opStack.Pop()
+			CuadruploList.addCuadruplo(opOperator)
+			opStack.Pop()
 		}
 
-		OpStack.Pop() // sacar el falso stack
-		return OpStack.Peek(), nil
+		opStack.Pop() // sacar el falso stack
+		return opStack.Peek(), nil
 
-	}else if (operator.IsRightAssociative() && operator.Precedence() > OpStack[len(OpStack)-1].Precedence()) || (!operator.IsRightAssociative() && operator.Precedence() >= OpStack[len(OpStack)-1].Precedence()) {
-		OpStack.Push(operator)
+	}else if (operator.IsRightAssociative() && operator.Precedence() > opStack.Peek().Precedence()) || (!operator.IsRightAssociative() && operator.Precedence() >= opStack.Peek().Precedence()) {
+		opStack.Push(operator)
 		return operator, nil
 
-	} else if operator.Precedence() < OpStack[len(OpStack)-1].Precedence() {
+	} else if operator.Precedence() < opStack.Peek().Precedence() {
 		// sacar el operador de la cima de la pila
-		topOperator := OpStack.Pop()
+		topOperator,_ := opStack.Pop()
 
 		// agergar el operador a la lista de cuadruplos
 		CuadruploList.addCuadruplo(topOperator)
 
 		// agregar el nuevo operador a la pila
-		OpStack.Push(operator)
+		opStack.Push(operator)
 		return operator, nil
 	}
 	
@@ -124,11 +129,11 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 }
 
 func (CuadruploList *CuadruploList) addVariable(variable Variable){
-	VarStack.VarPush(variable)
+	varStack.Push(variable)
 }
 
 func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
-	var1, var2 := VarStack[len(VarStack)-2], VarStack[len(VarStack.Stack)-1]
+	var1, var2 := varStack.PeekDouble(), varStack.Peek()
 
 	var opResult Type = SemanticCube[var1.Type][var2.Type][operator]
 	if opResult == Error {
@@ -136,7 +141,7 @@ func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 	}
 
 	var cuadruplo Cuadruplo
-	
+
 	// que pasa si es un asignacion?
 	if operator == Assign {
 		cuadruplo = Cuadruplo{
@@ -154,11 +159,14 @@ func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 		}
 	}
 
-	CuadruploList = append(CuadruploList.Cuadruplos, cuadruplo)
-	VarStack.VarPop() // quitar las 2 variables de la pila
-	VarStack.VarPop() 
-	VarStack.VarPush(cuadruplo.Result) // agregar el resultado al stack
-	TempVariables[cuadruplo.Result.Name] = opResult
+	CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
+	varStack.Pop() // quitar las 2 variables de la pila
+	varStack.Pop() 
+	varStack.Push(cuadruplo.Result) // agregar el resultado al stack
+	TempVariables[cuadruplo.Result.Name] = Variable{
+		Name: cuadruplo.Result.Name,
+		Type: opResult,
+	}
 }
 
 func (CuadruploList *CuadruploList) PrintCuadruplos() {
