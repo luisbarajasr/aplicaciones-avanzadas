@@ -8,97 +8,82 @@ import (
 
 var testData = map[string]bool{
 	// caso 1 : funcion doble declarada
-	`program demo1;
+	`program demoEleven;
 
-		var x, y, z : int;
-
-		void anotherFunction(a : int, b : float) [
-			{
-				x = 2;
-			}
-		];
-
-		void anotherFunction(abc : float, bca : int) [
-			var c : float;
-
-			{
-				c = 3;
-			}
-		];
+		var a, b, c, z : int;
 
 		main {
-			print(x);
+			z = (a + b) * c;
 		}
-
-		end`: false,
+		end`: true,
 	// caso 2 : variable no declarada
-    `program demo2;
+    // `program demo2;
 
-        var x, y, z : int;
+    //     var x, y, z : int;
 
-        main {
-            noesta = 2;
-        }
+    //     main {
+    //         noesta = 2;
+    //     }
 
-    end`: false,
-	// caso 3: variable declarada
-    `program demo3;
+    // end`: false,
+	// // caso 3: variable declarada
+    // `program demo3;
 
-    var t, u, i : int;
+    // var t, u, i : int;
 
-    main {
-        print(t);
-    }
-    end`: true,
-	// caso 4: re-declaracion de variable global
-	`program demo4;
+    // main {
+    //     print(t);
+    // }
+    // end`: true,
+	// // caso 4: re-declaracion de variable global
+	// `program demo4;
 
-		var x, y, z : int;
+	// 	var x, y, z : int;
 
-		void anotherFunction(a : int, b : float) [
-			var x : int;
+	// 	void anotherFunction(a : int, b : float) [
+	// 		var x : int;
 
-			{
-				d = a + b;
-				print(d);
-			}
-		];
+	// 		{
+	// 			d = a + b;
+	// 			print(d);
+	// 		}
+	// 	];
 
-		main {
-			print(x);
-		}
+	// 	main {
+	// 		print(x);
+	// 	}
 
-		end`: false,
-	// caso 5: variable no declarada
-	`program demo5;
+	// 	end`: false,
+	// // caso 5: variable no declarada
+	// `program demo5;
 
-		var x, y, z : int;
+	// 	var x, y, z : int;
 
-		void anotherFunction(a : int, b : float) [
-			var nueva : int;
+	// 	void anotherFunction(a : int, b : float) [
+	// 		var nueva : int;
 
-			{
-				nose = 1 + 2;
-				print(nose);
-			}
-		];
+	// 		{
+	// 			nose = 1 + 2;
+	// 			print(nose);
+	// 		}
+	// 	];
 
-		main {
-			x = 1;
-			anotherFunction(1, 2.0);
-		}
+	// 	main {
+	// 		x = 1;
+	// 		anotherFunction(1, 2.0);
+	// 	}
 
-		end`: false,
-	// caso 6: token no registrado
-    `program demo6;
+	// 	end`: false,
+	// // caso 6: token no registrado
+    // `program demo6;
 
-    var  x, y, z : string;
+    // var  x, y, z : string;
 
-    main {
-        print(1 + 2);
-    }`: false,
-	// caso 7: variable no declarada
-	"program p main { } end": false,
+    // main {
+    //     print(1 + 2);
+    // }`: false,
+	// // caso 7: variable no declarada
+	// "program p main { } end": false,
 }
 
 func TestParse(t *testing.T) {

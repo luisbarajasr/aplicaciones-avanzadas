@@ -3,7 +3,6 @@ package semantic
 import (
 	"fmt"
 	"babyduck/token"
-	"babyduck/expresions"
 )
 
 // ValidateAssign revisa si el tipo de la variable coincide con el tipo de la expresion
@@ -18,9 +17,7 @@ func (functionDir *FunctionDirectory) ValidateAssign(name interface{}) (interfac
 	// if err != nil {
 	// 	return fmt.Errorf("type mismatch in assignment: %s (%s) cannot be assigned %s", varName, varDecl.Type, exprType)
 	// }
-	// if resultType == Void {
-	// 	return fmt.Errorf("type mismatch in assignment: %s (%s) cannot be assigned %s", varName, varDecl.Type, exprType)
-	// }
+
 	return nil, nil
 }
 
@@ -57,3 +54,15 @@ func (functionDir *FunctionDirectory) RegisterParam(name interface{}, typ Type) 
 
 
 // ---------------- QUADRUPLE SECTION ----------------
+func (cuadruplo *Cuadruplo) AddOperatorAction(op Operator) (interface{}, error) {
+	// Add the operator to the stack
+	cuadruplo.OpStack.Push(op)
+	return nil, nil
+}
+
+func (cuadruplo *Cuadruplo) AddVariableAction(name interface{}) (interface{}, error) {
+	// Add the variable to the stack
+	varName := string(name.(*token.Token).Lit)
+	cuadruplo.VarStack.Push(varName)
+	return nil, nil
+}

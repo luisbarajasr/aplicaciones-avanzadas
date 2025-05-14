@@ -44,10 +44,9 @@ cte_string : '"' {_letter | ' ' | '!' | '?' }'"' ;
 << 
 import (
      "babyduck/semantic"
-     "babyduck/expresions"
 )
 var functionDir = semantic.NewFunctionDirectory()
-var cuadruple = expresions.NewCuadruploList()
+var cuadruple = semantic.NewCuadruploList()
 >>
 
 Start: Program <<functionDir, nil>> ;
@@ -122,28 +121,37 @@ Exp : Termino MoreExp ;
 
 Termino : Factor MoreTermino ;
 
-Factor : lparen Expresion rparen 
-       | Op id
+Factor : Agregar_Paren Expresion Terminar_Paren 
+       | Op id <<cuadruple.AddVariableAction($0)>> 
        | Op Cte ;
 
-MoreExpresion : ExOp Exp 
+Agregar_Paren : lparen <<expresion.AddOperatorAction($0)>>;
+Terminar_Paren : rparen <<expresion.AddOperatorAction($0)>>;
+
+Op : plus <<expresion.AddOperatorAction($0)>>
+     | minus <<expresion.AddOperatorAction($0)>>
      | empty ;
 
-ExOp : greater 
-     | less 
-     | notequal  ;
+MoreExpresion : Greater_Less_NotEqual Exp 
+     | empty ;
 
-MoreExp : plus Termino
-        | minus Termino
+Greater_Less_NotEqual : greater <<expresion.AddOperatorAction($0)>>
+     | less <<expresion.AddOperatorAction($0)>>
+     | notequal  <<expresion.AddOperatorAction($0)>>;
+
+MoreExp : Plus_Minus Termino
+        | Plus_Minus Termino
         | empty ;
 
-MoreTermino : times Factor MoreTermino
-            | divide Factor MoreTermino
+Plus_Minus : plus <<expresion.AddOperatorAction($0)>>
+     | minus <<expresion.AddOperatorAction($0)>>; 
+
+MoreTermino : Times_Div Factor MoreTermino
+            | Times_Div Factor MoreTermino
             | empty ;
 
-Op : plus 
-     | minus 
-     | empty ;
+Times_Div : times <<expresion.AddOperatorAction($0)>>
+     | divide  <<expresion.AddOperatorAction($0)>>;
 
 Cte : cte_int <<semantic.Int, nil >>
      | cte_float <<semantic.Float, nil>> ;

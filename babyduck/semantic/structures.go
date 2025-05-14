@@ -1,11 +1,9 @@
-package structures
+package semantic
 
-import (
-	"babyduck/semantic"
-)
-
-type VarStack struct {
-	data []int
+func NewVarStack() *VarStack {
+	return &VarStack{
+		data: []int{},
+	}
 }
 
 func (stack *VarStack) Push(val int) {
@@ -41,11 +39,14 @@ func (stack *VarStack) Reduce() []int {
 
 // ----------------------------------------------------
 
-type OpStack struct {
-	data []semantic.Operator
+func NewOpStack() *OpStack {
+	return &OpStack{
+		data: []Operator{},
+	}
 }
 
-func (stack *OpStack) Push(opertator semantic.Operator) {
+
+func (stack *OpStack) Push(opertator Operator) {
 	stack.data = append(stack.data, operador)
 }
 
@@ -55,14 +56,14 @@ func (stack *OpStack) Pop() int {
 		return -1
 	}
 
-	var ultimo semantic.Operator = stack.Peek()
+	var ultimo Operator = stack.Peek()
 	stack.data = stack.Reduce()
 
 	return ultimo
 }
 
 // Peek
-func (stack *OpStack) Peek() semantic.Operator {
+func (stack *OpStack) Peek() Operator {
 	return stack.data[len(stack.data)-1]
 }
 
@@ -72,6 +73,6 @@ func (stack *OpStack) IsEmpty() bool {
 }
 
 // reduce
-func (stack *OpStack) Reduce() []semantic.Operator {
+func (stack *OpStack) Reduce() []Operator {
 	return stack.data[:len(stack.data)-1]
 }

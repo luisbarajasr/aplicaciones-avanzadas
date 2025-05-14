@@ -2,8 +2,11 @@
 
 package parser
 
-import "babyduck/semantic"
+import (
+     "babyduck/semantic"
+)
 var functionDir = semantic.NewFunctionDirectory()
+var cuadruple = semantic.NewCuadruploList()
 
 type (
 	ProdTab      [numProductions]ProdTabEntry
@@ -531,7 +534,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Factor : lparen Expresion rparen	<<  >>`,
+		String: `Factor : Agregar_Paren Expresion Terminar_Paren	<<  >>`,
 		Id:         "Factor",
 		NTType:     33,
 		Index:      51,
@@ -541,13 +544,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Factor : Op id	<<  >>`,
+		String: `Factor : Op id	<< cuadruple.AddVariableAction(X[0]) >>`,
 		Id:         "Factor",
 		NTType:     33,
 		Index:      52,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return X[0], nil
+			return cuadruple.AddVariableAction(X[0])
 		},
 	},
 	ProdTabEntry{
@@ -561,10 +564,60 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `MoreExpresion : ExOp Exp	<<  >>`,
-		Id:         "MoreExpresion",
+		String: `Agregar_Paren : lparen	<< expresion.AddOperatorAction(X[0]) >>`,
+		Id:         "Agregar_Paren",
 		NTType:     34,
 		Index:      54,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return expresion.AddOperatorAction(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Terminar_Paren : rparen	<< expresion.AddOperatorAction(X[0]) >>`,
+		Id:         "Terminar_Paren",
+		NTType:     35,
+		Index:      55,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return expresion.AddOperatorAction(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Op : plus	<< expresion.AddOperatorAction(X[0]) >>`,
+		Id:         "Op",
+		NTType:     36,
+		Index:      56,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return expresion.AddOperatorAction(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Op : minus	<< expresion.AddOperatorAction(X[0]) >>`,
+		Id:         "Op",
+		NTType:     36,
+		Index:      57,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return expresion.AddOperatorAction(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Op : empty	<<  >>`,
+		Id:         "Op",
+		NTType:     36,
+		Index:      58,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return nil, nil
+		},
+	},
+	ProdTabEntry{
+		String: `MoreExpresion : Greater_Less_NotEqual Exp	<<  >>`,
+		Id:         "MoreExpresion",
+		NTType:     37,
+		Index:      59,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
@@ -573,58 +626,58 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `MoreExpresion : empty	<<  >>`,
 		Id:         "MoreExpresion",
-		NTType:     34,
-		Index:      55,
+		NTType:     37,
+		Index:      60,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `ExOp : greater	<<  >>`,
-		Id:         "ExOp",
-		NTType:     35,
-		Index:      56,
+		String: `Greater_Less_NotEqual : greater	<< expresion.AddOperatorAction(X[0]) >>`,
+		Id:         "Greater_Less_NotEqual",
+		NTType:     38,
+		Index:      61,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return X[0], nil
+			return expresion.AddOperatorAction(X[0])
 		},
 	},
 	ProdTabEntry{
-		String: `ExOp : less	<<  >>`,
-		Id:         "ExOp",
-		NTType:     35,
-		Index:      57,
+		String: `Greater_Less_NotEqual : less	<< expresion.AddOperatorAction(X[0]) >>`,
+		Id:         "Greater_Less_NotEqual",
+		NTType:     38,
+		Index:      62,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return X[0], nil
+			return expresion.AddOperatorAction(X[0])
 		},
 	},
 	ProdTabEntry{
-		String: `ExOp : notequal	<<  >>`,
-		Id:         "ExOp",
-		NTType:     35,
-		Index:      58,
+		String: `Greater_Less_NotEqual : notequal	<< expresion.AddOperatorAction(X[0]) >>`,
+		Id:         "Greater_Less_NotEqual",
+		NTType:     38,
+		Index:      63,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return X[0], nil
+			return expresion.AddOperatorAction(X[0])
 		},
 	},
 	ProdTabEntry{
-		String: `MoreExp : plus Termino	<<  >>`,
+		String: `MoreExp : Plus_Minus Termino	<<  >>`,
 		Id:         "MoreExp",
-		NTType:     36,
-		Index:      59,
+		NTType:     39,
+		Index:      64,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `MoreExp : minus Termino	<<  >>`,
+		String: `MoreExp : Plus_Minus Termino	<<  >>`,
 		Id:         "MoreExp",
-		NTType:     36,
-		Index:      60,
+		NTType:     39,
+		Index:      65,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
@@ -633,28 +686,48 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `MoreExp : empty	<<  >>`,
 		Id:         "MoreExp",
-		NTType:     36,
-		Index:      61,
+		NTType:     39,
+		Index:      66,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `MoreTermino : times Factor MoreTermino	<<  >>`,
+		String: `Plus_Minus : plus	<< expresion.AddOperatorAction(X[0]) >>`,
+		Id:         "Plus_Minus",
+		NTType:     40,
+		Index:      67,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return expresion.AddOperatorAction(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Plus_Minus : minus	<< expresion.AddOperatorAction(X[0]) >>`,
+		Id:         "Plus_Minus",
+		NTType:     40,
+		Index:      68,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return expresion.AddOperatorAction(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `MoreTermino : Times_Div Factor MoreTermino	<<  >>`,
 		Id:         "MoreTermino",
-		NTType:     37,
-		Index:      62,
+		NTType:     41,
+		Index:      69,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `MoreTermino : divide Factor MoreTermino	<<  >>`,
+		String: `MoreTermino : Times_Div Factor MoreTermino	<<  >>`,
 		Id:         "MoreTermino",
-		NTType:     37,
-		Index:      63,
+		NTType:     41,
+		Index:      70,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
@@ -663,48 +736,38 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `MoreTermino : empty	<<  >>`,
 		Id:         "MoreTermino",
-		NTType:     37,
-		Index:      64,
+		NTType:     41,
+		Index:      71,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `Op : plus	<<  >>`,
-		Id:         "Op",
-		NTType:     38,
-		Index:      65,
+		String: `Times_Div : times	<< expresion.AddOperatorAction(X[0]) >>`,
+		Id:         "Times_Div",
+		NTType:     42,
+		Index:      72,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return X[0], nil
+			return expresion.AddOperatorAction(X[0])
 		},
 	},
 	ProdTabEntry{
-		String: `Op : minus	<<  >>`,
-		Id:         "Op",
-		NTType:     38,
-		Index:      66,
+		String: `Times_Div : divide	<< expresion.AddOperatorAction(X[0]) >>`,
+		Id:         "Times_Div",
+		NTType:     42,
+		Index:      73,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Op : empty	<<  >>`,
-		Id:         "Op",
-		NTType:     38,
-		Index:      67,
-		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return nil, nil
+			return expresion.AddOperatorAction(X[0])
 		},
 	},
 	ProdTabEntry{
 		String: `Cte : cte_int	<< semantic.Int, nil >>`,
 		Id:         "Cte",
-		NTType:     39,
-		Index:      68,
+		NTType:     43,
+		Index:      74,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return semantic.Int, nil
@@ -713,8 +776,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Cte : cte_float	<< semantic.Float, nil >>`,
 		Id:         "Cte",
-		NTType:     39,
-		Index:      69,
+		NTType:     43,
+		Index:      75,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return semantic.Float, nil

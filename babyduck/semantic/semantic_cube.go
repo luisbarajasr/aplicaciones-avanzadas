@@ -17,6 +17,7 @@ var SemanticCube = map[Type]map[Type]map[Operator]Type{
 			Less:        Bool,
 			Greater:     Bool,
 			NotEqual:    Bool,
+			Assign:      Int,
 		},
 		Float: {
 			Plus:        Float,
@@ -26,6 +27,7 @@ var SemanticCube = map[Type]map[Type]map[Operator]Type{
 			Less:        Bool,
 			Greater:     Bool,
 			NotEqual:    Bool,
+			Assign:      Error,
 		},
 		Bool: {
 			Plus:     Error,
@@ -35,7 +37,8 @@ var SemanticCube = map[Type]map[Type]map[Operator]Type{
 			Less:     Error,
 			Greater:  Error,
 			NotEqual: Error,
-		}
+			Assign:      Error,
+		},
 	},
 	Float: {
 		Int: {
@@ -46,6 +49,7 @@ var SemanticCube = map[Type]map[Type]map[Operator]Type{
 			Less:        Bool,
 			Greater:     Bool,
 			NotEqual:    Bool,
+			Assign:      Error,
 		},
 		Float: {
 			Plus:        Float,
@@ -55,6 +59,7 @@ var SemanticCube = map[Type]map[Type]map[Operator]Type{
 			Less:        Bool,
 			Greater:     Bool,
 			NotEqual:    Bool,
+			Assign:      Float,
 		},
 		Bool: {
 			Plus:     Error,
@@ -64,7 +69,8 @@ var SemanticCube = map[Type]map[Type]map[Operator]Type{
 			Less:     Error,
 			Greater:  Error,
 			NotEqual: Error,
-		}
+			Assign:      Error,
+		},
 	},
 	Bool: {
 		Int: {
@@ -75,6 +81,7 @@ var SemanticCube = map[Type]map[Type]map[Operator]Type{
 			Less:     Error,
 			Greater:  Error,
 			NotEqual: Bool,
+			Assign:      Error,
 		},
 		Float: {
 			Plus:     Error,
@@ -84,6 +91,7 @@ var SemanticCube = map[Type]map[Type]map[Operator]Type{
 			Less:     Error,
 			Greater:  Error,
 			NotEqual: Error,
+			Assign:      Error,
 		},
 		Bool: {
 			Plus:     Error,
@@ -94,8 +102,8 @@ var SemanticCube = map[Type]map[Type]map[Operator]Type{
 			Greater:  Error,
 			NotEqual: Error,
 			Assign:   Error,
-		}
-	}
+		},
+	},
 }
 
 // CheckTypes returns the result type for an operation or error if invalid
