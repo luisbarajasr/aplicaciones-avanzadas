@@ -2,6 +2,7 @@ package semantic
 
 import (
 	"strconv"
+	"fmt"
 )
 
 // cuadruplo 
@@ -14,6 +15,7 @@ type Cuadruplo struct {
 
 type CuadruploList struct {
 	Cuadruplos []Cuadruplo
+	functionDir *FunctionDirectory
 }
 
 var TempVariables = map[string]Variable{}
@@ -21,8 +23,6 @@ var TempVariables = map[string]Variable{}
 // regresa las precednecias de los operadores
 func (o Operator) Precedence() int {
 	switch o {
-	case NewPara:
-		return 4
 	case Times, Divide:
 		return 3
 	case Plus, Minus:
@@ -54,17 +54,20 @@ var (
 	varStack *VarStack // Global VarStack instance
 )
 
-func NewCuadruploList() *CuadruploList {
+func NewCuadruploList(functionDir *FunctionDirectory) *CuadruploList {
 
 	opStack = NewOpStack()   // Initialize OpStack
     varStack = NewVarStack() // Initialize VarStack
 
     return &CuadruploList{
         Cuadruplos: []Cuadruplo{},
+		functionDir: functionDir,
     }
 }
 
 func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, error){
+
+	fmt.Println("Adding operator to stack:", operator)
 
 	if opStack.IsEmpty() {
 		// agregar operador a la pila
@@ -86,11 +89,11 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 		opStack.Pop() // sacar el falso stack
 		return opStack.Peek(), nil
 
-	}else if (operator.IsRightAssociative() && operator.Precedence() > opStack.Peek().Precedence()) || (!operator.IsRightAssociative() && operator.Precedence() >= opStack.Peek().Precedence()) {
+	} else if ( operator.Precedence() > opStack.Peek().Precedence() || operator.Precedence() == opStack.Peek().Precedence()) {
 		opStack.Push(operator)
 		return operator, nil
 
-	} else if operator.Precedence() < opStack.Peek().Precedence() {
+	} else if (operator.Precedence() < opStack.Peek().Precedence()) {
 		// sacar el operador de la cima de la pila
 		topOperator,_ := opStack.Pop()
 
@@ -129,11 +132,23 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 }
 
 func (CuadruploList *CuadruploList) addVariable(variable Variable){
+	fmt.Println("Adding variable to stack:", variable.Name)
 	varStack.Push(variable)
+	varStack.Print()
 }
 
 func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
-	var1, var2 := varStack.PeekDouble(), varStack.Peek()
+	var1, verifier := varStack.PeekDouble()
+	if !verifier {
+		panic("Error: Not enough variables in stack")
+	}
+	var2 := varStack.Peek() // tengo que corregir esto
+	/* 
+	entra una variable
+	se lee un operador
+	trata de tomar 2 variables del stack
+		hay error porque solo esta una variable
+	*/
 
 	var opResult Type = SemanticCube[var1.Type][var2.Type][operator]
 	if opResult == Error {

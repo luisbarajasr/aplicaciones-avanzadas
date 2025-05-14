@@ -46,7 +46,7 @@ import (
      "babyduck/semantic"
 )
 var functionDir = semantic.NewFunctionDirectory()
-var cuadruple = semantic.NewCuadruploList()
+var cuadruple = semantic.NewCuadruploList(functionDir)
 >>
 
 Start: Program <<functionDir, nil>> ;
@@ -122,36 +122,32 @@ Exp : Termino MoreExp ;
 Termino : Factor MoreTermino ;
 
 Factor : Agregar_Paren Expresion Terminar_Paren 
-       | Op id <<cuadruple.AddVariableAction($0)>> 
-       | Op Cte ;
+     | Plus_Minus id <<cuadruple.AddVariableAction($0)>> 
+     | Plus_Minus Cte 
+     | id <<cuadruple.AddVariableAction($0)>>
+     | Cte ;
 
-Agregar_Paren : lparen <<expresion.AddOperatorAction($0)>>;
-Terminar_Paren : rparen <<expresion.AddOperatorAction($0)>>;
-
-Op : plus <<expresion.AddOperatorAction($0)>>
-     | minus <<expresion.AddOperatorAction($0)>>
-     | empty ;
+Agregar_Paren : lparen <<cuadruple.AddOperatorAction(semantic.NewPara)>>;
+Terminar_Paren : rparen <<cuadruple.AddOperatorAction(semantic.ClosePara)>>;
 
 MoreExpresion : Greater_Less_NotEqual Exp 
      | empty ;
 
-Greater_Less_NotEqual : greater <<expresion.AddOperatorAction($0)>>
-     | less <<expresion.AddOperatorAction($0)>>
-     | notequal  <<expresion.AddOperatorAction($0)>>;
+Greater_Less_NotEqual : greater <<cuadruple.AddOperatorAction(semantic.Greater)>>
+     | less <<cuadruple.AddOperatorAction(semantic.Less)>>
+     | notequal  <<cuadruple.AddOperatorAction(semantic.NotEqual)>>;
 
 MoreExp : Plus_Minus Termino
-        | Plus_Minus Termino
         | empty ;
 
-Plus_Minus : plus <<expresion.AddOperatorAction($0)>>
-     | minus <<expresion.AddOperatorAction($0)>>; 
+Plus_Minus : plus <<cuadruple.AddOperatorAction(semantic.Plus)>>
+     | minus <<cuadruple.AddOperatorAction(semantic.Minus)>> ; 
 
-MoreTermino : Times_Div Factor MoreTermino
-            | Times_Div Factor MoreTermino
+MoreTermino : Times_Div Factor 
             | empty ;
 
-Times_Div : times <<expresion.AddOperatorAction($0)>>
-     | divide  <<expresion.AddOperatorAction($0)>>;
+Times_Div : times <<cuadruple.AddOperatorAction(semantic.Times)>>
+     | divide  <<cuadruple.AddOperatorAction(semantic.Divide)>>;
 
 Cte : cte_int <<semantic.Int, nil >>
      | cte_float <<semantic.Float, nil>> ;

@@ -62,8 +62,14 @@ func (cuadruplo *CuadruploList) AddOperatorAction(op Operator) (interface{}, err
 
 func (cuadruplo *CuadruploList) AddVariableAction(name interface{}) (interface{}, error) {
 	// Add the variable to the stack
-	// varName := string(name.(*token.Token).Lit)
+	varName := string(name.(*token.Token).Lit)
 
-	// cuadruplo.addVariable(varName)
+	// search the variable in the function directory by using its name
+	variable, err := cuadruplo.functionDir.LookupVariable(varName)
+	if err != nil { 
+		return nil, fmt.Errorf("error: variable %s not found", varName, err)
+	}
+
+	cuadruplo.addVariable(variable)
 	return nil, nil
 }

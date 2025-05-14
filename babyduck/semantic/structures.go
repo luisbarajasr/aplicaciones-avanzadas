@@ -31,13 +31,22 @@ func (stack *VarStack) Pop() Variable {
 	return ultimo
 }
 
+func (stack *VarStack) Print() {
+	for i := len(stack.data) - 1; i >= 0; i-- {
+		println(stack.data[i].Name)
+	}
+}
+
 // Peek
 func (stack *VarStack) Peek() Variable {
 	return stack.data[len(stack.data)-1]
 }
 
-func (stack *VarStack) PeekDouble() Variable {
-	return stack.data[len(stack.data)-2]
+func (stack *VarStack) PeekDouble() (Variable, bool) {
+	if len(stack.data) < 2 {
+        return Variable{}, false
+    }
+	return stack.data[len(stack.data)-2], true
 }
 
 // IsEmpty
@@ -88,4 +97,10 @@ func (stack *OpStack) IsEmpty() bool {
 // reduce
 func (stack *OpStack) Reduce() []Operator {
 	return stack.data[:len(stack.data)-1]
+}
+
+func (stack *OpStack) Print() {
+	for i := len(stack.data) - 1; i >= 0; i-- {
+		println(stack.data[i])
+	}
 }
