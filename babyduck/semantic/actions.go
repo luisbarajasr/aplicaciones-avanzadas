@@ -3,6 +3,7 @@ package semantic
 import (
 	"fmt"
 	"babyduck/token"
+	"babyduck/expresions"
 )
 
 // ValidateAssign revisa si el tipo de la variable coincide con el tipo de la expresion
@@ -46,7 +47,6 @@ func (functionDir *FunctionDirectory) RegisterFunction(name interface{}, ret Typ
 	return nil, nil
 }
 
-
 // RegisterParam agrega un nuevo parámetro a la función actual
 func (functionDir *FunctionDirectory) RegisterParam(name interface{}, typ Type) (interface{}, error) {
 	if functionDir.CurrentFunction == nil {
@@ -54,3 +54,6 @@ func (functionDir *FunctionDirectory) RegisterParam(name interface{}, typ Type) 
 	}
 	return nil, functionDir.AddParam(functionDir.CurrentFunction.Name, string(name.(*token.Token).Lit), typ)
 }
+
+
+// ---------------- QUADRUPLE SECTION ----------------

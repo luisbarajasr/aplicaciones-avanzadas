@@ -14,21 +14,28 @@ var SemanticCube = map[Type]map[Type]map[Operator]Type{
 			Minus:       Int,
 			Times:       Int,
 			Divide:      Float, // int / int -> float (to handle division)
-			Less:        Int,   // boolean, but BabyDuck uses int for simplicity
-			Greater:     Int,
-			NotEqual:    Int,
-			Assign:      Int,
+			Less:        Bool,
+			Greater:     Bool,
+			NotEqual:    Bool,
 		},
 		Float: {
 			Plus:        Float,
 			Minus:       Float,
 			Times:       Float,
 			Divide:      Float,
-			Less:        Int,
-			Greater:     Int,
-			NotEqual:    Int,
-			Assign:      Error, // int = float is invalid
+			Less:        Bool,
+			Greater:     Bool,
+			NotEqual:    Bool,
 		},
+		Bool: {
+			Plus:     Error,
+			Minus:    Error,
+			Times:    Error,
+			Divide:   Error,
+			Less:     Error,
+			Greater:  Error,
+			NotEqual: Error,
+		}
 	},
 	Float: {
 		Int: {
@@ -36,22 +43,59 @@ var SemanticCube = map[Type]map[Type]map[Operator]Type{
 			Minus:       Float,
 			Times:       Float,
 			Divide:      Float,
-			Less:        Int,
-			Greater:     Int,
-			NotEqual:    Int,
-			Assign:      Error, // float = int is invalid
+			Less:        Bool,
+			Greater:     Bool,
+			NotEqual:    Bool,
 		},
 		Float: {
 			Plus:        Float,
 			Minus:       Float,
 			Times:       Float,
 			Divide:      Float,
-			Less:        Int,
-			Greater:     Int,
-			NotEqual:    Int,
-			Assign:      Float,
+			Less:        Bool,
+			Greater:     Bool,
+			NotEqual:    Bool,
 		},
+		Bool: {
+			Plus:     Error,
+			Minus:    Error,
+			Times:    Error,
+			Divide:   Error,
+			Less:     Error,
+			Greater:  Error,
+			NotEqual: Error,
+		}
 	},
+	Bool: {
+		Int: {
+			Plus:     Error,
+			Minus:    Error,
+			Times:    Error,
+			Divide:   Error,
+			Less:     Error,
+			Greater:  Error,
+			NotEqual: Bool,
+		},
+		Float: {
+			Plus:     Error,
+			Minus:    Error,
+			Times:    Error,
+			Divide:   Error,
+			Less:     Error,
+			Greater:  Error,
+			NotEqual: Error,
+		},
+		Bool: {
+			Plus:     Error,
+			Minus:    Error,
+			Times:    Error,
+			Divide:   Error,
+			Less:     Error,
+			Greater:  Error,
+			NotEqual: Error,
+			Assign:   Error,
+		}
+	}
 }
 
 // CheckTypes returns the result type for an operation or error if invalid

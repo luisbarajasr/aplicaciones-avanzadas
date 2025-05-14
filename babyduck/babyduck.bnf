@@ -1,4 +1,4 @@
-/* ------------- Lexical Part  -------------  */
+/* ------------- reserved Part  -------------  */
 program : 'p' 'r' 'o' 'g' 'r' 'a' 'm' ;
 main : 'm' 'a' 'i' 'n' ;
 end : 'e' 'n' 'd' ;
@@ -42,8 +42,12 @@ cte_string : '"' {_letter | ' ' | '!' | '?' }'"' ;
 
 /* ----------------- CFG ----------------- */
 << 
-import "babyduck/semantic"
+import (
+     "babyduck/semantic"
+     "babyduck/expresions"
+)
 var functionDir = semantic.NewFunctionDirectory()
+var cuadruple = expresions.NewCuadruploList()
 >>
 
 Start: Program <<functionDir, nil>> ;

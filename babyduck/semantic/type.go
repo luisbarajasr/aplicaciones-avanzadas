@@ -1,12 +1,14 @@
 package semantic
 
-type Type string
+type Type int
 
 const (
-	Int   Type = "int"
-	Float Type = "float"
-	Void  Type = "void"
-	Error Type = "error"
+	Int   Type = iota
+	Float 
+	Void
+	Bool
+	String
+	Error
 )
 
 type Operator string
@@ -14,12 +16,14 @@ type Operator string
 const (
 	Plus        Operator = "+"
 	Minus       Operator = "-"
-	Times       Operator = "*"
+	Times       Operator = "*"	
 	Divide      Operator = "/"
 	Less        Operator = "<"
 	Greater     Operator = ">"
 	NotEqual    Operator = "!="
 	Assign	  	Operator = "="
+	NewPara   	Operator = "("
+	ClosePara 	Operator = ")"
 )
 
 // Variable nombre y tipo
