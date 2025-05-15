@@ -2,7 +2,7 @@ package semantic
 
 import (
 	"strconv"
-	// "fmt"
+	"fmt"
 )
 
 // cuadruplo 
@@ -118,11 +118,22 @@ func (CuadruploList *CuadruploList) addCuadruplo_dos(operator Operator) {
 	}
 }
 
-func (CuadruploList *CuadruploList) PrintCuadruplos() {
-	for _, cuadruplo := range CuadruploList.Cuadruplos {
-		println(cuadruplo.Arg1.Name, cuadruplo.Operator, cuadruplo.Arg2.Name, "->", cuadruplo.Result.Name)
-	}
-	println("Total Cuadruplos:", len(CuadruploList.Cuadruplos))
+func (cl *CuadruploList) PrintCuadruplos() {
+    if cl == nil || cl.Cuadruplos == nil {
+        fmt.Println("No quadruples generated")
+        return
+    }
+    
+    for _, quad := range cl.Cuadruplos {
+        if quad.Arg2 != nil {
+            fmt.Printf("%s %s %s -> %s\n", 
+                quad.Arg1.Name, quad.Operator, quad.Arg2.Name, quad.Result.Name)
+        } else {
+            fmt.Printf("%s %s -> %s\n", 
+                quad.Arg1.Name, quad.Operator, quad.Result.Name)
+        }
+    }
+    fmt.Printf("Total Cuadruplos: %d\n", len(cl.Cuadruplos))
 }
 
 func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, error) {
@@ -143,8 +154,23 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 				topOp, _ := opStack.Pop()
 				CuadruploList.addCuadruplo(topOp)	
 			}
-			if !opStack.IsEmpty() {
+			if !opStack.IsEmpty() && opStack.Peek() == NewPara {
 				opStack.Pop() // Remove the NewPara operator
+			}	
+			
+			// fmt.Println("Closing parenthesis, popping operators until NewPara")
+			opStack.Print()
+
+			return operator, nil
+
+		case Semicolon:
+			// fmt.Println("Semicolon detected, popping operators until empty stack")
+
+			for !opStack.IsEmpty() {
+				// opStack.Print()
+				// fmt.Println("-----------------")
+				topOp, _ := opStack.Pop()
+				CuadruploList.addCuadruplo(topOp)
 			}
 
 			return operator, nil
@@ -154,7 +180,10 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 			topPrecedence := opStack.Peek().Precedence()
 
 			if currentPrecedence > topPrecedence {
+				// fmt.Println("Adding operator to stack:", operator)
 				opStack.Push(operator)
+				// opStack.Print()
+				// fmt.Println("-----------------")
 			} else {
 				for !opStack.IsEmpty() && currentPrecedence <= opStack.Peek().Precedence() {
 					topOp, _ := opStack.Pop()
@@ -167,21 +196,31 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 } 
 
 func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
+	// fmt.Println("Adding operator to cuadruple list:", operator)
+
+	// opStack.Print()
+	// fmt.Println("-----------------")
+	// varStack.Print()
 
 	switch operator {
 
-	case Assign:
-		result := varStack.Pop()
-		varTarget := varStack.Pop()
+		case Assign:
+			// fmt.Println("Adding assignment operator to stack:", operator)
+			// fmt.Println("VarStack:", varStack)
+			// fmt.Println("OpStack:", opStack)
 
-		cuadruplo := Cuadruplo{
-			Operator: operator,
-			Arg1:     result,
-			Result:   varTarget,
-		}	
-		CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
-
-	default:
+			result := varStack.Pop()
+			varTarget := varStack.Pop()
+			// fmt.Println("Assigning", result.Name, "to", varTarget.Name)
+			cuadruplo := Cuadruplo{
+				Operator: operator,
+				Arg1:     result,
+				Result:   varTarget,
+			}	
+			// fmt.Println("Cuadruplo:", cuadruplo.Operator, cuadruplo.Arg1.Name, "->", cuadruplo.Result.Name)
+			CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
+			
+		default:
 		arg2 := varStack.Pop()
 		arg1 := varStack.Pop()
 		

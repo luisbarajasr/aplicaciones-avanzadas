@@ -86,7 +86,7 @@ Body : lbrace StateDeclare rbrace ;
 
 StateDeclare : Statement StateDeclare | empty ;
 
-Statement : Assign 
+Statement : Assign <<cuadruple.AddOperatorAction(semantic.Semicolon)>>
           | Condition 
           | Cycle 
           | FuncCall 

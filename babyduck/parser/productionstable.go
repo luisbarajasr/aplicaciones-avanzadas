@@ -294,13 +294,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Statement : Assign	<<  >>`,
+		String: `Statement : Assign	<< cuadruple.AddOperatorAction(semantic.Semicolon) >>`,
 		Id:         "Statement",
 		NTType:     18,
 		Index:      27,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return X[0], nil
+			return cuadruple.AddOperatorAction(semantic.Semicolon)
 		},
 	},
 	ProdTabEntry{

@@ -24,6 +24,7 @@ const (
 	Assign	  	Operator = "="
 	NewPara   	Operator = "("
 	ClosePara 	Operator = ")"
+	Semicolon   Operator = ";"
 )
 
 // Variable nombre y tipo
