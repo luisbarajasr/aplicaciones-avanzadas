@@ -2,7 +2,7 @@ package semantic
 
 import (
 	"strconv"
-	"fmt"
+	// "fmt"
 )
 
 // cuadruplo 
@@ -65,79 +65,13 @@ func NewCuadruploList(functionDir *FunctionDirectory) *CuadruploList {
     }
 }
 
-func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, error){
-
-	fmt.Println("Adding operator to stack:", operator)
-
-	if opStack.IsEmpty() {
-		// agregar operador a la pila
-		opStack.Push(operator)
-		return operator, nil
-
-	} else if(operator == NewPara){
-		opStack.Push(operator)
-		return operator, nil
-
-	} else if (operator == ClosePara) {
-
-		for opStack.Peek() != NewPara {
-			opOperator,_ := opStack.Pop()
-			CuadruploList.addCuadruplo(opOperator)
-			opStack.Pop()
-		}
-
-		opStack.Pop() // sacar el falso stack
-		return opStack.Peek(), nil
-
-	} else if ( operator.Precedence() > opStack.Peek().Precedence() || operator.Precedence() == opStack.Peek().Precedence()) {
-		opStack.Push(operator)
-		return operator, nil
-
-	} else if (operator.Precedence() < opStack.Peek().Precedence()) {
-		// sacar el operador de la cima de la pila
-		topOperator,_ := opStack.Pop()
-
-		// agergar el operador a la lista de cuadruplos
-		CuadruploList.addCuadruplo(topOperator)
-
-		// agregar el nuevo operador a la pila
-		opStack.Push(operator)
-		return operator, nil
-	}
-	
-	return operator, nil
-
-	/* 
-	revisar si esta vacio 
-		vacio, agregar operador
-	
-	revisar si operador es parentesis
-		crear nuevo stack falso
-		agregar operador
-	
-	revisar si operador es cierre de parentesis
-		mientras el operador de la cima del stack falso no sea el de apertura:
-			sacar los operadores dentro del stack falso
-			agregar a la lista de cuadruplos
-		ya encontro el operdaor de apertura (sale del loop)
-		sacar el operador de apertura del stack falso
-
-	no vacio, revisar si el nuevo operador tiene mayor o igual precedencia que el de la cima
-		menor, agregar operador
-		igual, agregar operador
-		mayor, sacar de la pila el operador de la cima y agregarlo a la lista de cuadruplos
-			agregar el nuevo operador a la pila
-		
-	*/
-}
-
 func (CuadruploList *CuadruploList) addVariable(variable Variable){
-	fmt.Println("Adding variable to stack:", variable.Name)
+	// fmt.Println("Adding variable to stack:", variable.Name)
 	varStack.Push(variable)
-	varStack.Print()
+	// varStack.Print()
 }
 
-func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
+func (CuadruploList *CuadruploList) addCuadruplo_dos(operator Operator) {
 	var1, verifier := varStack.PeekDouble()
 	if !verifier {
 		panic("Error: Not enough variables in stack")
@@ -189,4 +123,87 @@ func (CuadruploList *CuadruploList) PrintCuadruplos() {
 		println(cuadruplo.Arg1.Name, cuadruplo.Operator, cuadruplo.Arg2.Name, "->", cuadruplo.Result.Name)
 	}
 	println("Total Cuadruplos:", len(CuadruploList.Cuadruplos))
+}
+
+func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, error) {
+	// fmt.Println("Adding operator to stack:", operator)
+
+	if opStack.IsEmpty() {
+		opStack.Push(operator)
+		return operator, nil
+	}
+
+	switch operator {
+		case NewPara:
+			opStack.Push(operator)
+			return operator, nil
+
+		case ClosePara:
+			for !opStack.IsEmpty() && opStack.Peek() != NewPara {
+				topOp, _ := opStack.Pop()
+				CuadruploList.addCuadruplo(topOp)	
+			}
+			if !opStack.IsEmpty() {
+				opStack.Pop() // Remove the NewPara operator
+			}
+
+			return operator, nil
+
+		default:
+			currentPrecedence := operator.Precedence()
+			topPrecedence := opStack.Peek().Precedence()
+
+			if currentPrecedence > topPrecedence {
+				opStack.Push(operator)
+			} else {
+				for !opStack.IsEmpty() && currentPrecedence <= opStack.Peek().Precedence() {
+					topOp, _ := opStack.Pop()
+					CuadruploList.addCuadruplo(topOp)
+				}
+				opStack.Push(operator)
+			}
+			return operator, nil
+	}
+} 
+
+func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
+
+	switch operator {
+
+	case Assign:
+		result := varStack.Pop()
+		varTarget := varStack.Pop()
+
+		cuadruplo := Cuadruplo{
+			Operator: operator,
+			Arg1:     result,
+			Result:   varTarget,
+		}	
+		CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
+
+	default:
+		arg2 := varStack.Pop()
+		arg1 := varStack.Pop()
+		
+		var opResult Type = SemanticCube[arg1.Type][arg2.Type][operator]
+		if opResult == Error {
+			panic("Error: Type mismatch in operation")
+		}
+		
+		tempVar := NewTempVariable("t"+strconv.Itoa(len(TempVariables)), opResult)
+
+		cuadruplo := Cuadruplo{
+			Operator: operator,
+			Arg1:     arg1,
+			Arg2:     &arg2,
+			Result:   tempVar,
+		}
+
+		varStack.Push(tempVar) // Push the result variable onto the stack
+		CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
+		TempVariables[tempVar.Name] = Variable{
+			Name: tempVar.Name,
+			Type: opResult,
+		}
+	}
 }

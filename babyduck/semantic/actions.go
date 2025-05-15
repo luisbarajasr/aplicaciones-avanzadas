@@ -73,3 +73,9 @@ func (cuadruplo *CuadruploList) AddVariableAction(name interface{}) (interface{}
 	cuadruplo.addVariable(variable)
 	return nil, nil
 }
+
+func (cuadruplo *CuadruploList) PrintCuadruplosAction() (interface{}, error) {
+	// Print the list of quadruples
+	cuadruplo.PrintCuadruplos()
+	return nil, nil
+}

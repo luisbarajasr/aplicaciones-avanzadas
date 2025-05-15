@@ -51,7 +51,7 @@ var cuadruple = semantic.NewCuadruploList(functionDir)
 
 Start: Program <<functionDir, nil>> ;
 
-Program : program id semicolon VarsOp FuncLoop main Body end ;
+Program : program id semicolon VarsOp FuncLoop main Body end  <<cuadruple.PrintCuadruplosAction()>>;
 
 VarsOp : Vars 
     | empty ;
@@ -92,7 +92,10 @@ Statement : Assign
           | FuncCall 
           | Print ;
 
-Assign : id assign Expresion semicolon << functionDir.ValidateAssign($0)>>;
+Assign : Id_Assign Add_Assign Expresion semicolon ;
+
+Add_Assign : assign <<cuadruple.AddOperatorAction(semantic.Assign)>>;
+Id_Assign : id <<cuadruple.AddVariableAction($0)>>;
 
 Condition : if lparen Expresion rparen Body ElseBody semicolon ;
 
