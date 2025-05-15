@@ -71,53 +71,6 @@ func (CuadruploList *CuadruploList) addVariable(variable Variable){
 	// varStack.Print()
 }
 
-func (CuadruploList *CuadruploList) addCuadruplo_dos(operator Operator) {
-	var1, verifier := varStack.PeekDouble()
-	if !verifier {
-		panic("Error: Not enough variables in stack")
-	}
-	var2 := varStack.Peek() // tengo que corregir esto
-	/* 
-	entra una variable
-	se lee un operador
-	trata de tomar 2 variables del stack
-		hay error porque solo esta una variable
-	*/
-
-	var opResult Type = SemanticCube[var1.Type][var2.Type][operator]
-	if opResult == Error {
-		panic("Error: Type mismatch in operation")
-	}
-
-	var cuadruplo Cuadruplo
-
-	// que pasa si es un asignacion?
-	if operator == Assign {
-		cuadruplo = Cuadruplo{
-			Arg1:     var2,
-			Arg2:     nil,
-			Operator: operator,
-			Result:   var1,
-		}
-	} else {
-		cuadruplo  = Cuadruplo{
-			Arg1:     var1,
-			Arg2:     &var2,
-			Operator: operator,
-			Result:   NewTempVariable("t"+strconv.Itoa(len(TempVariables)), opResult),
-		}
-	}
-
-	CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
-	varStack.Pop() // quitar las 2 variables de la pila
-	varStack.Pop() 
-	varStack.Push(cuadruplo.Result) // agregar el resultado al stack
-	TempVariables[cuadruplo.Result.Name] = Variable{
-		Name: cuadruplo.Result.Name,
-		Type: opResult,
-	}
-}
-
 func (cl *CuadruploList) PrintCuadruplos() {
     if cl == nil || cl.Cuadruplos == nil {
         fmt.Println("No quadruples generated")
@@ -159,7 +112,7 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 			}	
 			
 			// fmt.Println("Closing parenthesis, popping operators until NewPara")
-			opStack.Print()
+			// opStack.Print()
 
 			return operator, nil
 

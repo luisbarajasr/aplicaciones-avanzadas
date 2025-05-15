@@ -1,111 +1,110 @@
 package main
 
 import (
+	"testing"
+
+	// "babyduck/semantic"
 	"babyduck/lexer"
 	"babyduck/parser"
-	"testing"
 )
 
-var testData = map[string]bool{
-	// caso 1 : funcion doble declarada
-	`program demoEleven;
+// func Test1(t *testing.T) {
+// 	src :=
+// 		`program demoEleven;
 
-		var a, b, c, z : int;
+// 		var a, b, c, z : int;
+
+// 		main {
+// 			z = (a + b) * c;
+// 		}
+// 		end`
+
+// 	l := lexer.NewLexer([]byte(src))
+// 	p := parser.NewParser()
+
+// 	tree, perr := p.Parse(l)
+
+// 	if perr != nil {
+// 		t.Fatalf("parse failed: %v", perr)
+// 	}
+
+// 	t.Logf("parse OK %#v", tree)
+// }
+
+// func Test2(t *testing.T) {
+// 	src :=
+// 	`program demoTwelve;
+
+// 	var a, b, c, z : int;
+
+// 	void anotherFunction(p : int, q : float) [
+// 		var o : int;
+
+// 		{
+// 			o = p + q;
+// 			print(o);
+// 		}
+// 	];
+
+// 	main {
+
+// 	}
+
+// 	end`
+
+// 	l := lexer.NewLexer([]byte(src))
+// 	p := parser.NewParser()
+
+// 	tree, perr := p.Parse(l)
+
+// 	if perr != nil {
+// 		t.Fatalf("parse failed: %v", perr)
+// 	}
+
+// 	t.Logf("parse OK %#v", tree)
+// }
+
+// func Test3(t *testing.T) {
+// 	src :=
+// 	`program myprog;
+// 	var id1 : int; id2 : float;
+// 	main {
+// 		id2 = 5;
+// 		id1 = 5 + 10;
+// 	}
+// 	end`
+	
+// 	l := lexer.NewLexer([]byte(src))
+// 	p := parser.NewParser()
+
+// 	tree, perr := p.Parse(l)
+
+// 	if perr != nil {
+// 		t.Fatalf("parse failed: %v", perr)
+// 	}
+
+// 	t.Logf("parse OK %#v", tree)
+// }
+
+func Test4(t *testing.T) {
+	src :=
+		`program demoEleven;
+
+		var a, b, c, z, d, e : int;
 
 		main {
-			z = (a + b) * c;
+			z = (a - (d / e)) * c;
 		}
-		end`: true,
-	// caso 2 : variable no declarada
-    // `program demo2;
+		end`
 
-    //     var x, y, z : int;
+	l := lexer.NewLexer([]byte(src))
+	p := parser.NewParser()
 
-    //     main {
-    //         noesta = 2;
-    //     }
+	tree, perr := p.Parse(l)
 
-    // end`: false,
-	// // caso 3: variable declarada
-    // `program demo3;
-
-    // var t, u, i : int;
-
-    // main {
-    //     print(t);
-    // }
-    // end`: true,
-	// // caso 4: re-declaracion de variable global
-	// `program demo4;
-
-	// 	var x, y, z : int;
-
-	// 	void anotherFunction(a : int, b : float) [
-	// 		var x : int;
-
-	// 		{
-	// 			d = a + b;
-	// 			print(d);
-	// 		}
-	// 	];
-
-	// 	main {
-	// 		print(x);
-	// 	}
-
-	// 	end`: false,
-	// // caso 5: variable no declarada
-	// `program demo5;
-
-	// 	var x, y, z : int;
-
-	// 	void anotherFunction(a : int, b : float) [
-	// 		var nueva : int;
-
-	// 		{
-	// 			nose = 1 + 2;
-	// 			print(nose);
-	// 		}
-	// 	];
-
-	// 	main {
-	// 		x = 1;
-	// 		anotherFunction(1, 2.0);
-	// 	}
-
-	// 	end`: false,
-	// // caso 6: token no registrado
-    // `program demo6;
-
-    // var  x, y, z : string;
-
-    // main {
-    //     print(1 + 2);
-    // }`: false,
-	// // caso 7: variable no declarada
-	// "program p main { } end": false,
-}
-
-func TestParse(t *testing.T) {
-	i := 1
-	for input, ok := range testData {
-		// Log the test input and output
-        t.Logf("\n")
-		t.Logf("=== Parsing Test #%d", i)
-		l := lexer.NewLexer([]byte(input))
-		p := parser.NewParser()
-		_, err := p.Parse(l)
-
-		// Check expectation
-		if (err == nil) != ok {
-			if ok {
-				t.Errorf("unexpected error parsing valid input:\n%s\nerror: %v", input, err)
-				t.Logf("Parse error: %v", err)
-			} else {
-				t.Errorf("expected error parsing invalid input, but got none:\n%s", input)
-				t.Logf("Parse error: %v", err)
-			}
-		}
-		i++
+	if perr != nil {
+		t.Fatalf("parse failed: %v", perr)
 	}
+
+	t.Logf("parse OK %#v", tree)
 }
