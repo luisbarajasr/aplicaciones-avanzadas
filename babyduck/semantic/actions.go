@@ -76,8 +76,14 @@ func (cuadruplo *CuadruploList) CompleteElseAction() (interface{}, error) {
 	return nil, nil
 }
 
-// func (cuadruplo *CuadruploList) AddBeginWhileAction() (interface{}, error) {}
-// func (cuadruplo *CuadruploList) CompleteWhileAction() (interface{}, error) {}
+func (cuadruplo *CuadruploList) AddBeginWhileAction() (interface{}, error) {
+	cuadruplo.BeginWhile()
+	return nil, nil
+}
+func (cuadruplo *CuadruploList) CompleteWhileAction() (interface{}, error) {
+	cuadruplo.CompleteWhile()
+	return nil, nil
+}
 
 func (cuadruplo *CuadruploList) PrintCuadruplosAction() (interface{}, error) {
 	// Print the list of quadruples

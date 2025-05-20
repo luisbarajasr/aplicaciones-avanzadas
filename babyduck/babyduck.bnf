@@ -108,7 +108,10 @@ ElseBody : Else_Begin Body <<cuadruple.CompleteElseAction()>>
 
 Else_Begin : else <<cuadruple.AddBeginElseAction()>>;
 
-Cycle : while lparen Expresion rparen do Body semicolon ;
+Cycle : While_Begin lparen Expresion rparen do While_Body semicolon;
+
+While_Begin : while <<cuadruple.AddBeginWhileAction()>>;
+While_Body : Body <<cuadruple.CompleteWhileAction()>>;
 
 FuncCall : id lparen ArgList rparen semicolon ;
 

@@ -17,6 +17,7 @@ var (
     jumpStack     *JumpStack  // Nueva pila para manejar saltos
 	BooleanTempVariables *VarStack
 	TempVariables *VarStack
+	whileIndex int
 )
 
 type JumpStack struct {
@@ -99,6 +100,7 @@ func NewCuadruploList(functionDir *FunctionDirectory) *CuadruploList {
     jumpStack = NewJumpStack()
 	BooleanTempVariables = NewVarStack()
 	TempVariables = NewVarStack()
+	whileIndex = 0
 
     return &CuadruploList{
         Cuadruplos: []Cuadruplo{},
@@ -351,26 +353,32 @@ func (cl *CuadruploList) CompleteElse() {
 }
 
 // ------------ WHILE ----------------
-func (cl *CuadruploList) BeginWhile() int {
+func (cl *CuadruploList) BeginWhile()  {
+	whileIndex = len(cl.Cuadruplos)
+
     // Guarda posición de inicio del while
-    return len(cl.Cuadruplos)
+    jumpStack.Push(len(cl.Cuadruplos))
+
+	condition := BooleanTempVariables.Pop()
+	cuadruplo := Cuadruplo{
+		Operator: GOTOF,
+		Arg1:     condition, // dirección del booleano temporal dentro del If( )
+		Arg2:     0, // Se completará después
+		Result:   0, 
+	}
+	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
+	jumpStack.Push(len(cl.Cuadruplos) - 1) // Guarda la posición del GOTOF
 }
 
-func (cl *CuadruploList) CompleteWhile(conditionAddr int, whilePos int) {
-    // Agrega GOTOF para la condición
-    endPos := len(cl.Cuadruplos)
-    cl.Cuadruplos = append(cl.Cuadruplos, Cuadruplo{
-        Operator: "GOTOF",
-        Arg1:     conditionAddr,
-        Result:   -1, // Se completará después
-    })
-    
+func (cl *CuadruploList) CompleteWhile() {
+	
+	gotoFIndex, _ := jumpStack.Pop()
+	cl.Cuadruplos[gotoFIndex].Arg1 = BooleanTempVariables.Pop() // direccion del booleano temporal dentro del If( )
+	cl.Cuadruplos[gotoFIndex].Arg2 = len(cl.Cuadruplos) + 1 // Completa el GOTOF con la posición actual (fin del bloque if)
+
     // Agrega GOTOT para volver al inicio
     cl.Cuadruplos = append(cl.Cuadruplos, Cuadruplo{
-        Operator: "GOTOT",
-        Result:   whilePos,
+        Operator: "GOTO",
+        Arg2: whileIndex,
     })
-    
-    // Completa el GOTOF con la posición final
-    cl.Cuadruplos[endPos].Result = len(cl.Cuadruplos)
 }

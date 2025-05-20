@@ -8,57 +8,24 @@ import (
 	"babyduck/parser"
 )
 
-func Test1(t *testing.T) {
-	src :=
-		`program demoEleven;
-
-		var a, b, c, s : int;
-
-		main {
-			s = (a + b) * c;
-			a = b + c;
-			b = c;
-
-			if(a<b*c){
-				a = b;
-			}else{
-				b = c;	
-			};
-		}
-		end`
-
-	l := lexer.NewLexer([]byte(src))
-	p := parser.NewParser()
-
-	tree, perr := p.Parse(l)
-
-	if perr != nil {
-		t.Fatalf("parse failed: %v", perr)
-	}
-
-	t.Logf("parse OK %#v", tree)
-}
-
-// func Test2(t *testing.T) {
+// func Test1(t *testing.T) {
 // 	src :=
-// 	`program demoTwelve;
+// 		`program demoEleven;
 
-// 	var a, b, c, z : int;
+// 		var a, b, c, s : int;
 
-// 	void anotherFunction(p : int, q : float) [
-// 		var o : int;
+// 		main {
+// 			s = (a + b) * c;
+// 			a = b + c;
+// 			b = c;
 
-// 		{
-// 			o = p + q;
-// 			print(o);
+// 			if(a<b*c){
+// 				a = b;
+// 			}else{
+// 				b = c;	
+// 			};
 // 		}
-// 	];
-
-// 	main {
-
-// 	}
-
-// 	end`
+// 		end`
 
 // 	l := lexer.NewLexer([]byte(src))
 // 	p := parser.NewParser()
@@ -71,6 +38,37 @@ func Test1(t *testing.T) {
 
 // 	t.Logf("parse OK %#v", tree)
 // }
+
+func Test2(t *testing.T) {
+	src :=
+	`program demoTwelve;
+
+	var a, b, c, z : int;
+
+	main {
+		z = c + a;
+		
+		while(a < b)
+		do {
+			a = a + b;
+		};
+
+		c = a + b;
+	}
+
+	end`
+
+	l := lexer.NewLexer([]byte(src))
+	p := parser.NewParser()
+
+	tree, perr := p.Parse(l)
+
+	if perr != nil {
+		t.Fatalf("parse failed: %v", perr)
+	}
+
+	t.Logf("parse OK %#v", tree)
+}
 
 // func Test3(t *testing.T) {
 // 	src :=
