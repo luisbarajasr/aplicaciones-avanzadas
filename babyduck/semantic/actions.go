@@ -6,22 +6,6 @@ import (
 	"babyduck/token"
 )
 
-// ValidateAssign revisa si el tipo de la variable coincide con el tipo de la expresion
-func (functionDir *FunctionDirectory) ValidateAssign(name interface{}) (interface{}, error) {
-	
-	varName := string(name.(*token.Token).Lit)
-	_, err := functionDir.LookupVariable(varName)
-	if err != nil {
-		return nil, err
-	}
-	// resultType, err := CheckTypes(varDecl.Type, exprType, Assign)
-	// if err != nil {
-	// 	return fmt.Errorf("type mismatch in assignment: %s (%s) cannot be assigned %s", varName, varDecl.Type, exprType)
-	// }
-
-	return nil, nil
-}
-
 // AppendVariable agrega una nueva variable a la lista de variables temporales
 func (functionDir *FunctionDirectory) AppendVariable(name interface{}) (interface{}, error) {
 	varName := string(name.(*token.Token).Lit)
@@ -78,6 +62,21 @@ func (cuadruplo *CuadruploList) AddVariableAction(name interface{}) (interface{}
 	cuadruplo.addVariable(variable)
 	return nil, nil
 }
+
+func (cuadruplo *CuadruploList) AddBeginIfAction() (interface{}, error) {
+	cuadruplo.BeginIf()
+	return nil, nil
+}
+func (cuadruplo *CuadruploList) CompleteIfAction() (interface{}, error) {
+	cuadruplo.CompleteIf()
+	return nil, nil
+}
+
+// func (cuadruplo *CuadruploList) AddElseAction() (interface{}, error) {}
+// func (cuadruplo *CuadruploList) CompleteElseAction() (interface{}, error) {}
+
+// func (cuadruplo *CuadruploList) AddBeginWhileAction() (interface{}, error) {}
+// func (cuadruplo *CuadruploList) CompleteWhileAction() (interface{}, error) {}
 
 func (cuadruplo *CuadruploList) PrintCuadruplosAction() (interface{}, error) {
 	// Print the list of quadruples

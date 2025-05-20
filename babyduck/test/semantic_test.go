@@ -8,28 +8,34 @@ import (
 	"babyduck/parser"
 )
 
-// func Test1(t *testing.T) {
-// 	src :=
-// 		`program demoEleven;
+func Test1(t *testing.T) {
+	src :=
+		`program demoEleven;
 
-// 		var a, b, c, z : int;
+		var a, b, c, s : int;
 
-// 		main {
-// 			z = (a + b) * c;
-// 		}
-// 		end`
+		main {
+			s = (a + b) * c;
+			a = b + c;
+			b = c;
 
-// 	l := lexer.NewLexer([]byte(src))
-// 	p := parser.NewParser()
+			if(a<b){
+				a = b;
+			};
+		}
+		end`
 
-// 	tree, perr := p.Parse(l)
+	l := lexer.NewLexer([]byte(src))
+	p := parser.NewParser()
 
-// 	if perr != nil {
-// 		t.Fatalf("parse failed: %v", perr)
-// 	}
+	tree, perr := p.Parse(l)
 
-// 	t.Logf("parse OK %#v", tree)
-// }
+	if perr != nil {
+		t.Fatalf("parse failed: %v", perr)
+	}
+
+	t.Logf("parse OK %#v", tree)
+}
 
 // func Test2(t *testing.T) {
 // 	src :=
@@ -86,24 +92,24 @@ import (
 // 	t.Logf("parse OK %#v", tree)
 // }
 
-func Test4(t *testing.T) {
-	src :=
-		`program demoEleven;
+// func Test4(t *testing.T) {
+// 	src :=
+// 		`program demoEleven;
 
-		var a, b, c, d, e : int; z : float;
-		main {
-			z = (a - (d / e)) * c;
-		}
-		end`
+// 		var a, b, c, d, e : int; z : float;
+// 		main {
+// 			z = (a - (d / e)) * c;
+// 		}
+// 		end`
 
-	l := lexer.NewLexer([]byte(src))
-	p := parser.NewParser()
+// 	l := lexer.NewLexer([]byte(src))
+// 	p := parser.NewParser()
 
-	tree, perr := p.Parse(l)
+// 	tree, perr := p.Parse(l)
 
-	if perr != nil {
-		t.Fatalf("parse failed: %v", perr)
-	}
+// 	if perr != nil {
+// 		t.Fatalf("parse failed: %v", perr)
+// 	}
 
-	t.Logf("parse OK %#v", tree)
-}
+// 	t.Logf("parse OK %#v", tree)
+// }

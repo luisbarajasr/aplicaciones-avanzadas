@@ -26,6 +26,9 @@ const (
 	ClosePara 	Operator = ")"
 	Semicolon   Operator = ";"
 	Print 		Operator = "print"
+	GOTO 		Operator = "GOTO"
+	GOTOF 		Operator = "GOTOF"
+	GOTOV 		Operator = "GOTOV"
 )
 
 // Variable nombre y tipo

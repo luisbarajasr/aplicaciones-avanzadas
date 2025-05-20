@@ -70,15 +70,3 @@ func (mm *MemoryManager) Allocate(memType MemoryType) int {
 	mm.memory_address[memType]++
 	return address
 }
-
-// func (mm *MemoryManager) AllocateConst(value interface{}) int {
-// 	switch v := value.(type) {
-// 	case Int: 
-
-// 	case Float:
-
-// 	case String: 
-
-// 	default:
-// 	}
-// }
