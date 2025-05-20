@@ -1,6 +1,8 @@
 package semantic
 
-import ()
+import (
+	"fmt"
+)
 
 // cuadruplo 
 type Cuadruplo struct {
@@ -72,17 +74,54 @@ func (cl *CuadruploList) PrintCuadruplos() {
         fmt.Println("No quadruples generated")
         return
     }
+
+    fmt.Println("\n=== Cuádruplos Generados ===")
+    fmt.Printf("%-6s %-10s %-10s %-10s %-10s\n", "Pos", "Operador", "Arg1", "Arg2", "Resultado")
+    fmt.Println("--------------------------------------------------")
     
-    for _, quad := range cl.Cuadruplos {
-        if quad.Arg2 != nil {
-            fmt.Printf("%s %s %s -> %s\n", 
-                quad.Arg1.Name, quad.Operator, quad.Arg2.Name, quad.Result.Name)
-        } else {
-            fmt.Printf("%s %s -> %s\n", 
-                quad.Arg1.Name, quad.Operator, quad.Result.Name)
+    for i, quad := range cl.Cuadruplos {
+        // Obtener información de cada argumento
+        arg1Info := cl.getVariableInfo(quad.Arg1)
+        arg2Info := ""
+        if quad.Arg2 != 0 { // 0 indica que no hay segundo argumento
+            arg2Info = cl.getVariableInfo(quad.Arg2)
+        }
+        resultInfo := cl.getVariableInfo(quad.Result)
+
+        // Imprimir el cuádruplo formateado
+        fmt.Printf("%-6d %-10v %-10s %-10s %-10s\n", 
+            i, quad.Operator, arg1Info, arg2Info, resultInfo)
+    }
+    fmt.Printf("\nTotal Cuádruplos: %d\n", len(cl.Cuadruplos))
+}
+
+// Función auxiliar para obtener información de la variable
+func (cl *CuadruploList) getVariableInfo(address int) string {
+    // Buscar en variables globales
+    for _, v := range cl.functionDir.GlobalVars.Variables {
+        if v.Virtual_address == address {
+            return v.Name
         }
     }
-    fmt.Printf("Total Cuadruplos: %d\n", len(cl.Cuadruplos))
+
+    // Buscar en variables locales de la función actual
+    if cl.functionDir.CurrentFunction != nil {
+        for _, v := range cl.functionDir.CurrentFunction.Vars.Variables {
+            if v.Virtual_address == address {
+                return v.Name
+            }
+        }
+    }
+
+    // Buscar en temporales (si están registradas)
+    for _, v := range cl.functionDir.TempVarList {
+        if v.Virtual_address == address {
+            return v.Name
+        }
+    }
+
+    // Si no se encuentra, mostrar la dirección como tal
+    return fmt.Sprintf("%d", address)
 }
 
 // AddOperator agrega un operador al stack de operadores y genera un cuadruplo si es necesario 
