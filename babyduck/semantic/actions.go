@@ -1,5 +1,6 @@
 package semantic
 
+
 import (
 	"fmt"
 	"babyduck/token"
@@ -52,6 +53,10 @@ func (functionDir *FunctionDirectory) RegisterParam(name interface{}, typ Type) 
 	return nil, functionDir.AddParam(functionDir.CurrentFunction.Name, string(name.(*token.Token).Lit), typ)
 }
 
+func (functionDir *FunctionDirectory) PrintFunctionDir() (interface{}, error) {
+	functionDir.PrintFunctions()
+	return nil, nil
+}
 
 // ---------------- QUADRUPLE SECTION ----------------
 func (cuadruplo *CuadruploList) AddOperatorAction(op Operator) (interface{}, error) {

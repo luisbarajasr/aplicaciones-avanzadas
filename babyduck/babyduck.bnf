@@ -1,3 +1,4 @@
+/* --- use : export PATH=$PATH:$(go env GOPATH)/bin  before ------ */
 /* ------------- reserved Part  -------------  */
 program : 'p' 'r' 'o' 'g' 'r' 'a' 'm' ;
 main : 'm' 'a' 'i' 'n' ;
@@ -38,7 +39,7 @@ _digit : '0'-'9' ;
 id : _letter {_letter | _digit} ;
 cte_int : '0' | '1'-'9' {_digit} ;  
 cte_float : '0' | '1'-'9' {_digit} '.' _digit {_digit} ;
-cte_string : '"' {_letter | ' ' | '!' | '?' }'"' ;
+cte_string : '"' {_letter | _digit | ' ' | '!' | '?' }'"' ;
 
 /* ----------------- CFG ----------------- */
 << 

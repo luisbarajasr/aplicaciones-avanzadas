@@ -1,24 +1,19 @@
 package semantic
 
-import (
-	"strconv"
-	"fmt"
-)
+import ()
 
 // cuadruplo 
 type Cuadruplo struct {
-	Arg1     Variable
-	Arg2     *Variable // siendo un puntero, permite ser nil, en caso de que no se necesite, eg. asignar valores
+	Arg1     int
+	Arg2     int // siendo un puntero, permite ser nil, en caso de que no se necesite, eg. asignar valores
 	Operator Operator
-	Result   Variable
+	Result   int
 }
 
 type CuadruploList struct {
 	Cuadruplos []Cuadruplo
 	functionDir *FunctionDirectory
 }
-
-var TempVariables = map[string]Variable{}
 
 // regresa las precednecias de los operadores
 func (o Operator) Precedence() int {
@@ -40,10 +35,11 @@ func (op Operator) IsRightAssociative() bool {
     return op == Assign
 }
 
-func NewTempVariable(name string, typ Type) Variable {
+func NewTempVariable(name string, typ Type, address int) Variable {
     return Variable{
         Name:          name,
         Type:        typ,
+		Virtual_address: address,
     }
 }
 
@@ -65,9 +61,9 @@ func NewCuadruploList(functionDir *FunctionDirectory) *CuadruploList {
     }
 }
 
+// fmt.Println("Adding variable to stack:", variable.Name)
 func (CuadruploList *CuadruploList) addVariable(variable Variable){
-	// fmt.Println("Adding variable to stack:", variable.Name)
-	varStack.Push(variable)
+	varStack.Push(variable.Virtual_address)
 	// varStack.Print()
 }
 
@@ -89,6 +85,8 @@ func (cl *CuadruploList) PrintCuadruplos() {
     fmt.Printf("Total Cuadruplos: %d\n", len(cl.Cuadruplos))
 }
 
+// AddOperator agrega un operador al stack de operadores y genera un cuadruplo si es necesario 
+// dependiendo de la precedencia del operador y el operador en la cima del stack
 func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, error) {
 	// fmt.Println("Adding operator to stack:", operator)
 
@@ -148,6 +146,8 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 	}
 } 
 
+// AddCuadruplo agrega un cuadruplo a la lista de cuadruplos
+// y genera un nuevo temporal si es necesario
 func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 	// fmt.Println("Adding operator to cuadruple list:", operator)
 
@@ -165,37 +165,59 @@ func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 			result := varStack.Pop()
 			varTarget := varStack.Pop()
 			// fmt.Println("Assigning", result.Name, "to", varTarget.Name)
+			
+			resultType,_ := CuadruploList.functionDir.GetTypeByAddress(result)
+			varTargetType,_ := CuadruploList.functionDir.GetTypeByAddress(varTarget)
+
+			if validateAssignment(resultType, varTargetType) != nil {
+				panic("Error: Type mismatch in assignment")
+			}
+
 			cuadruplo := Cuadruplo{
 				Operator: operator,
 				Arg1:     result,
 				Result:   varTarget,
-			}	
-			// fmt.Println("Cuadruplo:", cuadruplo.Operator, cuadruplo.Arg1.Name, "->", cuadruplo.Result.Name)
+			}
+
 			CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
+			// fmt.Println("Cuadruplo:", cuadruplo.Operator, cuadruplo.Arg1.Name, "->", cuadruplo.Result.Name)
 			
 		default:
 		arg2 := varStack.Pop()
 		arg1 := varStack.Pop()
+
+		arg1Type,_:= CuadruploList.functionDir.GetTypeByAddress(arg1)
+		arg2Type,_ := CuadruploList.functionDir.GetTypeByAddress(arg2)
 		
-		var opResult Type = SemanticCube[arg1.Type][arg2.Type][operator]
+		var opResult,_ = CheckTypes(arg1Type, arg2Type, operator)
+		// var opResult Type = SemanticCube[arg1.Type][arg2.Type][operator]
 		if opResult == Error {
 			panic("Error: Type mismatch in operation")
 		}
-		
-		tempVar := NewTempVariable("t"+strconv.Itoa(len(TempVariables)), opResult)
 
+		resultVarType := varTypetoMemoryType(opResult) // convierte el tipo de variable a un tipo de memoria para la asignacion de dir correcta 
+		resultAddress := CuadruploList.functionDir.MemoryManager.Allocate(resultVarType) // sera un temporal de int, float o bool
+		
 		cuadruplo := Cuadruplo{
 			Operator: operator,
 			Arg1:     arg1,
-			Arg2:     &arg2,
-			Result:   tempVar,
+			Arg2:     arg2,
+			Result:   resultAddress,
 		}
 
-		varStack.Push(tempVar) // Push the result variable onto the stack
+		varStack.Push(resultAddress) // Push the result variable onto the stack
 		CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
-		TempVariables[tempVar.Name] = Variable{
-			Name: tempVar.Name,
-			Type: opResult,
-		}
 	}
+}
+
+func varTypetoMemoryType(varType Type) MemoryType {
+	switch varType {
+	case Int:
+		return TemporalInt
+	case Float:
+		return TemporalFloat
+	case Bool:
+		return TemporalBool
+	}
+	return GlobalInt // Default case, should not happen
 }

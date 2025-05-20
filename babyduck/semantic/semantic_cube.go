@@ -120,3 +120,10 @@ func CheckTypes(t1, t2 Type, op Operator) (Type, error) {
 	}
 	return Void, fmt.Errorf("unsupported operation: %s %s %s", t1, op, t2)
 }
+
+func validateAssignment(t1, t2 Type) error {
+	if t1 != t2 {
+		return fmt.Errorf("type mismatch: cannot assign %s to %s", t2, t1)
+	}
+	return nil
+}

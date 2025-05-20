@@ -90,8 +90,7 @@ func Test4(t *testing.T) {
 	src :=
 		`program demoEleven;
 
-		var a, b, c, z, d, e : int;
-
+		var a, b, c, d, e : int; z : float;
 		main {
 			z = (a - (d / e)) * c;
 		}

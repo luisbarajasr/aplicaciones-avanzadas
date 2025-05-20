@@ -2,7 +2,7 @@ package semantic
 
 
 type VarStack struct {
-    data []Variable
+    data []int // direccion virtual de la variable
 }
 
 type OpStack struct {
@@ -11,21 +11,21 @@ type OpStack struct {
 
 func NewVarStack() *VarStack {
 	return &VarStack{
-		data: []Variable{},
+		data: []int{},
 	}
 }
 
-func (stack *VarStack) Push(val Variable) {
+func (stack *VarStack) Push(val int) {
 	stack.data = append(stack.data, val)
 }
 
-func (stack *VarStack) Pop() Variable {
+func (stack *VarStack) Pop() int {
 
 	if stack.IsEmpty() {
-		return Variable{}
+		return 0
 	}
 
-	var ultimo Variable = stack.Peek()
+	var ultimo int = stack.Peek()
 	stack.data = stack.Reduce()
 
 	return ultimo
@@ -33,18 +33,18 @@ func (stack *VarStack) Pop() Variable {
 
 func (stack *VarStack) Print() {
 	for i := len(stack.data) - 1; i >= 0; i-- {
-		println(stack.data[i].Name)
+		println(stack.data[i])
 	}
 }
 
 // Peek
-func (stack *VarStack) Peek() Variable {
+func (stack *VarStack) Peek() int {
 	return stack.data[len(stack.data)-1]
 }
 
-func (stack *VarStack) PeekDouble() (Variable, bool) {
+func (stack *VarStack) PeekDouble() (int, bool) {
 	if len(stack.data) < 2 {
-        return Variable{}, false
+        return 0, false
     }
 	return stack.data[len(stack.data)-2], true
 }
@@ -55,7 +55,7 @@ func (stack *VarStack) IsEmpty() bool {
 }
 
 // reduce
-func (stack *VarStack) Reduce() []Variable {
+func (stack *VarStack) Reduce() []int {
 	return stack.data[:len(stack.data)-1]
 }
 

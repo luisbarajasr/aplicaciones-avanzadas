@@ -25,12 +25,14 @@ const (
 	NewPara   	Operator = "("
 	ClosePara 	Operator = ")"
 	Semicolon   Operator = ";"
+	Print 		Operator = "print"
 )
 
 // Variable nombre y tipo
 type Variable struct {
 	Name string
 	Type Type
+	Virtual_address int
 }
 
 // VariableTable guarda las variables de una función
@@ -53,23 +55,6 @@ type FunctionDirectory struct {
 	GlobalVars   *VariableTable
 	CurrentScope *VariableTable
 	CurrentFunction *Function
-	TempVarList []Variable
+	MemoryManager *MemoryManager
+	TempVarList []Variable // lista para variables temporales que se agregan desde el BNF (lista de parametros, variables, etc)
 }
-
-/* comente aqui los stacks porque marca el siguiente error: 
-
-babyduck/semantic
-../semantic/type.go:58:6: OpStack redeclared in this block
-        ../semantic/cuadruplo.go:47:5: other declaration of OpStack
-../semantic/type.go:62:6: VarStack redeclared in this block
-        ../semantic/cuadruplo.go:48:5: other declaration of VarStack
-
-type OpStack struct { 
-    data []Operator
-}
-
-type VarStack struct {
-    data []int
-}
-
-*/
