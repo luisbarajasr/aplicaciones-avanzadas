@@ -15,7 +15,6 @@ var (
     opStack       *OpStack
     varStack      *VarStack
     jumpStack     *JumpStack  // Nueva pila para manejar saltos
-    currentQuad   int         // Contador de cuadruplos actual
 	BooleanTempVariables *VarStack
 	TempVariables *VarStack
 )
@@ -54,7 +53,7 @@ func (js *JumpStack) Peek() (int, error) {
 // cuadruplo 
 type Cuadruplo struct {
 	Arg1     int
-	Arg2     int // siendo un puntero, permite ser nil, en caso de que no se necesite, eg. asignar valores
+	Arg2     int 
 	Operator Operator
 	Result   int
 }
@@ -92,19 +91,12 @@ func NewTempVariable(name string, typ Type, address int) Variable {
     }
 }
  
-
 // ------------ CUADRUPLO LIST ------------ 
-
-// var (
-// 	opStack  *OpStack  // Global OpStack instance
-// 	varStack *VarStack // Global VarStack instance
-// )
 
 func NewCuadruploList(functionDir *FunctionDirectory) *CuadruploList {
     opStack = NewOpStack()
     varStack = NewVarStack()
     jumpStack = NewJumpStack()
-    currentQuad = 0
 	BooleanTempVariables = NewVarStack()
 	TempVariables = NewVarStack()
 
@@ -302,7 +294,6 @@ func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 			varStack.Push(resultAddress) // los temporales booleanos no se guardan en la pila de variables (causa problema en asignaciones)
 		} else {
 			BooleanTempVariables.Push(resultAddress) // los temporales booleanos se guardan en la pila de booleanos
-			fmt.Println("Boolean Temp Variable:", resultAddress)
 		}
 		TempVariables.Push(resultAddress)
 		CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
@@ -326,7 +317,6 @@ func (cl *CuadruploList) BeginIf() {
     jumpStack.Push(len(cl.Cuadruplos))
 	// Genera el GOTOF (salto si falso)
 	condition := BooleanTempVariables.Pop()
-	fmt.Println("Condition:", condition)
 	cuadruplo := Cuadruplo{
 		Operator: GOTOF,
 		Arg1:     condition, // dirección del booleano temporal dentro del If( )
@@ -341,20 +331,22 @@ func (cl *CuadruploList) CompleteIf() {
 	// Completa el GOTOF con la posición actual (fin del bloque if)
     gotoFIndex, _ := jumpStack.Pop()
 	cl.Cuadruplos[gotoFIndex].Arg1 = BooleanTempVariables.Pop() // direccion del booleano temporal dentro del If( ) 
-    cl.Cuadruplos[gotoFIndex].Arg2 = len(cl.Cuadruplos) // Completa el GOTOF con la posición actual (fin del bloque if)
+    cl.Cuadruplos[gotoFIndex].Arg2 = len(cl.Cuadruplos) + 1 // Completa el GOTOF con la posición actual (fin del bloque if)
 }
 
-func (cl *CuadruploList) AddElse(ifPos int) int {
+func (cl *CuadruploList) BeginElse() int {
     // Agrega GOTO para el else
+	jumpStack.Push(len(cl.Cuadruplos))
     cl.Cuadruplos = append(cl.Cuadruplos, Cuadruplo{
         Operator: "GOTO",
-        Result:   -1, // Pendiente
+        Result:   -1,
     })
     return len(cl.Cuadruplos) - 1
 }
 
-func (cl *CuadruploList) CompleteElse(elsePos int) {
+func (cl *CuadruploList) CompleteElse() {
     // Completa el GOTO del else
+	elsePos, _ := jumpStack.Pop()
     cl.Cuadruplos[elsePos].Result = len(cl.Cuadruplos)
 }
 

@@ -103,10 +103,10 @@ Condition : If_Begin lparen Expresion rparen If_Body ElseBody semicolon ;
 If_Begin : if <<cuadruple.AddBeginIfAction()>>;
 If_Body : Body <<cuadruple.CompleteIfAction()>>;
 
-ElseBody : Else_Begin Body 
+ElseBody : Else_Begin Body <<cuadruple.CompleteElseAction()>>
      | empty ;
 
-Else_Begin : else ;
+Else_Begin : else <<cuadruple.AddBeginElseAction()>>;
 
 Cycle : while lparen Expresion rparen do Body semicolon ;
 

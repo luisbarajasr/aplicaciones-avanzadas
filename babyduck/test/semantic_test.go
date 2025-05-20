@@ -19,8 +19,10 @@ func Test1(t *testing.T) {
 			a = b + c;
 			b = c;
 
-			if(a<b){
+			if(a<b*c){
 				a = b;
+			}else{
+				b = c;	
 			};
 		}
 		end`

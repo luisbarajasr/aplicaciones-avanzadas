@@ -404,13 +404,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `ElseBody : Else_Begin Body	<<  >>`,
+		String: `ElseBody : Else_Begin Body	<< cuadruple.CompleteElseAction() >>`,
 		Id:         "ElseBody",
 		NTType:     25,
 		Index:      38,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return X[0], nil
+			return cuadruple.CompleteElseAction()
 		},
 	},
 	ProdTabEntry{
@@ -424,13 +424,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Else_Begin : else	<<  >>`,
+		String: `Else_Begin : else	<< cuadruple.AddBeginElseAction() >>`,
 		Id:         "Else_Begin",
 		NTType:     26,
 		Index:      40,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return X[0], nil
+			return cuadruple.AddBeginElseAction()
 		},
 	},
 	ProdTabEntry{

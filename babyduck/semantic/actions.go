@@ -37,11 +37,6 @@ func (functionDir *FunctionDirectory) RegisterParam(name interface{}, typ Type) 
 	return nil, functionDir.AddParam(functionDir.CurrentFunction.Name, string(name.(*token.Token).Lit), typ)
 }
 
-func (functionDir *FunctionDirectory) PrintFunctionDir() (interface{}, error) {
-	functionDir.PrintFunctions()
-	return nil, nil
-}
-
 // ---------------- QUADRUPLE SECTION ----------------
 func (cuadruplo *CuadruploList) AddOperatorAction(op Operator) (interface{}, error) {
 	// Add the operator to the stack
@@ -72,8 +67,14 @@ func (cuadruplo *CuadruploList) CompleteIfAction() (interface{}, error) {
 	return nil, nil
 }
 
-// func (cuadruplo *CuadruploList) AddElseAction() (interface{}, error) {}
-// func (cuadruplo *CuadruploList) CompleteElseAction() (interface{}, error) {}
+func (cuadruplo *CuadruploList) AddBeginElseAction() (interface{}, error) {
+	cuadruplo.BeginElse()
+	return nil, nil
+}
+func (cuadruplo *CuadruploList) CompleteElseAction() (interface{}, error) {
+	cuadruplo.CompleteElse()
+	return nil, nil
+}
 
 // func (cuadruplo *CuadruploList) AddBeginWhileAction() (interface{}, error) {}
 // func (cuadruplo *CuadruploList) CompleteWhileAction() (interface{}, error) {}
