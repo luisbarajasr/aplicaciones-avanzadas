@@ -17,7 +17,6 @@ var (
 	BooleanTempVariables *VarStack
 	TempVariables *VarStack
 	whileIndex int
-	functionCalled string
 	paramIndex int
 )
 
@@ -58,7 +57,6 @@ func NewCuadruploList(functionDir *FunctionDirectory) *CuadruploList {
 	BooleanTempVariables = NewVarStack()
 	TempVariables = NewVarStack()
 	whileIndex = 0
-	functionCalled = ""
 	paramIndex = 0
 
     return &CuadruploList{
@@ -387,7 +385,6 @@ func (cl *CuadruploList) AddFunctionCallERA(funcName string) error {
 	}
 	cl.function_called = funcName
 	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
-	functionCalled = funcName
 	return nil
 }
 
