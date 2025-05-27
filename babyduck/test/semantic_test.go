@@ -43,11 +43,12 @@ func Test2(t *testing.T) {
 	src :=
 	`program demoTwelve;
 
-	var a, b, c, z : int;
+	var a, b, c, z : int; nose : float;
 
 	void uno(x : int, y : int) [{
 		y = x + b;
 		a = x + y;
+		nose = a+b; 
 	}];
 
 	void dos(dos : float, tres : float) [{
@@ -57,7 +58,7 @@ func Test2(t *testing.T) {
 	main {
 		uno(a*b-z, b);
 
-		dos(c+z*a, a);
+		dos(nose, nose);
 
 		while(a < b)
 		do {

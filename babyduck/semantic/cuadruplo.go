@@ -17,6 +17,8 @@ var (
 	BooleanTempVariables *VarStack
 	TempVariables *VarStack
 	whileIndex int
+	functionCalled string
+	paramIndex int
 )
 
 // regresa las precednecias de los operadores
@@ -56,6 +58,8 @@ func NewCuadruploList(functionDir *FunctionDirectory) *CuadruploList {
 	BooleanTempVariables = NewVarStack()
 	TempVariables = NewVarStack()
 	whileIndex = 0
+	functionCalled = ""
+	paramIndex = 0
 
     return &CuadruploList{
         Cuadruplos: []Cuadruplo{},
@@ -136,9 +140,10 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 				topOp, _ := opStack.Pop()
 				CuadruploList.addCuadruplo(topOp)	
 			}
+
 			if !opStack.IsEmpty() && opStack.Peek() == NewPara {
 				opStack.Pop() // Remove the NewPara operator
-			}	
+			}
 
 			return operator, nil
 
@@ -163,7 +168,6 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 			topPrecedence := opStack.Peek().Precedence()
 
 			if currentPrecedence > topPrecedence {
-				// fmt.Println("Adding operator to stack:", operator)
 				opStack.Push(operator)
 			} else {
 				for !opStack.IsEmpty() && currentPrecedence <= opStack.Peek().Precedence() {
@@ -248,6 +252,25 @@ func varTypetoMemoryType(varType Type) MemoryType {
 		return TemporalBool
 	}
 	return GlobalInt // Default case, should not happen
+}
+
+func addressToType(address int) Type {
+	if address >= 1000 && address < 2000 {
+		return Int
+	} else if address >= 2000 && address < 3000 {
+		return Float
+	} else if address >= 3000 && address < 4000 {
+		return Int
+	} else if address >= 4000 && address < 5000 {
+		return Float
+	}else if address >= 5000 && address < 6000 {
+		return Bool
+	}else if address >= 6000 && address < 7000 {
+		return Int
+	}else if address >= 7000 && address < 8000 {
+		return Float
+	}
+	return Error // Default case, should not happen
 }
 
 // ----------- IF-ELSE ---------------
@@ -349,18 +372,7 @@ func (cl *CuadruploList) EndFunction() {
 	}
 	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
 	cl.functionDir.MemoryManager.ResetLocalVariables()
-	/* 
-	resetear el directorio de variables locales, algo asi: 
-	memory_address: map[MemoryType]int{
-			LocalInt: 3000,
-			LocalFloat: 4000,
-			TemporalBool: 5000,
-			TemporalInt: 6000,
-			TemporalFloat: 7000,
-		}
-
-	!!!! variables globales y constantes no se resetean !!!!!
-	*/
+	cl.functionDir.PopScope() // salir de la funcion actual, regresar a global
 }
 
 func (cl *CuadruploList) AddFunctionCallERA(funcName string) error {
@@ -375,6 +387,7 @@ func (cl *CuadruploList) AddFunctionCallERA(funcName string) error {
 	}
 	cl.function_called = funcName
 	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
+	functionCalled = funcName
 	return nil
 }
 
@@ -389,19 +402,30 @@ func (cl *CuadruploList) AddGoSub(funcName string) error {
 		// debe ser el nombre de la funcion pero no se puede usar como argumento string
 	}
 	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
+	cl.function_called = ""
+	paramIndex = 0 
 	return nil
 }
 
 func (cl *CuadruploList) AddParameter() error {
+	paramIndex += 1 // Incrementa el índice de parámetros
 	paramAddress := varStack.Peek()
-	varStack.Pop() // Sacamos la dirección de la variable del stack
+	type_sent := addressToType(paramAddress)
+	neededType := cl.functionDir.Functions[cl.function_called].ParamsType[paramIndex-1]
 
-	cuadruplo := Cuadruplo{
-		Operator: PARAM,
-		Arg1:     0,
-		Arg2:     0,
-		Result:   paramAddress, 
-	}
-	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
-	return nil
+	if neededType == type_sent {
+		fmt.Print(neededType == type_sent, "\n")	
+		varStack.Pop() // Sacamos la dirección de la variable del stack
+	
+		cuadruplo := Cuadruplo{
+			Operator: PARAM,
+			Arg1:     0,
+			Arg2:     0,
+			Result:   paramAddress, 
+		}
+		cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
+		return nil
+	} 
+	
+	return fmt.Errorf("Error: Parameter type mismatch for parameter %d", paramIndex)
 }

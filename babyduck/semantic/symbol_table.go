@@ -159,33 +159,13 @@ func (functionDir *FunctionDirectory) SaveTempVarList(typ Type) error {
     return nil
 }
 
-// func (functionDir *FunctionDirectory) SaveTempVarList(typ Type) {
-// 	// si la funcion actual es nula, significa que estamos en global
-// 	if functionDir.CurrentFunction == nil {
-// 		for _, variable := range functionDir.TempVarList {			
-// 			varDir := functionDir.MemoryManager.Allocate(Global)
-// 			functionDir.GlobalVars.Variables[variable.Name] = Variable{Name: variable.Name, Type: typ, Virtual_address: varDir}
-// 		}
-// 	} else if functionDir.CurrentFunction != nil {
-// 		// si la funcion actual no es nula, significa que estamos en una funcion
-// 		for _, variable := range functionDir.TempVarList {
-// 			varDir := functionDir.MemoryManager.Allocate(Local)
-// 			functionDir.CurrentFunction.Vars.Variables[variable.Name] = Variable{Name: variable.Name, Type: typ, Virtual_address: varDir}
-// 		}
-// 	}
-// 	functionDir.TempVarList = []Variable{}
-// 	return
-// }
-
 func (functionDir *FunctionDirectory) LookupVariable(name string) (Variable, error) {
 	// primero revisamos si la variable existe en la tabla de variables de la funcion actual
 	if variable, exists := functionDir.CurrentScope.Variables[name]; exists {
-		// fmt.Printf("Variable %s found in current scope with address %d\n", name, variable.Virtual_address)
 		return variable, nil
 	}
 	// si no existe, revisamos si existe en la tabla de variables globales
 	if variable, exists := functionDir.GlobalVars.Variables[name]; exists {
-		// fmt.Printf("Variable %s found in global scope with address %d\n", name, variable.Virtual_address)
 		return variable, nil
 	}
 	return Variable{}, fmt.Errorf("error: variable %s not found", name)

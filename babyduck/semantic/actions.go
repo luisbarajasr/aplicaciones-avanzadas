@@ -1,6 +1,5 @@
 package semantic
 
-
 import (
 	"fmt"
 	"babyduck/token"
@@ -50,7 +49,10 @@ func (functionDir *FunctionDirectory) PrintCurrentFunctionParams() (interface{},
 // ---------------- QUADRUPLE SECTION ----------------
 func (cuadruplo *CuadruploList) AddOperatorAction(op Operator) (interface{}, error) {
 	// Add the operator to the stack
-	cuadruplo.AddOperator(op)
+	if _, err := cuadruplo.AddOperator(op); err != nil {
+		return nil, err
+	}
+
 	return nil, nil
 }
 
@@ -60,7 +62,6 @@ func (cuadruplo *CuadruploList) AddVariableAction(name interface{}) (interface{}
 
 	// search the variable in the function directory by using its name
 	variable, err := cuadruplo.functionDir.LookupVariable(varName)
-	// fmt.Println("Adding variable:", variable)
 	if err != nil { 
 		return nil, fmt.Errorf("error: variable %s not found", varName, err)
 	}
@@ -109,7 +110,6 @@ func (cuadruplo *CuadruploList) PrintCuadruplosAction() (interface{}, error) {
 Cuando termina la declaracion de una funcion, se debe agregar un cuadruplo de tipo ENDFUNC, que indica el final de la funcion.
 */ 
 func (cuadruplo *CuadruploList) EndFunctionAction() (interface{}, error) {
-	cuadruplo.functionDir.PopScope() // Pop the current scope
 	cuadruplo.EndFunction()
 	return nil, nil
 }
@@ -137,6 +137,8 @@ func (cuadruplo *CuadruploList) CompleteMainAction() (interface{}, error) {
 
 func (cuadruplo *CuadruploList) AddParamAction() (interface{}, error) {
 	cuadruplo.AddOperator(Comma)
-	cuadruplo.AddParameter()
+	if err := cuadruplo.AddParameter(); err != nil {
+		return nil, err
+	}	
 	return nil, nil
 }
