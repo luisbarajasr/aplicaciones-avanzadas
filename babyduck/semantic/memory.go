@@ -45,7 +45,6 @@ type MemoryManager struct {
 	constStrings []string
 }
 
-// TODO: TENGO QUE RESETEAR LOCALES Y TEMPORALES
 func NewMemoryManager() *MemoryManager {
 	return &MemoryManager{
 		memory_address: map[MemoryType]int{
@@ -81,4 +80,12 @@ func (mm *MemoryManager) ConvertVarType_ToMemoryType(typ Type) MemoryType {
 	default:
 		panic("tipo no soportado para memoria")
 	}
+}
+
+func (mm *MemoryManager) ResetLocalVariables() {
+	mm.memory_address[LocalInt] = 3000
+	mm.memory_address[LocalFloat] = 4000
+	mm.memory_address[TemporalBool] = 5000
+	mm.memory_address[TemporalInt] = 6000
+	mm.memory_address[TemporalFloat] = 7000
 }

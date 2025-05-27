@@ -1,5 +1,8 @@
 package semantic
 
+import ( 
+	"fmt"
+)
 
 type VarStack struct {
     data []int // direccion virtual de la variable
@@ -103,4 +106,32 @@ func (stack *OpStack) Print() {
 	for i := len(stack.data) - 1; i >= 0; i-- {
 		println(stack.data[i])
 	}
+}
+
+// ----------------------------------------------------
+
+func NewJumpStack() *JumpStack {
+    return &JumpStack{
+        stack: make([]int, 0),
+    }
+}
+
+func (js *JumpStack) Push(value int) {
+    js.stack = append(js.stack, value)
+}
+
+func (js *JumpStack) Pop() (int, error) {
+    if len(js.stack) == 0 {
+        return 0, fmt.Errorf("stack is empty")
+    }
+    value := js.stack[len(js.stack)-1]
+    js.stack = js.stack[:len(js.stack)-1]
+    return value, nil
+}
+
+func (js *JumpStack) Peek() (int, error) {
+    if len(js.stack) == 0 {
+        return 0, fmt.Errorf("stack is empty")
+    }
+    return js.stack[len(js.stack)-1], nil
 }

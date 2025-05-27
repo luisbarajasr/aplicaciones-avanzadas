@@ -102,16 +102,8 @@ func (cuadruplo *CuadruploList) PrintCuadruplosAction() (interface{}, error) {
 	return nil, nil
 }
 
-// TODO: FUNCTION CALLS
+
 // ----- FUNCTION CALLS -----
-/* 
-1. revisa si funcion existe
-	a. ERA
-2. va agregando params
-3. GOSUB
-4. RETURN
-5. ENDFUNC
-*/
 
 /*
 Cuando termina la declaracion de una funcion, se debe agregar un cuadruplo de tipo ENDFUNC, que indica el final de la funcion.

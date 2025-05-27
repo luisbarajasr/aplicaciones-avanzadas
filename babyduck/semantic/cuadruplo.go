@@ -19,32 +19,6 @@ var (
 	whileIndex int
 )
 
-func NewJumpStack() *JumpStack {
-    return &JumpStack{
-        stack: make([]int, 0),
-    }
-}
-
-func (js *JumpStack) Push(value int) {
-    js.stack = append(js.stack, value)
-}
-
-func (js *JumpStack) Pop() (int, error) {
-    if len(js.stack) == 0 {
-        return 0, fmt.Errorf("stack is empty")
-    }
-    value := js.stack[len(js.stack)-1]
-    js.stack = js.stack[:len(js.stack)-1]
-    return value, nil
-}
-
-func (js *JumpStack) Peek() (int, error) {
-    if len(js.stack) == 0 {
-        return 0, fmt.Errorf("stack is empty")
-    }
-    return js.stack[len(js.stack)-1], nil
-}
-
 // regresa las precednecias de los operadores
 func (o Operator) Precedence() int {
 	switch o {
@@ -165,9 +139,6 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 			if !opStack.IsEmpty() && opStack.Peek() == NewPara {
 				opStack.Pop() // Remove the NewPara operator
 			}	
-			
-			// fmt.Println("Closing parenthesis, popping operators until NewPara")
-			// opStack.Print()
 
 			return operator, nil
 
@@ -208,22 +179,12 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 // AddCuadruplo agrega un cuadruplo a la lista de cuadruplos
 // y genera un nuevo temporal si es necesario
 func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
-	// fmt.Println("Adding operator to cuadruple list:", operator)
-
-	// opStack.Print()
-	// fmt.Println("-----------------")
-	// fmt.Println("temporal variable:", TempVariables)
 
 	switch operator {
 		
 		case Assign:
 			result := varStack.Pop()
 			varTarget := varStack.Pop()
-			
-
-			// resultName := CuadruploList.getVariableInfo(result)
-			// varTargetName := CuadruploList.getVariableInfo(varTarget)
-			// fmt.Println("Assigning", resultName, "to", varTargetName)
 			
 			resultType,_ := CuadruploList.functionDir.GetTypeByAddress(result)
 			varTargetType,_ := CuadruploList.functionDir.GetTypeByAddress(varTarget)
@@ -239,7 +200,6 @@ func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 			}
 
 			CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
-			// fmt.Println("Cuadruplo:", cuadruplo.Operator, cuadruplo.Arg1.Name, "->", cuadruplo.Result.Name)
 		
 		default:
 		arg2 := varStack.Pop()
@@ -275,7 +235,6 @@ func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 		}
 		TempVariables.Push(resultAddress)
 		CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
-		// fmt.Printf("Added Cuadruplo: %s %d %d -> %d\n", operator, arg1, arg2, resultAddress)
 	}
 }
 
@@ -381,16 +340,6 @@ func (cl *CuadruploList) CompleteMain() {
 
 // ------------ FUNCTION CALLS ----------------
 
-/* 
-1. cuando se termina la declaración de una función, 
-se agrega un cuadruplo := Cuadruplo{
-		Operator: ENDFUNC,
-		Arg1:     0, 
-		Arg2:     0,
-		Result:   0, 
-	}
-*/ 
-
 func (cl *CuadruploList) EndFunction() {
 	cuadruplo := Cuadruplo{
 		Operator: ENDFUNC,
@@ -399,6 +348,7 @@ func (cl *CuadruploList) EndFunction() {
 		Result:   0, 
 	}
 	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
+	cl.functionDir.MemoryManager.ResetLocalVariables()
 	/* 
 	resetear el directorio de variables locales, algo asi: 
 	memory_address: map[MemoryType]int{
@@ -445,10 +395,7 @@ func (cl *CuadruploList) AddGoSub(funcName string) error {
 func (cl *CuadruploList) AddParameter() error {
 	paramAddress := varStack.Peek()
 	varStack.Pop() // Sacamos la dirección de la variable del stack
-	// lastCuad := cl.Cuadruplos[len(cl.Cuadruplos)-1]
-	// fmt.Println("Last Cuadruplo:", lastCuad)
-	// paramAddress := lastCuad.Result // El último resultado es la dirección del parámetro
-	
+
 	cuadruplo := Cuadruplo{
 		Operator: PARAM,
 		Arg1:     0,
