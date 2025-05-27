@@ -45,6 +45,8 @@ cte_string : '"' {_letter | _digit | ' ' | '!' | '?' }'"' ;
 << 
 import (
      "babyduck/semantic"
+     "babyduck/token"
+
 )
 var functionDir = semantic.NewFunctionDirectory()
 var cuadruple = semantic.NewCuadruploList(functionDir)
@@ -94,7 +96,7 @@ Statement : Assign <<cuadruple.AddOperatorAction(semantic.Semicolon)>>
           | Condition 
           | Cycle 
           | FuncCall 
-          | Print ;
+          | Print <<cuadruple.AddOperatorAction(semantic.Semicolon)>> ;
 
 Assign : Id_Assign Add_Assign Expresion semicolon ;
 
@@ -126,14 +128,20 @@ MoreCall : Add_comma Expresion MoreCall | empty ;
 
 Add_comma : comma <<cuadruple.AddParamAction()>> ; 
 
-Print : print lparen PrintList rparen semicolon ;
+Print : Add_print lparen PrintList rparen semicolon ;
+
+Add_print : print <<cuadruple.AddOperatorAction(semantic.Print)>>;
 
 PrintList : PrintItem MorePrint ;
 
 PrintItem : Expresion 
-          | cte_string ;
+          | Add_str_cte ;
 
-MorePrint : comma PrintItem MorePrint | empty ;
+Add_str_cte : cte_string <<cuadruple.StringconstantAction($0.(*token.Token))>>;
+
+MorePrint : Complete_Print PrintItem MorePrint | empty ;
+
+Complete_Print: comma <<cuadruple.AddOperatorAction(semantic.Print)>>;
 
 Expresion : Exp MoreExpresion ;
 
@@ -169,5 +177,5 @@ MoreTermino : Times_Div Factor
 Times_Div : times <<cuadruple.AddOperatorAction(semantic.Times)>>
      | divide  <<cuadruple.AddOperatorAction(semantic.Divide)>>;
 
-Cte : cte_int <<semantic.Int, nil >>
-     | cte_float <<semantic.Float, nil>> ;
+Cte : cte_int <<cuadruple.IntconstantAction($0)>>
+     | cte_float <<cuadruple.FloatconstantAction($0)>> ;

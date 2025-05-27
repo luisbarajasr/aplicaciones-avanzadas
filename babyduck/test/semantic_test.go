@@ -87,7 +87,7 @@ func Test3(t *testing.T) {
 	`program myprog;
 	var id1 : int; id2 : float;
 	main {
-		id2 = 5.2 + id1;
+		print("hola", id2, id1);
 	}
 	end`
 	
