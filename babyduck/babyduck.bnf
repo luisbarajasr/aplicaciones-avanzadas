@@ -120,9 +120,11 @@ FuncCall : Func_Id_Call lparen ArgList rparen semicolon <<cuadruple.AddGoSubActi
 
 Func_Id_Call : id <<cuadruple.AddEraAction($0)>> ;
 
-ArgList : Expresion MoreCall | empty ;
+ArgList : Expresion MoreCall <<cuadruple.AddParamAction()>> | empty ;
 
-MoreCall : comma Expresion MoreCall | empty ;
+MoreCall : Add_comma Expresion MoreCall | empty ;
+
+Add_comma : comma <<cuadruple.AddParamAction()>> ; 
 
 Print : print lparen PrintList rparen semicolon ;
 
@@ -140,7 +142,7 @@ Exp : Termino MoreExp ;
 Termino : Factor MoreTermino ;
 
 Factor : Agregar_Paren Expresion Terminar_Paren 
-     | Plus_Minus id <<cuadruple.AddVariableAction($0)>> 
+     | Plus_Minus id <<cuadruple.AddVariableAction($1)>> 
      | Plus_Minus Cte 
      | id <<cuadruple.AddVariableAction($0)>>
      | Cte ;

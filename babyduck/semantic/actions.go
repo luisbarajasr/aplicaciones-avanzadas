@@ -30,7 +30,6 @@ func (functionDir *FunctionDirectory) RegisterFunction(name interface{}, ret Typ
 }
 
 // RegisterParam agrega un nuevo parámetro a la función actual
-// TODO: Agregar contador de parametros, para sumar con las variables locales temporales que la funcion necesita para la memoria de ejecucion (en ERA)
 func (functionDir *FunctionDirectory) RegisterParam(name interface{}, typ Type) (interface{}, error) {
 	varName := string(name.(*token.Token).Lit)
 	if functionDir.CurrentFunction == nil {
@@ -65,7 +64,7 @@ func (cuadruplo *CuadruploList) AddVariableAction(name interface{}) (interface{}
 	if err != nil { 
 		return nil, fmt.Errorf("error: variable %s not found", varName, err)
 	}
-
+// Adding variable: {z 0 1003}
 	cuadruplo.addVariable(variable)
 	return nil, nil
 }
@@ -118,6 +117,7 @@ func (cuadruplo *CuadruploList) PrintCuadruplosAction() (interface{}, error) {
 Cuando termina la declaracion de una funcion, se debe agregar un cuadruplo de tipo ENDFUNC, que indica el final de la funcion.
 */ 
 func (cuadruplo *CuadruploList) EndFunctionAction() (interface{}, error) {
+	cuadruplo.functionDir.PopScope() // Pop the current scope
 	cuadruplo.EndFunction()
 	return nil, nil
 }
@@ -140,5 +140,11 @@ func (cuadruplo *CuadruploList) AddGotoMainAction() (interface{}, error) {
 
 func (cuadruplo *CuadruploList) CompleteMainAction() (interface{}, error) {
 	cuadruplo.CompleteMain()
+	return nil, nil
+}
+
+func (cuadruplo *CuadruploList) AddParamAction() (interface{}, error) {
+	cuadruplo.AddOperator(Comma)
+	cuadruplo.AddParameter()
 	return nil, nil
 }

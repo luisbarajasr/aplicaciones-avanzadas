@@ -50,14 +50,15 @@ func Test2(t *testing.T) {
 		a = x + y;
 	}];
 
-	void dos(t : float, u : float) [{
-		t = t + u;
+	void dos(dos : float, tres : float) [{
+		tres = dos + a;
 	}];
 
 	main {
-		
-		uno(a, b);
-		dos(z, c);
+		uno(a*b-z, b);
+
+		dos(c+z*a, a);
+
 		while(a < b)
 		do {
 			a = a + b;

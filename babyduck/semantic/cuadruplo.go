@@ -90,7 +90,6 @@ func NewCuadruploList(functionDir *FunctionDirectory) *CuadruploList {
     }
 }
 
-// fmt.Println("Adding variable to stack:", variable.Name)
 func (CuadruploList *CuadruploList) addVariable(variable Variable){
 	varStack.Push(variable.Virtual_address)
 }
@@ -146,9 +145,9 @@ func (cl *CuadruploList) getVariableInfo(address int) string {
 // AddOperator agrega un operador al stack de operadores y genera un cuadruplo si es necesario 
 // dependiendo de la precedencia del operador y el operador en la cima del stack
 func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, error) {
-	// fmt.Println("Adding operator to stack:", operator)
 
-	if opStack.IsEmpty() {
+	// Si el operador es Comma, no se agrega al stack de operadores porque se usa para separar parámetros en funciones
+	if opStack.IsEmpty() && operator != Comma { 
 		opStack.Push(operator)
 		return operator, nil
 	}
@@ -172,12 +171,16 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 
 			return operator, nil
 
-		case Semicolon:
-			// fmt.Println("Semicolon detected, popping operators until empty stack")
+		case Comma:
+			// Pop operators until parenthesis or op stack is empty
+			for !opStack.IsEmpty() && opStack.Peek() != NewPara {
+				topOp, _ := opStack.Pop()
+				CuadruploList.addCuadruplo(topOp)
+			}
+			return operator, nil
 
+		case Semicolon:
 			for !opStack.IsEmpty() {
-				// opStack.Print()
-				// fmt.Println("-----------------")
 				topOp, _ := opStack.Pop()
 				CuadruploList.addCuadruplo(topOp)
 			}
@@ -191,15 +194,9 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 			if currentPrecedence > topPrecedence {
 				// fmt.Println("Adding operator to stack:", operator)
 				opStack.Push(operator)
-				// opStack.Print()
-				// fmt.Println("-----------------")
 			} else {
 				for !opStack.IsEmpty() && currentPrecedence <= opStack.Peek().Precedence() {
 					topOp, _ := opStack.Pop()
-					// fmt.Println("Poping op from stack:", operator)
-					opStack.Print()
-					// fmt.Println("-----------------")
-					// fmt.Println("WHOLE OP STACK:", opStack)
 					CuadruploList.addCuadruplo(topOp)
 				}
 				opStack.Push(operator)
@@ -220,10 +217,6 @@ func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 	switch operator {
 		
 		case Assign:
-			// fmt.Println("Adding assignment operator to stack:", operator)
-			// fmt.Println("OpStack:", opStack)
-			
-
 			result := varStack.Pop()
 			varTarget := varStack.Pop()
 			
@@ -256,16 +249,17 @@ func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 		arg2Type,_ := CuadruploList.functionDir.GetTypeByAddress(arg2)
 		
 		var opResult,_ = CheckTypes(arg1Type, arg2Type, operator)
-		// fmt.Println("Operator:", operator, "Arg1:", arg1Type, "Arg2:", arg2Type, "Result Type:", opResult)
 
-		// var opResult Type = SemanticCube[arg1.Type][arg2.Type][operator]
 		if opResult == Error {
 			panic("Error: Type mismatch in operation")
 		}
 
 		resultVarType := varTypetoMemoryType(opResult) // convierte el tipo de variable a un tipo de memoria para la asignacion de dir correcta 
 		resultAddress := CuadruploList.functionDir.MemoryManager.Allocate(resultVarType) // sera un temporal de int, float o bool
-		CuadruploList.functionDir.CurrentFunction.vars_needed += 1 // incrementa el contador de variables necesarias para la funcion actual
+		
+		if CuadruploList.functionDir.CurrentFunction != nil {
+			CuadruploList.functionDir.CurrentFunction.vars_needed += 1 // incrementa el contador de variables necesarias para la funcion actual
+		}
 		
 		cuadruplo := Cuadruplo{
 			Operator: operator,
@@ -281,6 +275,7 @@ func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 		}
 		TempVariables.Push(resultAddress)
 		CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
+		// fmt.Printf("Added Cuadruplo: %s %d %d -> %d\n", operator, arg1, arg2, resultAddress)
 	}
 }
 
@@ -365,6 +360,25 @@ func (cl *CuadruploList) CompleteWhile() {
     })
 }
 
+// ------------- GOTO MAIN ----------------
+func (cl *CuadruploList) AddGotoMain()  {
+    jumpStack.Push(len(cl.Cuadruplos))
+
+	cuadruplo := Cuadruplo{
+		Operator: GOTO,
+		Arg1:     0,
+		Arg2:     0, // Se completará después
+		Result:   0, 
+	}
+	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
+	jumpStack.Push(len(cl.Cuadruplos) - 1) // Guarda la posición del GOTO
+}
+
+func (cl *CuadruploList) CompleteMain() {
+	gotoIndex, _ := jumpStack.Pop()
+	cl.Cuadruplos[gotoIndex].Arg2 = len(cl.Cuadruplos) + 1 // Completa el GOTOF con la posición actual (fin del bloque if)
+}
+
 // ------------ FUNCTION CALLS ----------------
 
 /* 
@@ -428,21 +442,19 @@ func (cl *CuadruploList) AddGoSub(funcName string) error {
 	return nil
 }
 
-// ------------- GOTO MAIN ----------------
-func (cl *CuadruploList) AddGotoMain()  {
-    jumpStack.Push(len(cl.Cuadruplos))
-
+func (cl *CuadruploList) AddParameter() error {
+	paramAddress := varStack.Peek()
+	varStack.Pop() // Sacamos la dirección de la variable del stack
+	// lastCuad := cl.Cuadruplos[len(cl.Cuadruplos)-1]
+	// fmt.Println("Last Cuadruplo:", lastCuad)
+	// paramAddress := lastCuad.Result // El último resultado es la dirección del parámetro
+	
 	cuadruplo := Cuadruplo{
-		Operator: GOTO,
+		Operator: PARAM,
 		Arg1:     0,
-		Arg2:     0, // Se completará después
-		Result:   0, 
+		Arg2:     0,
+		Result:   paramAddress, 
 	}
 	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
-	jumpStack.Push(len(cl.Cuadruplos) - 1) // Guarda la posición del GOTO
-}
-
-func (cl *CuadruploList) CompleteMain() {
-	gotoIndex, _ := jumpStack.Pop()
-	cl.Cuadruplos[gotoIndex].Arg2 = len(cl.Cuadruplos) + 1 // Completa el GOTOF con la posición actual (fin del bloque if)
+	return nil
 }

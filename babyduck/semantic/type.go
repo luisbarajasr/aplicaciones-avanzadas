@@ -43,6 +43,7 @@ const (
 	NewPara   	Operator = "("
 	ClosePara 	Operator = ")"
 	Semicolon   Operator = ";"
+	Comma 	 	Operator = ","
 	Print 		Operator = "print"
 	GOTO 		Operator = "GOTO"
 	GOTOF 		Operator = "GOTOF"
