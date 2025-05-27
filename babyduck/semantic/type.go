@@ -11,6 +11,7 @@ type Cuadruplo struct {
 type CuadruploList struct {
 	Cuadruplos []Cuadruplo
 	functionDir *FunctionDirectory
+	function_called string
 }
 
 type JumpStack struct {

@@ -52,10 +52,12 @@ var cuadruple = semantic.NewCuadruploList(functionDir)
 
 Start: Program <<functionDir, nil>> ;
 
-Program : program id semicolon VarsOp FuncLoop main Body end  <<cuadruple.PrintCuadruplosAction()>>;
+Program : program id semicolon VarsOp FuncLoop GotoMain Body end  <<cuadruple.PrintCuadruplosAction()>>;
 
-VarsOp : Vars 
+VarsOp : Vars <<cuadruple.AddGotoMainAction()>>
     | empty ;
+
+GotoMain : main <<cuadruple.CompleteMainAction()>>;
 
 Vars : var Variable VarsPrime ;
 
@@ -114,7 +116,9 @@ Cycle : While_Begin lparen Expresion rparen do While_Body semicolon;
 While_Begin : while <<cuadruple.AddBeginWhileAction()>>;
 While_Body : Body <<cuadruple.CompleteWhileAction()>>;
 
-FuncCall : id lparen ArgList rparen semicolon ;
+FuncCall : Func_Id_Call lparen ArgList rparen semicolon <<cuadruple.AddGoSubAction()>> ;
+
+Func_Id_Call : id <<cuadruple.AddEraAction($0)>> ;
 
 ArgList : Expresion MoreCall | empty ;
 

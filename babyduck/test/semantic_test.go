@@ -47,11 +47,17 @@ func Test2(t *testing.T) {
 
 	void uno(x : int, y : int) [{
 		y = x + b;
+		a = x + y;
+	}];
+
+	void dos(t : float, u : float) [{
+		t = t + u;
 	}];
 
 	main {
-		z = c + a;
 		
+		uno(a, b);
+		dos(z, c);
 		while(a < b)
 		do {
 			a = a + b;

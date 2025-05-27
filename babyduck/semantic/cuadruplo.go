@@ -86,6 +86,7 @@ func NewCuadruploList(functionDir *FunctionDirectory) *CuadruploList {
     return &CuadruploList{
         Cuadruplos: []Cuadruplo{},
 		functionDir: functionDir,
+		function_called: "",
     }
 }
 
@@ -264,6 +265,7 @@ func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 
 		resultVarType := varTypetoMemoryType(opResult) // convierte el tipo de variable a un tipo de memoria para la asignacion de dir correcta 
 		resultAddress := CuadruploList.functionDir.MemoryManager.Allocate(resultVarType) // sera un temporal de int, float o bool
+		CuadruploList.functionDir.CurrentFunction.vars_needed += 1 // incrementa el contador de variables necesarias para la funcion actual
 		
 		cuadruplo := Cuadruplo{
 			Operator: operator,
@@ -337,7 +339,7 @@ func (cl *CuadruploList) BeginWhile()  {
 	whileIndex = len(cl.Cuadruplos)
 
     // Guarda posición de inicio del while
-    jumpStack.Push(len(cl.Cuadruplos))
+    // jumpStack.Push(len(cl.Cuadruplos))
 
 	condition := BooleanTempVariables.Pop()
 	cuadruplo := Cuadruplo{
@@ -378,9 +380,69 @@ se agrega un cuadruplo := Cuadruplo{
 func (cl *CuadruploList) EndFunction() {
 	cuadruplo := Cuadruplo{
 		Operator: ENDFUNC,
-		Arg1:     -1, 
-		Arg2:     -1,
-		Result:   -1, 
+		Arg1:     0, 
+		Arg2:     0,
+		Result:   0, 
 	}
 	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
+	/* 
+	resetear el directorio de variables locales, algo asi: 
+	memory_address: map[MemoryType]int{
+			LocalInt: 3000,
+			LocalFloat: 4000,
+			TemporalBool: 5000,
+			TemporalInt: 6000,
+			TemporalFloat: 7000,
+		}
+
+	!!!! variables globales y constantes no se resetean !!!!!
+	*/
+}
+
+func (cl *CuadruploList) AddFunctionCallERA(funcName string) error {
+	varsNeeded := cl.functionDir.Functions[funcName].vars_needed
+	cuadruplo := Cuadruplo{
+		Operator: ERA,
+		Arg1:     0,
+		Arg2:     0,
+		Result:   varsNeeded, 
+		// !!! numero de variables necesarias para la funcion !!!
+		// debe ser el nombre de la funcion pero no se puede usar como argumento string
+	}
+	cl.function_called = funcName
+	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
+	return nil
+}
+
+func (cl *CuadruploList) AddGoSub(funcName string) error {
+	varsNeeded := cl.functionDir.Functions[funcName].vars_needed
+	cuadruplo := Cuadruplo{
+		Operator: GOSUB,
+		Arg1:     0,
+		Arg2:     0,
+		Result:   varsNeeded, 
+		// !!! numero de variables necesarias para la funcion !!!
+		// debe ser el nombre de la funcion pero no se puede usar como argumento string
+	}
+	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
+	return nil
+}
+
+// ------------- GOTO MAIN ----------------
+func (cl *CuadruploList) AddGotoMain()  {
+    jumpStack.Push(len(cl.Cuadruplos))
+
+	cuadruplo := Cuadruplo{
+		Operator: GOTO,
+		Arg1:     0,
+		Arg2:     0, // Se completará después
+		Result:   0, 
+	}
+	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
+	jumpStack.Push(len(cl.Cuadruplos) - 1) // Guarda la posición del GOTO
+}
+
+func (cl *CuadruploList) CompleteMain() {
+	gotoIndex, _ := jumpStack.Pop()
+	cl.Cuadruplos[gotoIndex].Arg2 = len(cl.Cuadruplos) + 1 // Completa el GOTOF con la posición actual (fin del bloque if)
 }

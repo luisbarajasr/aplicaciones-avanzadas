@@ -121,3 +121,24 @@ func (cuadruplo *CuadruploList) EndFunctionAction() (interface{}, error) {
 	cuadruplo.EndFunction()
 	return nil, nil
 }
+
+func (cuadruplo *CuadruploList) AddEraAction(name interface{}) (interface{}, error) {
+	functionName := string(name.(*token.Token).Lit)
+	cuadruplo.AddFunctionCallERA(functionName)
+	return nil, nil
+}
+
+func (cuadruplo *CuadruploList) AddGoSubAction() (interface{}, error) {
+	cuadruplo.AddGoSub(cuadruplo.function_called)
+	return nil, nil
+}
+
+func (cuadruplo *CuadruploList) AddGotoMainAction() (interface{}, error) {
+	cuadruplo.AddGotoMain()
+	return nil, nil
+}
+
+func (cuadruplo *CuadruploList) CompleteMainAction() (interface{}, error) {
+	cuadruplo.CompleteMain()
+	return nil, nil
+}
