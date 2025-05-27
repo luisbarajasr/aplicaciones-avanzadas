@@ -39,59 +39,37 @@ import (
 // 	t.Logf("parse OK %#v", tree)
 // }
 
-func Test2(t *testing.T) {
-	src :=
-	`program demoTwelve;
-
-	var a, b, c, z : int; nose : float;
-
-	void uno(x : int, y : int) [{
-		y = x + b;
-		a = x + y;
-		nose = a+b; 
-	}];
-
-	void dos(dos : float, tres : float) [{
-		tres = dos + a;
-	}];
-
-	main {
-		uno(a*b-z, b);
-
-		dos(nose, nose);
-
-		while(a < b)
-		do {
-			a = a + b;
-		};
-
-		c = a + b;
-	}
-
-	end`
-
-	l := lexer.NewLexer([]byte(src))
-	p := parser.NewParser()
-
-	tree, perr := p.Parse(l)
-
-	if perr != nil {
-		t.Fatalf("parse failed: %v", perr)
-	}
-
-	t.Logf("parse OK %#v", tree)
-}
-
-// func Test3(t *testing.T) {
+// func Test2(t *testing.T) {
 // 	src :=
-// 	`program myprog;
-// 	var id1 : int; id2 : float;
+// 	`program demoTwelve;
+
+// 	var a, b, c, z : int; nose : float;
+
+// 	void uno(x : int, y : int) [{
+// 		y = x + b;
+// 		a = x + y;
+// 		nose = a+b; 
+// 	}];
+
+// 	void dos(dos : float, tres : float) [{
+// 		tres = dos + a;
+// 	}];
+
 // 	main {
-// 		id2 = 5;
-// 		id1 = 5 + 10;
+// 		uno(a*b-z, b);
+
+// 		dos(nose, nose);
+
+// 		while(a < b)
+// 		do {
+// 			a = a + b;
+// 		};
+
+// 		c = a + b;
 // 	}
+
 // 	end`
-	
+
 // 	l := lexer.NewLexer([]byte(src))
 // 	p := parser.NewParser()
 
@@ -103,6 +81,27 @@ func Test2(t *testing.T) {
 
 // 	t.Logf("parse OK %#v", tree)
 // }
+
+func Test3(t *testing.T) {
+	src :=
+	`program myprog;
+	var id1 : int; id2 : float;
+	main {
+		id2 = 5.2 + id1;
+	}
+	end`
+	
+	l := lexer.NewLexer([]byte(src))
+	p := parser.NewParser()
+
+	tree, perr := p.Parse(l)
+
+	if perr != nil {
+		t.Fatalf("parse failed: %v", perr)
+	}
+
+	t.Logf("parse OK %#v", tree)
+}
 
 // func Test4(t *testing.T) {
 // 	src :=
