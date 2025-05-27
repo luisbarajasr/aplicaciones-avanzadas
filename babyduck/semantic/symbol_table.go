@@ -30,6 +30,7 @@ func (functionDir *FunctionDirectory) AddFunction(name string, returnType Type) 
 		Params:     []Variable{},
 		ParamsType: []Type{},
 		Vars:       NewVariableTable(),
+		vars_needed: 0, 
 	}
 	// cambiamos el scope actual a la funcion que acabamos de crear
 	functionDir.PushScope(functionDir.Functions[name])
@@ -39,9 +40,14 @@ func (functionDir *FunctionDirectory) AddFunction(name string, returnType Type) 
 // AddParam agrega un nuevo parámetro a la función
 func (functionDir *FunctionDirectory) AddParam(funcName, paramName string, tipo Type) error {
 	if function, exists := functionDir.Functions[funcName]; exists {
-		function.Params = append(function.Params, Variable{Name: paramName, Type: tipo})
+		memType := functionDir.MemoryManager.ConvertVarType_ToMemoryType(tipo)
+		virtual_address := functionDir.MemoryManager.Allocate(memType) // asignamos una direccion virtual para la variable local
+		new_var := Variable{Name: paramName, Type: tipo, Virtual_address: virtual_address}
+
+		function.Params = append(function.Params, new_var) // agregamos el parametro a la lista de parametros de la funcion
 		function.ParamsType = append(function.ParamsType, tipo)
-		function.Vars.Variables[paramName] = Variable{Name: paramName, Type: tipo}
+		function.Vars.Variables[paramName] = new_var
+		function.vars_needed = function.vars_needed + 1 
 		return nil
 	}
 	return fmt.Errorf("function %s not found", funcName)
@@ -55,7 +61,7 @@ y la funcion actual a la funcion que se pasa como argumento
 func (functionDir *FunctionDirectory) PushScope(function *Function) {
 	functionDir.CurrentScope = function.Vars // variables actuales de la funcion 
 	functionDir.CurrentFunction = function // la funcion actual en la que se encuentra
-}	
+}
 
 /* 
 SE AGREGARA AL BNF EN LA SIGUIENTE VERSION (creacion y eliminacion de virtual address temporales)
@@ -174,10 +180,12 @@ func (functionDir *FunctionDirectory) SaveTempVarList(typ Type) error {
 func (functionDir *FunctionDirectory) LookupVariable(name string) (Variable, error) {
 	// primero revisamos si la variable existe en la tabla de variables de la funcion actual
 	if variable, exists := functionDir.CurrentScope.Variables[name]; exists {
+		// fmt.Printf("Variable %s found in current scope with address %d\n", name, variable.Virtual_address)
 		return variable, nil
 	}
 	// si no existe, revisamos si existe en la tabla de variables globales
 	if variable, exists := functionDir.GlobalVars.Variables[name]; exists {
+		// fmt.Printf("Variable %s found in global scope with address %d\n", name, variable.Virtual_address)
 		return variable, nil
 	}
 	return Variable{}, fmt.Errorf("error: variable %s not found", name)

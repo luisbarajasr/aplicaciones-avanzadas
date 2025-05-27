@@ -45,6 +45,10 @@ func Test2(t *testing.T) {
 
 	var a, b, c, z : int;
 
+	void uno(x : int, y : int) [{
+		y = x + b;
+	}];
+
 	main {
 		z = c + a;
 		

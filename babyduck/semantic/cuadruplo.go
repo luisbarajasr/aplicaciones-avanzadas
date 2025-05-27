@@ -7,7 +7,6 @@ import (
 /* 
 TODO:
 - Manejo de constantes
-- GOTOs
 - Print*
 */
 
@@ -19,10 +18,6 @@ var (
 	TempVariables *VarStack
 	whileIndex int
 )
-
-type JumpStack struct {
-    stack []int
-}
 
 func NewJumpStack() *JumpStack {
     return &JumpStack{
@@ -48,20 +43,6 @@ func (js *JumpStack) Peek() (int, error) {
         return 0, fmt.Errorf("stack is empty")
     }
     return js.stack[len(js.stack)-1], nil
-}
-
-
-// cuadruplo 
-type Cuadruplo struct {
-	Arg1     int
-	Arg2     int 
-	Operator Operator
-	Result   int
-}
-
-type CuadruploList struct {
-	Cuadruplos []Cuadruplo
-	functionDir *FunctionDirectory
 }
 
 // regresa las precednecias de los operadores
@@ -111,7 +92,6 @@ func NewCuadruploList(functionDir *FunctionDirectory) *CuadruploList {
 // fmt.Println("Adding variable to stack:", variable.Name)
 func (CuadruploList *CuadruploList) addVariable(variable Variable){
 	varStack.Push(variable.Virtual_address)
-	// varStack.Print()
 }
 
 func (cl *CuadruploList) PrintCuadruplos() {
@@ -378,7 +358,29 @@ func (cl *CuadruploList) CompleteWhile() {
 
     // Agrega GOTOT para volver al inicio
     cl.Cuadruplos = append(cl.Cuadruplos, Cuadruplo{
-        Operator: "GOTO",
+        Operator: GOTO,
         Arg2: whileIndex,
     })
+}
+
+// ------------ FUNCTION CALLS ----------------
+
+/* 
+1. cuando se termina la declaración de una función, 
+se agrega un cuadruplo := Cuadruplo{
+		Operator: ENDFUNC,
+		Arg1:     0, 
+		Arg2:     0,
+		Result:   0, 
+	}
+*/ 
+
+func (cl *CuadruploList) EndFunction() {
+	cuadruplo := Cuadruplo{
+		Operator: ENDFUNC,
+		Arg1:     -1, 
+		Arg2:     -1,
+		Result:   -1, 
+	}
+	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
 }

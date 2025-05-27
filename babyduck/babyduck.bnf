@@ -69,7 +69,8 @@ VarsPrime : Variable | empty ;
 
 FuncLoop : Funcs FuncLoop | empty ;
 
-Funcs : RegisterFunc lparen Params rparen lbracket Vars Body rbracket semicolon ;
+Funcs : RegisterFunc lparen Params rparen lbracket Funcs_Vars Body rbracket semicolon <<cuadruple.EndFunctionAction()>> ;
+Funcs_Vars : Vars | empty ;
 
 RegisterFunc : void id <<functionDir.RegisterFunction($1, semantic.Void)>> ; 
 

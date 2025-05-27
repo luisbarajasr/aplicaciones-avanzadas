@@ -30,11 +30,22 @@ func (functionDir *FunctionDirectory) RegisterFunction(name interface{}, ret Typ
 }
 
 // RegisterParam agrega un nuevo parámetro a la función actual
+// TODO: Agregar contador de parametros, para sumar con las variables locales temporales que la funcion necesita para la memoria de ejecucion (en ERA)
 func (functionDir *FunctionDirectory) RegisterParam(name interface{}, typ Type) (interface{}, error) {
+	varName := string(name.(*token.Token).Lit)
 	if functionDir.CurrentFunction == nil {
 		return nil, fmt.Errorf("no active function to add parameter %s", string(name.(*token.Token).Lit))
 	}
-	return nil, functionDir.AddParam(functionDir.CurrentFunction.Name, string(name.(*token.Token).Lit), typ)
+	return nil, functionDir.AddParam(functionDir.CurrentFunction.Name, varName, typ)
+}
+
+// PrintCurrentFunctionParams prints the parameters of the current function
+func (functionDir *FunctionDirectory) PrintCurrentFunctionParams() (interface{}, error) {
+	for _, param := range functionDir.CurrentFunction.Params {
+		fmt.Printf("Param: %s, Type: %s, Virtual Address: %d\n", param.Name, param.Type, param.Virtual_address)
+	}
+
+	return nil, nil
 }
 
 // ---------------- QUADRUPLE SECTION ----------------
@@ -50,6 +61,7 @@ func (cuadruplo *CuadruploList) AddVariableAction(name interface{}) (interface{}
 
 	// search the variable in the function directory by using its name
 	variable, err := cuadruplo.functionDir.LookupVariable(varName)
+	// fmt.Println("Adding variable:", variable)
 	if err != nil { 
 		return nil, fmt.Errorf("error: variable %s not found", varName, err)
 	}
@@ -88,5 +100,24 @@ func (cuadruplo *CuadruploList) CompleteWhileAction() (interface{}, error) {
 func (cuadruplo *CuadruploList) PrintCuadruplosAction() (interface{}, error) {
 	// Print the list of quadruples
 	cuadruplo.PrintCuadruplos()
+	return nil, nil
+}
+
+// TODO: FUNCTION CALLS
+// ----- FUNCTION CALLS -----
+/* 
+1. revisa si funcion existe
+	a. ERA
+2. va agregando params
+3. GOSUB
+4. RETURN
+5. ENDFUNC
+*/
+
+/*
+Cuando termina la declaracion de una funcion, se debe agregar un cuadruplo de tipo ENDFUNC, que indica el final de la funcion.
+*/ 
+func (cuadruplo *CuadruploList) EndFunctionAction() (interface{}, error) {
+	cuadruplo.EndFunction()
 	return nil, nil
 }

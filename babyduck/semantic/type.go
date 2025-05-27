@@ -1,5 +1,22 @@
 package semantic
 
+// cuadruplo 
+type Cuadruplo struct {
+	Arg1     int
+	Arg2     int 
+	Operator Operator
+	Result   int
+}
+
+type CuadruploList struct {
+	Cuadruplos []Cuadruplo
+	functionDir *FunctionDirectory
+}
+
+type JumpStack struct {
+    stack []int
+}
+
 type Type int
 
 const (
@@ -29,6 +46,11 @@ const (
 	GOTO 		Operator = "GOTO"
 	GOTOF 		Operator = "GOTOF"
 	GOTOV 		Operator = "GOTOV"
+	ERA			Operator = "ERA"
+	GOSUB 		Operator = "GOSUB"
+	ENDFUNC 	Operator = "ENDFUNC"
+	RETURN 		Operator = "RETURN"
+	PARAM 		Operator = "PARAM"
 )
 
 // Variable nombre y tipo
@@ -50,6 +72,7 @@ type Function struct {
 	Params     []Variable
 	ParamsType []Type
 	Vars       *VariableTable
+	vars_needed int // contador de variables locales que la funcion necesita para la memoria de ejecucion
 }
 
 // FunctionDirectory guarda todas las funciones y variables globales
