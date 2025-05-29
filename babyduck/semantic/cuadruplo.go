@@ -30,6 +30,8 @@ func (o Operator) Precedence() int {
 	case Less, Greater, NotEqual:
 		return 3
 	case Assign:
+		return 2
+	case Print:
 		return 1
 	default:
 		return -1 // operador invalido
@@ -66,8 +68,8 @@ func NewCuadruploList(functionDir *FunctionDirectory) *CuadruploList {
     }
 }
 
-func (CuadruploList *CuadruploList) addVariable(variable Variable){
-	varStack.Push(variable.Virtual_address)
+func (CuadruploList *CuadruploList) addVariable(virtual_address int){
+	varStack.Push(virtual_address)
 }
 
 func (cl *CuadruploList) PrintCuadruplos() {
@@ -121,7 +123,6 @@ func (cl *CuadruploList) getVariableInfo(address int) string {
 // AddOperator agrega un operador al stack de operadores y genera un cuadruplo si es necesario 
 // dependiendo de la precedencia del operador y el operador en la cima del stack
 func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, error) {
-
 	// Si el operador es Comma, no se agrega al stack de operadores porque se usa para separar parámetros en funciones
 	if opStack.IsEmpty() && operator != Comma { 
 		opStack.Push(operator)
@@ -203,6 +204,17 @@ func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 
 			CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
 		
+		case Print: 
+			arg := varStack.Pop()
+			
+			cuadruplo := Cuadruplo{
+				Operator: operator,
+				Arg1:     arg,
+				Arg2:     0,
+				Result:   0,
+			}
+			CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
+
 		default:
 		arg2 := varStack.Pop()
 		arg1 := varStack.Pop()
@@ -356,7 +368,7 @@ func (cl *CuadruploList) AddGotoMain()  {
 
 func (cl *CuadruploList) CompleteMain() {
 	gotoIndex, _ := jumpStack.Pop()
-	cl.Cuadruplos[gotoIndex].Arg2 = len(cl.Cuadruplos) + 1 // Completa el GOTOF con la posición actual (fin del bloque if)
+	cl.Cuadruplos[gotoIndex].Arg2 = len(cl.Cuadruplos) // Completa el GOTOF con la posición actual (fin del bloque if)
 }
 
 // ------------ FUNCTION CALLS ----------------

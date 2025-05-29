@@ -4,6 +4,8 @@ package parser
 
 import (
      "babyduck/semantic"
+     "babyduck/token"
+
 )
 var functionDir = semantic.NewFunctionDirectory()
 var cuadruple = semantic.NewCuadruploList(functionDir)
@@ -364,13 +366,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Statement : Print	<<  >>`,
+		String: `Statement : Print	<< cuadruple.AddOperatorAction(semantic.Semicolon) >>`,
 		Id:         "Statement",
 		NTType:     20,
 		Index:      34,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return X[0], nil
+			return cuadruple.AddOperatorAction(semantic.Semicolon)
 		},
 	},
 	ProdTabEntry{
@@ -564,7 +566,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Print : print lparen PrintList rparen semicolon	<<  >>`,
+		String: `Print : Add_print lparen PrintList rparen semicolon	<<  >>`,
 		Id:         "Print",
 		NTType:     37,
 		Index:      54,
@@ -574,10 +576,20 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `PrintList : PrintItem MorePrint	<<  >>`,
-		Id:         "PrintList",
+		String: `Add_print : print	<< cuadruple.AddOperatorAction(semantic.Print) >>`,
+		Id:         "Add_print",
 		NTType:     38,
 		Index:      55,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return cuadruple.AddOperatorAction(semantic.Print)
+		},
+	},
+	ProdTabEntry{
+		String: `PrintList : PrintItem MorePrint	<<  >>`,
+		Id:         "PrintList",
+		NTType:     39,
+		Index:      56,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
@@ -586,17 +598,7 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `PrintItem : Expresion	<<  >>`,
 		Id:         "PrintItem",
-		NTType:     39,
-		Index:      56,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `PrintItem : cte_string	<<  >>`,
-		Id:         "PrintItem",
-		NTType:     39,
+		NTType:     40,
 		Index:      57,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
@@ -604,10 +606,30 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `MorePrint : comma PrintItem MorePrint	<<  >>`,
-		Id:         "MorePrint",
+		String: `PrintItem : Add_str_cte	<<  >>`,
+		Id:         "PrintItem",
 		NTType:     40,
 		Index:      58,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `Add_str_cte : cte_string	<< cuadruple.StringconstantAction(X[0].(*token.Token)) >>`,
+		Id:         "Add_str_cte",
+		NTType:     41,
+		Index:      59,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return cuadruple.StringconstantAction(X[0].(*token.Token))
+		},
+	},
+	ProdTabEntry{
+		String: `MorePrint : Complete_Print PrintItem MorePrint	<<  >>`,
+		Id:         "MorePrint",
+		NTType:     42,
+		Index:      60,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
@@ -616,18 +638,28 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `MorePrint : empty	<<  >>`,
 		Id:         "MorePrint",
-		NTType:     40,
-		Index:      59,
+		NTType:     42,
+		Index:      61,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
+		String: `Complete_Print : comma	<< cuadruple.AddOperatorAction(semantic.Print) >>`,
+		Id:         "Complete_Print",
+		NTType:     43,
+		Index:      62,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return cuadruple.AddOperatorAction(semantic.Print)
+		},
+	},
+	ProdTabEntry{
 		String: `Expresion : Exp MoreExpresion	<<  >>`,
 		Id:         "Expresion",
-		NTType:     41,
-		Index:      60,
+		NTType:     44,
+		Index:      63,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
@@ -636,8 +668,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Exp : Termino MoreExp	<<  >>`,
 		Id:         "Exp",
-		NTType:     42,
-		Index:      61,
+		NTType:     45,
+		Index:      64,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
@@ -646,8 +678,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Termino : Factor MoreTermino	<<  >>`,
 		Id:         "Termino",
-		NTType:     43,
-		Index:      62,
+		NTType:     46,
+		Index:      65,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
@@ -656,8 +688,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Factor : Agregar_Paren Expresion Terminar_Paren	<<  >>`,
 		Id:         "Factor",
-		NTType:     44,
-		Index:      63,
+		NTType:     47,
+		Index:      66,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
@@ -666,8 +698,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Factor : Plus_Minus id	<< cuadruple.AddVariableAction(X[1]) >>`,
 		Id:         "Factor",
-		NTType:     44,
-		Index:      64,
+		NTType:     47,
+		Index:      67,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return cuadruple.AddVariableAction(X[1])
@@ -676,8 +708,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Factor : Plus_Minus Cte	<<  >>`,
 		Id:         "Factor",
-		NTType:     44,
-		Index:      65,
+		NTType:     47,
+		Index:      68,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
@@ -686,8 +718,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Factor : id	<< cuadruple.AddVariableAction(X[0]) >>`,
 		Id:         "Factor",
-		NTType:     44,
-		Index:      66,
+		NTType:     47,
+		Index:      69,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return cuadruple.AddVariableAction(X[0])
@@ -696,8 +728,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Factor : Cte	<<  >>`,
 		Id:         "Factor",
-		NTType:     44,
-		Index:      67,
+		NTType:     47,
+		Index:      70,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
@@ -706,8 +738,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Agregar_Paren : lparen	<< cuadruple.AddOperatorAction(semantic.NewPara) >>`,
 		Id:         "Agregar_Paren",
-		NTType:     45,
-		Index:      68,
+		NTType:     48,
+		Index:      71,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return cuadruple.AddOperatorAction(semantic.NewPara)
@@ -716,8 +748,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Terminar_Paren : rparen	<< cuadruple.AddOperatorAction(semantic.ClosePara) >>`,
 		Id:         "Terminar_Paren",
-		NTType:     46,
-		Index:      69,
+		NTType:     49,
+		Index:      72,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return cuadruple.AddOperatorAction(semantic.ClosePara)
@@ -726,8 +758,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `MoreExpresion : Greater_Less_NotEqual Exp	<<  >>`,
 		Id:         "MoreExpresion",
-		NTType:     47,
-		Index:      70,
+		NTType:     50,
+		Index:      73,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
@@ -736,8 +768,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `MoreExpresion : empty	<<  >>`,
 		Id:         "MoreExpresion",
-		NTType:     47,
-		Index:      71,
+		NTType:     50,
+		Index:      74,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
@@ -746,8 +778,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Greater_Less_NotEqual : greater	<< cuadruple.AddOperatorAction(semantic.Greater) >>`,
 		Id:         "Greater_Less_NotEqual",
-		NTType:     48,
-		Index:      72,
+		NTType:     51,
+		Index:      75,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return cuadruple.AddOperatorAction(semantic.Greater)
@@ -756,8 +788,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Greater_Less_NotEqual : less	<< cuadruple.AddOperatorAction(semantic.Less) >>`,
 		Id:         "Greater_Less_NotEqual",
-		NTType:     48,
-		Index:      73,
+		NTType:     51,
+		Index:      76,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return cuadruple.AddOperatorAction(semantic.Less)
@@ -766,8 +798,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Greater_Less_NotEqual : notequal	<< cuadruple.AddOperatorAction(semantic.NotEqual) >>`,
 		Id:         "Greater_Less_NotEqual",
-		NTType:     48,
-		Index:      74,
+		NTType:     51,
+		Index:      77,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return cuadruple.AddOperatorAction(semantic.NotEqual)
@@ -776,8 +808,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `MoreExp : Plus_Minus Termino	<<  >>`,
 		Id:         "MoreExp",
-		NTType:     49,
-		Index:      75,
+		NTType:     52,
+		Index:      78,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
@@ -786,8 +818,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `MoreExp : empty	<<  >>`,
 		Id:         "MoreExp",
-		NTType:     49,
-		Index:      76,
+		NTType:     52,
+		Index:      79,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
@@ -796,8 +828,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Plus_Minus : plus	<< cuadruple.AddOperatorAction(semantic.Plus) >>`,
 		Id:         "Plus_Minus",
-		NTType:     50,
-		Index:      77,
+		NTType:     53,
+		Index:      80,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return cuadruple.AddOperatorAction(semantic.Plus)
@@ -806,8 +838,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Plus_Minus : minus	<< cuadruple.AddOperatorAction(semantic.Minus) >>`,
 		Id:         "Plus_Minus",
-		NTType:     50,
-		Index:      78,
+		NTType:     53,
+		Index:      81,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return cuadruple.AddOperatorAction(semantic.Minus)
@@ -816,8 +848,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `MoreTermino : Times_Div Factor	<<  >>`,
 		Id:         "MoreTermino",
-		NTType:     51,
-		Index:      79,
+		NTType:     54,
+		Index:      82,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
@@ -826,8 +858,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `MoreTermino : empty	<<  >>`,
 		Id:         "MoreTermino",
-		NTType:     51,
-		Index:      80,
+		NTType:     54,
+		Index:      83,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
@@ -836,8 +868,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Times_Div : times	<< cuadruple.AddOperatorAction(semantic.Times) >>`,
 		Id:         "Times_Div",
-		NTType:     52,
-		Index:      81,
+		NTType:     55,
+		Index:      84,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return cuadruple.AddOperatorAction(semantic.Times)
@@ -846,31 +878,31 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Times_Div : divide	<< cuadruple.AddOperatorAction(semantic.Divide) >>`,
 		Id:         "Times_Div",
-		NTType:     52,
-		Index:      82,
+		NTType:     55,
+		Index:      85,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return cuadruple.AddOperatorAction(semantic.Divide)
 		},
 	},
 	ProdTabEntry{
-		String: `Cte : cte_int	<< semantic.Int, nil >>`,
+		String: `Cte : cte_int	<< cuadruple.IntconstantAction(X[0]) >>`,
 		Id:         "Cte",
-		NTType:     53,
-		Index:      83,
+		NTType:     56,
+		Index:      86,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return semantic.Int, nil
+			return cuadruple.IntconstantAction(X[0])
 		},
 	},
 	ProdTabEntry{
-		String: `Cte : cte_float	<< semantic.Float, nil >>`,
+		String: `Cte : cte_float	<< cuadruple.FloatconstantAction(X[0]) >>`,
 		Id:         "Cte",
-		NTType:     53,
-		Index:      84,
+		NTType:     56,
+		Index:      87,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return semantic.Float, nil
+			return cuadruple.FloatconstantAction(X[0])
 		},
 	},
 }

@@ -66,7 +66,7 @@ func (cuadruplo *CuadruploList) AddVariableAction(name interface{}) (interface{}
 		return nil, fmt.Errorf("error: variable %s not found", varName, err)
 	}
 // Adding variable: {z 0 1003}
-	cuadruplo.addVariable(variable)
+	cuadruplo.addVariable(variable.Virtual_address)
 	return nil, nil
 }
 
@@ -140,5 +140,31 @@ func (cuadruplo *CuadruploList) AddParamAction() (interface{}, error) {
 	if err := cuadruplo.AddParameter(); err != nil {
 		return nil, err
 	}	
+	return nil, nil
+}
+
+// ---------------- CONSTANTS SECTION ----------------
+
+func (cl *CuadruploList) IntconstantAction(value interface {}) (interface {}, error) {
+	cte, _ := value.(*token.Token).Int32Value()
+	virtual_address := cl.functionDir.MemoryManager.Allocate(ConstantInt)
+	cl.functionDir.MemoryManager.constInts = append(cl.functionDir.MemoryManager.constInts, int(cte))
+	cl.addVariable(virtual_address)
+	return nil, nil
+}
+
+func (cl *CuadruploList) FloatconstantAction(value interface {}) (interface {}, error) {
+	cte, _ := value.(*token.Token).Float64Value()
+	virtual_address := cl.functionDir.MemoryManager.Allocate(ConstantFloat)
+	cl.functionDir.MemoryManager.constFloats = append(cl.functionDir.MemoryManager.constFloats, cte)
+	cl.addVariable(virtual_address)
+	return nil, nil
+}
+
+func (cl *CuadruploList) StringconstantAction(value *token.Token) (interface {}, error) {
+	cte := value.CharLiteralValue()
+	virtual_address := cl.functionDir.MemoryManager.Allocate(ConstantString)
+	cl.functionDir.MemoryManager.constStrings = append(cl.functionDir.MemoryManager.constStrings, cte)
+	cl.addVariable(virtual_address)
 	return nil, nil
 }
