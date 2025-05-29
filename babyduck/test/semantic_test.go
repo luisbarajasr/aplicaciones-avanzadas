@@ -48,7 +48,6 @@ func Test2(t *testing.T) {
 	void uno(x : int, y : int) [{
 		y = x + b;
 		a = x + y;
-		nose = a+b; 
 	}];
 
 	void dos(dos : float, tres : float) [{
