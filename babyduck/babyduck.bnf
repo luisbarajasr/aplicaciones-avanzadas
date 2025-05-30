@@ -39,7 +39,7 @@ _digit : '0'-'9' ;
 id : _letter {_letter | _digit} ;
 cte_int : '0' | '1'-'9' {_digit} ;  
 cte_float : '0' | '1'-'9' {_digit} '.' _digit {_digit} ;
-cte_string : '"' {_letter | _digit | ' ' | '!' | '?' }'"' ;
+cte_string : '"' {_letter | _digit | ' ' | '!' | '?' | ':'}'"' ;
 
 /* ----------------- CFG ----------------- */
 << 
@@ -54,7 +54,7 @@ var cuadruple = semantic.NewCuadruploList(functionDir)
 
 Start: Program <<functionDir, nil>> ;
 
-Program : program id semicolon VarsOp FuncLoop GotoMain Body end  <<cuadruple.PrintCuadruplosAction()>>;
+Program : program id semicolon VarsOp FuncLoop GotoMain Body end  <<cuadruple.Done()>>;
 
 VarsOp : Vars <<cuadruple.AddGotoMainAction()>>
     | empty ;
@@ -76,7 +76,7 @@ FuncLoop : Funcs FuncLoop | empty ;
 Funcs : RegisterFunc lparen Params rparen lbracket Funcs_Vars Body rbracket semicolon <<cuadruple.EndFunctionAction()>> ;
 Funcs_Vars : Vars | empty ;
 
-RegisterFunc : void id <<functionDir.RegisterFunction($1, semantic.Void)>> ; 
+RegisterFunc : void id <<cuadruple.RegisterFunction($1, semantic.Void)>> ; 
 
 Params : ParamIndiv MoreParam | empty ;
 

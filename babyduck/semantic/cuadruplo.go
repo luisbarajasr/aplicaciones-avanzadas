@@ -84,16 +84,16 @@ func (cl *CuadruploList) PrintCuadruplos() {
     
     for i, quad := range cl.Cuadruplos {
         // Obtener información de cada argumento
-        arg1Info := cl.getVariableInfo(quad.Arg1)
-        arg2Info := ""
-        if quad.Arg2 != 0 { // 0 indica que no hay segundo argumento
-            arg2Info = cl.getVariableInfo(quad.Arg2)
-        }
-        resultInfo := cl.getVariableInfo(quad.Result)
+        // arg1Info := cl.getVariableInfo(quad.Arg1)
+        // arg2Info := ""
+        // if quad.Arg2 != 0 { // 0 indica que no hay segundo argumento
+        //     arg2Info = cl.getVariableInfo(quad.Arg2)
+        // }
+        // resultInfo := cl.getVariableInfo(quad.Result)
 
         // Imprimir el cuádruplo formateado
-        fmt.Printf("%-6d %-10v %-10s %-10s %-10s\n", 
-            i, quad.Operator, arg1Info, arg2Info, resultInfo)
+        fmt.Printf("%-6d %-10v %-6d %-6d %-6d\n", 
+            i, quad.Operator, quad.Arg1, quad.Arg2, quad.Result)
     }
     fmt.Printf("\nTotal Cuádruplos: %d\n", len(cl.Cuadruplos))
 }
@@ -161,7 +161,7 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 			}
 
 			return operator, nil
-				
+	
 		default:
 			currentPrecedence := operator.Precedence()
 			topPrecedence := opStack.Peek().Precedence()
@@ -214,7 +214,7 @@ func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 				Result:   0,
 			}
 			CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
-
+	
 		default:
 		arg2 := varStack.Pop()
 		arg1 := varStack.Pop()
@@ -386,12 +386,12 @@ func (cl *CuadruploList) EndFunction() {
 }
 
 func (cl *CuadruploList) AddFunctionCallERA(funcName string) error {
-	varsNeeded := cl.functionDir.Functions[funcName].vars_needed
+	vars_needed := cl.functionDir.Functions[funcName].vars_needed
 	cuadruplo := Cuadruplo{
 		Operator: ERA,
 		Arg1:     0,
 		Arg2:     0,
-		Result:   varsNeeded, 
+		Result:   vars_needed, 
 		// !!! numero de variables necesarias para la funcion !!!
 		// debe ser el nombre de la funcion pero no se puede usar como argumento string
 	}
@@ -401,12 +401,12 @@ func (cl *CuadruploList) AddFunctionCallERA(funcName string) error {
 }
 
 func (cl *CuadruploList) AddGoSub(funcName string) error {
-	varsNeeded := cl.functionDir.Functions[funcName].vars_needed
+	cuad_init := cl.functionDir.Functions[funcName].cuad_init
 	cuadruplo := Cuadruplo{
 		Operator: GOSUB,
 		Arg1:     0,
 		Arg2:     0,
-		Result:   varsNeeded, 
+		Result:   cuad_init, 
 		// !!! numero de variables necesarias para la funcion !!!
 		// debe ser el nombre de la funcion pero no se puede usar como argumento string
 	}
@@ -423,7 +423,6 @@ func (cl *CuadruploList) AddParameter() error {
 	neededType := cl.functionDir.Functions[cl.function_called].ParamsType[paramIndex-1]
 
 	if neededType == type_sent {
-		fmt.Print(neededType == type_sent, "\n")	
 		varStack.Pop() // Sacamos la dirección de la variable del stack
 	
 		cuadruplo := Cuadruplo{
@@ -437,4 +436,26 @@ func (cl *CuadruploList) AddParameter() error {
 	} 
 	
 	return fmt.Errorf("Error: Parameter type mismatch for parameter %d", paramIndex)
+}
+
+func (cl *CuadruploList) AddDone() error {
+	// Agrega el operador DONE al final de la lista de cuadruplos
+	cuadruplo := Cuadruplo{
+		Operator: DONE,
+		Arg1:     0,
+		Arg2:     0,
+		Result:   0, 
+	}
+	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
+	return nil
+}
+
+func (cl *CuadruploList) Finalize() (string, error) {
+	cl.PrintCuadruplos()
+	output, err := Run(cl)
+	if err != nil {
+		return "", fmt.Errorf("error during execution: %w", err)
+	}
+
+	return output, nil
 }
