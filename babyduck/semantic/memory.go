@@ -63,7 +63,7 @@ func NewMemoryManager() *MemoryManager {
 		},
 		ConstInts: []int{},
 		ConstFloats: []float64{},
-		ConstStrings: []string{""},
+		ConstStrings: []string{},
 	}
 }
 

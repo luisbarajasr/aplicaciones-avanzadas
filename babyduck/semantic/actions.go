@@ -71,11 +71,16 @@ func (cuadruplo *CuadruploList) AddVariableAction(name interface{}) (interface{}
 }
 
 func (cuadruplo *CuadruploList) AddBeginIfAction() (interface{}, error) {
+	cuadruplo.AddOperator(Semicolon)
 	cuadruplo.BeginIf()
 	return nil, nil
 }
 func (cuadruplo *CuadruploList) CompleteIfAction() (interface{}, error) {
 	cuadruplo.CompleteIf()
+	return nil, nil
+}
+func (cuadruplo *CuadruploList) CompleteIfEmptyAction() (interface{}, error) {
+	cuadruplo.CompleteIfEmpty()
 	return nil, nil
 }
 
@@ -89,6 +94,7 @@ func (cuadruplo *CuadruploList) CompleteElseAction() (interface{}, error) {
 }
 
 func (cuadruplo *CuadruploList) AddBeginWhileAction() (interface{}, error) {
+	cuadruplo.AddOperator(Semicolon)
 	cuadruplo.BeginWhile()
 	return nil, nil
 }
@@ -173,12 +179,10 @@ func (cl *CuadruploList) Done() (interface {}, error) {
 	// Finalize the quadruple list
 	cl.PrintCuadruplos()
 	cl.AddDone()
-	output, err := cl.Finalize()
+	fmt.Printf("=================== OUTPUT DE LA VM ==========================\n")
+	err := cl.Finalize()
 	if err != nil {
 		return nil, err
 	}
-	fmt.Printf("=================== OUTPUT DE LA VM ==========================\n")
-	fmt.Print(output)
-
 	return nil, nil
 }

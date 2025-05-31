@@ -34,6 +34,7 @@ func (cl *CuadruploList) AddFunction(name string, returnType Type) error {
 		virtual_address: cl.functionDir.MemoryManager.Allocate(FunctionsAddress), // asignamos la direccion virtual de la funcion
 		cuad_init: len(cl.Cuadruplos),
 	}
+	
 	// cambiamos el scope actual a la funcion que acabamos de crear
 	cl.functionDir.PushScope(cl.functionDir.Functions[name])
 	return nil
