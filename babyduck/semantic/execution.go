@@ -53,6 +53,8 @@ func NewVM(cl []Cuadruplo) *VirtualMachine {
 }
 
 func (vm *VirtualMachine) getCurrentLocalMemory() Memory {	
+	// fmt.Printf("TAMAÑO DE LOCALS: %d\n", len(vm.Locals))
+	// fmt.Printf("CURRENT LOCAL MEMORY: %+v\n", vm.Locals[len(vm.Locals)-1])
 	return vm.Locals[len(vm.Locals)-1]
 }
 

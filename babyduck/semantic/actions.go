@@ -177,7 +177,7 @@ func (cl *CuadruploList) StringconstantAction(value *token.Token) (interface {},
 
 func (cl *CuadruploList) Done() (interface {}, error) {
 	// Finalize the quadruple list
-	cl.PrintCuadruplos()
+	// cl.PrintCuadruplos()
 	cl.AddDone()
 	fmt.Printf("=================== OUTPUT DE LA VM ==========================\n")
 	err := cl.Finalize()

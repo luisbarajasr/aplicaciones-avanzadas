@@ -7,38 +7,38 @@ import (
 	"babyduck/parser"
 )
 
-func Test1(t *testing.T) {
-	src :=
-	`
-	program fibonacci;
-	var input: int;
-	void funcion2(nose: int) [
-		{
-			print("imprimiendo desde funcion2", nose);
-		}
-	];
+// func Test1(t *testing.T) {
+// 	src :=
+// 	`
+// 	program fibonacci;
+// 	var input: int;
+// 	void funcion2(nose: int) [
+// 		{
+// 			print("imprimiendo desde funcion2", nose);
+// 		}
+// 	];
 
-	void funcion1(n: int)[{
-		funcion2(n);
-	}];
+// 	void funcion1(n: int)[{
+// 		funcion2(n);
+// 	}];
 
-	main {
-		input = 10;
-		funcion1(input);
-	}
-	end`
+// 	main {
+// 		input = 10;
+// 		funcion1(input);
+// 	}
+// 	end`
 
-	l := lexer.NewLexer([]byte(src))
-	p := parser.NewParser()
+// 	l := lexer.NewLexer([]byte(src))
+// 	p := parser.NewParser()
 
-	tree, perr := p.Parse(l)
+// 	tree, perr := p.Parse(l)
 
-	if perr != nil {
-		t.Fatalf("parse failed: %v", perr)
-	}
+// 	if perr != nil {
+// 		t.Fatalf("parse failed: %v", perr)
+// 	}
 
-	t.Logf("parse OK %#v", tree)
-}
+// 	t.Logf("parse OK %#v", tree)
+// }
 
 // func Test2(t *testing.T) {
 // 	src :=
@@ -168,60 +168,45 @@ func Test1(t *testing.T) {
 // 	t.Logf("parse OK %#v", tree)
 // }
 
-// func Test5(t *testing.T) {
-// 	src :=
-// 	`	program primerintento; 
-	
-// 	var x: int;
-	
-// 	void uno(a: int) 
-// 	[ 
-// 		{
-// 			while (a < 10) do
-// 			{
-// 				a = a + 1;
-// 				print("El valor de a es: ", a);
-// 			};
-// 		}
-// 	]; 
+func Test5(t *testing.T) {
+	src :=
+	`	program factorial;
+		var input: int;
 
-// 	void dos() 
-// 	[ 
-// 		var y: int;
-// 		{
-// 			y = 10;
-// 			print(y);
-// 			if (x > 5) 
-// 			{
-// 				print ( "X es mayor que 5" );
-// 			}
-// 			else
-// 			{
-// 				print ( "X es menor a 5" );
-// 			};
-// 		}
-// 	]; 
+		void factorial(n: int) [
+			var result, i: int;
+			{
+				if (n < 2) {
+					print("Factorial of", n, "is", 1);
+				} else {
+					result = 1;
+					i = 2;
+					while (i < n+1) do {
+						result = result * i;
+						i = i + 1;
+					};
+					print("Factorial of", n, "is", result);
+				};
+			}
+		];
+
+		main {
+			input = 5; 
+			factorial(input);
+		}
+		end`
 	
-// 	main { 
-// 		x = 3;
-// 		print("Hola mundo!");
-// 		dos();
-// 		uno(x);
-// 		print("x es: ", x);
-// 		print("Fin del programa");
-// 	} end`
-	
-// 	l := lexer.NewLexer([]byte(src))
-// 	p := parser.NewParser()
+	l := lexer.NewLexer([]byte(src))
+	p := parser.NewParser()
 
-// 	tree, perr := p.Parse(l)
+	tree, perr := p.Parse(l)
 
-// 	if perr != nil {
-// 		t.Fatalf("parse failed: %v", perr)
-// 	}
+	if perr != nil {
+		t.Fatalf("parse failed: %v", perr)
+	}
 
-// 	t.Logf("parse OK %#v", tree)
-// }
+	t.Logf("parse OK %#v", tree)
+}
 
 // func Test6(t *testing.T) {
 // 	src :=
@@ -264,6 +249,8 @@ func Test1(t *testing.T) {
 
 // 	t.Logf("parse OK %#v", tree)
 // }
+
+
 // func Test6(t *testing.T) {
 // 	src :=
 // 	`
