@@ -19,9 +19,9 @@ func (functionDir *FunctionDirectory) SaveVariables(varType Type) (interface{}, 
 }
 
 // RegisterFunction registra una nueva función en el directorio de funciones
-func (functionDir *FunctionDirectory) RegisterFunction(name interface{}, ret Type) (interface{}, error) {
+func (cl *CuadruploList) RegisterFunction(name interface{}, ret Type) (interface{}, error) {
 	functionName := string(name.(*token.Token).Lit)
-	err := functionDir.AddFunction(functionName, ret)
+	err := cl.AddFunction(functionName, ret)
 	if err != nil {
 		return nil, err
 	}
@@ -71,11 +71,16 @@ func (cuadruplo *CuadruploList) AddVariableAction(name interface{}) (interface{}
 }
 
 func (cuadruplo *CuadruploList) AddBeginIfAction() (interface{}, error) {
+	cuadruplo.AddOperator(Semicolon)
 	cuadruplo.BeginIf()
 	return nil, nil
 }
 func (cuadruplo *CuadruploList) CompleteIfAction() (interface{}, error) {
 	cuadruplo.CompleteIf()
+	return nil, nil
+}
+func (cuadruplo *CuadruploList) CompleteIfEmptyAction() (interface{}, error) {
+	cuadruplo.CompleteIfEmpty()
 	return nil, nil
 }
 
@@ -89,6 +94,7 @@ func (cuadruplo *CuadruploList) CompleteElseAction() (interface{}, error) {
 }
 
 func (cuadruplo *CuadruploList) AddBeginWhileAction() (interface{}, error) {
+	cuadruplo.AddOperator(Semicolon)
 	cuadruplo.BeginWhile()
 	return nil, nil
 }
@@ -148,7 +154,7 @@ func (cuadruplo *CuadruploList) AddParamAction() (interface{}, error) {
 func (cl *CuadruploList) IntconstantAction(value interface {}) (interface {}, error) {
 	cte, _ := value.(*token.Token).Int32Value()
 	virtual_address := cl.functionDir.MemoryManager.Allocate(ConstantInt)
-	cl.functionDir.MemoryManager.constInts = append(cl.functionDir.MemoryManager.constInts, int(cte))
+	cl.functionDir.MemoryManager.ConstInts = append(cl.functionDir.MemoryManager.ConstInts, int(cte))
 	cl.addVariable(virtual_address)
 	return nil, nil
 }
@@ -156,7 +162,7 @@ func (cl *CuadruploList) IntconstantAction(value interface {}) (interface {}, er
 func (cl *CuadruploList) FloatconstantAction(value interface {}) (interface {}, error) {
 	cte, _ := value.(*token.Token).Float64Value()
 	virtual_address := cl.functionDir.MemoryManager.Allocate(ConstantFloat)
-	cl.functionDir.MemoryManager.constFloats = append(cl.functionDir.MemoryManager.constFloats, cte)
+	cl.functionDir.MemoryManager.ConstFloats = append(cl.functionDir.MemoryManager.ConstFloats, cte)
 	cl.addVariable(virtual_address)
 	return nil, nil
 }
@@ -164,7 +170,19 @@ func (cl *CuadruploList) FloatconstantAction(value interface {}) (interface {}, 
 func (cl *CuadruploList) StringconstantAction(value *token.Token) (interface {}, error) {
 	cte := value.CharLiteralValue()
 	virtual_address := cl.functionDir.MemoryManager.Allocate(ConstantString)
-	cl.functionDir.MemoryManager.constStrings = append(cl.functionDir.MemoryManager.constStrings, cte)
+	cl.functionDir.MemoryManager.ConstStrings = append(cl.functionDir.MemoryManager.ConstStrings, cte)
 	cl.addVariable(virtual_address)
+	return nil, nil
+}
+
+func (cl *CuadruploList) Done() (interface {}, error) {
+	// Finalize the quadruple list
+	// cl.PrintCuadruplos()
+	cl.AddDone()
+	fmt.Printf("=================== OUTPUT DE LA VM ==========================\n")
+	err := cl.Finalize()
+	if err != nil {
+		return nil, err
+	}
 	return nil, nil
 }

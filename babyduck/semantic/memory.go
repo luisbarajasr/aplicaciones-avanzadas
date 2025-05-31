@@ -26,7 +26,8 @@ Hacer division de indices para tipos de vars:
 type MemoryType int
 
 const (
-	GlobalInt MemoryType = iota
+	FunctionsAddress MemoryType = iota
+	GlobalInt
 	GlobalFloat
 	LocalInt
 	LocalFloat
@@ -39,15 +40,16 @@ const (
 )
 
 type MemoryManager struct {
-	memory_address map[MemoryType]int //mapa que lleva el registro de las direcciones disponibles para cada tipo de var. Es la pieza clave para la asignación automática de direcciones virtuales.
-	constInts  []int
-	constFloats []float64
-	constStrings []string
+	Memory_address map[MemoryType]int //mapa que lleva el registro de las direcciones disponibles para cada tipo de var. Es la pieza clave para la asignación automática de direcciones virtuales.
+	ConstInts  []int
+	ConstFloats []float64
+	ConstStrings []string
 }
 
 func NewMemoryManager() *MemoryManager {
 	return &MemoryManager{
-		memory_address: map[MemoryType]int{
+		Memory_address: map[MemoryType]int{
+			FunctionsAddress: 100, // Asignación inicial para funciones
 			GlobalInt: 1000,
 			GlobalFloat: 2000,
 			LocalInt: 3000,
@@ -59,15 +61,54 @@ func NewMemoryManager() *MemoryManager {
 			ConstantFloat: 9000,
 			ConstantString: 10000,
 		},
-		constInts: []int{},
-		constFloats: []float64{},
-		constStrings: []string{""},
+		ConstInts: []int{},
+		ConstFloats: []float64{},
+		ConstStrings: []string{},
 	}
 }
 
+/*
+---- guardar valores de constantes con su dirección virtual (posible manera) ----
+
+type Constant struct {
+    Value   interface{}
+    Address int
+}
+
+type MemoryManager struct {
+    Memory_address map[MemoryType]int
+    constants      map[MemoryType][]Constant
+}
+
+func NewMemoryManager() *MemoryManager {
+    return &MemoryManager{
+        Memory_address: map[MemoryType]int{
+            ConstantInt:    8000,
+            ConstantFloat:  9000,
+            ConstantString: 10000,
+        },
+        constants: map[MemoryType][]Constant{
+            ConstantInt:    {},
+            ConstantFloat:  {},
+            ConstantString: {},
+        },
+    }
+}
+
+func (mm *MemoryManager) AddConstantInt(value int) {
+    addr := mm.Memory_address[ConstantInt] + len(mm.constants[ConstantInt])
+    mm.constants[ConstantInt] = append(mm.constants[ConstantInt], Constant{
+        Value:   value,
+        Address: addr,
+    })
+}
+
+// Similar methods for AddConstantFloat, AddConstantString
+*/
+
 func (mm *MemoryManager) Allocate(memType MemoryType) int {
-	address := mm.memory_address[memType]
-	mm.memory_address[memType]++
+	address := mm.Memory_address[memType]
+	mm.Memory_address[memType]++
 	return address
 }
 
@@ -83,9 +124,9 @@ func (mm *MemoryManager) ConvertVarType_ToMemoryType(typ Type) MemoryType {
 }
 
 func (mm *MemoryManager) ResetLocalVariables() {
-	mm.memory_address[LocalInt] = 3000
-	mm.memory_address[LocalFloat] = 4000
-	mm.memory_address[TemporalBool] = 5000
-	mm.memory_address[TemporalInt] = 6000
-	mm.memory_address[TemporalFloat] = 7000
+	mm.Memory_address[LocalInt] = 3000
+	mm.Memory_address[LocalFloat] = 4000
+	mm.Memory_address[TemporalBool] = 5000
+	mm.Memory_address[TemporalInt] = 6000
+	mm.Memory_address[TemporalFloat] = 7000
 }

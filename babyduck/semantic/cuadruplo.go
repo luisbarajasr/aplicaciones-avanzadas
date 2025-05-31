@@ -84,16 +84,16 @@ func (cl *CuadruploList) PrintCuadruplos() {
     
     for i, quad := range cl.Cuadruplos {
         // Obtener información de cada argumento
-        arg1Info := cl.getVariableInfo(quad.Arg1)
-        arg2Info := ""
-        if quad.Arg2 != 0 { // 0 indica que no hay segundo argumento
-            arg2Info = cl.getVariableInfo(quad.Arg2)
-        }
-        resultInfo := cl.getVariableInfo(quad.Result)
+        // arg1Info := cl.getVariableInfo(quad.Arg1)
+        // arg2Info := ""
+        // if quad.Arg2 != 0 { // 0 indica que no hay segundo argumento
+        //     arg2Info = cl.getVariableInfo(quad.Arg2)
+        // }
+        // resultInfo := cl.getVariableInfo(quad.Result)
 
         // Imprimir el cuádruplo formateado
-        fmt.Printf("%-6d %-10v %-10s %-10s %-10s\n", 
-            i, quad.Operator, arg1Info, arg2Info, resultInfo)
+        fmt.Printf("%-6d %-10v %-6d %-6d %-6d\n", 
+            i, quad.Operator, quad.Arg1, quad.Arg2, quad.Result)
     }
     fmt.Printf("\nTotal Cuádruplos: %d\n", len(cl.Cuadruplos))
 }
@@ -161,7 +161,7 @@ func (CuadruploList *CuadruploList) AddOperator(operator Operator) (Operator, er
 			}
 
 			return operator, nil
-				
+	
 		default:
 			currentPrecedence := operator.Precedence()
 			topPrecedence := opStack.Peek().Precedence()
@@ -206,7 +206,6 @@ func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 		
 		case Print: 
 			arg := varStack.Pop()
-			
 			cuadruplo := Cuadruplo{
 				Operator: operator,
 				Arg1:     arg,
@@ -214,7 +213,7 @@ func (CuadruploList *CuadruploList) addCuadruplo(operator Operator) {
 				Result:   0,
 			}
 			CuadruploList.Cuadruplos = append(CuadruploList.Cuadruplos, cuadruplo)
-
+	
 		default:
 		arg2 := varStack.Pop()
 		arg1 := varStack.Pop()
@@ -264,7 +263,7 @@ func varTypetoMemoryType(varType Type) MemoryType {
 	return GlobalInt // Default case, should not happen
 }
 
-func addressToType(address int) Type {
+func (cl *CuadruploList) addressToType(address int) Type {
 	if address >= 1000 && address < 2000 {
 		return Int
 	} else if address >= 2000 && address < 3000 {
@@ -278,6 +277,10 @@ func addressToType(address int) Type {
 	}else if address >= 6000 && address < 7000 {
 		return Int
 	}else if address >= 7000 && address < 8000 {
+		return Float
+	}else if address >= 8000 && address < 9000 {
+		return Int
+	}else if address >= 9000 && address < 10000 {
 		return Float
 	}
 	return Error // Default case, should not happen
@@ -301,16 +304,21 @@ func (cl *CuadruploList) BeginIf() {
 func (cl *CuadruploList) CompleteIf() {
 	// Completa el GOTOF con la posición actual (fin del bloque if)
     gotoFIndex, _ := jumpStack.Pop()
-	cl.Cuadruplos[gotoFIndex].Arg1 = BooleanTempVariables.Pop() // direccion del booleano temporal dentro del If( ) 
     cl.Cuadruplos[gotoFIndex].Arg2 = len(cl.Cuadruplos) + 1 // Completa el GOTOF con la posición actual (fin del bloque if)
+}
+
+func (cl *CuadruploList) CompleteIfEmpty() {
+	// Completa el GOTOF con la posición actual (fin del bloque if)
+	gotoFIndex, _ := jumpStack.Pop()
+	cl.Cuadruplos[gotoFIndex].Arg2 = len(cl.Cuadruplos) // Completa el GOTOF con la posición actual (fin del bloque if)
 }
 
 func (cl *CuadruploList) BeginElse() int {
     // Agrega GOTO para el else
 	jumpStack.Push(len(cl.Cuadruplos))
     cl.Cuadruplos = append(cl.Cuadruplos, Cuadruplo{
-        Operator: "GOTO",
-        Result:   -1,
+        Operator: GOTO,
+        Arg2:   -1,
     })
     return len(cl.Cuadruplos) - 1
 }
@@ -318,7 +326,7 @@ func (cl *CuadruploList) BeginElse() int {
 func (cl *CuadruploList) CompleteElse() {
     // Completa el GOTO del else
 	elsePos, _ := jumpStack.Pop()
-    cl.Cuadruplos[elsePos].Result = len(cl.Cuadruplos)
+    cl.Cuadruplos[elsePos].Arg2 = len(cl.Cuadruplos)
 }
 
 // ------------ WHILE ----------------
@@ -336,25 +344,23 @@ func (cl *CuadruploList) BeginWhile()  {
 		Result:   0, 
 	}
 	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
+
 	jumpStack.Push(len(cl.Cuadruplos) - 1) // Guarda la posición del GOTOF
 }
 
 func (cl *CuadruploList) CompleteWhile() {
-	
 	gotoFIndex, _ := jumpStack.Pop()
-	cl.Cuadruplos[gotoFIndex].Arg1 = BooleanTempVariables.Pop() // direccion del booleano temporal dentro del If( )
 	cl.Cuadruplos[gotoFIndex].Arg2 = len(cl.Cuadruplos) + 1 // Completa el GOTOF con la posición actual (fin del bloque if)
 
     // Agrega GOTOT para volver al inicio
     cl.Cuadruplos = append(cl.Cuadruplos, Cuadruplo{
         Operator: GOTO,
-        Arg2: whileIndex,
+        Arg2: whileIndex-1,
     })
 }
 
 // ------------- GOTO MAIN ----------------
 func (cl *CuadruploList) AddGotoMain()  {
-    jumpStack.Push(len(cl.Cuadruplos))
 
 	cuadruplo := Cuadruplo{
 		Operator: GOTO,
@@ -363,12 +369,10 @@ func (cl *CuadruploList) AddGotoMain()  {
 		Result:   0, 
 	}
 	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
-	jumpStack.Push(len(cl.Cuadruplos) - 1) // Guarda la posición del GOTO
 }
 
 func (cl *CuadruploList) CompleteMain() {
-	gotoIndex, _ := jumpStack.Pop()
-	cl.Cuadruplos[gotoIndex].Arg2 = len(cl.Cuadruplos) // Completa el GOTOF con la posición actual (fin del bloque if)
+	cl.Cuadruplos[0].Arg2 = len(cl.Cuadruplos) // Completa el GOTOF con la posición actual (fin del bloque if)
 }
 
 // ------------ FUNCTION CALLS ----------------
@@ -386,12 +390,12 @@ func (cl *CuadruploList) EndFunction() {
 }
 
 func (cl *CuadruploList) AddFunctionCallERA(funcName string) error {
-	varsNeeded := cl.functionDir.Functions[funcName].vars_needed
+	vars_needed := cl.functionDir.Functions[funcName].vars_needed
 	cuadruplo := Cuadruplo{
 		Operator: ERA,
 		Arg1:     0,
 		Arg2:     0,
-		Result:   varsNeeded, 
+		Result:   vars_needed, 
 		// !!! numero de variables necesarias para la funcion !!!
 		// debe ser el nombre de la funcion pero no se puede usar como argumento string
 	}
@@ -401,12 +405,12 @@ func (cl *CuadruploList) AddFunctionCallERA(funcName string) error {
 }
 
 func (cl *CuadruploList) AddGoSub(funcName string) error {
-	varsNeeded := cl.functionDir.Functions[funcName].vars_needed
+	cuad_init := cl.functionDir.Functions[funcName].cuad_init
 	cuadruplo := Cuadruplo{
 		Operator: GOSUB,
 		Arg1:     0,
 		Arg2:     0,
-		Result:   varsNeeded, 
+		Result:   cuad_init, 
 		// !!! numero de variables necesarias para la funcion !!!
 		// debe ser el nombre de la funcion pero no se puede usar como argumento string
 	}
@@ -419,22 +423,45 @@ func (cl *CuadruploList) AddGoSub(funcName string) error {
 func (cl *CuadruploList) AddParameter() error {
 	paramIndex += 1 // Incrementa el índice de parámetros
 	paramAddress := varStack.Peek()
-	type_sent := addressToType(paramAddress)
+	type_sent := cl.addressToType(paramAddress)
 	neededType := cl.functionDir.Functions[cl.function_called].ParamsType[paramIndex-1]
 
+	local_type := cl.functionDir.MemoryManager.ConvertVarType_ToMemoryType(neededType)
+	local_var := cl.functionDir.MemoryManager.Allocate(local_type)
+
 	if neededType == type_sent {
-		fmt.Print(neededType == type_sent, "\n")	
 		varStack.Pop() // Sacamos la dirección de la variable del stack
 	
 		cuadruplo := Cuadruplo{
 			Operator: PARAM,
 			Arg1:     0,
-			Arg2:     0,
+			Arg2:     local_var,
 			Result:   paramAddress, 
 		}
 		cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
 		return nil
-	} 
+	}
 	
 	return fmt.Errorf("Error: Parameter type mismatch for parameter %d", paramIndex)
+}
+
+func (cl *CuadruploList) AddDone() error {
+	// Agrega el operador DONE al final de la lista de cuadruplos
+	cuadruplo := Cuadruplo{
+		Operator: DONE,
+		Arg1:     0,
+		Arg2:     0,
+		Result:   0, 
+	}
+	cl.Cuadruplos = append(cl.Cuadruplos, cuadruplo)
+	return nil
+}
+
+func (cl *CuadruploList) Finalize() error {
+	err := Run(cl)
+	if err != nil {
+		return fmt.Errorf("error during execution: %w", err)
+	}
+
+	return nil
 }

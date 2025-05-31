@@ -39,7 +39,7 @@ _digit : '0'-'9' ;
 id : _letter {_letter | _digit} ;
 cte_int : '0' | '1'-'9' {_digit} ;  
 cte_float : '0' | '1'-'9' {_digit} '.' _digit {_digit} ;
-cte_string : '"' {_letter | _digit | ' ' | '!' | '?' }'"' ;
+cte_string : '"' {_letter | _digit | ' ' | '!' | '?' | ':'} '"' ;
 
 /* ----------------- CFG ----------------- */
 << 
@@ -54,7 +54,7 @@ var cuadruple = semantic.NewCuadruploList(functionDir)
 
 Start: Program <<functionDir, nil>> ;
 
-Program : program id semicolon VarsOp FuncLoop GotoMain Body end  <<cuadruple.PrintCuadruplosAction()>>;
+Program : program id semicolon VarsOp FuncLoop GotoMain Body end  <<cuadruple.Done()>>;
 
 VarsOp : Vars <<cuadruple.AddGotoMainAction()>>
     | empty ;
@@ -76,7 +76,7 @@ FuncLoop : Funcs FuncLoop | empty ;
 Funcs : RegisterFunc lparen Params rparen lbracket Funcs_Vars Body rbracket semicolon <<cuadruple.EndFunctionAction()>> ;
 Funcs_Vars : Vars | empty ;
 
-RegisterFunc : void id <<functionDir.RegisterFunction($1, semantic.Void)>> ; 
+RegisterFunc : void id <<cuadruple.RegisterFunction($1, semantic.Void)>> ; 
 
 Params : ParamIndiv MoreParam | empty ;
 
@@ -103,19 +103,19 @@ Assign : Id_Assign Add_Assign Expresion semicolon ;
 Add_Assign : assign <<cuadruple.AddOperatorAction(semantic.Assign)>>;
 Id_Assign : id <<cuadruple.AddVariableAction($0)>>;
 
-Condition : If_Begin lparen Expresion rparen If_Body ElseBody semicolon ;
+Condition : if lparen Expresion If_Begin If_Body ElseBody semicolon ;
 
-If_Begin : if <<cuadruple.AddBeginIfAction()>>;
+If_Begin : rparen <<cuadruple.AddBeginIfAction()>>;
 If_Body : Body <<cuadruple.CompleteIfAction()>>;
 
 ElseBody : Else_Begin Body <<cuadruple.CompleteElseAction()>>
-     | empty ;
+     | empty <<cuadruple.CompleteIfEmptyAction()>> ;
 
 Else_Begin : else <<cuadruple.AddBeginElseAction()>>;
 
-Cycle : While_Begin lparen Expresion rparen do While_Body semicolon;
+Cycle : while lparen Expresion While_Begin do While_Body semicolon;
 
-While_Begin : while <<cuadruple.AddBeginWhileAction()>>;
+While_Begin : rparen <<cuadruple.AddBeginWhileAction()>>;
 While_Body : Body <<cuadruple.CompleteWhileAction()>>;
 
 FuncCall : Func_Id_Call lparen ArgList rparen semicolon <<cuadruple.AddGoSubAction()>> ;

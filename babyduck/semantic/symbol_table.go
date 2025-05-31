@@ -20,20 +20,23 @@ func NewFunctionDirectory() *FunctionDirectory {
 }
 
 // AddFunction agrega una nueva función al directorio de funciones global
-func (functionDir *FunctionDirectory) AddFunction(name string, returnType Type) error {
-	if value, exists := functionDir.Functions[name]; exists {
+func (cl *CuadruploList) AddFunction(name string, returnType Type) error {
+	if value, exists := cl.functionDir.Functions[name]; exists {
 		return fmt.Errorf("error: function %s already exists with return type %s", name, value.ReturnType)
 	}
-	functionDir.Functions[name] = &Function{
+	cl.functionDir.Functions[name] = &Function{
 		Name:       name,
 		ReturnType: returnType,
 		Params:     []Variable{},
 		ParamsType: []Type{},
 		Vars:       NewVariableTable(),
 		vars_needed: 0, 
+		virtual_address: cl.functionDir.MemoryManager.Allocate(FunctionsAddress), // asignamos la direccion virtual de la funcion
+		cuad_init: len(cl.Cuadruplos),
 	}
+	
 	// cambiamos el scope actual a la funcion que acabamos de crear
-	functionDir.PushScope(functionDir.Functions[name])
+	cl.functionDir.PushScope(cl.functionDir.Functions[name])
 	return nil
 }
 
@@ -75,23 +78,6 @@ func (functionDir *FunctionDirectory) PopScope() {
 
 func (functionDir *FunctionDirectory) ReturnFunctionDirectory() (interface {}, error) {
 	return functionDir, nil
-}
-
-func (functionDir *FunctionDirectory) PrintFunctions() {
-	for name, function := range functionDir.Functions {
-		fmt.Printf("Function: %s\n", name)
-		fmt.Printf("Return Type: %s\n", function.ReturnType)
-		fmt.Printf("Parameters: ")
-		for _, param := range function.Params {
-			fmt.Printf("%s (%s) ", param.Name, param.Type)
-		}
-
-		for _, variable := range function.Vars.Variables {
-			fmt.Printf("Variable: %s (%s) ", variable.Name, variable.Type)
-			fmt.Printf("Virtual Address: %d ", variable.Virtual_address)
-		}
-		fmt.Println()
-	}
 }
 
 

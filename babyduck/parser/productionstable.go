@@ -46,13 +46,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Program : program id semicolon VarsOp FuncLoop GotoMain Body end	<< cuadruple.PrintCuadruplosAction() >>`,
+		String: `Program : program id semicolon VarsOp FuncLoop GotoMain Body end	<< cuadruple.Done() >>`,
 		Id:         "Program",
 		NTType:     2,
 		Index:      2,
 		NumSymbols: 8,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return cuadruple.PrintCuadruplosAction()
+			return cuadruple.Done()
 		},
 	},
 	ProdTabEntry{
@@ -206,13 +206,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `RegisterFunc : void id	<< functionDir.RegisterFunction(X[1], semantic.Void) >>`,
+		String: `RegisterFunc : void id	<< cuadruple.RegisterFunction(X[1], semantic.Void) >>`,
 		Id:         "RegisterFunc",
 		NTType:     13,
 		Index:      18,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return functionDir.RegisterFunction(X[1], semantic.Void)
+			return cuadruple.RegisterFunction(X[1], semantic.Void)
 		},
 	},
 	ProdTabEntry{
@@ -406,7 +406,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Condition : If_Begin lparen Expresion rparen If_Body ElseBody semicolon	<<  >>`,
+		String: `Condition : if lparen Expresion If_Begin If_Body ElseBody semicolon	<<  >>`,
 		Id:         "Condition",
 		NTType:     24,
 		Index:      38,
@@ -416,7 +416,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `If_Begin : if	<< cuadruple.AddBeginIfAction() >>`,
+		String: `If_Begin : rparen	<< cuadruple.AddBeginIfAction() >>`,
 		Id:         "If_Begin",
 		NTType:     25,
 		Index:      39,
@@ -446,13 +446,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `ElseBody : empty	<<  >>`,
+		String: `ElseBody : empty	<< cuadruple.CompleteIfEmptyAction() >>`,
 		Id:         "ElseBody",
 		NTType:     27,
 		Index:      42,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
-			return nil, nil
+			return cuadruple.CompleteIfEmptyAction()
 		},
 	},
 	ProdTabEntry{
@@ -466,7 +466,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Cycle : While_Begin lparen Expresion rparen do While_Body semicolon	<<  >>`,
+		String: `Cycle : while lparen Expresion While_Begin do While_Body semicolon	<<  >>`,
 		Id:         "Cycle",
 		NTType:     29,
 		Index:      44,
@@ -476,7 +476,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `While_Begin : while	<< cuadruple.AddBeginWhileAction() >>`,
+		String: `While_Begin : rparen	<< cuadruple.AddBeginWhileAction() >>`,
 		Id:         "While_Begin",
 		NTType:     30,
 		Index:      45,
